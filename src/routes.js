@@ -6,6 +6,7 @@ import {
 import Features from "./Views/Features";
 import AboutUs from "./Views/AboutUs";
 import ContactUs from "./Views/ContactUs";
+import Home from "./Views/Home";
 
 export function Routes(){
 	return (
@@ -13,7 +14,7 @@ export function Routes(){
 			<Route path="/features" component={Features}/>
 			<Route path="/about-us" component={AboutUs}/>
 			<Route path="/contact-us" component={ContactUs}/>
-			<Route path="/"/>
+			<Route path="/" component={Home}/>
 		</Switch>
 	)
 }
