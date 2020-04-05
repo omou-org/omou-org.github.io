@@ -5,6 +5,7 @@ import {appBarTheme, theme} from './theme/theme'
 import {AppBar, makeStyles, Toolbar, Typography} from "@material-ui/core";
 import {BrowserRouter as Router, NavLink} from "react-router-dom";
 import {Routes} from "./routes";
+import {primaryColor} from "./theme/colors";
 import Container from "@material-ui/core/Container/Container";
 
 const useStyles = makeStyles((appBarTheme)=>({
@@ -49,7 +50,7 @@ function NavigationBar() {
         <AppBar
             color="primary"
             position="static">
-            <Toolbar>
+            <Toolbar style={{backgroundColor: primaryColor}}>
                 <NavLink className={classes.link} to="/">
                     <Typography
                         variant="h3">
