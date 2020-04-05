@@ -1,39 +1,26 @@
-// React
-import React from "react";
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
 
-// Redux
-import {connect} from "react-redux";
-import {bindActionCreators} from "redux";
-import * as rootActions from "./actions/rootActions";
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
 
-// Material UI
-// TODO: import each component individually (i.e. '@material-ui/core/AppBar') to reduce bundle size
-import {CssBaseline} from "@material-ui/core";
-
-// Local Component Imports
-import Navigation from "./components/Navigation/Navigation";
-import "./App.scss";
-import "./theme/theme.scss";
-
-const App = (props) => {
-    props.rootActions.fetchData("student");
-    props.rootActions.fetchData("parent");
-    props.rootActions.fetchData("instructor");
-    return (
-        <div className="App">
-            <CssBaseline />
-            <Navigation />
-        </div>
-    );
-};
-
-const mapStateToProps = () => ({});
-
-const mapDispatchToProps = (dispatch) => ({
-    rootActions: bindActionCreators(rootActions, dispatch),
-});
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(App);
+export default App;
