@@ -12,7 +12,8 @@ import Grid from '@material-ui/core/Grid'
 
 const useStyles = makeStyles({
     root: {
-        maxWidth: 345,
+        maxWidth: 450,
+        height: 300,
     },
     media: {
         height: 140,
@@ -29,8 +30,9 @@ const UserCards = ({ user }) => {
                     <CardMedia
                         className={classes.media}
                         image=""
-                        title="Contemplative Reptile"
+                        title=""
                     />
+                    {console.log(user.picture_src)}
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="h2">
                             {user.name}
@@ -39,11 +41,11 @@ const UserCards = ({ user }) => {
                             LinkedIn
           </Typography>
                         <Typography gutterBottom variant="h5" component="h2">
-                            Role
-          </Typography>
+                            {user.role}
+                        </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
-                            Description
-          </Typography>
+                            {user.description}
+                        </Typography>
                     </CardContent>
                 </CardActionArea>
 

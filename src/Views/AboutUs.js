@@ -38,8 +38,9 @@ const AboutUs = () => {
 				</Container>
 			</div>
 			<Container maxWidth="xl">
-				<Typography variant="h3" alight="center">Meet The Team</Typography>
+				<Typography variant="h3">Meet The Team</Typography>
 				<Container>
+					<Typography variant="h3" align="left">Leadership</Typography>
 					<Grid
 						container
 						spacing={2}
@@ -47,12 +48,60 @@ const AboutUs = () => {
 						justify="center"
 						alignItems="flex-start"
 					>
-						{Users.map((user) => {
-							return (
-								<UserCards user={user} />)
-						})}
+						{
+							Users
+								.filter((user) => user.roleID === 0)
+								.map((user) => <UserCards user={user} />
+								)
+						}
 
 					</Grid>
+					<Typography variant="h3" align="left">Front-End Engineers</Typography>
+					<Grid
+						container
+						spacing={2}
+						direction="row"
+						justify="center"
+						alignItems="flex-start"
+					>
+						{
+							Users
+								.filter((user) => user.roleID === 1)
+								.map((user) => <UserCards user={user} />
+								)
+						}
+					</Grid>
+					<Typography variant="h3" align="left">Back-End Engineers</Typography>
+					<Grid
+						container
+						spacing={2}
+						direction="row"
+						justify="center"
+						alignItems="flex-start"
+					>
+						{
+							Users
+								.filter((user) => user.roleID === 2)
+								.map((user) => <UserCards user={user} />
+								)
+						}
+					</Grid>
+					<Typography variant="h3" align="left">Product Designers</Typography>
+					<Grid
+						container
+						spacing={2}
+						direction="row"
+						justify="center"
+						alignItems="flex-start"
+					>
+						{
+							Users
+								.filter((user) => user.roleID === 3)
+								.map((user) => <UserCards user={user} />
+								)
+						}
+					</Grid>
+
 				</Container>
 			</Container>
 
