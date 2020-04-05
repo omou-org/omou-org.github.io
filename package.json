@@ -1,45 +1,21 @@
 {
-  "name": "omou-frontend",
+  "name": "marketing-portal",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fullcalendar/bootstrap": "^4.2.0",
-    "@fullcalendar/core": "^4.2.0",
-    "@fullcalendar/daygrid": "^4.2.0",
-    "@fullcalendar/interaction": "^4.2.0",
-    "@fullcalendar/list": "^4.2.0",
-    "@fullcalendar/react": "^4.2.0",
-    "@fullcalendar/resource-timeline": "^4.2.0",
-    "@fullcalendar/timegrid": "^4.2.0",
-    "@material-ui/core": "^3.9.3",
-    "@material-ui/icons": "^3.0.2",
-    "@material-ui/styles": "^4.3.0",
-    "axios": "^0.19.0",
-    "clsx": "^1.0.4",
-    "eslint-plugin-jest": "^22.17.0",
-    "node-sass": "^4.12.0",
-    "popper.js": "^1.15.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-redux": "^7.0.3",
-    "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.1",
-    "react-select": "^3.0.3",
-    "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0",
-    "tar": "^4.4.8",
-    "tippy.js": "^4.3.5"
+    "@material-ui/core": "^4.9.9",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1"
   },
-  "proxy": "http://127.0.0.1:8000/api/",
-  "homepage": "http://omou-org.github.io/stage-1-demo",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -55,8 +31,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^2.1.1"
   }
 }
