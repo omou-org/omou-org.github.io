@@ -5,6 +5,7 @@ import {appBarTheme, theme} from './theme/theme'
 import {AppBar, makeStyles, Toolbar, Typography} from "@material-ui/core";
 import {BrowserRouter as Router, NavLink} from "react-router-dom";
 import {Routes} from "./routes";
+import Container from "@material-ui/core/Container/Container";
 
 const useStyles = makeStyles((appBarTheme)=>({
     link:{
@@ -20,6 +21,10 @@ const useStyles = makeStyles((appBarTheme)=>({
     desktopMenuItem: {
         marginLeft: "10px",
         color: "black",
+    },
+    footer:{
+        backgroundColor: "#43B5D9",
+        color: "white",
     }
 }));
 
@@ -76,6 +81,18 @@ function NavigationBar() {
     </ThemeProvider>;
 }
 
+const Footer = () => {
+    const classes = useStyles();
+  return (
+      <Container
+          maxWidth={"lg"}
+          className={classes.footer}
+      >
+
+      </Container>
+  )
+};
+
 function App() {
 	return (
         <ThemeProvider theme={theme}>
@@ -83,6 +100,7 @@ function App() {
                 <div className="App">
                     <NavigationBar/>
                     <Routes/>
+                    <Footer/>
                 </div>
             </Router>
         </ThemeProvider>
