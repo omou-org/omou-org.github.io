@@ -1,11 +1,9 @@
 import React from "react";
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import paymentImage from "./payment.png";
 import scheduleImage from "./schedule.png"
 import "./Home.scss";
-import { shadows } from '@material-ui/system';
 import Box from '@material-ui/core/Box';
 import Hidden from '@material-ui/core/Hidden';
 
@@ -27,7 +25,7 @@ export default function Home() {
 		<Grid container className="mid">
 			<Grid item md={6}>
 				<Box boxShadow={4} className="imageContainer">
-					<img Component={Hidden} lgDown className="paymentImage" src={scheduleImage}/>
+					<img Component={Hidden} lgDown className="paymentImage" src={paymentImage}/>
 				</Box>
 			</Grid>
 			<Grid item md={6} className="midContent">
