@@ -14,7 +14,7 @@ export const appBarTheme = createMuiTheme({
 		h3:{
 			fontFamily: "Roboto Slab, serif",
 			fontWeight:700,
-			color:"#43B5D9",
+			color: primaryColor,
 		}
 	},
 	overrides:{
@@ -53,4 +53,11 @@ export const theme = createMuiTheme({
 			fontWeight:700,
 		}
 	},
+	overrides:{
+		MuiButton:{
+			containedPrimary: {
+				color:"white",
+			},
+		}
+	}
 })
