@@ -1,4 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles';
+import {primaryColor} from "./colors";
 
 export const appBarTheme = createMuiTheme({
 	palette: {
@@ -27,7 +28,7 @@ export const appBarTheme = createMuiTheme({
 
 export const theme = createMuiTheme({
 	palette: {
-		primary: {main: "#43B5D9"},
+		primary: {main: primaryColor},
 		secondary: {main: "#a6a6a6"},
 		background: {
 			main: "#ffffff",
@@ -52,4 +53,11 @@ export const theme = createMuiTheme({
 			fontWeight:700,
 		}
 	},
+	overrides:{
+		MuiButton:{
+			containedPrimary: {
+				color:"white",
+			},
+		}
+	}
 })
