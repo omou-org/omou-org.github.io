@@ -4,10 +4,12 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
+import Button from "@material-ui/core/Button"
 import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core";
 import { theme } from "../theme/theme";
-import studentregister from "../assets/img/stureg.png"
+import FeaturesData from "./FeaturesData"
+import FeaturesCard from "../components/FeaturesCard/FeaturesCard"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,13 +34,25 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "19px",
   },
   sturegTitle: {
-    fontSize: "30px",
+    fontSize: "40px",
     fontWeight: "bolder"
+  },
+  alignTextLeft: {
+    textAlign: "left"
   }
 }));
 
 export default function Features() {
+
   const classes = useStyles();
+  const featureDisplay = FeaturesData.map(data => (<FeaturesCard
+    key={data.name} 
+    name={data.name} 
+    title={data.title}
+    description={data.description} 
+    content={data.content}
+    image={data.image}
+    />))
   return (
     <>
       <CssBaseline />
@@ -86,56 +100,13 @@ export default function Features() {
           </Grid>
         </div>
       </Container>
-
-    <section id="stureg">
-      <Container>
-      <div className={classes.root}>
-      <Grid container spacing={3}>
-        <Grid item xs={6} style={{marginBottom: "20px"}}>
-          <Typography className={classes.sturegTitle}>
-            Standardized Registration and Payments
-          </Typography>
-          {/* <Paper className={classes.paper}>Title</Paper> */}
-        </Grid>
-        <Grid item xs={6}>
-          <Typography>
-            With an automated registration flow and payment history, never wonder if a student has completed payment again.
-          </Typography>
-          {/* <Paper className={classes.paper}>Content</Paper> */}
-        </Grid>
-        <Grid item xs={12}>
-        <img src={studentregister} alt="stureg" height="auto" width="1300vh"/>
-          {/* <Paper className={classes.paper}>xs=12</Paper> */}
-        </Grid>
-      </Grid>
-    </div>
-      </Container>
-      </section>
-
-      <section id="simple-monthly-secheduling">
-      <Container>
-      <div className={classes.root}>
-      <Grid container spacing={3}>
-        <Grid item xs={6} style={{marginBottom: "20px"}}>
-          <Typography className={classes.sturegTitle}>
-            Standardized Registration and Payments
-          </Typography>
-          {/* <Paper className={classes.paper}>Title</Paper> */}
-        </Grid>
-        <Grid item xs={6}>
-          <Typography>
-            With an automated registration flow and payment history, never wonder if a student has completed payment again.
-          </Typography>
-          {/* <Paper className={classes.paper}>Content</Paper> */}
-        </Grid>
-        <Grid item xs={12}>
-        <img src={studentregister} alt="stureg" height="auto" width="1300vh"/>
-          {/* <Paper className={classes.paper}>xs=12</Paper> */}
-        </Grid>
-      </Grid>
-    </div>
-      </Container>
-      </section>
+    {featureDisplay}
+    <br />
+    <br />
+    <Button variant="contained" color="primary">
+    Request Demo
+    </Button>
     </>
   );
 }
+
