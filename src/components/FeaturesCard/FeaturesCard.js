@@ -24,8 +24,9 @@ const useStyles = makeStyles((theme) => ({
 const FeaturesCard = (props) => {
   const classes = useStyles();
   return (
-    <section id={props.name} style={{ marginTop: "200px" }}>
-      <Container>
+    <section id={props.name}
+             style={{ marginTop: props.title == "Standardized Registration and Payments" ? "50px" : "200px" }}>
+      <Container maxWidth="md">
         <div className={classes.root}>
           <Grid container spacing={3}>
             <Grid item xs={6} style={{ marginBottom: "35px" }}>
