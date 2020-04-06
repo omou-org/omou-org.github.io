@@ -41,26 +41,24 @@ const AboutUs = () => {
 								centers to grow and better connect their community of learners, parents, and teachers.
 								We were founded by former tutors and students who recognize vast accessibility of content and connectivity
 								opportunities enhancing the learning and teaching experiences.
-								</Typography>
+							</Typography>
 							<br />
 							<Typography variant="body1" align="left">
 								While not a direct replacement for physical classrooms, we at Omou believe digital
 								learning spaces empower tutoring centers to extend and enhance their relationships online.
-								 A digital learning space offers tutoring centers to grow their community of students, parents, and teachers at minimal to no additional cost.
-						</Typography>
+								A digital learning space offers tutoring centers to grow their community of students, parents, and teachers at minimal to no additional cost.
+							</Typography>
 							<br />
 							<Typography variant="body1" align="left">
 								We at Omou want to remove all physical barriers that prevent students, parents, and teachers from connecting with a tutoring center’s community.
-							In the end, all that separates you and your tutoring community is just 1 click away.
-						</Typography>
+								In the end, all that separates you and your tutoring community is just 1 click away.
+							</Typography>
 						</Grid>
 
 						<Grid item xs>
 							<Box component="div" >
 								<img className={classes.meetTeamPicture} alt="" src={require("./Users/pictures/omou.jpeg")} />
 							</Box>
-
-
 						</Grid>
 					</Grid>
 				</Container>
@@ -80,8 +78,7 @@ const AboutUs = () => {
 					{
 						Users
 							.filter((user) => user.roleID === 0)
-							.map((user) => <UserCards user={user} />
-							)
+							.map((user) => <UserCards user={user} />)
 					}
 
 				</Grid>
@@ -95,8 +92,7 @@ const AboutUs = () => {
 					{
 						Users
 							.filter((user) => user.roleID === 1)
-							.map((user) => <UserCards user={user} />
-							)
+							.map((user) => <UserCards user={user} />)
 					}
 				</Grid>
 				<Typography className={classes.roleTitle} variant="h3" align="left">Back-End Engineers</Typography>
@@ -109,8 +105,7 @@ const AboutUs = () => {
 					{
 						Users
 							.filter((user) => user.roleID === 2)
-							.map((user) => <UserCards user={user} />
-							)
+							.map((user) => <UserCards user={user} />)
 					}
 				</Grid>
 				<Typography className={classes.roleTitle} variant="h3" align="left">Product Designers</Typography>
@@ -123,15 +118,10 @@ const AboutUs = () => {
 					{
 						Users
 							.filter((user) => user.roleID === 3)
-							.map((user) => <UserCards user={user} />
-							)
+							.map((user) => <UserCards user={user} />)
 					}
 				</Grid>
-
 			</Container>
-
-
-
 		</>
 	)
 }

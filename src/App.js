@@ -3,7 +3,7 @@ import './App.css';
 
 import { ThemeProvider } from '@material-ui/core/styles';
 import { appBarTheme, theme } from './theme/theme'
-import { AppBar, makeStyles, Toolbar, Typography } from "@material-ui/core";
+import { AppBar, makeStyles, Toolbar, Typography, Container, Grid } from "@material-ui/core";
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
 import { Routes } from "./routes";
 import { primaryColor } from "./theme/colors";
@@ -21,15 +21,15 @@ const useStyles = makeStyles((appBarTheme) => ({
         display: "flex"
     },
     desktopMenuItem: {
-        marginLeft: "15px",
+        marginLeft: "20px",
         color: "black",
-        display:"inline-block"
+        display:"inline-block",
+        fontWeight: "400"
     },
     footerWrapper:{
         backgroundColor: primaryColor,
         color: "white",
-        position: "absolute",
-        bottom: 0,
+        marginTop: "25px",
         width:"100%",
     },
     footer:{
@@ -78,9 +78,7 @@ function NavigationBar() {
         <AppBar
             color="primary"
             position="static">
-
-            <Toolbar style={{ backgroundColor: primaryColor }}>
-
+            <Toolbar>
                 <NavLink className={classes.link} to="/">
                     <Typography variant="h3">
                         omou
@@ -88,24 +86,7 @@ function NavigationBar() {
                 </NavLink>
                 <div className={classes.grow} />
                 <div className={classes.desktopMenu}>
-
-                    {
-                        MenuItems.map(({ title, link }) => (
-                            <NavLink
-                                className={classes.link}
-                                to={link}
-                            >
-                                <Typography
-                                    variant="h6"
-                                    align="center"
-                                    className={classes.desktopMenuItem}
-                                >
-                                    {title}
-                                </Typography>
-                            </NavLink>
-                        ))
-
-                    }
+                    <MenuList fontType="h6"/>
                 </div>
             </Toolbar>
         </AppBar>
@@ -147,7 +128,7 @@ function App() {
                 <div className="App">
                     <NavigationBar />
                     <Routes />
-
+                    <Footer/>
                 </div>
             </Router>
         </ThemeProvider>
