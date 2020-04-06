@@ -7,7 +7,7 @@ import scheduleImage from "./schedule.png"
 import "./Home.scss";
 import { shadows } from '@material-ui/system';
 import Box from '@material-ui/core/Box';
-
+import Hidden from '@material-ui/core/Hidden';
 
 export default function Home() {
 	return (<div>
@@ -27,8 +27,7 @@ export default function Home() {
 		<Grid container className="mid">
 			<Grid item md={6}>
 				<Box boxShadow={4} className="imageContainer">
-					<img className="paymentImage" src={scheduleImage}>
-					</img>
+					<img Component={Hidden} lgDown className="paymentImage" src={scheduleImage}/>
 				</Box>
 			</Grid>
 			<Grid item md={6} className="midContent">
@@ -51,16 +50,14 @@ export default function Home() {
 			</Grid>
 			<Grid item md={6}>
 				<Box boxShadow={4} className="imageContainer">
-					<img className="scheduleImage" src={scheduleImage}>
-					</img>
+					<img className="scheduleImage" src={scheduleImage}/>
 				</Box>
 			</Grid>
 		</Grid>
 		<Grid container className="bot2">
 			<Grid item md={6}>
-				<Box boxShadow={4} className="imageContainer">
-					<img className="scheduleImage" src={scheduleImage}>
-					</img>
+				<Box boxShadow={4} className="imageContainer" Component={Hidden} xsDown>
+					<img className="scheduleImage" src={scheduleImage}/>
 				</Box>
 			</Grid>
 			<Grid item md={6} className="bot2Content">
