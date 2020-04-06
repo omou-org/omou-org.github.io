@@ -7,7 +7,7 @@
         text-align:left;
         .upper{
             font-size:50px;
-
+            font-weight:bold;
         }
         .bottom{
             padding-top:20px;
@@ -15,13 +15,101 @@
         }
     }
 }
-.middle{
+.mid{
     width:100%;
     height:100vh;
     background-color:#43B5D9;
-    .middleContent{
+    .midContent{
         padding:10%;
         font-size:50px;
         text-align:left;
+        
+        .upper{
+            padding-bottom: 20px;
+            color:white;
+            font-weight:bold;
+        }
+        .bottom{
+            color:white;
+
+        }
     }
+    .imageContainer{
+        text-align:left;
+        margin:10%;
+        margin-top:25%;
+        height:40vh;
+        width:40vw;
+       .paymentImage{
+        height:40vh;
+        width:40vw;
+        }
+    }
+}
+.bot{
+    width:100%;
+    height:100vh;
+    background-color:white;
+    .botContent{
+        padding:10%;
+        font-size:50px;
+        text-align:left;
+        
+        .upper{
+            padding-bottom: 20px;
+            color:#43B5D9;
+            font-weight:bold;
+        }
+        .bottom{
+            color:#666666;
+
+        }
+        
+    }
+    .imageContainer{
+        text-align:left;
+        margin:10%;
+        margin-top:25%;
+        height:40vh;
+        width:40vw;
+       .scheduleImage{
+        height:40vh;
+        width:40vw;
+        }
+    }
+}
+.bot2{
+    width:100%;
+    height:100vh;
+    background-color:#43B5D9;
+    .bot2Content{
+        padding:10%;
+        font-size:50px;
+        text-align:left;
+        
+        .upper{
+            padding-bottom: 20px;
+            color:white;
+            font-weight:bold;
+        }
+        .bottom{
+            color:white;
+
+        }
+        
+    }
+    .imageContainer{
+        text-align:left;
+        margin:10%;
+        margin-top:25%;
+        height:40vh;
+        width:40vw;
+       .scheduleImage{
+        height:40vh;
+        width:40vw;
+        }
+    }
+}
+.button{
+    border-radius:25;
 }
