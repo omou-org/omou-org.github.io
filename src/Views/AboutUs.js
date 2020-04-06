@@ -64,8 +64,6 @@ const AboutUs = () => {
 				</Container>
 			</div>
 
-
-
 			<Container>
 				<Typography variant="h2" align="left" className={classes.meetTeam} >Meet The Team</Typography>
 				<Typography className={classes.roleTitle} variant="h3" align="left">Leadership</Typography>
@@ -73,53 +71,51 @@ const AboutUs = () => {
 					container
 					spacing={4}
 					direction="row"
-					alignItems="flex-start"
-				>
-					{
-						Users
-							.filter((user) => user.roleID === 0)
-							.map((user) => <UserCards user={user} />)
-					}
+					alignItems="flex-start">
+					{Users
+						.filter((user) => user.roleID === 0)
+						.map((user) => <UserCards user={user} />)}
 
-				</Grid>
-				<Typography className={classes.roleTitle} variant="h3" align="left">Front-End Engineers</Typography>
-				<Grid
-					container
-					spacing={4}
-					direction="row"
-					alignItems="flex-start"
-				>
-					{
-						Users
-							.filter((user) => user.roleID === 1)
-							.map((user) => <UserCards user={user} />)
-					}
-				</Grid>
-				<Typography className={classes.roleTitle} variant="h3" align="left">Back-End Engineers</Typography>
-				<Grid
-					container
-					spacing={4}
-					direction="row"
-					alignItems="flex-start"
-				>
-					{
-						Users
-							.filter((user) => user.roleID === 2)
-							.map((user) => <UserCards user={user} />)
-					}
 				</Grid>
 				<Typography className={classes.roleTitle} variant="h3" align="left">Product Designers</Typography>
 				<Grid
 					container
 					spacing={4}
 					direction="row"
-					alignItems="flex-start"
-				>
-					{
-						Users
-							.filter((user) => user.roleID === 3)
-							.map((user) => <UserCards user={user} />)
-					}
+					alignItems="flex-start">
+					{Users
+						.filter((user) => user.roleID === 3)
+						.map((user) => <UserCards user={user} />)}
+				</Grid>
+				<Typography
+					className={classes.roleTitle}
+					variant="h3"
+					align="left">
+					Front-End Engineers
+				</Typography>
+				<Grid
+					container
+					spacing={4}
+					direction="row"
+					alignItems="flex-start">
+					{Users
+						.filter((user) => user.roleID === 1)
+						.map((user) => <UserCards user={user} />)}
+				</Grid>
+				<Typography
+					className={classes.roleTitle}
+					variant="h3"
+					align="left">
+					Back-End Engineers
+				</Typography>
+				<Grid
+					container
+					spacing={4}
+					direction="row"
+					alignItems="flex-start">
+					{Users
+						.filter((user) => user.roleID === 2)
+						.map((user) => <UserCards user={user} />)}
 				</Grid>
 			</Container>
 		</>
