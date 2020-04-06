@@ -34,8 +34,8 @@ const UserCards = ({ user }) => {
                 >
                     <CardMedia
                         className={classes.media}
-                        image={require("./pictures/" + user.picture_src)}
-                        title=""
+                        image={require(`./pictures/${user.picture_src}`)}
+                        title={user.name}
                     />
                     <CardContent>
                         <Typography
