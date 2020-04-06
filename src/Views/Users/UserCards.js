@@ -38,13 +38,28 @@ const UserCards = ({ user }) => {
                         title=""
                     />
                     <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
+                        <Typography
+                            gutterBottom
+                            variant="h5"
+                            component="h2"
+                            align="left"
+                        >
                             {user.name}
                         </Typography>
-                        <Typography gutterBottom variant="h5" component="h2">
+                        <Typography
+                            gutterBottom
+                            variant="h6"
+                            component="h2"
+                            align="left"
+                        >
                             {user.role}
                         </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
+                        <Typography
+                            variant="body2"
+                            color="textSecondary"
+                            component="p"
+                            align="left"
+                        >
                             {user.description}
                         </Typography>
                     </CardContent>
