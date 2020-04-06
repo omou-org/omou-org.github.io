@@ -19,7 +19,6 @@ export default function Home() {
 				</Typography>
 			</Grid>
 			<Grid item md={6}>
-				INSERT IMAGE HERE
 			</Grid>
 		</Grid>
 		<Grid container className="mid">
