@@ -24,17 +24,17 @@ const useStyles = makeStyles((theme) => ({
   jumbotron: {
     background: "linear-gradient(110deg,#3E6E8C 60%, #7EB6D9 60%)",
     height: "450px",
-    paddingTop: "7%"
+    paddingTop: "7%",
   },
   jumbotronTitle: {
     textAlign: "left",
-    color: "#ffffff"
+    color: "#ffffff",
   },
   jumbotronText: {
     marginTop: "10px",
     textAlign: "left",
     fontSize: "19px",
-    color: "#ffffff"
+    color: "#ffffff",
   },
   sturegTitle: {
     fontSize: "40px",
@@ -61,61 +61,61 @@ export default function Features() {
     <>
       <CssBaseline />
       <div className={classes.jumbotron}>
-      <Container maxWidth="lg">
-        <Typography
-          component="div"
-          className={classes.jumbotronTitle}
-          style={theme.typography.h1}
-        >
-          Our Features
-        </Typography>
-        <Grid container xs={6}>
-          <Typography component="div" className={classes.jumbotronText}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad
-            provident optio tempora, voluptatum quo commodi similique magni
-            illum repellendus veritatis asperiores amet expedita blanditiis,
-            debitis, accusantium corrupti dicta explicabo. Necessitatibus!
+        <Container maxWidth="lg">
+          <Typography
+            component="div"
+            className={classes.jumbotronTitle}
+            style={theme.typography.h1}
+          >
+            Our Features
           </Typography>
-        </Grid>
-      </Container>
+          <Grid container xs={6}>
+            <Typography component="div" className={classes.jumbotronText}>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad
+              provident optio tempora, voluptatum quo commodi similique magni
+              illum repellendus veritatis asperiores amet expedita blanditiis,
+              debitis, accusantium corrupti dicta explicabo. Necessitatibus!
+            </Typography>
+          </Grid>
+        </Container>
       </div>
 
       <Container>
         <div className={classes.root}>
           <Grid container spacing={2}>
             <Grid item xs={3}>
-              <Link 
-                href="#stureg" 
+              <Link
+                href="#stureg"
                 onClick={(e) => e.preventDefault}
-                style={{color: "#635b5c"}}
+                style={{ color: "#635b5c" }}
               >
                 Standardized Registration and Payments
               </Link>
             </Grid>
             <Grid item xs={3}>
-              <Link 
-                href="#paytrack" 
+              <Link
+                href="#paytrack"
                 onClick={(e) => e.preventDefault}
-                style={{color: "#635b5c"}}
+                style={{ color: "#635b5c" }}
               >
                 Simple Monthly Scheduling
               </Link>
             </Grid>
             <Grid item xs={3}>
-              <Link 
-                href="#schedule" 
-                onClick={(e) => e.preventDefault}  
-                style={{color: "#635b5c"}}
+              <Link
+                href="#schedule"
+                onClick={(e) => e.preventDefault}
+                style={{ color: "#635b5c" }}
               >
                 Centralized User Accounts
               </Link>
             </Grid>
             <Grid item xs={3}>
-              <Link 
-              href="#useracct" 
-              onClick={(e) => e.preventDefault}
-              style={{color: "#635b5c"}}
-            >
+              <Link
+                href="#useracct"
+                onClick={(e) => e.preventDefault}
+                style={{ color: "#635b5c" }}
+              >
                 User Ticketing
               </Link>
             </Grid>
@@ -123,18 +123,15 @@ export default function Features() {
         </div>
       </Container>
       {featureDisplay}
-      <NavLink 
-        to="/contact-us"
-        style={{textDecoration: "none"}}
-      >
-      <Button 
-      variant="contained" 
-      size="large" 
-      color="primary"
-      style={{color: "white", marginTop: "150px"}}
-      >
-        Request Demo
-      </Button>
+      <NavLink to="/contact-us" style={{ textDecoration: "none" }}>
+        <Button
+          variant="contained"
+          size="large"
+          color="primary"
+          style={{ color: "white", marginTop: "150px" }}
+        >
+          Request Demo
+        </Button>
       </NavLink>
     </>
   );
