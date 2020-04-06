@@ -57,7 +57,7 @@ const MenuList = ({fontType}) => {
             link: "/contact-us",
         },
     ];
-    console.log("location", location);
+
     return MenuItems.map(({title, link}) => (
         <NavLink
             className={classes.link}
