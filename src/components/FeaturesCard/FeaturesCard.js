@@ -4,7 +4,7 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core";
-import { theme } from "../../theme/theme";
+
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -16,47 +16,31 @@ const useStyles = makeStyles(theme => ({
       textAlign: "center",
       color: theme.palette.text.secondary,
     },
-    jumbotron: {
-      background: "linear-gradient(110deg,#3E6E8C 60%, #7EB6D9 60%)",
-      height: "450px",
-    },
-    jumbotronTitle: {
-      textAlign: "left",
-    },
-    jumbotronText: {
-      marginTop: "10px",
-      textAlign: "left",
-      fontSize: "19px",
-    },
-    sturegTitle: {
-      fontSize: "40px",
+    title: {
+      fontSize: "54px",
       fontWeight: "bolder"
-    },
-    alignTextLeft: {
-      textAlign: "left"
     }
   }));
 
 const FeaturesCard = props => {
     const classes = useStyles();
     return (
-      <section id={props.name} style={{marginTop: "45px"}}>
+      <section id={props.name} style={{marginTop: "200px"}}>
         <Container>
         <div className={classes.root}>
         <Grid 
           container 
           spacing={3}
-          alignItems="center"
         >
-          <Grid item xs={6} style={{marginBottom: "20px"}}>
+          <Grid item xs={6} style={{marginBottom: "35px"}}>
             <Typography
               variant="h2" 
-              className={classes.sturegTitle}
+              className={classes.title}
               align="left"
             >
               {props.title}
             </Typography>
-            <Typography style={{textAlign: "left", marginTop: "20px"}}>
+            <Typography style={{textAlign: "left", marginTop: "40px"}}>
               {props.description}
             </Typography>
           </Grid>
@@ -64,8 +48,8 @@ const FeaturesCard = props => {
           <Grid item xs={6}>
               {props.content()}
           </Grid>
-          <Box boxShadow={4}>
-            <img src={require("../../assets/img/" + props.image)} alt={props.name} height="auto" width="1256vh"/>
+          <Box boxShadow={4} style={{marginTop: "37px"}}>
+            <img src={require("../../assets/img/" + props.image)} alt={props.name} height="auto" width="1000vh"/>
           </Box>
         </Grid>
       </div>
