@@ -5,58 +5,54 @@ import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core";
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    marginTop: "20px",
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  },
+  title: {
+    fontSize: "54px",
+    fontWeight: "bolder",
+  },
+}));
 
-const useStyles = makeStyles(theme => ({
-    root: {
-      flexGrow: 1,
-      marginTop: "20px"
-    },
-    paper: {
-      padding: theme.spacing(2),
-      textAlign: "center",
-      color: theme.palette.text.secondary,
-    },
-    title: {
-      fontSize: "54px",
-      fontWeight: "bolder"
-    }
-  }));
-
-const FeaturesCard = props => {
-    const classes = useStyles();
-    return (
-      <section id={props.name} style={{marginTop: "200px"}}>
-        <Container>
+const FeaturesCard = (props) => {
+  const classes = useStyles();
+  return (
+    <section id={props.name} style={{ marginTop: "200px" }}>
+      <Container>
         <div className={classes.root}>
-        <Grid 
-          container 
-          spacing={3}
-        >
-          <Grid item xs={6} style={{marginBottom: "35px"}}>
-            <Typography
-              variant="h2" 
-              className={classes.title}
-              align="left"
-            >
-              {props.title}
-            </Typography>
-            <Typography style={{textAlign: "left", marginTop: "40px"}}>
-              {props.description}
-            </Typography>
-          </Grid>
-          <br />
-          <Grid item xs={6}>
+          <Grid container spacing={3}>
+            <Grid item xs={6} style={{ marginBottom: "35px" }}>
+              <Typography variant="h2" className={classes.title} align="left">
+                {props.title}
+              </Typography>
+              <Typography style={{ textAlign: "left", marginTop: "40px" }}>
+                {props.description}
+              </Typography>
+            </Grid>
+            <br />
+            <Grid item xs={6}>
               {props.content()}
+            </Grid>
+            <Box boxShadow={4} style={{ marginTop: "37px" }}>
+              <img
+                src={require("../../assets/img/" + props.image)}
+                alt={props.name}
+                height="auto"
+                width="1000vh"
+              />
+            </Box>
           </Grid>
-          <Box boxShadow={4} style={{marginTop: "37px"}}>
-            <img src={require("../../assets/img/" + props.image)} alt={props.name} height="auto" width="1000vh"/>
-          </Box>
-        </Grid>
-      </div>
-        </Container>
-        </section>
-    )
-  }
+        </div>
+      </Container>
+    </section>
+  );
+};
 
-  export default FeaturesCard;
-  
+export default FeaturesCard;
