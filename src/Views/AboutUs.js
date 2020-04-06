@@ -27,7 +27,7 @@ const useStyles = makeStyles({
 });
 
 const AboutUs = () => {
-	const classes = useStyles()
+	const classes = useStyles();
 
 	return (
 		<>
@@ -64,9 +64,7 @@ const AboutUs = () => {
 				</Container>
 			</div>
 
-
-
-			<Container>
+			<Container maxWidth="md">
 				<Typography variant="h2" align="left" className={classes.meetTeam} >Meet The Team</Typography>
 				<Typography className={classes.roleTitle} variant="h3" align="left">Leadership</Typography>
 				<Grid
