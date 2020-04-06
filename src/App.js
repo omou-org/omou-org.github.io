@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {ThemeProvider} from '@material-ui/core/styles';
 import {appBarTheme, theme} from './theme/theme'
-import {AppBar, makeStyles, Toolbar, Typography} from "@material-ui/core";
+import {AppBar, makeStyles, Toolbar, Typography, Grid} from "@material-ui/core";
 import {BrowserRouter as Router, NavLink} from "react-router-dom";
 import {Routes} from "./routes";
 import {primaryColor} from "./theme/colors";
@@ -20,17 +20,25 @@ const useStyles = makeStyles((appBarTheme)=>({
         display:"flex"
     },
     desktopMenuItem: {
-        marginLeft: "10px",
+        marginLeft: "15px",
         color: "black",
+        display:"inline-block"
+    },
+    footerWrapper:{
+        backgroundColor: primaryColor,
+        color: "white",
+        position: "absolute",
+        bottom: 0,
+        width:"100%",
     },
     footer:{
-        backgroundColor: "#43B5D9",
-        color: "white",
+        padding:"3%"
     }
 }));
 
-function NavigationBar() {
+const MenuList = ({fontType}) => {
     const classes = useStyles();
+
     const MenuItems = [
         {
             title: "Features",
@@ -45,37 +53,39 @@ function NavigationBar() {
             link: "/contact-us",
         },
     ];
+    return MenuItems.map(({title, link}) => (
+        <NavLink
+            className={classes.link}
+            to={link}
+            key={title}
+        >
+            <Typography
+                variant={fontType}
+                align="center"
+                className={classes.desktopMenuItem}
+            >
+                {title}
+            </Typography>
+        </NavLink>
+    ));
+}
+
+function NavigationBar() {
+    const classes = useStyles();
 
     return <ThemeProvider theme={appBarTheme}>
         <AppBar
             color="primary"
             position="static">
-            <Toolbar style={{backgroundColor: primaryColor}}>
+            <Toolbar>
                 <NavLink className={classes.link} to="/">
-                    <Typography
-                        variant="h3">
+                    <Typography variant="h3">
                         omou
                     </Typography>
                 </NavLink>
                 <div className={classes.grow}/>
                 <div className={classes.desktopMenu}>
-                    {
-                        MenuItems.map(({title, link}) => (
-                            <NavLink
-                                className={classes.link}
-                                to={link}
-                            >
-                                <Typography
-                                    variant="h6"
-                                    align="center"
-                                    className={classes.desktopMenuItem}
-                                >
-                                    {title}
-                                </Typography>
-                            </NavLink>
-                        ))
-
-                    }
+                    <MenuList fontType="h6"/>
                 </div>
             </Toolbar>
         </AppBar>
@@ -85,12 +95,28 @@ function NavigationBar() {
 const Footer = () => {
     const classes = useStyles();
   return (
-      <Container
-          maxWidth={"lg"}
-          className={classes.footer}
+      <div
+          className={classes.footerWrapper}
       >
-
-      </Container>
+          <Container
+              maxWidth={"lg"}
+              className={classes.footer}
+          >
+            <Grid
+                container
+                alignItems="flex-end"
+            >
+                <Grid item md={2} xs={12}>
+                    <Typography variant="h3">
+                        omou
+                    </Typography>
+                </Grid>
+                <Grid item md={4} xs={12}>
+                    <MenuList fontType="body1"/>
+                </Grid>
+            </Grid>
+          </Container>
+      </div>
   )
 };
 
@@ -98,7 +124,7 @@ function App() {
 	return (
         <ThemeProvider theme={theme}>
             <Router>
-                <div className="App">
+                <div className="App" style={{overflow:"hidden"}}>
                     <NavigationBar/>
                     <Routes/>
                     <Footer/>

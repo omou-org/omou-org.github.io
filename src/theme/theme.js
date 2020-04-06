@@ -53,4 +53,11 @@ export const theme = createMuiTheme({
 			fontWeight:700,
 		}
 	},
+	overrides:{
+		MuiButton:{
+			containedPrimary: {
+				color:"white",
+			},
+		}
+	}
 })
