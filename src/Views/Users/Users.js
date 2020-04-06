@@ -106,7 +106,7 @@ export const Users = [
         role: "Lead Front-End Engineer",
         description: "Junior at Amador Valley High School. Loves to code and relax.",
         linkedin: "",
-        picture_src: "neil.JPG",
+        picture_src: "neil.png",
     },
 
 ]
