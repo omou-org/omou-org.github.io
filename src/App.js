@@ -1,34 +1,35 @@
 import React from 'react';
 import './App.css';
-import {ThemeProvider} from '@material-ui/core/styles';
-import {appBarTheme, theme} from './theme/theme'
-import {AppBar, makeStyles, Toolbar, Typography, Grid} from "@material-ui/core";
-import {BrowserRouter as Router, NavLink} from "react-router-dom";
-import {Routes} from "./routes";
-import {primaryColor} from "./theme/colors";
-import Container from "@material-ui/core/Container/Container";
 
-const useStyles = makeStyles((appBarTheme)=>({
-    link:{
-        textDecoration:"none",
-        textDecorationColor:"inherit",
+import { ThemeProvider } from '@material-ui/core/styles';
+import { appBarTheme, theme } from './theme/theme'
+import { AppBar, makeStyles, Toolbar, Typography, Container, Grid } from "@material-ui/core";
+import { BrowserRouter as Router, NavLink } from "react-router-dom";
+import { Routes } from "./routes";
+import { primaryColor } from "./theme/colors";
+
+
+const useStyles = makeStyles((appBarTheme) => ({
+    link: {
+        textDecoration: "none",
+        textDecorationColor: "inherit",
     },
     grow: { // create gap between left and right components on the app bar
         flexGrow: 1,
     },
     desktopMenu: {
-        display:"flex"
+        display: "flex"
     },
     desktopMenuItem: {
-        marginLeft: "15px",
+        marginLeft: "20px",
         color: "black",
-        display:"inline-block"
+        display:"inline-block",
+        fontWeight: "400"
     },
     footerWrapper:{
         backgroundColor: primaryColor,
         color: "white",
-        position: "absolute",
-        bottom: 0,
+        marginTop: "25px",
         width:"100%",
     },
     footer:{
@@ -83,7 +84,7 @@ function NavigationBar() {
                         omou
                     </Typography>
                 </NavLink>
-                <div className={classes.grow}/>
+                <div className={classes.grow} />
                 <div className={classes.desktopMenu}>
                     <MenuList fontType="h6"/>
                 </div>
@@ -121,12 +122,12 @@ const Footer = () => {
 };
 
 function App() {
-	return (
+    return (
         <ThemeProvider theme={theme}>
             <Router>
-                <div className="App" style={{overflow:"hidden"}}>
-                    <NavigationBar/>
-                    <Routes/>
+                <div className="App">
+                    <NavigationBar />
+                    <Routes />
                     <Footer/>
                 </div>
             </Router>
