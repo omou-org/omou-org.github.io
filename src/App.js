@@ -4,7 +4,7 @@ import './App.css';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { appBarTheme, theme } from './theme/theme'
 import { AppBar, makeStyles, Toolbar, Typography, Container, Grid } from "@material-ui/core";
-import { BrowserRouter as Router, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, NavLink, useLocation } from "react-router-dom";
 import { Routes } from "./routes";
 import { primaryColor } from "./theme/colors";
 
@@ -34,12 +34,15 @@ const useStyles = makeStyles((appBarTheme) => ({
     },
     footer:{
         padding:"3%"
+    },
+    active:{
+        textDecoration: "underline",
     }
 }));
 
 const MenuList = ({fontType}) => {
     const classes = useStyles();
-
+    const location = useLocation();
     const MenuItems = [
         {
             title: "Features",
@@ -54,6 +57,7 @@ const MenuList = ({fontType}) => {
             link: "/contact-us",
         },
     ];
+    console.log("location", location);
     return MenuItems.map(({title, link}) => (
         <NavLink
             className={classes.link}
@@ -63,7 +67,7 @@ const MenuList = ({fontType}) => {
             <Typography
                 variant={fontType}
                 align="center"
-                className={classes.desktopMenuItem}
+                className={`${classes.desktopMenuItem} ${location.pathname == link ? classes.active: ""}`}
             >
                 {title}
             </Typography>
