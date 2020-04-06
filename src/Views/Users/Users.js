@@ -105,7 +105,7 @@ export const Users = [
         name: "Neil Allavarpu",
         role: "Lead Front-End Engineer",
         description: "Junior at Amador Valley High School. Loves to code and relax.",
-        linkedin: "",
+        linkedin: "https://www.linkedin.com/in/neilallavarpu/",
         picture_src: "neil.png",
     },
 
