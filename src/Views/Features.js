@@ -80,7 +80,7 @@ export default function Features() {
         </Container>
       </div>
 
-      <Container>
+      <Container maxWidth="md">
         <div className={classes.root}>
           <Grid container spacing={2}>
             <Grid item xs={3}>
