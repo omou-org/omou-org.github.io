@@ -23,8 +23,8 @@ export default function Home() {
 		</Grid>
 		<Grid container className="mid">
 			<Grid item md={6}>
-				<Box boxShadow={4} className="imageContainer">
-					<img Component={Hidden} lgDown className="paymentImage" src={paymentImage}/>
+				<Box boxShadow={4} display={{ xs: 'none', sm: 'none', md: 'block' }} className="imageContainer">
+					<img className="paymentImage" src={paymentImage} />
 				</Box>
 			</Grid>
 			<Grid item md={6} className="midContent">
@@ -46,15 +46,15 @@ export default function Home() {
 				</Typography>
 			</Grid>
 			<Grid item md={6}>
-				<Box boxShadow={4} className="imageContainer">
-					<img className="scheduleImage" src={scheduleImage}/>
+				<Box boxShadow={4} display={{ xs: 'none', sm: 'none', md: 'block' }} className="imageContainer">
+					<img className="scheduleImage" src={scheduleImage} />
 				</Box>
 			</Grid>
 		</Grid>
 		<Grid container className="bot2">
 			<Grid item md={6}>
-				<Box boxShadow={4} className="imageContainer" Component={Hidden} xsDown>
-					<img className="scheduleImage" src={scheduleImage}/>
+				<Box boxShadow={4} display={{ xs: 'none', sm: 'none', md: 'block' }} className="imageContainer" xsDown>
+					<img className="scheduleImage" src={scheduleImage} />
 				</Box>
 			</Grid>
 			<Grid item md={6} className="bot2Content">
