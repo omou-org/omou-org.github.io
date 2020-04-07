@@ -19,6 +19,7 @@ export default function Home() {
 				</Typography>
 			</Grid>
 			<Grid item md={6}>
+				{console.log("asd")}
 			</Grid>
 		</Grid>
 		<Grid container className="mid">
