@@ -5,6 +5,7 @@ import paymentImage from "./payment.png";
 import scheduleImage from "./schedule.png"
 import "./Home.scss";
 import Box from '@material-ui/core/Box';
+import { display } from '@material-ui/system';
 import Hidden from '@material-ui/core/Hidden';
 
 export default function Home() {
@@ -22,8 +23,8 @@ export default function Home() {
 			</Grid>
 		</Grid>
 		<Grid container className="mid">
-			<Grid item md={6}>
-				<Box boxShadow={4} className="imageContainer">
+			<Grid item md={6} >
+				<Box boxShadow={4} className="imageContainer" display={{ xs: 'none', sm: 'none' }}>
 					<img Component={Hidden} lgDown className="paymentImage" src={paymentImage}/>
 				</Box>
 			</Grid>
@@ -46,14 +47,14 @@ export default function Home() {
 				</Typography>
 			</Grid>
 			<Grid item md={6}>
-				<Box boxShadow={4} className="imageContainer">
+				<Box boxShadow={4} className="imageContainer" display={{ xs: 'none', sm: 'none' }}>
 					<img className="scheduleImage" src={scheduleImage}/>
 				</Box>
 			</Grid>
 		</Grid>
 		<Grid container className="bot2">
 			<Grid item md={6}>
-				<Box boxShadow={4} className="imageContainer" Component={Hidden} xsDown>
+				<Box boxShadow={4} className="imageContainer" Component={Hidden} display={{ xs: 'none', sm: 'none' }} xsDown>
 					<img className="scheduleImage" src={scheduleImage}/>
 				</Box>
 			</Grid>
