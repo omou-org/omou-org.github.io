@@ -18,14 +18,30 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: "54px",
     fontWeight: "bolder",
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2rem'
+    }
+  },
+  image: {
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      height: '100%'
+    }
   },
 }));
 
 const FeaturesCard = (props) => {
   const classes = useStyles();
   return (
-    <section id={props.name}
-             style={{ marginTop: props.title == "Standardized Registration and Payments" ? "50px" : "200px" }}>
+    <section
+      id={props.name}
+      style={{
+        marginTop:
+          props.title == "Standardized Registration and Payments"
+            ? "50px"
+            : "200px",
+      }}
+    >
       <Container maxWidth="md">
         <div className={classes.root}>
           <Grid container spacing={3}>
@@ -44,6 +60,7 @@ const FeaturesCard = (props) => {
             <Box boxShadow={4} style={{ marginTop: "37px" }}>
               <img
                 src={require("../../assets/img/" + props.image)}
+                className={classes.image}
                 alt={props.name}
                 height="auto"
                 width="1000vh"
