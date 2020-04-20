@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     marginTop: "20px",
+    [theme.breakpoints.down('sm')]: {
+     width: '100%',
+    },
   },
   paper: {
     padding: theme.spacing(2),
@@ -25,16 +28,27 @@ const useStyles = makeStyles((theme) => ({
     background: "linear-gradient(110deg,#3E6E8C 60%, #7EB6D9 60%)",
     height: "450px",
     paddingTop: "7%",
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      height: '100%'
+    }
   },
   jumbotronTitle: {
     textAlign: "left",
     color: "#ffffff",
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2.5rem !important'
+    }
   },
   jumbotronText: {
     marginTop: "10px",
     textAlign: "left",
     fontSize: "19px",
     color: "#ffffff",
+    [theme.breakpoints.down('sm')]: {
+      textAlign: "left",
+      fontSize: "12px"
+    }
   },
   sturegTitle: {
     fontSize: "40px",
@@ -128,7 +142,7 @@ export default function Features() {
           variant="contained"
           size="large"
           color="primary"
-          style={{ color: "white", marginTop: "150px" }}
+          style={{ color: "white", marginTop: "150px", marginRight: "-75px" }}
         >
           Request Demo
         </Button>
