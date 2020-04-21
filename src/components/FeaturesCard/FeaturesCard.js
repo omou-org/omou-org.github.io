@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "54px",
     fontWeight: "bolder",
     [theme.breakpoints.down('sm')]: {
-      fontSize: '2rem'
+      fontSize: '1.75rem'
     }
   },
   image: {
