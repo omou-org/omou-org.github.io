@@ -24,8 +24,15 @@ export default function Home() {
 		</Grid>
 		<Grid container className="mid">
 			<Grid item md={6} >
-				<Box boxShadow={4} className="imageContainer" display={{ xs: 'none', sm: 'none' }}>
-					<img Component={Hidden} lgDown className="paymentImage" src={paymentImage}/>
+				<Box 
+					boxShadow={4} 
+					className="imageContainer" 
+					display={{ xs: 'none', sm: 'none' }}>
+					<img 
+						Component={Hidden} 
+						lgDown 
+						className="paymentImage" 
+						src={paymentImage}/>
 				</Box>
 			</Grid>
 			<Grid item md={6} className="midContent">
@@ -38,7 +45,8 @@ export default function Home() {
 			</Grid>
 		</Grid>
 		<Grid container className="bot">
-			<Grid item md={6} className="botContent">
+			<Grid item md={6} 
+				className="botContent">
 				<Typography className="upper" variant="h4">
 					Elevate Communication with Parents
 				</Typography>
@@ -47,22 +55,39 @@ export default function Home() {
 				</Typography>
 			</Grid>
 			<Grid item md={6}>
-				<Box boxShadow={4} className="imageContainer" display={{ xs: 'none', sm: 'none' }}>
+				<Box 
+					boxShadow={4} 
+					className="imageContainer" 
+					display={{ xs: 'none', sm: 'none' }}>
 					<img className="scheduleImage" src={scheduleImage}/>
 				</Box>
 			</Grid>
 		</Grid>
 		<Grid container className="bot2">
 			<Grid item md={6}>
-				<Box boxShadow={4} className="imageContainer" Component={Hidden} display={{ xs: 'none', sm: 'none' }} xsDown>
-					<img className="scheduleImage" src={scheduleImage}/>
+				<Box 
+					boxShadow={4} 
+					className="imageContainer" 
+					Component={Hidden} 
+					display={{ xs: 'none', sm: 'none' }} 
+					xsDown>
+					<img 
+						className="scheduleImage" 
+						src={scheduleImage}/>
 				</Box>
 			</Grid>
-			<Grid item md={6} className="bot2Content">
-				<Typography className="upper" variant="h4">
+			<Grid 
+				item 
+				md={6} 
+				className="bot2Content"
+			>
+				<Typography 
+					className="upper" 
+					variant="h4">
 					Set Up Students For Online Success
 				</Typography>
-				<Typography className="bottom" variant="h6">
+				<Typography className="bottom" 
+							variant="h6">
 					Remote learning is the future. Remove the friction of setting up and configuring tools for online tutoring. With the ability to create on-demand tutorials and recommended student activities built into Omou, online tutoring is now seamless and accessible for everyone involved.
 				</Typography>
 			</Grid>
