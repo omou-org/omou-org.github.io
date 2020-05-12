@@ -42,6 +42,7 @@ const FeaturesData = [
       </div>
     ),
     image: "stureg.png",
+    styling: {marginTop: "50px"}
   },
   {
     name: "paytrack",
@@ -68,6 +69,7 @@ const FeaturesData = [
       </div>
     ),
     image: "register.png",
+    styling: {marginTop: "200px"}
   },
   {
     name: "schedule",
@@ -92,6 +94,7 @@ const FeaturesData = [
       </div>
     ),
     image: "schedular.png",
+    styling: {marginTop: "200px"}
   },
   {
     name: "useracct",
@@ -118,6 +121,7 @@ const FeaturesData = [
       </div>
     ),
     image: "useracct.png",
+    styling: {marginTop: "200px"}
   },
   // {
   //     name: "tracking",

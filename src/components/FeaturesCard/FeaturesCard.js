@@ -31,16 +31,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const FeaturesCard = (props) => {
+  console.log(props)
   const classes = useStyles();
   return (
     <section
       id={props.name}
-      style={{
-        marginTop:
-          props.title == "Standardized Registration and Payments"
-            ? "50px"
-            : "200px",
-      }}
+      style={props.styling}
     >
       <Container maxWidth="md">
         <div className={classes.root}>

@@ -69,6 +69,7 @@ export default function Features() {
       description={data.description}
       content={data.content}
       image={data.image}
+      styling={data.styling}
     />
   ));
   return (
