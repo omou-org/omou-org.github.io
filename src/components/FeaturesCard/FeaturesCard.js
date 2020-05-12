@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "54px",
     fontWeight: "bolder",
     [theme.breakpoints.down('sm')]: {
-      fontSize: '1.75rem'
+      fontSize: '1.55rem'
     }
   },
   image: {
@@ -28,6 +28,14 @@ const useStyles = makeStyles((theme) => ({
       height: '100%'
     }
   },
+  cascadeSection: {
+    fontSize: "18px",
+    lineHeight: "37px",
+    [theme.breakpoints.down('xs')]: {
+      fontSize:"12px",
+      lineHeight: "20px",
+    }
+  }
 }));
 
 const FeaturesCard = (props) => {
@@ -50,7 +58,7 @@ const FeaturesCard = (props) => {
               </Typography>
             </Grid>
             <br />
-            <Grid item xs={6}>
+            <Grid item xs={6} className={classes.cascadeSection}>
               {props.content()}
             </Grid>
             <Box boxShadow={4} style={{ marginTop: "37px" }}>

@@ -57,11 +57,16 @@ const useStyles = makeStyles((theme) => ({
   alignTextLeft: {
     textAlign: "left",
   },
+  sectionContainer: {
+    [theme.breakpoints.down('xs')]: {
+      fontSize: ".7rem"
+    }
+  }
 }));
 
 export default function Features() {
   const classes = useStyles();
-  const featureDisplay = FeaturesData.map((data) => (
+  const featureDisplay = FeaturesData.map(data => (
     <FeaturesCard
       key={data.name}
       name={data.name}
@@ -97,7 +102,7 @@ export default function Features() {
 
       <Container maxWidth="md">
         <div className={classes.root}>
-          <Grid container spacing={2}>
+          <Grid container spacing={2} className={classes.sectionContainer}>
             <Grid item xs={3}>
               <Link
                 href="#stureg"
