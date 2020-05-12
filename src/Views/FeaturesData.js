@@ -11,13 +11,13 @@ const FeaturesData = [
         <span
           style={{
             fontWeight: "bold",
-            fontSize: "18px",
+            fontSize: "inherit",
             fontFamily: "Roboto, sans-serif",
           }}
         >
           Tutoring Course Information All On One Surface
         </span>
-        <ul style={{ textAlign: "left", lineHeight: "30px" }}>
+        <ul style={{ textAlign: "left", lineHeight: "inherit" }}>
           <li>Course enrollment status</li>
           <li>Time and date of the course</li>
           <li>Course teacher</li>
@@ -26,13 +26,13 @@ const FeaturesData = [
         <span
           style={{
             fontWeight: "bold",
-            fontSize: "18px",
+            fontSize: "inherit",
             fontFamily: "Roboto, sans-serif",
           }}
         >
           Find Courses Quickly for Easy Registration
         </span>
-        <ul style={{ textAlign: "left", lineHeight: "30px" }}>
+        <ul style={{ textAlign: "left", lineHeight: "inherit" }}>
           <li>
             Filter classes by instructor(s), subject(s), academic grade level(s)
           </li>
@@ -55,9 +55,9 @@ const FeaturesData = [
           style={{
             textAlign: "left",
             fontWeight: "bold",
-            fontSize: "18px",
+            fontSize: "inherit",
             fontFamily: "Roboto, sans-serif",
-            lineHeight: "37px",
+            lineHeight: "inherit",
           }}
         >
           <li>
@@ -82,9 +82,9 @@ const FeaturesData = [
           style={{
             textAlign: "left",
             fontWeight: "bold",
-            fontSize: "18px",
+            fontSize: "inherit",
             fontFamily: "Roboto, sans-serif",
-            lineHeight: "37px",
+            lineHeight: "inherit",
           }}
         >
           <li>Filter by the instructor or course</li>
@@ -107,9 +107,9 @@ const FeaturesData = [
           style={{
             textAlign: "left",
             fontWeight: "bold",
-            fontSize: "18px",
+            fontSize: "inherit",
             fontFamily: "Roboto, sans-serif",
-            lineHeight: "37px",
+            lineHeight: "inherit",
           }}
         >
           <li>View accounts by type</li>
@@ -128,7 +128,7 @@ const FeaturesData = [
   //     title: "Universal ticketing",
   //     description: "Make this yours. Add images, text and links, or connect data from your collection.",
   //     content: () => (<div>
-  //         <ul style={{textAlign: "left", fontWeight: "bold", fontSize: "18px", fontFamily:"Roboto, sans-serif"}}>
+  //         <ul style={{textAlign: "left", fontWeight: "bold", fontSize: "inherit", fontFamily:"Roboto, sans-serif"}}>
   //         <li>Add/edit/view categories</li>
   //
   //         <li>Add/edit/view tuition rules</li>
