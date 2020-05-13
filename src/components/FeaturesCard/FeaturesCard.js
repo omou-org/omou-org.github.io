@@ -39,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const FeaturesCard = (props) => {
-  console.log(props)
   const classes = useStyles();
   return (
     <section
