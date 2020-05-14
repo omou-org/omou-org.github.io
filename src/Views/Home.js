@@ -27,7 +27,7 @@ export default function Home() {
 				<Box 
 					boxShadow={4} 
 					className="imageContainer" 
-					display={{ xs: 'none', sm: 'none' }}>
+					display={{ xs: 'none', sm: 'none', md: 'block' }} >
 					<img 
 						Component={Hidden} 
 						lgDown 
@@ -58,7 +58,7 @@ export default function Home() {
 				<Box 
 					boxShadow={4} 
 					className="imageContainer" 
-					display={{ xs: 'none', sm: 'none' }}>
+					display={{ xs: 'none', sm: 'none', md: 'block' }} >
 					<img className="scheduleImage" src={scheduleImage}/>
 				</Box>
 			</Grid>
@@ -69,7 +69,7 @@ export default function Home() {
 					boxShadow={4} 
 					className="imageContainer" 
 					Component={Hidden} 
-					display={{ xs: 'none', sm: 'none' }} 
+					display={{ xs: 'none', sm: 'none', md: 'block' }} 
 					xsDown>
 					<img 
 						className="scheduleImage" 
