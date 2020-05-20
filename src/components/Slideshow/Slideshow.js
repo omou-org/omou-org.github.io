@@ -6,7 +6,7 @@ const Slideshow = ({ images, path }) => {
   return (
     <Carousel autoPlay animation="fade">
       {images.map((image) => (
-        <Items item={image} path={path}/>
+        <Items item={image} path={path} />
       ))}
     </Carousel>
   );
