@@ -28,10 +28,10 @@ const useStyles = makeStyles((theme) => ({
     background: "linear-gradient(110deg,#3E6E8C 60%, #7EB6D9 60%)",
     height: "450px",
     paddingTop: "7%",
-    [theme.breakpoints.down('sm')]: {
-      width: '100%',
-      height: '40vh'
-    }
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+      height: "40vh",
+    },
   },
   jumbotronTitle: {
     textAlign: "left",
@@ -84,18 +84,19 @@ export default function Features() {
       <CssBaseline />
       <div className={classes.jumbotron}>
         <Container maxWidth="lg">
-          <Typography
-            variant="h2"
-            align="left"
-            style={{color:"white"}}
-          >
+          <Typography variant="h2" align="left" style={{ color: "white" }}>
             Our Features
           </Typography>
           <Grid container xs={12} md={6}>
-            <Typography variant="body1" align="left" style={{color:"white"}}>
-              Whatever your needs are, Omou can help your tutoring center seamlessly make the transition to digital learning. Manage tutor schedule, billing invoices, and everything else that keeps your business running, all from our platform.
-              <br/><br/>
-              Thinking of a feature that’s not listed? Contact us, since it’s likely on our roadmap.
+            <Typography variant="body1" align="left" style={{ color: "white" }}>
+              Whatever your needs are, Omou can help your tutoring center
+              seamlessly make the transition to digital learning. Manage tutor
+              schedule, billing invoices, and everything else that keeps your
+              business running, all from our platform.
+              <br />
+              <br />
+              Thinking of a feature that’s not listed? Contact us, since it’s
+              likely on our roadmap.
             </Typography>
           </Grid>
         </Container>

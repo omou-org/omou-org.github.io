@@ -41,45 +41,44 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const FeaturesCard = ({name, title, description, content, images, path, styling, underline_color}) => {
+const FeaturesCard = ({
+  name,
+  title,
+  description,
+  content,
+  images,
+  path,
+  styling,
+  underline_color,
+}) => {
   const classes = useStyles();
-  if(name=="stureg"){
-    return (<section
-        id={name}
-        style={styling}
-    >
-      <Container maxWidth="md">
-        <div className={classes.root}>
-          <Grid
-              container
-              spacing={3}
-              direction="column"
-          >
-            <Grid item>
-              <Typography variant="h4" align="left">
-                <span style={{
-                  borderBottom: `8px solid ${underline_color}`,
-                  lineHeight: '1.5em'
-                }}>
-                  {title}
-                </span>
-              </Typography>
-              <br/><br/>
-              <Typography variant="body1" align="left">
-                {description}
-              </Typography>
+  if (name == "stureg") {
+    return (
+      <section id={name} style={styling}>
+        <Container maxWidth="md">
+          <div className={classes.root}>
+            <Grid container spacing={3} direction="column">
+              <Grid item>
+                <Typography variant="h4" align="left">
+                  <span
+                    style={{
+                      borderBottom: `8px solid ${underline_color}`,
+                      lineHeight: "1.5em",
+                    }}
+                  >
+                    {title}
+                  </span>
+                </Typography>
+                <br />
+                <br />
+                <Typography variant="body1" align="left">
+                  {description}
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Slideshow images={images} path={path} />
+              </Grid>
             </Grid>
-            <Grid item>
-            <Slideshow images={images} path={path}/>
-              {/* <img
-                  src={require("../../assets/img/" + image)}
-                  className={classes.image}
-                  alt={name}
-                  height="auto"
-                  width="80%"
-              /> */}
-            </Grid>
-          </Grid>
           </div>
         </Container>
       </section>
@@ -87,58 +86,42 @@ const FeaturesCard = ({name, title, description, content, images, path, styling,
   }
 
   return (
-    <section
-      id={name}
-      style={styling}
-    >
+    <section id={name} style={styling}>
       <Container maxWidth="md">
         <div className={classes.root}>
-          <Grid
-              container
-              spacing={3}
-              direction="row"
-              alignItems="flex-end"
-          >
+          <Grid container spacing={3} direction="row" alignItems="flex-end">
             <Grid item xs={12}>
               <Typography variant="h4" align="left">
-                <span style={{
-                  borderBottom: `8px solid ${underline_color}`,
-                  lineHeight: '1.5em'
-                }}>
+                <span
+                  style={{
+                    borderBottom: `8px solid ${underline_color}`,
+                    lineHeight: "1.5em",
+                  }}
+                >
                   {title}
                 </span>
               </Typography>
             </Grid>
-            <Grid item
-                  xs={12} md={6}>
+            <Grid item xs={12} md={6}>
               <Typography style={{ textAlign: "left", marginTop: "40px" }}>
                 {description}
               </Typography>
               <Grid item xs={12} className={classes.cascadeSection}>
-                  <Card
-                      style={{
-                        backgroundColor: `${underline_color}`,
-                        color:"white",
-                        padding:"25px",
-                        margin:"30px 30px 0 30px"
-                      }}
-                  >
-                    {content()}
-                  </Card>
-
+                <Card
+                  style={{
+                    backgroundColor: `${underline_color}`,
+                    color: "white",
+                    padding: "25px",
+                    margin: "30px 30px 0 30px",
+                  }}
+                >
+                  {content()}
+                </Card>
               </Grid>
             </Grid>
-            <Grid item
-                  xs={12} md={6}>
+            <Grid item xs={12} md={6}>
               <Box boxShadow={4} style={{ marginTop: "37px" }}>
-              <Slideshow images={images} path={path}/>
-                {/* <img
-                  src={require("../../assets/img/" + image)}
-                  className={classes.image}
-                  alt={name}
-                  height="auto"
-                  width="100%"
-                /> */}
+                <Slideshow images={images} path={path} />
               </Box>
             </Grid>
           </Grid>
