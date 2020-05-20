@@ -1,10 +1,12 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
+import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Slideshow from "../Slideshow/Slideshow";
 
 import { makeStyles } from "@material-ui/core";
+import Card from "@material-ui/core/Card/Card";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,85 +41,111 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const FeaturesCard = ({
-  name,
-  title,
-  description,
-  content,
-  images,
-  styling,
-}) => {
+const FeaturesCard = ({name, title, description, content, images, path, styling, underline_color}) => {
   const classes = useStyles();
-
-  if (name == "stureg") {
-    return (
-      <section id={name} style={styling}>
-        <Container maxWidth="md">
-          <div className={classes.root}>
-            <Grid container spacing={3} direction="column">
-              <Grid item>
-                <div
-                  style={{
-                    borderBottom: "8px solid #53A9D0",
-                  }}
-                >
-                  <Typography variant="h4" align="left">
-                    {title}
-                  </Typography>
-                </div>
-                <br />
-                <br />
-                <Typography variant="body1" align="left">
-                  {description}
-                </Typography>
-              </Grid>
-              <Grid item>
-                <Slideshow images={images} />
-              </Grid>
-              <Grid item container direction="row" spacing={3}>
-                {content()}
-              </Grid>
+  if(name=="stureg"){
+    return (<section
+        id={name}
+        style={styling}
+    >
+      <Container maxWidth="md">
+        <div className={classes.root}>
+          <Grid
+              container
+              spacing={3}
+              direction="column"
+          >
+            <Grid item>
+              <Typography variant="h4" align="left">
+                <span style={{
+                  borderBottom: `8px solid ${underline_color}`,
+                  lineHeight: '1.5em'
+                }}>
+                  {title}
+                </span>
+              </Typography>
+              <br/><br/>
+              <Typography variant="body1" align="left">
+                {description}
+              </Typography>
             </Grid>
+            <Grid item>
+            <Slideshow images={images} path={path}/>
+              {/* <img
+                  src={require("../../assets/img/" + image)}
+                  className={classes.image}
+                  alt={name}
+                  height="auto"
+                  width="80%"
+              /> */}
+            </Grid>
+          </Grid>
           </div>
         </Container>
       </section>
     );
   }
 
-  // return (
-  //   <section
-  //     id={name}
-  //     style={styling}
-  //   >
-  //     <Container maxWidth="md">
-  //       <div className={classes.root}>
-  //         <Grid container spacing={3}>
-  //           <Grid item xs={6} style={{ marginBottom: "35px" }}>
-  //             <Typography variant="h2" className={classes.title} align="left">
-  //               {title}
-  //             </Typography>
-  //             <Typography style={{ textAlign: "left", marginTop: "40px" }}>
-  //               {description}
-  //             </Typography>
-  //           </Grid>
-  //           <br />
-  //           <Grid item xs={6} className={classes.cascadeSection}>
-  //             {content()}
-  //           </Grid>
-  //           <Box boxShadow={4} style={{ marginTop: "37px" }}>
-  //             <img
-  //               src={require("../../assets/img/" + images)}
-  //               className={classes.images}
-  //               alt={name}
-  //               height="auto"
-  //               width="1000vh"
-  //             />
-  //           </Box>
-  //         </Grid>
-  //       </div>
-  //     </Container>
-  //   </section>
-  // );
+  return (
+    <section
+      id={name}
+      style={styling}
+    >
+      <Container maxWidth="md">
+        <div className={classes.root}>
+          <Grid
+              container
+              spacing={3}
+              direction="row"
+              alignItems="flex-end"
+          >
+            <Grid item xs={12}>
+              <Typography variant="h4" align="left">
+                <span style={{
+                  borderBottom: `8px solid ${underline_color}`,
+                  lineHeight: '1.5em'
+                }}>
+                  {title}
+                </span>
+              </Typography>
+            </Grid>
+            <Grid item
+                  xs={12} md={6}>
+              <Typography style={{ textAlign: "left", marginTop: "40px" }}>
+                {description}
+              </Typography>
+              <Grid item xs={12} className={classes.cascadeSection}>
+                  <Card
+                      style={{
+                        backgroundColor: `${underline_color}`,
+                        color:"white",
+                        padding:"25px",
+                        margin:"30px 30px 0 30px"
+                      }}
+                  >
+                    {content()}
+                  </Card>
+
+              </Grid>
+            </Grid>
+            <Grid item
+                  xs={12} md={6}>
+              <Box boxShadow={4} style={{ marginTop: "37px" }}>
+              <Slideshow images={images} path={path}/>
+                {/* <img
+                  src={require("../../assets/img/" + image)}
+                  className={classes.image}
+                  alt={name}
+                  height="auto"
+                  width="100%"
+                /> */}
+              </Box>
+            </Grid>
+          </Grid>
+        </div>
+      </Container>
+    </section>
+  );
 };
 
 export default FeaturesCard;
