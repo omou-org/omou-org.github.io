@@ -64,8 +64,9 @@ const FeaturesData = [
           </Grid>
       </>
     ),
-    images:[ "stureg.png"],
-    styling: {marginTop: "50px"}
+    image: "stureg.png",
+    styling: {marginTop: "50px"},
+      underline_color: "#53A9D0"
   },
     {
         name: "schedule",
@@ -73,24 +74,22 @@ const FeaturesData = [
         description:
             "Scheduling personal tutoring classes with specific tutors can be tricky. Omou lets you quickly see which tutors are available at what time.",
         content: () => (
-            <div>
-                <ul
-                    style={{
-                        textAlign: "left",
-                        fontWeight: "bold",
-                        fontSize: "inherit",
-                        fontFamily: "Roboto, sans-serif",
-                        lineHeight: "inherit",
-                    }}
-                >
-                    <li>Filter by the instructor or course</li>
-                    <li>Session color-coding by an instructor</li>
-                    <li>View previous and future schedules</li>
-                </ul>
-            </div>
+            <ul
+                style={{
+                    textAlign: "left",
+                    fontSize: "inherit",
+                    fontFamily: "Roboto, sans-serif",
+                    lineHeight: "inherit",
+                }}
+            >
+                <li>Filter by the instructor or course</li>
+                <li>Session color-coding by an instructor</li>
+                <li>View previous and future schedules</li>
+            </ul>
         ),
         image: "schedular.png",
-        styling: {marginTop: "200px"}
+        styling: {marginTop: "200px"},
+        underline_color: "#599349"
     },
     {
         name: "paytuition",
@@ -118,11 +117,12 @@ const FeaturesData = [
             </div>
         ),
         image: "register.png",
-        styling: {marginTop: "200px"}
+        styling: {marginTop: "200px"},
+        underline_color: "#F1974A"
     },
     {
         name: "useracct",
-        title: "Centralized user accounts",
+        title: "Centralized User Accounts",
         description:
             "Omou allows you to create user profiles for admins, students, and parents.",
         content: () => (
@@ -130,7 +130,6 @@ const FeaturesData = [
                 <ul
                     style={{
                         textAlign: "left",
-                        fontWeight: "bold",
                         fontSize: "inherit",
                         fontFamily: "Roboto, sans-serif",
                         lineHeight: "inherit",
@@ -145,7 +144,8 @@ const FeaturesData = [
             </div>
         ),
         image: "useracct.png",
-        styling: {marginTop: "200px"}
+        styling: {marginTop: "200px"},
+        underline_color: "#CE6764"
     },
 ];
 
