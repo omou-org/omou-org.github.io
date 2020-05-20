@@ -3,6 +3,7 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
+
 import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
@@ -38,33 +39,84 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const FeaturesCard = (props) => {
+const FeaturesCard = ({name, title, description, content, image, styling}) => {
   const classes = useStyles();
+
+  if(name=="stureg"){
+    return <section
+        id={name}
+        style={styling}
+    >
+      <Container maxWidth="md">
+        <div className={classes.root}>
+          <Grid
+              container
+              spacing={3}
+              direction="column"
+          >
+            <Grid item>
+              <div
+                style={{
+                  borderBottom: "8px solid #53A9D0"
+                }}
+              >
+                <Typography variant="h4" align="left">
+                  {title}
+                </Typography>
+              </div>
+              <br/><br/>
+              <Typography variant="body1" align="left">
+                {description}
+              </Typography>
+            </Grid>
+            <Grid item>
+              <img
+                  src={require("../../assets/img/" + image)}
+                  className={classes.image}
+                  alt={name}
+                  height="auto"
+                  width="80%"
+              />
+            </Grid>
+            <Grid
+                item
+                container
+                direction="row"
+                spacing={3}
+            >
+              {content()}
+            </Grid>
+          </Grid>
+        </div>
+      </Container>
+    </section>
+  }
+
   return (
     <section
-      id={props.name}
-      style={props.styling}
+      id={name}
+      style={styling}
     >
       <Container maxWidth="md">
         <div className={classes.root}>
           <Grid container spacing={3}>
             <Grid item xs={6} style={{ marginBottom: "35px" }}>
               <Typography variant="h2" className={classes.title} align="left">
-                {props.title}
+                {title}
               </Typography>
               <Typography style={{ textAlign: "left", marginTop: "40px" }}>
-                {props.description}
+                {description}
               </Typography>
             </Grid>
             <br />
             <Grid item xs={6} className={classes.cascadeSection}>
-              {props.content()}
+              {content()}
             </Grid>
             <Box boxShadow={4} style={{ marginTop: "37px" }}>
               <img
-                src={require("../../assets/img/" + props.image)}
+                src={require("../../assets/img/" + image)}
                 className={classes.image}
-                alt={props.name}
+                alt={name}
                 height="auto"
                 width="1000vh"
               />
