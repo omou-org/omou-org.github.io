@@ -12,11 +12,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const Items = (props) => {
+    console.log(props.path)
   const classes = useStyles();
   return (
     <Paper>
       <img
-        src={require("../../assets/product-screenshots/standardized-registration-and-payments/" +
+        src={require("../../" + props.path +
           props.item)}
         className={classes.image}
         alt={props.item}
