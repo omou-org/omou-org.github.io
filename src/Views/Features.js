@@ -91,10 +91,9 @@ export default function Features() {
           </Typography>
           <Grid container xs={6}>
             <Typography component="div" className={classes.jumbotronText}>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad
-              provident optio tempora, voluptatum quo commodi similique magni
-              illum repellendus veritatis asperiores amet expedita blanditiis,
-              debitis, accusantium corrupti dicta explicabo. Necessitatibus!
+              Whatever your needs are, Omou can help your tutoring center seamlessly make the transition to digital learning. Manage tutor schedule, billing invoices, and everything else that keeps your business running, all from our platform.
+              <br/><br/>
+              Thinking of a feature that’s not listed? Contact us, since it’s likely on our roadmap.
             </Typography>
           </Grid>
         </Container>
@@ -103,7 +102,7 @@ export default function Features() {
       <Container maxWidth="md">
         <div className={classes.root}>
           <Grid container spacing={2} className={classes.sectionContainer}>
-            <Grid item xs={3}>
+            <Grid item>
               <Link
                 href="#stureg"
                 onClick={(e) => e.preventDefault}
@@ -112,31 +111,31 @@ export default function Features() {
                 Standardized Registration and Payments
               </Link>
             </Grid>
-            <Grid item xs={3}>
-              <Link
-                href="#paytrack"
-                onClick={(e) => e.preventDefault}
-                style={{ color: "#635b5c" }}
-              >
-                Simple Monthly Scheduling
-              </Link>
-            </Grid>
-            <Grid item xs={3}>
+            <Grid item>
               <Link
                 href="#schedule"
                 onClick={(e) => e.preventDefault}
                 style={{ color: "#635b5c" }}
               >
-                Centralized User Accounts
+                Simple Scheduling
               </Link>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item>
+              <Link
+                  href="#paytuition"
+                  onClick={(e) => e.preventDefault}
+                  style={{ color: "#635b5c" }}
+              >
+                Control Payments and Tuition
+              </Link>
+            </Grid>
+            <Grid item>
               <Link
                 href="#useracct"
                 onClick={(e) => e.preventDefault}
                 style={{ color: "#635b5c" }}
               >
-                User Ticketing
+                Centralized User Accounts
               </Link>
             </Grid>
           </Grid>
