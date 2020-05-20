@@ -70,7 +70,7 @@ const FeaturesData = [
   },
     {
         name: "schedule",
-        title: "Simple Monthly Scheduling",
+        title: "Simple Scheduling",
         description:
             "Scheduling personal tutoring classes with specific tutors can be tricky. Omou lets you quickly see which tutors are available at what time.",
         content: () => (
