@@ -6,7 +6,6 @@ import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from '@material-ui/core/styles';
-import { theme } from "../theme/theme";
 import FeaturesData from "./FeaturesData";
 import FeaturesCard from "../components/FeaturesCard/FeaturesCard";
 import { NavLink } from "react-router-dom";
@@ -41,7 +40,7 @@ const useStyles = makeStyles({
 });
 
 export default function Features() {
-  const classes = useStyles(theme);
+  const classes = useStyles();
   const featureDisplay = FeaturesData.map((data) => (
     <FeaturesCard
       key={data.name}
