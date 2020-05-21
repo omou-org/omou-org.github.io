@@ -14,10 +14,7 @@ import { NavLink } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginTop: "20px",
-    [theme.breakpoints.down("sm")]: {
-      width: "100%",
-    },
+    marginTop: "20px"
   },
   paper: {
     padding: theme.spacing(2),
@@ -27,28 +24,17 @@ const useStyles = makeStyles((theme) => ({
   jumbotron: {
     background: "linear-gradient(110deg,#3E6E8C 60%, #7EB6D9 60%)",
     height: "450px",
-    paddingTop: "7%",
-    [theme.breakpoints.down("sm")]: {
-      width: "100%",
-      height: "40vh",
-    },
+    paddingTop: "7%"
   },
   jumbotronTitle: {
     textAlign: "left",
-    color: "#ffffff",
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "2.5rem !important",
-    },
+    color: "#ffffff"
   },
   jumbotronText: {
     marginTop: "10px",
     textAlign: "left",
     fontSize: "19px",
-    color: "#ffffff",
-    [theme.breakpoints.down("sm")]: {
-      textAlign: "left",
-      fontSize: "12px",
-    },
+    color: "#ffffff"
   },
   sturegTitle: {
     fontSize: "40px",
@@ -57,15 +43,10 @@ const useStyles = makeStyles((theme) => ({
   alignTextLeft: {
     textAlign: "left",
   },
-  sectionContainer: {
-    [theme.breakpoints.down("xs")]: {
-      fontSize: ".7rem",
-    },
-  },
 }));
 
 export default function Features() {
-  const classes = useStyles();
+  const classes = useStyles(theme);
   const featureDisplay = FeaturesData.map((data) => (
     <FeaturesCard
       key={data.name}
