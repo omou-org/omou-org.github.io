@@ -9,7 +9,7 @@ import { Routes } from "./routes";
 import { primaryColor } from "./theme/colors";
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(({theme})=>({
     link: {
         textDecoration: "none",
         textDecorationColor: "inherit",
@@ -32,7 +32,7 @@ const useStyles = makeStyles({
     active: {
         textDecoration: "underline",
     }
-});
+}));
 
 const MenuList = ({ fontType }) => {
     const classes = useStyles();
@@ -132,15 +132,15 @@ const Footer = () => {
 
 function App() {
     return (
-        <ThemeProvider theme={theme}>
-            <Router>
-                <div className="App">
-                    <NavigationBar />
+        <Router>
+            <div className="App">
+                <NavigationBar />
+                <ThemeProvider theme={theme}>
                     <Routes />
-                    <Footer />
-                </div>
-            </Router>
-        </ThemeProvider>
+                </ThemeProvider>
+                <Footer />
+            </div>
+        </Router>
     );
 }
 
