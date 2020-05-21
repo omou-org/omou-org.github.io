@@ -26,12 +26,6 @@ const useStyles = makeStyles({
         display: "inline-block",
         fontWeight: "400"
     },
-    footerWrapper: {
-        backgroundColor: primaryColor,
-        color: "white",
-        marginTop: "25px",
-        width:"100%",
-    },
     footer: {
         padding: "3%"
     },
@@ -101,7 +95,12 @@ const Footer = () => {
     const classes = useStyles();
     return (
         <div
-            className={classes.footerWrapper}
+            style={{
+                backgroundColor: primaryColor,
+                color: "white",
+                marginTop: "25px",
+                width:"100%",
+            }}
         >
             <Container
                 maxWidth={"lg"}
