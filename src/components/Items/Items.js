@@ -10,18 +10,11 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-const Items = (props) => {
-  const classes = useStyles();
-  return (
-
-      <img
+const Items = (props) => (<img
         src={require("../../" + props.path + props.item)}
-        className={classes.image}
         alt={props.item}
         height="auto"
         width="80%"
-      />
-  );
-};
+      />);
 
 export default Items;
