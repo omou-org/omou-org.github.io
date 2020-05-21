@@ -97,7 +97,7 @@ const FeaturesData = [
       </ul>
     ),
     images: [
-      "1_scheduler-landing-month-popup.png",
+      "1_scheduler_landing_month-new.png",
       "2_scheduler-landing-day.png",
       "3_scheduler-landing-list.png",
       "4_scheduler-session-view.png",
