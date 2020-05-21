@@ -31,8 +31,7 @@ const UserCards = ({ user }) => {
                     disableTouchRipple={true}
                     onClick={() => {
                         window.open(user.linkedin)
-                    }}
-                >
+                    }}>
                     <CardMedia
                         className={classes.media}
                         image={require(`./pictures/${user.picture_src}`)}
@@ -65,6 +64,7 @@ const UserCards = ({ user }) => {
                         </Typography>
                     </CardContent>
                 </CardActionArea>
+
 
             </Card>
         </Grid>
