@@ -92,7 +92,6 @@ function NavigationBar() {
 }
 
 const Footer = () => {
-    const classes = useStyles();
     return (
         <div
             style={{
@@ -104,7 +103,9 @@ const Footer = () => {
         >
             <Container
                 maxWidth={"lg"}
-                className={classes.footer}
+                style={{
+                    padding: "3%"
+                }}
             >
                 <Grid
                     container
@@ -136,7 +137,7 @@ function App() {
                 <div className="App">
                     <NavigationBar />
                     <Routes />
-                    {/*<Footer />*/}
+                    <Footer />
                 </div>
             </Router>
         </ThemeProvider>
