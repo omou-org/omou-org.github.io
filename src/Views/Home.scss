@@ -111,3 +111,21 @@
 .button{
     border-radius:25;
 }
+
+.transform-colors {
+    animation: pulse 5s infinite;
+  }
+  @keyframes pulse {
+    0% {
+      color: #53A9D0;
+    }
+    25% {
+      color: #599349;
+    }
+      75% {
+      color: #F1974A
+    }  
+    100% {
+      color: #CE6764;
+    }
+  }

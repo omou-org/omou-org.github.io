@@ -14,6 +14,7 @@ import Slideshow from "../components/Slideshow/Slideshow"
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container"
 
+
 export default function Home() {
 	return (
 
@@ -22,7 +23,7 @@ export default function Home() {
 				<Grid container direction="row" justify="space-evenly" alignItems="center">
 					<Grid item xs={6}>
 						<Typography variant="h3" className="upper" align="left">
-							Don’t just digitize the way your tutoring center runs - <span>transform</span>  it.
+							Don’t just digitize the way your tutoring center runs - <span className="transform-colors">transform</span>  it.
 				</Typography>
 						<Typography variant="h6" className="bottom" align="left">
 							Omou is a tutoring management service designed for remote-learning.
