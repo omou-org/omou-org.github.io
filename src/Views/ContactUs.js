@@ -1,18 +1,39 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import emailjs from "emailjs-com";
+import { makeStyles } from '@material-ui/core/styles';
 import {
 	TextField,
 	Button,
 	Typography,
 	Grid,
-	Container
+	Container,
+	Box,
+	Card,
+	CardContent,
+	CardActions
 } from "@material-ui/core";
+
+const useStyles = makeStyles({
+	root: {
+		marginTop: "100px",
+		backgroundColor: "#F8F8F8",
+		boxShadow: "2px 2px 1px rgba(0, 0, 0, 0.25)",
+		marginBottom: "100px",
+	},
+	textBox: {
+		backgroundColor: "#FFFFFF"
+	},
+	sendButton: {
+		marginLeft: "8px"
+	}
+})
 
 export default function ContactUs() {
 	const [fromName, setFromName] = useState("");
 	const [messageHTML, setMessage] = useState("");
 	const [replyTo, setReplyTo] = useState("");
 
+	const classes = useStyles();
 	/***
 	 * Contact Fields
 	 * from_name: name of customer sending the inquiry
@@ -46,70 +67,76 @@ export default function ContactUs() {
 
 	const fieldWidth = "100%";
 
-	return (<Container maxWidth="md">
-		<Typography
-			style={{marginBottom:"25px", marginTop:"40px"}}
-			variant="h2"
-		>
-			Contact Us
-		</Typography>
-		<form className="contact-form" onSubmit={sendEmail}>
-			<Grid
-				direction="column"
-				spacing={3}
-				style={{height:"80vh"}}
-				container
-			>
-				<Grid item>
-					<TextField
-						id="Name"
-						label="Name"
-						variant="outlined"
-						style={{width:fieldWidth}}
-						value={fromName}
-						onChange={handleNameChange}
-					/>
-				</Grid>
-				<Grid item>
-					<TextField
-						id="Email"
-						label="Your Email"
-						variant="outlined"
-						required
-						style={{width:fieldWidth}}
-						value={replyTo}
-						onChange={handleReplyToEmail}
-					/>
-				</Grid>
-				<Grid item>
-					<TextField
-						id="message-body"
-						multiline
-						label="Message"
-						rows="8"
-						variant="outlined"
-						style={{width:fieldWidth}}
-						required
-						value={messageHTML}
-						onChange={handleMessageBodyChange}
-					/>
-				</Grid>
+	return (
 
-				<Grid
-					item
-					container
-					justify="flex-end">
-					<Grid item>
+		<Container maxWidth="md">
+
+			<Card variant="outlined" className={classes.root}>
+				<Typography
+					style={{ marginBottom: "25px", marginTop: "40px" }}
+					variant="h2"
+				>
+					Contact Us
+					</Typography>
+
+				<form className="contact-form" onSubmit={sendEmail}>
+					<CardContent>
+
+						<Grid item>
+							<TextField
+								className={classes.textBox}
+								id="Name"
+								label="Name"
+								variant="outlined"
+								style={{ width: fieldWidth }}
+								value={fromName}
+								onChange={handleNameChange}
+							/>
+						</Grid>
+						<br />
+						<Grid item>
+							<TextField
+								className={classes.textBox}
+								id="Email"
+								label="Your Email"
+								variant="outlined"
+								required
+								style={{ width: fieldWidth }}
+								value={replyTo}
+								onChange={handleReplyToEmail}
+							/>
+						</Grid>
+						<br />
+						<Grid item>
+							<TextField
+								className={classes.textBox}
+								id="message-body"
+								multiline
+								label="Message"
+								rows="8"
+								variant="outlined"
+								style={{ width: fieldWidth }}
+								required
+								value={messageHTML}
+								onChange={handleMessageBodyChange}
+							/>
+						</Grid>
+					</CardContent>
+					<CardActions>
+
 						<Button
+							className={classes.sendButton}
 							color="primary"
 							variant="contained"
 							onClick={sendEmail}
 						>
 							SEND
 						</Button>
-					</Grid>
-				</Grid>
-			</Grid>
-		</form>
-	</Container>)
+					</CardActions>
+				</form>
+
+			</Card>
+
+		</Container>
+	)
 }
