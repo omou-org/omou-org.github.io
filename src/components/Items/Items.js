@@ -1,7 +1,7 @@
 import React from "react";
 import { theme } from "../../theme/theme";
 import { Paper } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   image: {
