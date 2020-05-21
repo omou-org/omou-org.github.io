@@ -1,16 +1,14 @@
 import React from "react";
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import paymentImage from "./payment.png";
 import studentsImage from './omoukids.png'
 import people from './people.jpg'
 import "./Home.scss";
 import Box from '@material-ui/core/Box';
-import { display } from '@material-ui/system';
 import Hidden from '@material-ui/core/Hidden';
 import ContactUs from './ContactUs'
 import { NavLink } from "react-router-dom";
-import Slideshow from "../components/Slideshow/Slideshow"
+// import Slideshow from "../components/Slideshow/Slideshow"
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container"
 
@@ -47,15 +45,15 @@ export default function Home() {
 			</Container>
 			<Grid container className="mid">
 				<Grid item md={5} className="imageContainer">
-					<Slideshow images={[
-						"0_scheduler_landing_month-new.png",
-						"1-0_admin-discount.png",
-						"1-1_admin-tuition-rules.png",
-						"1-2_invoice-receipt.png",
-						"2_enrollment-view.png",
-						"3_enrollment-payment-hist.png",
-						"4_parent-pay-hist.png",
-					]} path={"assets/product-screenshots/control-payment-and-tuition/"} />
+					{/*<Slideshow images={[*/}
+					{/*	"0_scheduler_landing_month-new.png",*/}
+					{/*	"1-0_admin-discount.png",*/}
+					{/*	"1-1_admin-tuition-rules.png",*/}
+					{/*	"1-2_invoice-receipt.png",*/}
+					{/*	"2_enrollment-view.png",*/}
+					{/*	"3_enrollment-payment-hist.png",*/}
+					{/*	"4_parent-pay-hist.png",*/}
+					{/*]} path={"assets/product-screenshots/control-payment-and-tuition/"} />*/}
 				</Grid>
 
 				<Grid item md className="midContent">
