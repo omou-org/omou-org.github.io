@@ -110,7 +110,7 @@ const FeaturesCard = ({
                 </span>
               </Typography>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={5}>
               <Typography style={{ textAlign: "left", marginTop: "40px" }}>
                 {description}
               </Typography>
@@ -127,10 +127,8 @@ const FeaturesCard = ({
                 </Card>
               </Grid>
             </Grid>
-            <Grid item xs={12} md={6}>
-              <Box boxShadow={4} style={{ marginTop: "37px" }}>
-                <Slideshow images={images} path={path} />
-              </Box>
+            <Grid item xs={12} md={7}>
+				<Slideshow images={images} path={path} />
             </Grid>
           </Grid>
         </div>

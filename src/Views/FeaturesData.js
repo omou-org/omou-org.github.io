@@ -116,7 +116,6 @@ const FeaturesData = [
         <ul
           style={{
             textAlign: "left",
-            fontWeight: "bold",
             fontSize: "inherit",
             fontFamily: "Roboto, sans-serif",
             lineHeight: "inherit",
