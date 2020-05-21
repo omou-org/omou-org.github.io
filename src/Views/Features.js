@@ -5,7 +5,7 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
 import Button from "@material-ui/core/Button";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import { theme } from "../theme/theme";
 import FeaturesData from "./FeaturesData";
 import FeaturesCard from "../components/FeaturesCard/FeaturesCard";
@@ -15,11 +15,6 @@ const useStyles = makeStyles({
   root: {
     flexGrow: 1,
     marginTop: "20px"
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
   },
   jumbotron: {
     background: "linear-gradient(110deg,#3E6E8C 60%, #7EB6D9 60%)",

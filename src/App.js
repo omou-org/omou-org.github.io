@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
 
-import { ThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import { appBarTheme, theme } from './theme/theme'
-import { AppBar, makeStyles, Toolbar, Typography, Container, Grid } from "@material-ui/core";
+import { AppBar, Toolbar, Typography, Container, Grid } from "@material-ui/core";
 import { BrowserRouter as Router, NavLink, useLocation } from "react-router-dom";
 import { Routes } from "./routes";
 import { primaryColor } from "./theme/colors";
 
 
-const useStyles = makeStyles(({theme})=>({
+const useStyles = makeStyles({
     link: {
         textDecoration: "none",
         textDecorationColor: "inherit",
@@ -32,7 +32,7 @@ const useStyles = makeStyles(({theme})=>({
     active: {
         textDecoration: "underline",
     }
-}));
+});
 
 const MenuList = ({ fontType }) => {
     const classes = useStyles();
@@ -132,15 +132,15 @@ const Footer = () => {
 
 function App() {
     return (
-        <Router>
-            <div className="App">
-                <NavigationBar />
-                <ThemeProvider theme={theme}>
+        <ThemeProvider theme={theme}>
+            <Router>
+                <div className="App">
+                    <NavigationBar />
                     <Routes />
-                </ThemeProvider>
-                <Footer />
-            </div>
-        </Router>
+                    <Footer />
+                </div>
+            </Router>
+        </ThemeProvider>
     );
 }
 
