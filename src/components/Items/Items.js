@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
+import { theme } from "../../theme/theme";
 import { Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 
@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const Items = (props) => {
-  const classes = useStyles();
+  const classes = useStyles(theme);
   return (
     <Paper>
       <img

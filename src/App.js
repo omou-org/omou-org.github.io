@@ -9,7 +9,7 @@ import { Routes } from "./routes";
 import { primaryColor } from "./theme/colors";
 
 
-const useStyles = makeStyles((appBarTheme) => ({
+const useStyles = makeStyles({
     link: {
         textDecoration: "none",
         textDecorationColor: "inherit",
@@ -38,7 +38,7 @@ const useStyles = makeStyles((appBarTheme) => ({
     active: {
         textDecoration: "underline",
     }
-}));
+});
 
 const MenuList = ({ fontType }) => {
     const classes = useStyles();

@@ -11,7 +11,7 @@ import FeaturesData from "./FeaturesData";
 import FeaturesCard from "../components/FeaturesCard/FeaturesCard";
 import { NavLink } from "react-router-dom";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   root: {
     flexGrow: 1,
     marginTop: "20px"
@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
   alignTextLeft: {
     textAlign: "left",
   },
-}));
+});
 
 export default function Features() {
   const classes = useStyles(theme);

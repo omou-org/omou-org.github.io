@@ -1,7 +1,7 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import Box from "@material-ui/core/Box";
+import { theme } from "../../theme/theme";
 import Grid from "@material-ui/core/Grid";
 import Slideshow from "../Slideshow/Slideshow";
 
@@ -38,7 +38,7 @@ const FeaturesCard = ({
   styling,
   underline_color,
 }) => {
-  const classes = useStyles();
+  const classes = useStyles(theme);
   if (name == "stureg") {
     return (
       <section id={name} style={styling}>
