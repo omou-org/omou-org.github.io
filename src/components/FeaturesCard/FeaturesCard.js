@@ -5,7 +5,7 @@ import { theme } from "../../theme/theme";
 import Grid from "@material-ui/core/Grid";
 import Slideshow from "../Slideshow/Slideshow";
 
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from '@material-ui/core/styles';
 import Card from "@material-ui/core/Card/Card";
 
 const useStyles = makeStyles((theme) => ({

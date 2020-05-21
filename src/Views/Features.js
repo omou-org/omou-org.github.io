@@ -5,7 +5,7 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
 import Button from "@material-ui/core/Button";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
 import { theme } from "../theme/theme";
 import FeaturesData from "./FeaturesData";
 import FeaturesCard from "../components/FeaturesCard/FeaturesCard";
