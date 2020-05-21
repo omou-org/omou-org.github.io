@@ -20,24 +20,11 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontSize: "54px",
-    fontWeight: "bolder",
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "1.55rem",
-    },
-  },
-  image: {
-    [theme.breakpoints.down("sm")]: {
-      width: "100%",
-      height: "100%",
-    },
+    fontWeight: "bolder"
   },
   cascadeSection: {
     fontSize: "18px",
-    lineHeight: "37px",
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "12px",
-      lineHeight: "20px",
-    },
+    lineHeight: "37px"
   },
 }));
 
