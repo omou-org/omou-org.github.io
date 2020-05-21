@@ -23,24 +23,24 @@ const useStyles = makeStyles((appBarTheme) => ({
     desktopMenuItem: {
         marginLeft: "20px",
         color: "black",
-        display:"inline-block",
+        display: "inline-block",
         fontWeight: "400"
     },
-    footerWrapper:{
+    footerWrapper: {
         backgroundColor: primaryColor,
         color: "white",
         marginTop: "25px",
         width:"100%",
     },
-    footer:{
-        padding:"3%"
+    footer: {
+        padding: "3%"
     },
-    active:{
+    active: {
         textDecoration: "underline",
     }
 }));
 
-const MenuList = ({fontType}) => {
+const MenuList = ({ fontType }) => {
     const classes = useStyles();
     const location = useLocation();
     const MenuItems = [
@@ -58,7 +58,7 @@ const MenuList = ({fontType}) => {
         },
     ];
 
-    return MenuItems.map(({title, link}) => (
+    return MenuItems.map(({ title, link }) => (
         <NavLink
             className={classes.link}
             to={link}
@@ -67,7 +67,7 @@ const MenuList = ({fontType}) => {
             <Typography
                 variant={fontType}
                 align="center"
-                className={`${classes.desktopMenuItem} ${location.pathname == link ? classes.active: ""}`}
+                className={`${classes.desktopMenuItem} ${location.pathname == link ? classes.active : ""}`}
             >
                 {title}
             </Typography>
@@ -90,7 +90,7 @@ function NavigationBar() {
                 </NavLink>
                 <div className={classes.grow} />
                 <div className={classes.desktopMenu}>
-                    <MenuList fontType="h6"/>
+                    <MenuList fontType="h6" />
                 </div>
             </Toolbar>
         </AppBar>
@@ -99,30 +99,35 @@ function NavigationBar() {
 
 const Footer = () => {
     const classes = useStyles();
-  return (
-      <div
-          className={classes.footerWrapper}
-      >
-          <Container
-              maxWidth={"lg"}
-              className={classes.footer}
-          >
-            <Grid
-                container
-                alignItems="flex-end"
+    return (
+        <div
+            className={classes.footerWrapper}
+        >
+            <Container
+                maxWidth={"lg"}
+                className={classes.footer}
             >
-                <Grid item md={2} xs={12}>
-                    <Typography variant="h3">
-                        omou
+                <Grid
+                    container
+                    alignItems="flex-end"
+                >
+                    <Grid item md={2} xs={12}>
+                        <Typography variant="h3">
+                            omou
                     </Typography>
+                    </Grid>
+                    <Grid item md={4} xs={12}>
+                        <MenuList fontType="body1" />
+                    </Grid>
+                    <Grid item md={2} xs={12}>
+                        <Typography variant="body1">
+                            © 2020 Omou
+                    </Typography>
+                    </Grid>
                 </Grid>
-                <Grid item md={4} xs={12}>
-                    <MenuList fontType="body1"/>
-                </Grid>
-            </Grid>
-          </Container>
-      </div>
-  )
+            </Container>
+        </div>
+    )
 };
 
 function App() {
@@ -132,7 +137,7 @@ function App() {
                 <div className="App">
                     <NavigationBar />
                     <Routes />
-                    <Footer/>
+                    <Footer />
                 </div>
             </Router>
         </ThemeProvider>
