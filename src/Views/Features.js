@@ -86,7 +86,7 @@ export default function Features() {
           <Typography
             variant="h2"
             align="left"
-            style={{color:"white"}}
+            style={{color:"white", marginBottom:"25px"}}
           >
             Our Features
           </Typography>
