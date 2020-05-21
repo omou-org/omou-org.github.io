@@ -31,9 +31,6 @@ const useStyles = makeStyles((appBarTheme) => ({
         color: "white",
         marginTop: "25px",
         width:"100%",
-        [theme.breakpoints.down('sm')]: {
-            width:"100%",
-          }
     },
     footer:{
         padding:"3%"
