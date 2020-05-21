@@ -15,8 +15,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     marginTop: "20px",
-    [theme.breakpoints.down('sm')]: {
-     width: '100%',
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
     },
   },
   paper: {
@@ -28,27 +28,27 @@ const useStyles = makeStyles((theme) => ({
     background: "linear-gradient(110deg,#3E6E8C 60%, #7EB6D9 60%)",
     height: "450px",
     paddingTop: "7%",
-    [theme.breakpoints.down('sm')]: {
-      width: '100%',
-      height: '40vh'
-    }
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+      height: "40vh",
+    },
   },
   jumbotronTitle: {
     textAlign: "left",
     color: "#ffffff",
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '2.5rem !important'
-    }
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "2.5rem !important",
+    },
   },
   jumbotronText: {
     marginTop: "10px",
     textAlign: "left",
     fontSize: "19px",
     color: "#ffffff",
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down("sm")]: {
       textAlign: "left",
-      fontSize: "12px"
-    }
+      fontSize: "12px",
+    },
   },
   sturegTitle: {
     fontSize: "40px",
@@ -58,22 +58,23 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
   },
   sectionContainer: {
-    [theme.breakpoints.down('xs')]: {
-      fontSize: ".7rem"
-    }
-  }
+    [theme.breakpoints.down("xs")]: {
+      fontSize: ".7rem",
+    },
+  },
 }));
 
 export default function Features() {
   const classes = useStyles();
-  const featureDisplay = FeaturesData.map(data => (
+  const featureDisplay = FeaturesData.map((data) => (
     <FeaturesCard
       key={data.name}
       name={data.name}
       title={data.title}
       description={data.description}
       content={data.content}
-      image={data.image}
+      images={data.images}
+      path={data.path}
       styling={data.styling}
       underline_color={data.underline_color}
     />
@@ -83,18 +84,19 @@ export default function Features() {
       <CssBaseline />
       <div className={classes.jumbotron}>
         <Container maxWidth="lg">
-          <Typography
-            variant="h2"
-            align="left"
-            style={{color:"white", marginBottom:"25px"}}
-          >
+          <Typography variant="h2" align="left" style={{ color: "white" }}>
             Our Features
           </Typography>
           <Grid container xs={12} md={6}>
-            <Typography variant="body1" align="left" style={{color:"white"}}>
-              Whatever your needs are, Omou can help your tutoring center seamlessly make the transition to digital learning. Manage tutor schedule, billing invoices, and everything else that keeps your business running, all from our platform.
-              <br/><br/>
-              Thinking of a feature that’s not listed? Contact us, since it’s likely on our roadmap.
+            <Typography variant="body1" align="left" style={{ color: "white" }}>
+              Whatever your needs are, Omou can help your tutoring center
+              seamlessly make the transition to digital learning. Manage tutor
+              schedule, billing invoices, and everything else that keeps your
+              business running, all from our platform.
+              <br />
+              <br />
+              Thinking of a feature that’s not listed? Contact us, since it’s
+              likely on our roadmap.
             </Typography>
           </Grid>
         </Container>
@@ -123,9 +125,9 @@ export default function Features() {
             </Grid>
             <Grid item>
               <Link
-                  href="#paytuition"
-                  onClick={(e) => e.preventDefault}
-                  style={{ color: "#635b5c" }}
+                href="#paytuition"
+                onClick={(e) => e.preventDefault}
+                style={{ color: "#635b5c" }}
               >
                 Control Payments and Tuition
               </Link>
