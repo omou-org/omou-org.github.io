@@ -4,7 +4,7 @@ import Items from "../Items/Items";
 
 const Slideshow = ({ images, path }) => {
   return (
-    <Carousel autoPlay animation="fade">
+    <Carousel autoPlay animation="fade" indicators={false}>
       {images.map((image) => (
         <Items item={image} path={path} />
       ))}
