@@ -1,14 +1,12 @@
 import React from "react";
-import Carousel from "react-material-ui-carousel";
+import Carousel from "./Carousel";
 import Items from "../Items/Items";
 
 const Slideshow = ({ images, path }) => {
   return (
-    <Carousel
-        fullHeightHover={false}
-        autoPlay
-        animation="fade"
-    >
+
+    <Carousel autoPlay animation="fade" fullHeightHover="false">
+
       {images.map((image) => (
         <Items item={image} path={path} />
       ))}
