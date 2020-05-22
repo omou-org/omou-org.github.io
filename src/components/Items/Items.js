@@ -10,11 +10,19 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-const Items = (props) => (<img
+const Items = (props) => {
+  const classes = useStyles();
+  return (
+    <Paper>
+      <img
         src={require("../../" + props.path + props.item)}
+        className={classes.image}
         alt={props.item}
         height="auto"
         width="80%"
-      />);
+      />
+    </Paper>
+  );
+};
 
 export default Items;
