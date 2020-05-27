@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 
 import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
@@ -97,9 +97,9 @@ const MenuList = ({ fontType }) => {
 
 function NavigationBar() {
     const classes = useStyles();
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const [mobileOpen, setMobileOpen] = React.useState(false);
-    const navBarList = ['Features', 'About', 'Contact Us']
+    const [anchorEl, setAnchorEl] = useState(null);
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const navBarList = ['Features', 'About', 'Contact Us'];
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     }
@@ -108,7 +108,8 @@ function NavigationBar() {
         setAnchorEl(null);
     }
 
-    function handleDrawerToggle() {
+    function handleDrawerToggle(e) {
+        e.preventDefault();
         setMobileOpen(!mobileOpen)
     }
 
@@ -140,51 +141,53 @@ function NavigationBar() {
                 <div className={classes.desktopMenu}>
 
                 </div>
-
-                <NavLink to="/features" style={{ textDecoration: "none", marginLeft: "10px" }}>
-                    <Button>
-                        Features
-       					 </Button>
-                </NavLink>
-                <Button aria-controls="about-menu" aria-haspopup="true" onClick={handleClick}>
-                    About
-       					 </Button>
-                <Menu
-                    id="about-menu"
-                    anchorEl={anchorEl}
-                    keepMounted
-                    open={Boolean(anchorEl)}
-                    onClose={handleClose}
-                >
-                    <MenuItem onClick={handleClose} >
-                        <NavLink
-                            to="about-us"
-                            style={{ color: "black", textDecoration: "none" }}
-                        >About Us</NavLink>
-                    </MenuItem>
-
-                    <MenuItem onClick={handleClose}  >
-                        <NavLink
-                            to="meet-team"
-                            style={{ color: "black", textDecoration: "none" }}
-                        >Meet the Team</NavLink>
-
-                    </MenuItem>
-                </Menu>
-                <NavLink to="/contact-us" style={{ textDecoration: "none", marginLeft: "10px" }}>
-                    <Button
-                        variant="contained"
-                        size="large"
-                        style={{ color: "white", backgroundColor: "#43B5D9", }}
+                <Hidden xsDown>
+                    <NavLink to="/features" style={{ textDecoration: "none", marginLeft: "10px" }}>
+                        <Button>
+                            Features
+                             </Button>
+                    </NavLink>
+                    <Button aria-controls="about-menu" aria-haspopup="true" onClick={handleClick}>
+                        About
+                             </Button>
+                    <Menu
+                        id="about-menu"
+                        anchorEl={anchorEl}
+                        keepMounted
+                        open={Boolean(anchorEl)}
+                        onClose={handleClose}
                     >
-                        Contact Us
-       					 </Button>
-                </NavLink>
-            </Toolbar>
+                        <MenuItem onClick={handleClose} >
+                            <NavLink
+                                to="about-us"
+                                style={{ color: "black", textDecoration: "none" }}
+                            >About Us</NavLink>
+                        </MenuItem>
 
-            <nav className={classes.drawer}>
+                        <MenuItem onClick={handleClose}  >
+                            <NavLink
+                                to="meet-team"
+                                style={{ color: "black", textDecoration: "none" }}
+                            >Meet the Team</NavLink>
+
+                        </MenuItem>
+                    </Menu>
+                    <NavLink to="/contact-us" style={{ textDecoration: "none", marginLeft: "10px" }}>
+                        <Button
+                            variant="contained"
+                            size="large"
+                            style={{ color: "white", backgroundColor: "#43B5D9", }}
+                        >
+                            Contact Us
+                             </Button>
+                    </NavLink>
+                </Hidden>
                 {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+
                 <Hidden smUp >
+                    <IconButton onClick={handleDrawerToggle} className={classes.closeMenuButton}>
+                        <MenuIcon style={{color:primaryColor}}/>
+                    </IconButton>
                     <Drawer
                         variant="temporary"
                         anchor="right"
@@ -197,14 +200,10 @@ function NavigationBar() {
                             keepMounted: true, // Better open performance on mobile.
                         }}
                     >
-                        <IconButton onClick={handleDrawerToggle} className={classes.closeMenuButton}>
-                            <MenuIcon />
-                        </IconButton>
                         {drawer}
                     </Drawer>
                 </Hidden>
-
-            </nav>
+            </Toolbar>
         </AppBar>
     </ThemeProvider>;
 }
