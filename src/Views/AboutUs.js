@@ -75,7 +75,7 @@ const AboutUs = () => {
 							parents, and teachers at minimal to no additional cost.
 							</Typography>
 
-						<Grid item xs={12} md={6} >
+						<Grid item xs={12}  >
 							<Typography variant="h4" align="left" className={classes.titleColor}>
 								Our Misson
                     </Typography>
