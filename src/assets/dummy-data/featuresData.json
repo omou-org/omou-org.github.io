@@ -1,0 +1,103 @@
+[
+    {
+        "banner": {
+            "title": "Our Features",
+            "subtitle1": "Whatever your needs are, Omou can help your tutoring center seamlessly make the transition to digital learning. Manage tutor schedule, billing invoices, and everything else that keeps you business running, all from our platform.",
+            "subtitle2": "Thinking of a feature that’s not listed? Contact us, since it’s likely on our roadmap."
+        }
+    },
+    {
+        "featuresList": {
+            "title": "Features",
+            "list1": "Standarized Registration & Payments",
+            "list2": "Simple Scheduling",
+            "list3": "Control Payments & Tuition",
+            "list4": "Centralized User Accounts"
+        }
+    },
+    {
+        "feature0": {
+            "title": "Standarized Registration & Payments",
+            "subtitle": "Omou provides an easy way for admins to browse all available tutoring courses with detailed descriptions and register students quickly.",
+            "images": ["0-0_registration_landing.png",
+                "0-1_register-student.png",
+                "1_register-by-parent.png",
+                "1-1_registration-cart.png",
+                "2_Tuition Rules.png",
+                "3_scheduling_conflict.png"],
+            "path":  "assets/product-screenshots/standardized-registration-and-payments/",
+            "card1": {
+                "title": "Tutoring Course Information All On One Surface",
+                "list1": "Course enrollment status",
+                "list2": "Time and date of the courses",
+                "list3": "Course Teacher",
+                "list4": "Total cost"
+            },
+            "card2": {
+                "title": "Find Courses Quickly for Easy Registration",
+                "list1": "Filter classes by instructor(s), subject(s), academic grade level(s)",
+                "list2": "Register by tutoring subject",
+                "list3": "Register by parent"
+            }
+        }
+    },
+    {
+        "feature1": {
+            "title": "Simple Scheduling",
+            "subtitle": "Scheduling personal tutoring classes with specific tutors can be tricky. Omou lets you quickly see which tutors are available at what time.",
+            "images": ["1_scheduler_landing_month-new.png",
+                "2_scheduler-landing-day.png",
+                "3_scheduler-landing-list.png",
+                "4_scheduler-session-view.png"],
+            "path": "assets/product-screenshots/simple-scheduling/",
+            "card1": {
+                "list1": "Filter by the instructor or course",
+                "list2": "Session color-coding by an instructor",
+                "list3": "View previous and future schedules"
+            }
+        }
+    },
+    {
+        "feature2": {
+            "title": "Control Payments and Tuition",
+            "subtitle": "Never worry about mix-ups with payment confirmation! Omou canbe your single source of truth with automated invoice tracking and much more.",
+            "images": [
+                "1-0_admin-discount.png",
+                "1-1_admin-tuition-rules.png",
+                "1-2_invoice-receipt.png",
+                "2_enrollment-view.png",
+                "3_enrollment-payment-hist.png",
+                "4_parent-pay-hist.png"
+              ],
+            "path": "assets/product-screenshots/control-payment-and-tuition/",
+            "card1": {
+                "list1": "Create Tuition Rules and Discounts",
+                "list2": "View Payments by Enrollment",
+                "list3": "View Updated Payment Status of a Tutoring Session",
+                "list4": "Print Invoices" 
+            }
+        }
+    },
+    {
+        "feature3": {
+            "title": "Centralized User Accounts",
+            "subtitle": "Omou allows you to create user profiles for admins, students, and parents.",
+            "images": [
+                "1_account_landing.png",
+                "2_instructor-bio.png",
+                "2-2_instructor-courses.png",
+                "3_parent-notes.png",
+                "4_parent-children-association.png",
+                "5_student-courselist.png"
+              ],
+            "path": "assets/product-screenshots/centralized-user-accounts/",
+            "card1": {
+                "list1": "View accounts by type",
+                "list2": "Edit account information",
+                "list3": "View accounts on mobile phone",
+                "list4": "Instructors can confirm/deny a course",
+                "list5": "Students linked to a parent account and vise versa"
+            }
+        }
+    }
+]
