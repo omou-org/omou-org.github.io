@@ -227,11 +227,11 @@ const Featuresv2 = () => {
           {features === "1" ? (
             <FeaturesCardV2 data={data[2].feature0} />
           ) : features === "2" ? (
-            <FeaturesCardV2 data={data[3].feature1} />
+            <FeaturesCardV2 data={data[3].feature1} style={{color: "#599349"}}/>
           ) : features === "3" ? (
-            <FeaturesCardV2 data={data[4].feature2} />
+            <FeaturesCardV2 data={data[4].feature2} style={{color: "#F1974A"}}/>
           ) : features === "4" ? (
-            <FeaturesCardV2 data={data[5].feature3} />
+            <FeaturesCardV2 data={data[5].feature3} style={{color: "#CE6764"}}/>
           ) : (
             <FeaturesCardV2 data={data[2].feature0} />
           )}
