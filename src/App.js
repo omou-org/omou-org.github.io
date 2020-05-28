@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
@@ -9,7 +9,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { Routes } from "./routes";
 import { primaryColor } from "./theme/colors";
 
-const drawerWidth = 240;
+const drawerWidth = 150;
 const useStyles = makeStyles(theme => (
 
     {
@@ -57,24 +57,27 @@ const useStyles = makeStyles(theme => (
     }));
 
 
+const MenuItems = [
+    {
+        title: "Features",
+        link: "/features",
+    },
+    {
+        title: "About Us",
+        link: "/about-us",
+    },
+    {
+        title: "Contact Us",
+        link: "/contact-us",
+    },
+];
+
+
 const MenuList = ({ fontType }) => {
     const classes = useStyles();
     const location = useLocation();
 
-    const MenuItems = [
-        {
-            title: "Features",
-            link: "/features",
-        },
-        {
-            title: "About Us",
-            link: "/about-us",
-        },
-        {
-            title: "Contact Us",
-            link: "/contact-us",
-        },
-    ];
+
 
     return MenuItems.map(({ title, link }) => (
         <NavLink
@@ -116,7 +119,7 @@ function NavigationBar() {
     const drawer = (
         <div>
             <List>
-                {navBarList.map((text, index) => (
+                {MenuItems.map((text, index) => (
                     <ListItem button key={text}>
                         <ListItemText primary={text} />
                     </ListItem>
@@ -186,7 +189,7 @@ function NavigationBar() {
 
                 <Hidden smUp >
                     <IconButton onClick={handleDrawerToggle} className={classes.closeMenuButton}>
-                        <MenuIcon style={{color:primaryColor}}/>
+                        <MenuIcon style={{ color: primaryColor }} />
                     </IconButton>
                     <Drawer
                         variant="temporary"
