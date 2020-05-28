@@ -50,6 +50,9 @@ demoBtn: {
     color: "#ffffff",
     marginRight: "11.625em",
     padding: ".5em 4em",
+},
+listMargin: {
+  marginTop: "2.5625em"
 }
 }));
 
@@ -67,23 +70,23 @@ const FeaturesComponent = ({click}) => {
         </Typography>
         <span className={classes.line}></span>
       </Grid>
-      <Grid item xs={12}>
-        <Button className={classes.buttonMargins} data-id="standarized-registration" onClick={handleClick}>
+      <Grid item xs={12} className={classes.listMargin}>
+        <Button className={classes.buttonMargins} data-id="1" onClick={handleClick}>
           <Typography className={classes.featureslist} data-id="standarized-registration">Standarized Registration & Payments</Typography>
         </Button>
       </Grid>
       <Grid item xs={12}>
-        <Button className={`${classes.buttonMargins} ${classes.buttonMargins1}`} data-id="simple-scheduling" onClick={handleClick}>
+        <Button className={`${classes.buttonMargins} ${classes.buttonMargins1}`} data-id="2" onClick={handleClick}>
           <Typography className={classes.featureslist} data-id="simple-scheduling">Simple Scheduling</Typography>
         </Button>
       </Grid>
       <Grid item xs={12}>
-        <Button className={`${classes.buttonMargins} ${classes.buttonMargins2}`} data-id="control-payments" onClick={handleClick}>
+        <Button className={`${classes.buttonMargins} ${classes.buttonMargins2}`} data-id="3" onClick={handleClick}>
           <Typography className={classes.featureslist} data-id="control-payments">Control Payments & Tuition</Typography>
         </Button>
       </Grid>
       <Grid item xs={12}>
-        <Button className={`${classes.buttonMargins} ${classes.buttonMargins3}`} data-id="centralized-user" onClick={handleClick}>
+        <Button className={`${classes.buttonMargins} ${classes.buttonMargins3}`} data-id="4" onClick={handleClick}>
           <Typography className={classes.featureslist} data-id="centralized-user">Centralized User Accounts</Typography>
         </Button>
       </Grid>
