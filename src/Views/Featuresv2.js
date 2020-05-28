@@ -45,7 +45,7 @@ const useStyles = makeStyles({
   root1: {
     width: "99%",
     backgroundColor: "#43B5D9",
-    marginLeft: ".7em",
+    marginLeft: "-2em",
     borderRadius: "1em"
   },
   bullet: {
@@ -69,7 +69,10 @@ const useStyles = makeStyles({
     marginBottom: "7.3125em",
   },
   card1: {
-    marginRight: "2em",
+    width: "96%",
+    backgroundColor: "#43B5D9",
+    marginLeft: "2.5em",
+    borderRadius: "1em"
   },
   card2: {
     marginLeft: "2em",
@@ -95,7 +98,7 @@ const Cards = (props) => {
       {props.title2 ? (
         <Grid container justify="center">
           <Grid item xs={5}>
-            <Card className={`${classes.root1} ${classes.card1}`} style={props.style}>
+            <Card className={`${classes.root1}`} style={props.style}>
               <CardContent>
                 <Typography
                   className={classes.title}
@@ -135,7 +138,7 @@ const Cards = (props) => {
         </Grid>
       ) : (
         <Grid item xs={12}>
-          <Card className={classes.root1} style={props.style}>
+          <Card className={classes.card1} style={props.style}>
             <CardContent>
               <Typography
                 className={classes.title}
