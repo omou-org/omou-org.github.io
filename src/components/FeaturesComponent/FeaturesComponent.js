@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "14.9em"
 },
 buttonMargins2: {
-    marginRight: "7.575em"
+    marginRight: "5.575em"
 },
 buttonMargins3: {
     marginRight: "7.85em"
@@ -56,12 +56,13 @@ listMargin: {
 }
 }));
 
-const FeaturesComponent = ({click}) => {
+const FeaturesComponent = ({ click, featuresArr}) => {
   const classes = useStyles();
   const handleClick = e => {
     const { id } = e.currentTarget.dataset
     click(id);
   }
+
   return (
     <Grid container className={classes.root}>
       <Grid item xs={12} md={12} lg={12}>
@@ -72,22 +73,22 @@ const FeaturesComponent = ({click}) => {
       </Grid>
       <Grid item xs={12} className={classes.listMargin}>
         <Button className={classes.buttonMargins} data-id="1" onClick={handleClick}>
-          <Typography className={classes.featureslist} data-id="standarized-registration">Standarized Registration & Payments</Typography>
+  <Typography className={classes.featureslist}>{featuresArr[0]["1"].title}</Typography>
         </Button>
       </Grid>
       <Grid item xs={12}>
         <Button className={`${classes.buttonMargins} ${classes.buttonMargins1}`} data-id="2" onClick={handleClick}>
-          <Typography className={classes.featureslist} data-id="simple-scheduling">Simple Scheduling</Typography>
+  <Typography className={classes.featureslist}>{featuresArr[1]["2"].title}</Typography>
         </Button>
       </Grid>
       <Grid item xs={12}>
         <Button className={`${classes.buttonMargins} ${classes.buttonMargins2}`} data-id="3" onClick={handleClick}>
-          <Typography className={classes.featureslist} data-id="control-payments">Control Payments & Tuition</Typography>
+  <Typography className={classes.featureslist}>{featuresArr[2]["3"].title}</Typography>
         </Button>
       </Grid>
       <Grid item xs={12}>
         <Button className={`${classes.buttonMargins} ${classes.buttonMargins3}`} data-id="4" onClick={handleClick}>
-          <Typography className={classes.featureslist} data-id="centralized-user">Centralized User Accounts</Typography>
+  <Typography className={classes.featureslist}>{featuresArr[3]["4"].title}</Typography>
         </Button>
       </Grid>
       <Grid item xs={12} className={classes.root2}>
