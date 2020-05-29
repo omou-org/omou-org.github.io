@@ -8,9 +8,9 @@ import { NavLink } from "react-router-dom";
 import { Slide } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        marginTop: "4.688em"
-    },
+  root: {
+    marginTop: "4.688em",
+  },
   title: {
     fontFamily: "Roboto Slab",
     fontStyle: "normal",
@@ -28,35 +28,35 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "300",
     fontSize: "1.5rem",
     lineHeight: "2.0625rem",
-    textAlign: "left"
+    textAlign: "left",
   },
   slideshow: {
     marginLeft: "2.5em",
-    marginTop: "4.625em"
-  }
+    marginTop: "4.625em",
+  },
 }));
 
 const FeaturesCardv2 = (props) => {
   const classes = useStyles();
-  // console.log(props)
-  const { title, subtitle, images, path } = props.data
-
+  const { title, subtitle, images, path, style } = props.data[props.keys];
 
   return (
     <>
       <Grid container className={classes.root}>
         <Grid item xs={12} md={9} lg={9}>
-          <Typography variant="h4" className={classes.title} style={props.style}>
+          <Typography
+            variant="h4"
+            className={classes.title}
+            style={{ color: style }}
+          >
             {title}
           </Typography>
         </Grid>
         <Grid item xs={12} md={7} lg={7}>
-          <p className={classes.text}>
-            {subtitle}
-          </p>
+          <p className={classes.text}>{subtitle}</p>
         </Grid>
         <Grid item xs={12} md={9} lg={9} className={classes.slideshow}>
-          <Slideshow images={images} path={path}/>
+          <Slideshow images={images} path={path} />
         </Grid>
       </Grid>
     </>
