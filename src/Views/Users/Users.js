@@ -103,7 +103,14 @@ export const Users = [
         linkedin: "https://www.linkedin.com/in/ryan-gedwill-a87960107/",
         picture_src: "ryan.png",
     },
-
+    {
+        roleId: 3,
+        name: "Gina Yoo",
+        role: "Product Designer",
+        description: "I love learning and trying new things. Addicted to coffee and playing games.",
+        linkedin: "https://www.linkedin.com/in/eunhyegina/",
+        picture_src: "gina.png"
+    },
 
     {
         roleID: 3,
