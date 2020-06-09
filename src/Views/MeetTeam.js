@@ -16,7 +16,7 @@ const MeetTeam = () => {
 
     return (
         <>
-            <Container maxWidth="md">
+            <Container maxWidth="lg">
 
                 <Typography variant="h2" align="center" className={classes.meetTeam} >We are Omou</Typography>
 
