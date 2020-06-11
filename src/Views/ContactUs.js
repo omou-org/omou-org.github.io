@@ -12,6 +12,7 @@ import {
 	CardContent,
 	CardActions
 } from "@material-ui/core";
+import Waves from "../components/Waves/Waves"
 
 const useStyles = makeStyles({
 	root: {
@@ -68,7 +69,7 @@ export default function ContactUs() {
 	const fieldWidth = "100%";
 
 	return (
-
+		<>
 		<Container maxWidth="md">
 
 			<Card variant="outlined" className={classes.root}>
@@ -136,7 +137,8 @@ export default function ContactUs() {
 				</form>
 
 			</Card>
-
 		</Container>
+			<Waves />
+			</>
 	)
 }
