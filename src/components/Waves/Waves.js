@@ -1,15 +1,11 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 
-const useStyles = makeStyles((theme) => ({
-  svgwrapper: {},
-}));
 
 const Waves = () => {
   return (
     <Grid container>
-        <Grid md={12} item>
+        <Grid sm={12} md={12} xs={12} item>
     <svg
       viewBox="0 0 1440 258"
       fill="none"
