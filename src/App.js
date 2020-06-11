@@ -215,9 +215,9 @@ const Footer = () => {
     return (
         <div
             style={{
-                backgroundColor: primaryColor,
-                color: "white",
-                marginTop: "25px",
+                backgroundColor: "#FFFFFF",
+                color: primaryColor,
+                // marginTop: "25px",
                 width: "100%",
             }}
         >

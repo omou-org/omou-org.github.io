@@ -14,6 +14,9 @@ import {
 } from "@material-ui/core";
 import { blue } from "@material-ui/core/colors";
 import { flexbox } from "@material-ui/system";
+import Waves from "../components/Waves/Waves"
+import { useLocation } from "react-router-dom";
+
 
 const useStyles = makeStyles({
 	root: {
@@ -42,6 +45,7 @@ export default function ContactUs() {
 	const [messageHTML, setMessage] = useState("");
 	const [replyTo, setReplyTo] = useState("");
 
+	const location = useLocation();
 	const classes = useStyles();
 	/***
 	 * Contact Fields
@@ -77,7 +81,7 @@ export default function ContactUs() {
 	const fieldWidth = "100%";
 
 	return (
-
+		<>
 		<Container maxWidth="md">
 <Typography
 					style={{ marginBottom: "25px", marginTop: "40px" }}
@@ -144,9 +148,8 @@ export default function ContactUs() {
 				</form>
 
 			</Card>
-
 		</Container>
-
-		
+			{location.pathname === "/contact-us" && <Waves />}
+			</>
 	)
 }
