@@ -13,6 +13,8 @@ import {
 	CardActions
 } from "@material-ui/core";
 import Waves from "../components/Waves/Waves"
+import { useLocation } from "react-router-dom";
+
 
 const useStyles = makeStyles({
 	root: {
@@ -34,6 +36,7 @@ export default function ContactUs() {
 	const [messageHTML, setMessage] = useState("");
 	const [replyTo, setReplyTo] = useState("");
 
+	const location = useLocation();
 	const classes = useStyles();
 	/***
 	 * Contact Fields
@@ -138,7 +141,7 @@ export default function ContactUs() {
 
 			</Card>
 		</Container>
-			<Waves />
+			{location.pathname === "/contact-us" && <Waves />}
 			</>
 	)
 }
