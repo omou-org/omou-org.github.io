@@ -17,6 +17,10 @@ const useStyles = makeStyles(theme => (
             textDecoration: "none",
             textDecorationColor: "inherit",
         },
+        appBar: {
+            boxShadow: "none",
+            position: "static"
+        },
         grow: { // create gap between left and right components on the app bar
             flexGrow: 1,
         },
@@ -119,7 +123,7 @@ function NavigationBar() {
     const drawer = (
         <div>
             <List>
-                {MenuItems.map((text, index) => (
+                {MenuItems.map((text) => (
                     <ListItem button key={text}>
                         <ListItemText primary={text} />
                     </ListItem>
@@ -132,8 +136,10 @@ function NavigationBar() {
 
     return <ThemeProvider theme={appBarTheme}>
         <AppBar
-            color="primary"
-            position="static">
+            color="transparent"
+
+
+        >
             <Toolbar>
                 <NavLink className={classes.link} to="/">
                     <Typography variant="h3">
