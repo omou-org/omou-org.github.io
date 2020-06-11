@@ -12,7 +12,7 @@ const useStyles = makeStyles({
 		objectFit: "cover"
 	},
 	boxSizing: {
-		width: "100%"		
+		width: "100%"
 	},
 
 	titleColor: {
@@ -26,7 +26,8 @@ const useStyles = makeStyles({
 		marginBottom: "1em",
 		fontWeight: "400",
 		letterSpacing: "0.05em",
-		fontSize: "1.9em"
+		fontSize: "1.9em",
+		fontFamily: "roboto"
 
 	},
 	headlineColor: {
@@ -35,25 +36,19 @@ const useStyles = makeStyles({
 		marginBottom: "1em",
 		letterSpacing: "0.06em",
 		fontWeight: "450",
-		fontSize: "2.55em"
+		fontSize: "2.55em",
+		fontFamily: "roboto",
 
 	},
 	aboutUs: {
 		fontSize: "1.66em",
 		lineHeight: "2.25em",
 		fontWeight: "lighter",
-		letterSpacing: "0.01em"
+		letterSpacing: "0.01em",
+
 	},
 
 	topContent: {
-		fontSize: "1.35em",
-		marginBottom: "2em",
-		lineHeight: "1.9em",
-		fontWeight: "lighter",
-		letterSpacing: "0.021em"
-
-	},
-	bottomContent: {
 		fontSize: "1.3em",
 		marginBottom: "2em",
 		lineHeight: "1.9em",
@@ -61,7 +56,6 @@ const useStyles = makeStyles({
 		letterSpacing: "0.021em"
 
 	},
-
 	box: {
 		paddingTop: "3em",
 		paddingBottom: "4em",
@@ -98,7 +92,7 @@ const AboutUs = () => {
 							ABOUT US
                     </Typography>
 						<Typography align="left" className={classes.aboutUs}>
-							We’re Omou. We’re born out of a desire to create digital spaces for tutoring 
+							We’re Omou. We’re born out of a desire to create digital spaces for tutoring
 							centers to grow and better connect their community of learners, parents, and teachers.
 							We were founded by former tutors and students who recognize vast accessibility of content and connectivity
 							opportunities enhancing the learning and teaching experiences.
@@ -120,7 +114,7 @@ const AboutUs = () => {
 							<Typography variant="h4" align="left" className={classes.subtitleColor}>
 								OUR MISSION
                     </Typography>
-							<Typography align="left" className={classes.bottomContent} >
+							<Typography align="left" className={classes.topContent} >
 								We at Omou want to remove all physical barriers that prevent students, parents, and teachers
 								from connecting with a tutoring center’s community. In the end, all that separates you and your
 								tutoring community is just 1 click away.
