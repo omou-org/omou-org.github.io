@@ -11,7 +11,7 @@ const Waves = () => {
     <Grid container>
         <Grid md={12} item>
     <svg
-      viewBox="0 0 1440 458"
+      viewBox="0 0 1440 258"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
