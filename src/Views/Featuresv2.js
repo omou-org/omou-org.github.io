@@ -6,7 +6,7 @@ import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core/styles";
 import FeaturesComponent from "../components/FeaturesComponent/FeaturesComponent";
-import FeaturesCardV2 from "../components/FeaturesCardv2/FeaturesCardv2";
+import FeaturesContent from "../components/FeaturesContent/FeaturesContent";
 import FeaturesList from "../components/FeaturesList/FeaturesList";
 import data from "../assets/dummy-data/featuresData.json";
 
@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     marginTop: "20px",
   },
   jumbotron: {
-    background: "linear-gradient(130deg,#43B5D9 65%, #28ABD5 60%)",
+    background: "linear-gradient(125deg, rgba(67, 181, 217, .9) 50%, rgba(40, 171, 213, 0.87282) 50%)",
     height: "24.919em",
     paddingTop: "2%",
     paddingRight: "18%",
@@ -28,7 +28,7 @@ const useStyles = makeStyles({
   jumbotronText: {
     marginTop: "1.5em",
     textAlign: "left",
-    fontSize: "1.1875rem",
+    fontSize: "1.2875rem",
     color: "#000000",
   },
   sturegTitle: {
@@ -67,7 +67,7 @@ const Featuresv2 = () => {
       return content.features.map((feature) => {
         let keys = Object.keys(feature);
         if (features == keys) {
-          return <FeaturesCardV2 data={feature} keys={keys} />;
+          return <FeaturesContent data={feature} keys={keys} />;
         }
       });
     }
@@ -139,10 +139,10 @@ const Featuresv2 = () => {
       return (
         <>
           <Grid container>
-            <Grid item xs={6} md={9} lg={9}>
+            <Grid item xs={6} sm={6} md={8} lg={9}>
               {renderContent(content)}
             </Grid>
-            <Grid item xs={6} md={3} lg={3}>
+            <Grid item xs={6} sm={6} md={3} lg={3}>
               {renderFeaturesList(content, handleClick)}
             </Grid>
           </Grid>
