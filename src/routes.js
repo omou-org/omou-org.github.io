@@ -8,8 +8,9 @@ import Featuresv2 from "./Views/Featuresv2";
 import AboutUs from "./Views/AboutUs";
 import ContactUs from "./Views/ContactUs";
 import Home from "./Views/Home";
+import MeetTeam from "./Views/MeetTeam";
 
-export function Routes(){
+export function Routes() {
 	return (
 		<Switch>
 			<Route path="/features" component={Features}/>
