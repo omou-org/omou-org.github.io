@@ -26,8 +26,9 @@ const UserCards = ({ user }) => {
 
         <Grid item sm={4}>
             <Card
-                className={classes.root}>
+            >
                 <CardActionArea
+                    className={classes.root}
                     disableTouchRipple={true}
                     onClick={() => {
                         window.open(user.linkedin)
