@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import Slideshow from "../Slideshow/Slideshow";
 import { NavLink } from "react-router-dom";
@@ -31,19 +32,25 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
   },
   slideshow: {
-    marginLeft: "2.5em",
-    marginTop: "4.625em",
+    marginLeft: "4.5em",
+    marginTop: "0.625em",
+    maxWidth: "45%"
   },
+  boxShadow: {
+    boxShadow: "0 4px 5px -2px gray",
+    padding: "1.3em",
+    borderRadius: ".6em"
+  }
 }));
 
-const FeaturesCardv2 = (props) => {
+const FeaturesContent = (props) => {
   const classes = useStyles();
   const { title, subtitle, images, path, style } = props.data[props.keys];
 
   return (
     <>
       <Grid container className={classes.root}>
-        <Grid item xs={12} md={9} lg={9}>
+        <Grid item xs={12} md={9} lg={9} className={classes.boxShadow}>
           <Typography
             variant="h4"
             className={classes.title}
@@ -52,7 +59,7 @@ const FeaturesCardv2 = (props) => {
             {title}
           </Typography>
         </Grid>
-        <Grid item xs={12} md={7} lg={7}>
+        <Grid item xs={12} md={9} lg={9}>
           <p className={classes.text}>{subtitle}</p>
         </Grid>
         <Grid item xs={12} md={9} lg={9} className={classes.slideshow}>
@@ -63,4 +70,4 @@ const FeaturesCardv2 = (props) => {
   );
 };
 
-export default FeaturesCardv2;
+export default FeaturesContent;

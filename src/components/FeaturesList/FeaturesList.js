@@ -7,8 +7,8 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   root: {
-    marginTop: "9.813em",
-    marginBottom: "7.313em",
+    marginTop: "2.813em",
+    marginBottom: "1.313em",
   },
   root1: {
     width: "99%",
@@ -47,7 +47,6 @@ const useStyles = makeStyles({
 });
 
 const FeaturesList = (props) => {
-  console.log(props);
   const classes = useStyles();
 
   const list1 = () => {
@@ -68,9 +67,11 @@ const FeaturesList = (props) => {
   return (
     <>
       {props.title2 ? (
-        <Grid container justify="center" className={classes.root}>
-          <Grid item xs={5}>
+        <Grid container direction="row" justify="flex-start" className={classes.root}>
+          <Grid item xs={12} sm={7} md={7} lg={7} xl={7}>
             <Card className={`${classes.root1}`}>
+              <Grid container>
+              <Grid item xs={6}>
               <CardContent>
                 <Typography
                   className={classes.title}
@@ -81,11 +82,10 @@ const FeaturesList = (props) => {
                 </Typography>
                 <ul className={classes.list1}>{list1()}</ul>
               </CardContent>
-            </Card>
-          </Grid>
+              </Grid>
+              
+          <Grid item xs={6}>
 
-          <Grid item xs={5}>
-            <Card className={`${classes.root1} ${classes.card2}`}>
               <CardContent>
                 <Typography
                   className={classes.title}
@@ -96,12 +96,17 @@ const FeaturesList = (props) => {
                 </Typography>
                 <ul className={classes.list1}>{list2()}</ul>
               </CardContent>
+          </Grid>
+          </Grid>
             </Card>
+          
+
+
           </Grid>
         </Grid>
       ) : (
         <Grid container className={classes.root}>
-          <Grid item xs={12}>
+          <Grid item xs={7}>
             <Card
               className={classes.card1}
               style={{ backgroundColor: props.style }}
