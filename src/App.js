@@ -104,6 +104,7 @@ const MenuList = ({ fontType }) => {
 
 function NavigationBar() {
     const classes = useStyles();
+    const location = useLocation();
     const [anchorEl, setAnchorEl] = useState(null);
     const [mobileOpen, setMobileOpen] = useState(false);
     const navBarList = ['Features', 'About', 'Contact Us'];
@@ -123,10 +124,21 @@ function NavigationBar() {
     const drawer = (
         <div>
             <List>
-                {MenuItems.map((text) => (
-                    <ListItem button key={text}>
-                        <ListItemText primary={text} />
-                    </ListItem>
+                {MenuItems.map(({ link, title }) => (
+                    <NavLink
+                        className={classes.link}
+                        to={link}
+                        key={title}
+                    >
+                        <Typography
+                            style={{ lineHeight: "5vh" }}
+                            align="center"
+                            className={`${classes.desktopMenuItem} ${location.pathname == link ? classes.active : ""}`}
+                        >
+                            {title}
+                        </Typography>
+                    </NavLink>
+
                 ))}
             </List>
         </div>
@@ -137,8 +149,7 @@ function NavigationBar() {
     return <ThemeProvider theme={appBarTheme}>
         <AppBar
             color="transparent"
-
-
+            position="absolute"
         >
             <Toolbar>
                 <NavLink className={classes.link} to="/">
