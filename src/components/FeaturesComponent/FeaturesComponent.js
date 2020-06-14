@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
   features: {
     fontFamily: "Roboto Slab",
     float: "left",
+    // [theme.breakpoints.between(1280, 1444)]: {
+    //   fontSize: "1.925rem !important",
+    // },
   },
   line: {
     display: "block",
@@ -24,6 +27,37 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     left: "11em",
     top: "1.75em",
+    // [theme.breakpoints.between(1710, 1849)]: {
+    //   width: "16vw"
+    // },
+    // [theme.breakpoints.between(1684, 1710)]: {
+    //   width: "15.9vw"
+    // },
+    // [theme.breakpoints.between(1675, 1684)]: {
+    //   width: "15.5vw"
+    // },
+    // [theme.breakpoints.between(1654, 1675)]: {
+    //   width: "15.3vw"
+    // },
+    // [theme.breakpoints.between(1605, 1654)]: {
+    //   width: "15vw"
+    // },
+    // [theme.breakpoints.between(1500, 1605)]: {
+    //   width: "14.9vw"
+    // },
+    // [theme.breakpoints.between(1476, 1500)]: {
+    //   width: "14.7vw"
+    // },
+    // [theme.breakpoints.between(1450, 1476)]: {
+    //   width: "14.5vw"
+    // },
+    // [theme.breakpoints.between(1440, 1450)]: {
+    //   width: "14.3vw"
+    // },
+    // [theme.breakpoints.between(1280, 1440)]: {
+    //   width: "14vw",
+    //   left: "10em"
+    // },
   },
   featureslist: {
     fontFamily: "Roboto",
@@ -32,15 +66,39 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.275rem",
     lineHeight: "1.75rem",
     whiteSpace: "nowrap",
-    [theme.breakpoints.between('xs', "sm")]: {
-      fontSize: ".3rem !important",
-    },
-    [theme.breakpoints.between('sm', "md")]: {
-      fontSize: ".4rem !important",
-    },
-    [theme.breakpoints.between('md', "lg")]: {
-      fontSize: "1rem !important",
-    },
+    // [theme.breakpoints.between(320, 360)]: {
+    //   fontSize: ".3rem !important",
+    // },
+    // [theme.breakpoints.between('sm', "md")]: {
+    //   fontSize: ".4rem !important",
+    // },
+    // [theme.breakpoints.between(1280, 1444)]: {
+    //   fontSize: ".575rem !important",
+    // },
+    // [theme.breakpoints.between(1444, 1450)]: {
+    //   fontSize: ".615rem !important",
+    // },
+    // [theme.breakpoints.between(1450, 1476)]: {
+    //   fontSize: ".615rem !important",
+    // },
+    // [theme.breakpoints.between(1476, 1500)]: {
+    //   fontSize: ".675rem !important",
+    // },
+    // [theme.breakpoints.between(1500, 1514)]: {
+    //   fontSize: ".675rem !important",
+    // },
+    // [theme.breakpoints.between(1514, 1540)]: {
+    //   fontSize: ".725rem !important",
+    // },
+    // [theme.breakpoints.between(1540, 1605)]: {
+    //   fontSize: ".775rem !important",
+    // },
+    // [theme.breakpoints.between(1605, 1700)]: {
+    //   fontSize: ".875rem !important",
+    // },
+    // [theme.breakpoints.between(1700, 1919)]: {
+    //   fontSize: "1rem !important",
+    // },
   },
   buttonMargins: {
     marginTop: ".35em",
@@ -94,12 +152,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
 const FeaturesComponent = ({ click, featuresArr }) => {
   const classes = useStyles();
   const [btnBg, setBtnBg] = useState(classes.blueBg);
   const [active, setActive] = useState("1");
   const handleClick = (e) => {
     const { id } = e.currentTarget.dataset;
+    click(id);
     switch (id) {
       case "1":
         setBtnBg(classes.blueBg);
@@ -119,7 +180,6 @@ const FeaturesComponent = ({ click, featuresArr }) => {
       default:
         return;
     }
-    click(id);
   };
 
   return (
@@ -128,7 +188,7 @@ const FeaturesComponent = ({ click, featuresArr }) => {
         <Typography variant="h4" className={classes.features}>
           Features
         </Typography>
-        <span className={classes.line}></span>
+        {/* <span className={classes.line}></span> */}
       </Grid>
       <Grid item xs={12} className={classes.listMargin}>
         <Button
