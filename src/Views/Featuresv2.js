@@ -10,7 +10,7 @@ import FeaturesContent from "../components/FeaturesContent/FeaturesContent";
 import FeaturesList from "../components/FeaturesList/FeaturesList";
 import data from "../assets/dummy-data/featuresData.json";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     marginTop: "20px",
@@ -38,13 +38,11 @@ const useStyles = makeStyles({
   alignTextLeft: {
     textAlign: "left",
   },
-
   bullet: {
     display: "inline-block",
     margin: "0 2px",
     transform: "scale(0.8)",
   },
-
   pos: {
     marginBottom: 12,
   },
@@ -52,13 +50,55 @@ const useStyles = makeStyles({
     marginTop: "9.8125em",
     marginBottom: "7.3125em",
   },
-});
+  bannerWidth: {
+    [theme.breakpoints.between(1793, 1863)]: {
+      width: "calc(100vw + 1vw)"
+    },
+    [theme.breakpoints.between(1730, 1793)]: {
+      width: "calc(100vw + 2vw)"
+    },
+    [theme.breakpoints.between(1673, 1730)]: {
+      width: "calc(100vw + 3vw)"
+    },
+    [theme.breakpoints.between(1613, 1673)]: {
+      width: "calc(100vw + 4vw)"
+    },
+    [theme.breakpoints.between(1558, 1613)]: {
+      width: "calc(100vw + 5vw)"
+    },
+    [theme.breakpoints.between(1512, 1558)]: {
+      width: "calc(100vw + 6vw)"
+    },
+    [theme.breakpoints.between(1458, 1512)]: {
+      width: "calc(100vw + 7vw)"
+    },
+    [theme.breakpoints.between(1418, 1458)]: {
+      width: "calc(100vw + 8vw)"
+    },
+    [theme.breakpoints.between(1376, 1418)]: {
+      width: "calc(100vw + 9vw)"
+    },
+    [theme.breakpoints.between(1339, 1376)]: {
+      width: "calc(100vw + 10vw)"
+    },
+    [theme.breakpoints.between(1300, 1339)]: {
+      width: "calc(100vw + 11vw)"
+    },
+    [theme.breakpoints.between(1031, 1300)]: {
+      width: "calc(100vw + 12vw)"
+    },
+    [theme.breakpoints.between(1024, 1031)]: {
+      width: "calc(100vw + 13vw)"
+    },
+  }
+}));
 
 const Featuresv2 = () => {
   const [features, setFeatures] = useState("1");
   const classes = useStyles();
   const handleClick = (id) => {
     console.log(`previous state: ${features}`);
+    console.log(id);
     setFeatures(id);
   };
 
@@ -116,7 +156,7 @@ const Featuresv2 = () => {
                 >
                   {content.banner.title}
                 </Typography>
-                <Grid container xs={12} md={6} lg={7}>
+                <Grid container xs={12} sm={6} md={6} lg={7}>
                   <Typography
                     variant="body1"
                     align="left"
@@ -142,7 +182,7 @@ const Featuresv2 = () => {
             <Grid item xs={6} sm={6} md={8} lg={9}>
               {renderContent(content)}
             </Grid>
-            <Grid item xs={6} sm={6} md={3} lg={3}>
+            <Grid item xs={6} sm={6} md={4} lg={3}>
               {renderFeaturesList(content, handleClick)}
             </Grid>
           </Grid>
