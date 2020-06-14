@@ -5,7 +5,7 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: "2.813em",
     marginBottom: "1.313em",
@@ -23,6 +23,10 @@ const useStyles = makeStyles({
     fontWeight: "900",
     lineHeight: "136.69%",
     color: "#FFFFFF",
+    [theme.breakpoints.between(768, 1279)]: {
+      fontSize: "1.25rem",
+      marginLeft: ".275em"
+    },
   },
   list1: {
     color: "#FFFFFF",
@@ -33,6 +37,9 @@ const useStyles = makeStyles({
     fontWeight: 300,
     fontSize: "1.5rem",
     marginTop: "2em",
+    [theme.breakpoints.between(1024, 1279)]: {
+      fontSize: ".85rem",
+    },
   },
   card2: {
     marginLeft: "2em",
@@ -44,7 +51,7 @@ const useStyles = makeStyles({
     marginLeft: "2.5em",
     borderRadius: "1em",
   },
-});
+}));
 
 const FeaturesList = (props) => {
   const classes = useStyles();

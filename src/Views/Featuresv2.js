@@ -24,12 +24,20 @@ const useStyles = makeStyles((theme) => ({
   jumbotronTitle: {
     textAlign: "left",
     color: "#ffffff",
+    [theme.breakpoints.between(1024, 1400)]: {
+      fontSize: "2.725rem !important",
+      marginLeft: "1em"
+    },
   },
   jumbotronText: {
     marginTop: "1.5em",
     textAlign: "left",
     fontSize: "1.2875rem",
     color: "#000000",
+    [theme.breakpoints.between(1024, 1400)]: {
+      fontSize: "1.125rem",
+      marginLeft: "2.5em"
+    },
   },
   sturegTitle: {
     fontSize: "40px",
@@ -156,7 +164,8 @@ const Featuresv2 = () => {
                 >
                   {content.banner.title}
                 </Typography>
-                <Grid container xs={12} sm={6} md={6} lg={7}>
+                <Grid container >
+                  <Grid item xs={12} sm={6} md={6} lg={6} xl={7}>
                   <Typography
                     variant="body1"
                     align="left"
@@ -167,6 +176,7 @@ const Featuresv2 = () => {
                     <br />
                     {content.banner.subtitle2}
                   </Typography>
+                  </Grid>
                 </Grid>
               </Container>
             </div>
@@ -179,10 +189,10 @@ const Featuresv2 = () => {
       return (
         <>
           <Grid container>
-            <Grid item xs={6} sm={6} md={8} lg={9}>
+            <Grid item xs={6} sm={6} md={7} lg={8} xl={9}>
               {renderContent(content)}
             </Grid>
-            <Grid item xs={6} sm={6} md={4} lg={3}>
+            <Grid item xs={6} sm={6} md={5} lg={4} xl={3}>
               {renderFeaturesList(content, handleClick)}
             </Grid>
           </Grid>
