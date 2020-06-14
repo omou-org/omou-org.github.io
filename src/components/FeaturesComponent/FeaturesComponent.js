@@ -15,9 +15,12 @@ const useStyles = makeStyles((theme) => ({
   features: {
     fontFamily: "Roboto Slab",
     float: "left",
-    // [theme.breakpoints.between(1280, 1444)]: {
-    //   fontSize: "1.925rem !important",
-    // },
+    [theme.breakpoints.between(1280, 1400)]: {
+      fontSize: "1.925rem",
+    },
+    [theme.breakpoints.between(768, 1124)]: {
+      fontSize: "1.725rem",
+    },
   },
   line: {
     display: "block",
@@ -96,9 +99,12 @@ const useStyles = makeStyles((theme) => ({
     // [theme.breakpoints.between(1605, 1700)]: {
     //   fontSize: ".875rem !important",
     // },
-    // [theme.breakpoints.between(1700, 1919)]: {
-    //   fontSize: "1rem !important",
-    // },
+    [theme.breakpoints.between(1024, 1400)]: {
+      fontSize: "1rem",
+    },
+    [theme.breakpoints.between(768, 1024)]: {
+      fontSize: ".875rem",
+    },
   },
   buttonMargins: {
     marginTop: ".35em",
@@ -108,11 +114,17 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: "rgba(67, 181, 217, 0.2)",
     },
+    [theme.breakpoints.between(1024, 1400)]: {
+      marginRight: "3.5em"
+    },
   },
   buttonMargins2: {
     marginRight: "14.9em",
     "&:hover": {
       backgroundColor: "rgba(89, 147, 73, 0.2)",
+    },
+    [theme.breakpoints.between(1024, 1400)]: {
+      marginRight: "15.2em"
     },
   },
   buttonMargins3: {
@@ -120,11 +132,17 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: "rgba(241, 151, 74, 0.2)",
     },
+    [theme.breakpoints.between(1024, 1400)]: {
+      marginRight: "7.7em"
+    },
   },
   buttonMargins4: {
     marginRight: "7.85em",
     "&:hover": {
       backgroundColor: "rgba(206, 103, 100, 0.2)",
+    },
+    [theme.breakpoints.between(1024, 1400)]: {
+      marginRight: "9.5em"
     },
   },
   demoBtn: {
@@ -184,11 +202,11 @@ const FeaturesComponent = ({ click, featuresArr }) => {
 
   return (
     <Grid container className={classes.root}>
-      <Grid item xs={3} md={6} lg={9} xl={12}>
+      <Grid item xs={12}>
         <Typography variant="h4" className={classes.features}>
           Features
         </Typography>
-        {/* <span className={classes.line}></span> */}
+        <span className={classes.line}></span>
       </Grid>
       <Grid item xs={12} className={classes.listMargin}>
         <Button
