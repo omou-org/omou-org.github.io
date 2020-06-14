@@ -11,7 +11,7 @@ import Home from "./Views/Home"
 export function Routes() {
 	return (
 		<Switch>
-			<Route path="/" component={Home} />
+			<Route exact path="/" component={Home} />
 			<Route path="/meet-team" component={MeetTeam} />
 			<Route path="/features" component={Features} />
 			<Route path="/about-us" component={AboutUs} />

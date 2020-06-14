@@ -17,7 +17,7 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles({
     root: {
-        padding: "20vh"
+        padding: '20vh'
     }
 })
 
@@ -28,19 +28,24 @@ export default function Home() {
         <div>
             <div className='background-image'>
                 <Grid container className={classes.root}>
-                    <Grid item xs={12} >
+
+                    <Grid item align="center" >
                         <Typography variant="h3" className="upper" >
                             Don’t just digitize the way your tutoring center runs - <span className="transform-colors">transform</span>  it.
 				</Typography>
-                        <Typography variant="h6" className="bottom" >
+                        <Typography className="bottom" >
                             Omou is a tutoring management service designed for remote-learning.
 				</Typography>
                     </Grid>
                 </Grid>
             </div>
 
-            <Grid container className="mid">
-                <Grid item md={4}>
+            <Grid container
+                className="mid"
+                direction="row"
+                justify="space-evenly"
+            >
+                <Grid item md={3}>
                     <Box
                         className="imageContainer"
                     >
@@ -56,7 +61,7 @@ export default function Home() {
                         Ditch the traditional ways of scheduling tutoring classes over the phone or processing payments with cash or check. Omou will help alleviate time-consuming administrative tasks and reduce human errors by providing our customers with a simple interface for the single source of truth.
 				</Typography>
                 </Grid>
-                <Grid item md={4}>
+                <Grid item md={3}>
                     <Box
                         className="imageContainer"
 
@@ -72,7 +77,7 @@ export default function Home() {
                         Miscommunication between parents and tutoring centers are often caused by disparate systems with conflicting information. Omou provides a digital central hub for parents, students, and staff alike to access personal information such as automated student progress reports, class schedules, and payment confirmations.(Comming Soon)
 				</Typography>
                 </Grid>
-                <Grid item md={4}>
+                <Grid item md={3}>
                     <Box
                         className="imageContainer"
                     >
