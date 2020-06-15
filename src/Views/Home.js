@@ -1,42 +1,74 @@
 import React from "react";
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
+import { Button, Typography, Grid, makeStyles } from "@material-ui/core";
 import studentImage from "./student.png";
 import bookImage from "./book.png";
 import loginImage from "./login.png"
+import { NavLink } from "react-router-dom";
 
 
-
+import { HomeData } from "./HomeData";
 
 import "./Home.scss";
-import Box from '@material-ui/core/Box';
-
-import Container from "@material-ui/core/Container"
-import { makeStyles } from "@material-ui/core";
 
 
-const useStyles = makeStyles({
-    root: {
-        padding: '20vh'
+
+const useStyles = makeStyles(theme => ({
+    topTextPadding: {
+        padding: "20vh",
+        [theme.breakpoints.down('sm')]: {
+            padding: "10vh",
+        }
+    },
+    scheduleImage: {
+        width: "20vh",
+        height: "20vh",
+        marginTop: "10vh",
+        [theme.breakpoints.down('sm')]: {
+            width: "15vh",
+            height: "15vh"
+        }
+    },
+    contentText: {
+        textAlign: "left",
+        fontSize: "18px",
+        lineHeight: "24px",
+        marginTop: "3vh",
+        marginBottom: "3vh",
+        [theme.breakpoints.down('sm')]: {
+            textAlign: "center"
+        }
+    },
+    learnMoreButtonSizing: {
+        width: "30em",
+        [theme.breakpoints.down('sm')]: {
+            width: "20em"
+        }
     }
-})
+
+}))
 
 export default function Home() {
     const classes = useStyles()
+
+
+
+    const { header, content } = HomeData
+
     return (
 
         <div>
             <div className='background-image'>
-                <Grid container className={classes.root}>
-
-                    <Grid item align="center" >
+                <Grid container className={classes.backgroundImagePadding}>
+                    <Grid item md />
+                    <Grid item xs={12} md={9} align="center" className={classes.topTextPadding}>
                         <Typography variant="h3" className="upper" >
-                            Don’t just digitize the way your tutoring center runs - <span className="transform-colors">transform</span>  it.
-				</Typography>
+                            {header.title} <span className="transform-colors">{header.transformText}</span>{header.textAfterTransform}
+                        </Typography>
                         <Typography className="bottom" >
-                            Omou is a tutoring management service designed for remote-learning.
-				</Typography>
+                            {header.bottomText}
+                        </Typography>
                     </Grid>
+                    <Grid item md />
                 </Grid>
             </div>
 
@@ -45,57 +77,59 @@ export default function Home() {
                 direction="row"
                 justify="space-evenly"
             >
-                <Grid item md={3}>
-                    <Box
-                        className="imageContainer"
-                    >
-                        <img
-                            className="scheduleImage"
-                            src={bookImage} />
-                    </Box>
+                <Grid item sm={12} md={3}>
+                    <img
+                        className={classes.scheduleImage}
+                        src={bookImage} />
+                    <Typography className="title1">
+                        {content.title1}
+                    </Typography>
+                    <Typography className={classes.contentText} >
+                        {content.description1}
+                    </Typography>
+                </Grid>
+                <Grid item sm={12} md={3}>
+                    <img
+                        className={classes.scheduleImage}
+                        src={loginImage} />
 
                     <Typography className="title1">
-                        Modernize Administrative Processes
-				</Typography>
-                    <Typography className="content1">
-                        Ditch the traditional ways of scheduling tutoring classes over the phone or processing payments with cash or check. Omou will help alleviate time-consuming administrative tasks and reduce human errors by providing our customers with a simple interface for the single source of truth.
-				</Typography>
-                </Grid>
-                <Grid item md={3}>
-                    <Box
-                        className="imageContainer"
+                        {content.title2}
+                    </Typography>
 
-                    >
-                        <img
-                            className="scheduleImage"
-                            src={loginImage} />
-                    </Box>
+                    <Typography className={classes.contentText}>
+                        {content.description2}
+                    </Typography>
+
+                </Grid>
+                <Grid item sm={12} md={3}>
+
+                    <img
+                        className={classes.scheduleImage}
+                        src={studentImage} />
+
                     <Typography className="title1">
-                        Elevate Communication with Parents
-				</Typography>
-                    <Typography className="content1">
-                        Miscommunication between parents and tutoring centers are often caused by disparate systems with conflicting information. Omou provides a digital central hub for parents, students, and staff alike to access personal information such as automated student progress reports, class schedules, and payment confirmations.(Comming Soon)
-				</Typography>
-                </Grid>
-                <Grid item md={3}>
-                    <Box
-                        className="imageContainer"
-                    >
-                        <img
-                            className="scheduleImage"
-                            src={studentImage} />
-                    </Box>
-                    <Typography className="title1">
-                        Set Up Students For Online Success
-				</Typography>
-                    <Typography className="content1">
-                        Remote learning is the future. Remove the friction of setting up and configuring tools for online tutoring. With the ability to create on-demand tutorials and recommended student activities built into Omou, online tutoring is now seamless and accessible for everyone involved.
-                        (Comming Soon)
-				</Typography>
+                        {content.title3}
+                    </Typography>
+                    <Typography className={classes.contentText}>
+                        {content.description3}
+                    </Typography>
                 </Grid>
 
-
-
+            </Grid>
+            <Grid container direction="row" alignContent="center" className="learnMoreContainer">
+                <Grid item xs={12}>
+                    <NavLink to="/features" style={{ textDecoration: "none", backgroundColor: "#43B5D9" }}>
+                        <Button
+                            variant="contained"
+                            size="large"
+                            style={{ color: "black", backgroundColor: "white", }}
+                            className={classes.learnMoreButtonSizing}
+                        >
+                            Learn More
+                             </Button>
+                    </NavLink>
+                </Grid>
             </Grid>
 
         </div>)
