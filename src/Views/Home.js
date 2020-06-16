@@ -64,7 +64,7 @@ export default function Home() {
                         <Typography variant="h3" className="upper" >
                             {header.title} <span className="transform-colors">{header.transformText}</span>{header.textAfterTransform}
                         </Typography>
-                        <Typography className="bottom" >
+                        <Typography variant="h5" className="bottom" >
                             {header.bottomText}
                         </Typography>
                     </Grid>
