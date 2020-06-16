@@ -107,6 +107,7 @@ function NavigationBar() {
     const location = useLocation();
     const [anchorEl, setAnchorEl] = useState(null);
     const [mobileOpen, setMobileOpen] = useState(false);
+
     const navBarList = ['Features', 'About', 'Contact Us'];
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -144,11 +145,9 @@ function NavigationBar() {
         </div>
     );
 
-
-
     return <ThemeProvider theme={appBarTheme}>
         <AppBar
-            color="transparent"
+            color={location.pathname === '/' ? "transparent" : "primary"}
             position="absolute"
         >
             <Toolbar>
@@ -174,6 +173,7 @@ function NavigationBar() {
                         id="about-menu"
                         anchorEl={anchorEl}
                         keepMounted
+                        disableScrollLock={true}
                         open={Boolean(anchorEl)}
                         onClose={handleClose}
                     >
@@ -188,7 +188,9 @@ function NavigationBar() {
                             <NavLink
                                 to="meet-team"
                                 style={{ color: "black", textDecoration: "none" }}
-                            >Meet the Team</NavLink>
+                            >
+                                Meet the Team
+                                </NavLink>
 
                         </MenuItem>
                     </Menu>
