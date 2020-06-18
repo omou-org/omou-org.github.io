@@ -255,7 +255,7 @@ function App() {
         <ThemeProvider theme={theme}>
             <Router>
                 <div className="App">
-                    {/* <NavigationBar /> */}
+                    <NavigationBar />
                     <Routes />
                     <Footer />
                 </div>

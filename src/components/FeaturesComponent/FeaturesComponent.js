@@ -18,8 +18,14 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.between(1280, 1400)]: {
       fontSize: "1.925rem",
     },
-    [theme.breakpoints.between(768, 1124)]: {
+    [theme.breakpoints.between(601, 1124)]: {
       fontSize: "1.725rem",
+    },
+    [theme.breakpoints.between(834, 960)]: {
+      marginLeft: "3em",
+    },
+    [theme.breakpoints.between(601, 834)]: {
+      marginLeft: "2em",
     },
   },
   line: {
@@ -30,37 +36,39 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     left: "11em",
     top: "1.75em",
-    // [theme.breakpoints.between(1710, 1849)]: {
-    //   width: "16vw"
-    // },
-    // [theme.breakpoints.between(1684, 1710)]: {
-    //   width: "15.9vw"
-    // },
-    // [theme.breakpoints.between(1675, 1684)]: {
-    //   width: "15.5vw"
-    // },
-    // [theme.breakpoints.between(1654, 1675)]: {
-    //   width: "15.3vw"
-    // },
-    // [theme.breakpoints.between(1605, 1654)]: {
-    //   width: "15vw"
-    // },
-    // [theme.breakpoints.between(1500, 1605)]: {
-    //   width: "14.9vw"
-    // },
-    // [theme.breakpoints.between(1476, 1500)]: {
-    //   width: "14.7vw"
-    // },
-    // [theme.breakpoints.between(1450, 1476)]: {
-    //   width: "14.5vw"
-    // },
-    // [theme.breakpoints.between(1440, 1450)]: {
-    //   width: "14.3vw"
-    // },
-    // [theme.breakpoints.between(1280, 1440)]: {
-    //   width: "14vw",
-    //   left: "10em"
-    // },
+    [theme.breakpoints.between(1124, 1920)]: {
+      width: "20.7vw",
+    },
+    [theme.breakpoints.between(960, 1124)]: {
+      width: "24.7vw",
+      top: "1.35em",
+      left: "9em",
+    },
+    [theme.breakpoints.between(834, 960)]: {
+      left: "15em",
+      top: "1.35em",
+      width: "24.7vw",
+    },
+    [theme.breakpoints.between(779, 834)]: {
+      left: "13em",
+      width: "24.7vw",
+      top: "1.35em",
+    },
+    [theme.breakpoints.between(718, 779)]: {
+      left: "13em",
+      width: "24.7vw",
+      top: "1.35em",
+    },
+    [theme.breakpoints.between(670, 718)]: {
+      left: "13em",
+      width: "22.7vw",
+      top: "1.35em",
+    },
+    [theme.breakpoints.between(601, 670)]: {
+      left: "13em",
+      top: "1.3em",
+      width: "20.7vw",
+    },
   },
   featureslist: {
     fontFamily: "Roboto",
@@ -69,41 +77,14 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.275rem",
     lineHeight: "1.75rem",
     whiteSpace: "nowrap",
-    // [theme.breakpoints.between(320, 360)]: {
-    //   fontSize: ".3rem !important",
-    // },
-    // [theme.breakpoints.between('sm', "md")]: {
-    //   fontSize: ".4rem !important",
-    // },
-    // [theme.breakpoints.between(1280, 1444)]: {
-    //   fontSize: ".575rem !important",
-    // },
-    // [theme.breakpoints.between(1444, 1450)]: {
-    //   fontSize: ".615rem !important",
-    // },
-    // [theme.breakpoints.between(1450, 1476)]: {
-    //   fontSize: ".615rem !important",
-    // },
-    // [theme.breakpoints.between(1476, 1500)]: {
-    //   fontSize: ".675rem !important",
-    // },
-    // [theme.breakpoints.between(1500, 1514)]: {
-    //   fontSize: ".675rem !important",
-    // },
-    // [theme.breakpoints.between(1514, 1540)]: {
-    //   fontSize: ".725rem !important",
-    // },
-    // [theme.breakpoints.between(1540, 1605)]: {
-    //   fontSize: ".775rem !important",
-    // },
-    // [theme.breakpoints.between(1605, 1700)]: {
-    //   fontSize: ".875rem !important",
-    // },
     [theme.breakpoints.between(1024, 1400)]: {
       fontSize: "1rem",
     },
-    [theme.breakpoints.between(768, 1024)]: {
-      fontSize: ".875rem",
+    [theme.breakpoints.between(715, 1024)]: {
+      fontSize: ".825rem",
+    },
+    [theme.breakpoints.between(601, 715)]: {
+      fontSize: ".7rem",
     },
   },
   buttonMargins: {
@@ -115,7 +96,22 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "rgba(67, 181, 217, 0.2)",
     },
     [theme.breakpoints.between(1024, 1400)]: {
-      marginRight: "3.5em"
+      marginRight: "3.5em",
+    },
+    [theme.breakpoints.between(815, 1024)]: {
+      marginRight: "8.5em",
+    },
+    [theme.breakpoints.between(715, 960)]: {
+      marginLeft: "2.6em",
+      marginRight: 0,
+    },
+    [theme.breakpoints.between(617, 715)]: {
+      marginLeft: "2em",
+      marginRight: 0,
+    },
+    [theme.breakpoints.between(601, 617)]: {
+      marginLeft: "1.7em",
+      marginRight: 0,
     },
   },
   buttonMargins2: {
@@ -124,7 +120,16 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "rgba(89, 147, 73, 0.2)",
     },
     [theme.breakpoints.between(1024, 1400)]: {
-      marginRight: "15.2em"
+      marginRight: "15.2em",
+    },
+    [theme.breakpoints.between(960, 1024)]: {
+      marginRight: "17.5em",
+    },
+    [theme.breakpoints.between(715, 960)]: {
+      marginRight: "7em",
+    },
+    [theme.breakpoints.between(601, 715)]: {
+      marginRight: "6.5em",
     },
   },
   buttonMargins3: {
@@ -133,7 +138,19 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "rgba(241, 151, 74, 0.2)",
     },
     [theme.breakpoints.between(1024, 1400)]: {
-      marginRight: "7.7em"
+      marginRight: "7.7em",
+    },
+    [theme.breakpoints.between(960, 1024)]: {
+      marginRight: "11.5em",
+    },
+    [theme.breakpoints.between(715, 960)]: {
+      marginRight: ".9em",
+    },
+    [theme.breakpoints.between(678, 715)]: {
+      marginRight: "1.4em",
+    },
+    [theme.breakpoints.between(601, 678)]: {
+      marginRight: "1.3em",
     },
   },
   buttonMargins4: {
@@ -142,13 +159,28 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "rgba(206, 103, 100, 0.2)",
     },
     [theme.breakpoints.between(1024, 1400)]: {
-      marginRight: "9.5em"
+      marginRight: "9.5em",
+    },
+    [theme.breakpoints.between(960, 1024)]: {
+      marginRight: "13em",
+    },
+    [theme.breakpoints.between(714, 960)]: {
+      marginRight: "2.5em",
+    },
+    [theme.breakpoints.between(601, 714)]: {
+      marginRight: "2.7em",
     },
   },
   demoBtn: {
     color: "#ffffff",
     marginRight: "11.625em",
     padding: ".5em 4em",
+    [theme.breakpoints.between(961, 1280)]: {
+      marginRight: "5.5em",
+    },
+    [theme.breakpoints.between(601, 961)]: {
+      marginRight: "1em",
+    },
   },
   listMargin: {
     marginTop: "2.5625em",
@@ -169,8 +201,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "rgba(206, 103, 100, 0.2)",
   },
 }));
-
-
 
 const FeaturesComponent = ({ click, featuresArr }) => {
   const classes = useStyles();

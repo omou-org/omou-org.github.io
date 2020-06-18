@@ -2,11 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import Paper from "@material-ui/core/Paper";
-import Button from "@material-ui/core/Button";
 import Slideshow from "../Slideshow/Slideshow";
-import { NavLink } from "react-router-dom";
-import { Slide } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,28 +15,50 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: "2.9375rem",
     color: "#1F82A1",
     float: "left",
-    marginLeft: "1.9em",
+    marginLeft: "1.3em",
+    [theme.breakpoints.between(802, 961)]: {
+      fontSize: "1.725rem",
+    },
+    [theme.breakpoints.between(788, 802)]: {
+      fontSize: "1.525rem",
+    },
+    [theme.breakpoints.between(601, 788)]: {
+      fontSize: "1.5rem",
+      marginLeft: ".5em",
+    },
   },
   text: {
     float: "left",
-    marginLeft: "2.75em",
+    marginLeft: "2.65em",
     fontFamily: "Roboto",
     fontStyle: "normal",
     fontWeight: "300",
     fontSize: "1.5rem",
     lineHeight: "2.0625rem",
     textAlign: "left",
+    [theme.breakpoints.between(601, 961)]: {
+      fontSize: "1.225rem",
+    },
+    [theme.breakpoints.between(601, 788)]: {
+      marginLeft: "2.45em",
+    },
   },
   slideshow: {
     marginLeft: "4.5em",
     marginTop: "0.625em",
-    maxWidth: "45%"
+    maxWidth: "45%",
+    [theme.breakpoints.between(788, 961)]: {
+      maxWidth: "55%",
+    },
+    [theme.breakpoints.between(601, 788)]: {
+      maxWidth: "65%",
+    },
   },
   boxShadow: {
     boxShadow: "0 4px 5px -2px gray",
     padding: "1.3em",
-    borderRadius: ".6em"
-  }
+    borderRadius: ".6em",
+  },
 }));
 
 const FeaturesContent = (props) => {
