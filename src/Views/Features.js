@@ -179,7 +179,7 @@ const Features = () => {
       return (
         <>
           <CssBaseline />
-          <Paper elevation={3}>
+          <Paper elevation={3} style={{marginTop: "4em"}}>
             <div className={classes.jumbotron}>
               <Container maxWidth="xl" disableGutters>
                 <Typography
@@ -232,7 +232,7 @@ const Features = () => {
       return (
         <>
           <div className={classes.root1}>
-            <Paper elevation={3}>
+            <Paper elevation={3} style={{marginTop: "4em"}}>
               <Container maxWidth="xl" disableGutters>
                 <Typography
                   variant={width <= 360 ? "h4" : "h2"}
