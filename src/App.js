@@ -17,6 +17,10 @@ const useStyles = makeStyles(theme => (
             textDecoration: "none",
             textDecorationColor: "inherit",
         },
+        appBar: {
+            boxShadow: "none",
+            position: "static"
+        },
         grow: { // create gap between left and right components on the app bar
             flexGrow: 1,
         },
@@ -100,8 +104,10 @@ const MenuList = ({ fontType }) => {
 
 function NavigationBar() {
     const classes = useStyles();
+    const location = useLocation();
     const [anchorEl, setAnchorEl] = useState(null);
     const [mobileOpen, setMobileOpen] = useState(false);
+
     const navBarList = ['Features', 'About', 'Contact Us'];
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -119,21 +125,31 @@ function NavigationBar() {
     const drawer = (
         <div>
             <List>
-                {MenuItems.map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemText primary={text} />
-                    </ListItem>
+                {MenuItems.map(({ link, title }) => (
+                    <NavLink
+                        className={classes.link}
+                        to={link}
+                        key={title}
+                    >
+                        <Typography
+                            style={{ lineHeight: "5vh" }}
+                            align="center"
+                            className={`${classes.desktopMenuItem} ${location.pathname == link ? classes.active : ""}`}
+                        >
+                            {title}
+                        </Typography>
+                    </NavLink>
+
                 ))}
             </List>
         </div>
     );
 
-
-
     return <ThemeProvider theme={appBarTheme}>
         <AppBar
-            color="primary"
-            position="static">
+            color={location.pathname === '/' ? "transparent" : "primary"}
+            position="absolute"
+        >
             <Toolbar>
                 <NavLink className={classes.link} to="/">
                     <Typography variant="h3">
@@ -157,6 +173,7 @@ function NavigationBar() {
                         id="about-menu"
                         anchorEl={anchorEl}
                         keepMounted
+                        disableScrollLock={true}
                         open={Boolean(anchorEl)}
                         onClose={handleClose}
                     >
@@ -171,7 +188,9 @@ function NavigationBar() {
                             <NavLink
                                 to="meet-team"
                                 style={{ color: "black", textDecoration: "none" }}
-                            >Meet the Team</NavLink>
+                            >
+                                Meet the Team
+                                </NavLink>
 
                         </MenuItem>
                     </Menu>
@@ -217,7 +236,6 @@ const Footer = () => {
             style={{
                 backgroundColor: "#FFFFFF",
                 color: primaryColor,
-                // marginTop: "25px",
                 width: "100%",
             }}
         >
@@ -240,7 +258,7 @@ const Footer = () => {
                         <MenuList fontType="body1" />
                     </Grid>
                     <Grid item md={12} xs={12}>
-                        <Typography variant="body1">
+                        <Typography variant="body1" style={{ color: "black" }}>
                             © 2020 Omou
                     </Typography>
                     </Grid>
