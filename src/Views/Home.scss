@@ -1,116 +1,41 @@
-.top{
-    width:100%;
-    height:60vh;
-    background-color:white;
-    .topContent{
-        padding:10%;
-        text-align:left;
-        .upper{
-            font-size:50px;
-            font-weight:bold;
-        }
-        .bottom{
-            padding-top:20px;
-            font-size:20px;
-        }
-    }
+.body{
+  padding-right: 0 !important;
 }
+
+ .bottom{
+     padding-top:20px;
+     font-size: 40px ;
+ }
 .mid{
-    width:100%;
-    height:90vh;
-    background-color:#43B5D9;
-    .midContent{
-        padding:10%;
-        font-size:50px;
-        text-align:left;
-        
-        .upper{
-            padding-bottom: 20px;
-            color:white;
-            font-weight:bold;
-        }
-        .bottom{
-            color:white;
+  background-color:#43B5D9;
+.scheduleImage{
+    width: 20vh;
+    height: 20vh;
+    margin-top: 10vh;
+}
+.title1{
+    margin-top: 3vh;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+}
+.content1{
+    text-align: left;
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+ }
 
-        }
-    }
-    .imageContainer{
-        text-align:center;
-        margin-top:7%;
-        margin-left: 7%;
-       .paymentImage{
-        height:40vh;
-        width:40vw;
-        }
-    }
-}
-.bot{
-    width:100%;
-    height:90vh;
-    background-color:white;
-    .botContent{
-        padding:10%;
-        font-size:50px;
-        text-align:left;
-        
-        .upper{
-            padding-bottom: 20px;
-            color:#43B5D9;
-            font-weight:bold;
-        }
-        .bottom{
-            color:#666666;
 
-        }
-        
-    }
-    .imageContainer{
-        text-align:left;
-        margin:10%;
-        margin-top:25%;
-        height:40vh;
-        width:40vw;
-       .scheduleImage{
-        height:40vh;
-        width:40vw;
-        }
-    }
 }
-.bot2{
-    width:100%;
-    height:90vh;
-    background-color:#43B5D9;
-    .bot2Content{
-        padding:10%;
-        font-size:50px;
-        text-align:left;
-        
-        .upper{
-            padding-bottom: 20px;
-            color:white;
-            font-weight:bold;
-        }
-        .bottom{
-            color:white;
 
-        }
-        
-    }
-    .imageContainer{
-        text-align:left;
-        margin:10%;
-        margin-top:25%;
-        height:40vh;
-        width:40vw;
-       .scheduleImage{
-        height:40vh;
-        width:40vw;
-        }
-    }
+.learnMoreContainer{
+  background-color: #43B5D9;
+  padding: 4vh;
 }
-.button{
-    border-radius:25;
-}
+
+
 
 .transform-colors {
     animation: pulse 5s infinite;
@@ -129,3 +54,26 @@
       color: #CE6764;
     }
   }
+
+  .background-image {
+    z-index: 1;
+    height: 100%;
+    
+  }
+    
+.background-image:before{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url("./backgroundImage.jpg");
+  background-size: cover;
+  opacity: .25;
+  background-repeat: no-repeat;
+ 
+ 
+}
+
