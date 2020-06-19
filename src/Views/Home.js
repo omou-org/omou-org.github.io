@@ -9,6 +9,7 @@ import { NavLink } from "react-router-dom";
 import { HomeData } from "./HomeData";
 
 import "./Home.scss";
+import ContactUs from "./ContactUs";
 
 
 

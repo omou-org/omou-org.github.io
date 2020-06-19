@@ -234,9 +234,9 @@ const Footer = () => {
     return (
         <div
             style={{
-                backgroundColor: primaryColor,
-                color: "white",
-                marginTop: "25px",
+                backgroundColor: "white",
+                color: primaryColor,
+
                 width: "100%",
             }}
         >
@@ -259,7 +259,7 @@ const Footer = () => {
                         <MenuList fontType="body1" />
                     </Grid>
                     <Grid item md={12} xs={12}>
-                        <Typography variant="body1">
+                        <Typography variant="body1" style={{ color: "black" }}>
                             © 2020 Omou
                     </Typography>
                     </Grid>
