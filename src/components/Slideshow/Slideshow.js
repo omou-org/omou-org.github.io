@@ -4,7 +4,6 @@ import Items from "../Items/Items";
 
 const Slideshow = ({ images, path }) => {
   return (
-
     <Carousel autoPlay animation="fade" fullHeightHover="false">
 
       {images.map((image) => (

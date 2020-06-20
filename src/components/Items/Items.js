@@ -19,7 +19,7 @@ const Items = (props) => {
         className={classes.image}
         alt={props.item}
         height="auto"
-        width="80%"
+        width="100%"
       />
     </Paper>
   );
