@@ -12,7 +12,7 @@ import Grid from '@material-ui/core/Grid'
 const useStyles = makeStyles({
     root: {
         maxWidth: 400,
-        height: 500,
+        height: 500
     },
     media: {
         height: 300,
@@ -20,6 +20,10 @@ const useStyles = makeStyles({
         borderRadius: '50%',
 
     },
+
+    cardTitle: {
+        fontSize: "2em"
+    }
 });
 
 const UserCards = ({ user }) => {
@@ -43,9 +47,7 @@ const UserCards = ({ user }) => {
                     />
                     <CardContent>
                         <Typography
-                            gutterBottom
-                            variant="h5"
-                            component="h2"
+                            className={classes.cardTitle}
                             align="left"
                         >
                             {user.name}

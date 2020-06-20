@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => (
             fontWeight: "400"
         },
         footer: {
-            padding: "3%"
+            padding: "3%",
         },
         active: {
             textDecoration: "underline",
@@ -250,7 +250,7 @@ const Footer = () => {
                     alignItems="flex-end"
                 >
                     <Grid item md={12} xs={12}>
-                        <Typography variant="h3">
+                        <Typography variant="h3" style={{marginBottom:"1.5vh"}}>
                             omou
                     </Typography>
                     </Grid>
