@@ -250,9 +250,15 @@ const Footer = () => {
                     alignItems="flex-end"
                 >
                     <Grid item md={12} xs={12}>
-                        <Typography variant="h3" style={{marginBottom:"1.5vh"}}>
-                            omou
+
+                        <NavLink
+                            to="/"
+                            style={{ textDecoration: "none", color: primaryColor }}
+                        >
+                            <Typography variant="h3" style={{marginBottom:"1.5vh"}>
+                                omou
                     </Typography>
+                        </NavLink>
                     </Grid>
                     <Grid item md={12} xs={12}>
                         <MenuList fontType="body1" />
