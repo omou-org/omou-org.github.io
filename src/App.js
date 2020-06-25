@@ -254,7 +254,7 @@ const Footer = () => {
                             to="/"
                             style={{ textDecoration: "none", color: primaryColor }}
                         >
-                            <Typography variant="h3">
+                            <Typography variant="h3" style={{ marginBottom: "1.5vh" }}>
                                 omou
                     </Typography>
                         </NavLink>
@@ -263,7 +263,7 @@ const Footer = () => {
                         <MenuList fontType="body1" />
                     </Grid>
                     <Grid item md={12} xs={12}>
-                        <Typography variant="body1" style={{ color: "black" }}>
+                        <Typography variant="body1" style={{ color: "black", }}>
                             © 2020 Omou
                     </Typography>
                     </Grid>
