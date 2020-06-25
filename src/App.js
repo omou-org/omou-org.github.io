@@ -255,7 +255,7 @@ const Footer = () => {
                             to="/"
                             style={{ textDecoration: "none", color: primaryColor }}
                         >
-                            <Typography variant="h3" style={{marginBottom:"1.5vh"}>
+                            <Typography variant="h3" style={{ marginBottom: "1.5vh" }}>
                                 omou
                     </Typography>
                         </NavLink>
