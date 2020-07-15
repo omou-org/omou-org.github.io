@@ -12,20 +12,32 @@ import {
 	CardContent,
 	CardActions
 } from "@material-ui/core";
+import { blue } from "@material-ui/core/colors";
+import { flexbox } from "@material-ui/system";
+import Waves from "../components/Waves/Waves"
+import { useLocation } from "react-router-dom";
+
 
 const useStyles = makeStyles({
 	root: {
-		marginTop: "100px",
-		backgroundColor: "#F8F8F8",
-		boxShadow: "2px 2px 1px rgba(0, 0, 0, 0.25)",
-		marginBottom: "100px",
+		marginTop: "5em",
+		backgroundColor: "#FFFFFF",
+		boxShadow: "2px 5px 6px rgba(0, 0, 0, 0.25)",
+		marginBottom: "8em",
+		padding: "2em",
 	},
 	textBox: {
 		backgroundColor: "#FFFFFF"
 	},
 	sendButton: {
-		marginLeft: "8px"
-	}
+		margin: "0 auto"
+
+	},
+
+	header: {
+		color: "#43B5D9",
+		paddingTop: "1.5em"	
+}
 })
 
 export default function ContactUs() {
@@ -33,6 +45,7 @@ export default function ContactUs() {
 	const [messageHTML, setMessage] = useState("");
 	const [replyTo, setReplyTo] = useState("");
 
+	const location = useLocation();
 	const classes = useStyles();
 	/***
 	 * Contact Fields
@@ -68,16 +81,15 @@ export default function ContactUs() {
 	const fieldWidth = "100%";
 
 	return (
-
+		<>
 		<Container maxWidth="md">
-
-			<Card variant="outlined" className={classes.root}>
-				<Typography
+<Typography
 					style={{ marginBottom: "25px", marginTop: "40px" }}
-					variant="h2"
-				>
+					variant="h2" className={classes.header}>
 					Contact Us
 					</Typography>
+			<Card variant="outlined" className={classes.root}>
+				
 
 				<form className="contact-form" onSubmit={sendEmail}>
 					<CardContent>
@@ -136,7 +148,8 @@ export default function ContactUs() {
 				</form>
 
 			</Card>
-
 		</Container>
+			{location.pathname === "/contact-us" && <Waves />}
+			</>
 	)
 }

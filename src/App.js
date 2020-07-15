@@ -1,56 +1,87 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import { appBarTheme, theme } from './theme/theme'
-import { AppBar, Toolbar, Typography, Container, Grid } from "@material-ui/core";
+import { AppBar, Toolbar, Typography, Container, Grid, Button, Menu, MenuItem, Hidden, Drawer, IconButton, List, ListItem, ListItemText } from "@material-ui/core";
 import { BrowserRouter as Router, NavLink, useLocation } from "react-router-dom";
+import MenuIcon from '@material-ui/icons/Menu';
 import { Routes } from "./routes";
 import { primaryColor } from "./theme/colors";
 
+const drawerWidth = 150;
+const useStyles = makeStyles(theme => (
 
-const useStyles = makeStyles({
-    link: {
-        textDecoration: "none",
-        textDecorationColor: "inherit",
+    {
+        link: {
+            textDecoration: "none",
+            textDecorationColor: "inherit",
+        },
+        appBar: {
+            boxShadow: "none",
+            position: "static"
+        },
+        grow: { // create gap between left and right components on the app bar
+            flexGrow: 1,
+        },
+        desktopMenu: {
+            display: "flex"
+        },
+        desktopMenuItem: {
+            marginLeft: "20px",
+            color: "black",
+            display: "inline-block",
+            fontWeight: "400"
+        },
+        footer: {
+            padding: "3%",
+        },
+        active: {
+            textDecoration: "underline",
+        },
+        drawer: {
+            [theme.breakpoints.up('sm')]: {
+                width: drawerWidth,
+                flexShrink: 0,
+            },
+        },
+        drawerPaper: {
+            width: drawerWidth
+        },
+        menuButton: {
+            marginRight: theme.spacing(2),
+            [theme.breakpoints.up('sm')]: {
+                display: 'none',
+            },
+        },
+        closeMenuButton: {
+            marginRight: 'auto',
+            marginLeft: 0,
+        },
+    }));
+
+
+const MenuItems = [
+    {
+        title: "Features",
+        link: "/features",
     },
-    grow: { // create gap between left and right components on the app bar
-        flexGrow: 1,
+    {
+        title: "About Us",
+        link: "/about-us",
     },
-    desktopMenu: {
-        display: "flex"
+    {
+        title: "Contact Us",
+        link: "/contact-us",
     },
-    desktopMenuItem: {
-        marginLeft: "20px",
-        color: "black",
-        display: "inline-block",
-        fontWeight: "400"
-    },
-    footer: {
-        padding: "3%"
-    },
-    active: {
-        textDecoration: "underline",
-    }
-});
+];
+
 
 const MenuList = ({ fontType }) => {
     const classes = useStyles();
     const location = useLocation();
-    const MenuItems = [
-        {
-            title: "Features",
-            link: "/features",
-        },
-        {
-            title: "About Us",
-            link: "/about-us",
-        },
-        {
-            title: "Contact Us",
-            link: "/contact-us",
-        },
-    ];
+
+
 
     return MenuItems.map(({ title, link }) => (
         <NavLink
@@ -69,13 +100,56 @@ const MenuList = ({ fontType }) => {
     ));
 }
 
+
+
 function NavigationBar() {
     const classes = useStyles();
+    const location = useLocation();
+    const [anchorEl, setAnchorEl] = useState(null);
+    const [mobileOpen, setMobileOpen] = useState(false);
+
+    const navBarList = ['Features', 'About', 'Contact Us'];
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    }
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    }
+
+    function handleDrawerToggle(e) {
+        e.preventDefault();
+        setMobileOpen(!mobileOpen)
+    }
+
+    const drawer = (
+        <div>
+            <List>
+                {MenuItems.map(({ link, title }) => (
+                    <NavLink
+                        className={classes.link}
+                        to={link}
+                        key={title}
+                    >
+                        <Typography
+                            style={{ lineHeight: "5vh" }}
+                            align="center"
+                            className={`${classes.desktopMenuItem} ${location.pathname == link ? classes.active : ""}`}
+                        >
+                            {title}
+                        </Typography>
+                    </NavLink>
+
+                ))}
+            </List>
+        </div>
+    );
 
     return <ThemeProvider theme={appBarTheme}>
         <AppBar
-            color="primary"
-            position="static">
+            color={location.pathname === '/' ? "transparent" : "primary"}
+            position="absolute"
+        >
             <Toolbar>
                 <NavLink className={classes.link} to="/">
                     <Typography variant="h3">
@@ -84,8 +158,73 @@ function NavigationBar() {
                 </NavLink>
                 <div className={classes.grow} />
                 <div className={classes.desktopMenu}>
-                    <MenuList fontType="h6" />
+
                 </div>
+                <Hidden xsDown>
+                    <NavLink to="/features" style={{ textDecoration: "none", marginLeft: "10px" }}>
+                        <Button>
+                            Features
+                             </Button>
+                    </NavLink>
+                    <Button aria-controls="about-menu" aria-haspopup="true" onClick={handleClick}>
+                        About
+                             </Button>
+                    <Menu
+                        id="about-menu"
+                        anchorEl={anchorEl}
+                        keepMounted
+                        disableScrollLock={true}
+                        open={Boolean(anchorEl)}
+                        onClose={handleClose}
+                    >
+                        <MenuItem onClick={handleClose} >
+                            <NavLink
+                                to="about-us"
+                                style={{ color: "black", textDecoration: "none" }}
+                            >About Us</NavLink>
+                        </MenuItem>
+
+                        <MenuItem onClick={handleClose}  >
+                            <NavLink
+                                to="meet-team"
+                                style={{ color: "black", textDecoration: "none" }}
+                            >
+                                Meet the Team
+                                </NavLink>
+
+                        </MenuItem>
+                    </Menu>
+                    <NavLink to="/contact-us" style={{ textDecoration: "none", marginLeft: "10px" }}>
+                        <Button
+                            variant="contained"
+                            size="large"
+                            style={{ color: "white", backgroundColor: "#43B5D9", }}
+                        >
+                            Contact Us
+                             </Button>
+                    </NavLink>
+                </Hidden>
+                {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+
+                <Hidden smUp >
+                    <IconButton onClick={handleDrawerToggle} className={classes.closeMenuButton}>
+                        <MenuIcon style={{ color: primaryColor }} />
+                    </IconButton>
+                    <Drawer
+                        variant="temporary"
+                        anchor="right"
+                        open={mobileOpen}
+                        onClose={handleDrawerToggle}
+                        classes={{
+                            paper: classes.drawerPaper,
+                        }}
+                        ModalProps={{
+                            keepMounted: true, // Better open performance on mobile.
+                        }}
+                    >
+                        {drawer}
+                    </Drawer>
+                </Hidden>
             </Toolbar>
         </AppBar>
     </ThemeProvider>;
@@ -95,10 +234,9 @@ const Footer = () => {
     return (
         <div
             style={{
-                backgroundColor: primaryColor,
-                color: "white",
-                marginTop: "25px",
-                width:"100%",
+                backgroundColor: "#FFFFFF",
+                color: primaryColor,
+                width: "100%",
             }}
         >
             <Container
@@ -111,16 +249,22 @@ const Footer = () => {
                     container
                     alignItems="flex-end"
                 >
-                    <Grid item md={2} xs={12}>
-                        <Typography variant="h3">
-                            omou
+                    <Grid item md={12} xs={12}>
+
+                        <NavLink
+                            to="/"
+                            style={{ textDecoration: "none", color: primaryColor }}
+                        >
+                            <Typography variant="h3" style={{ marginBottom: "1.5vh" }}>
+                                omou
                     </Typography>
+                        </NavLink>
                     </Grid>
-                    <Grid item md={4} xs={12}>
+                    <Grid item md={12} xs={12}>
                         <MenuList fontType="body1" />
                     </Grid>
-                    <Grid item md={2} xs={12}>
-                        <Typography variant="body1">
+                    <Grid item md={12} xs={12}>
+                        <Typography variant="body1" style={{ color: "black" }}>
                             © 2020 Omou
                     </Typography>
                     </Grid>

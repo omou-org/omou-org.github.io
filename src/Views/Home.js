@@ -1,17 +1,52 @@
 import React from "react";
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import studentsImage from './omoukids.png'
-import people from './people.jpg'
-import "./Home.scss";
-import Box from '@material-ui/core/Box';
-import Hidden from '@material-ui/core/Hidden';
-import ContactUs from './ContactUs'
+import { Button, Typography, Grid, makeStyles } from "@material-ui/core";
+import studentImage from "./student.png";
+import bookImage from "./book.png";
+import loginImage from "./login.png"
 import { NavLink } from "react-router-dom";
-import Slideshow from "../components/Slideshow/Slideshow"
-import Button from "@material-ui/core/Button";
-import Container from "@material-ui/core/Container"
 
+
+import { HomeData } from "./HomeData";
+
+import "./Home.scss";
+import ContactUs from "./ContactUs";
+
+
+
+const useStyles = makeStyles(theme => ({
+    topTextPadding: {
+        padding: "20vh",
+        [theme.breakpoints.down('sm')]: {
+            padding: "10vh",
+        }
+    },
+    scheduleImage: {
+        width: "20vh",
+        height: "20vh",
+        marginTop: "10vh",
+        [theme.breakpoints.down('sm')]: {
+            width: "15vh",
+            height: "15vh"
+        }
+    },
+    contentText: {
+        textAlign: "left",
+        fontSize: "18px",
+        lineHeight: "24px",
+        marginTop: "3vh",
+        marginBottom: "3vh",
+        [theme.breakpoints.down('sm')]: {
+            textAlign: "center"
+        }
+    },
+    learnMoreButtonSizing: {
+        width: "30em",
+        [theme.breakpoints.down('sm')]: {
+            width: "20em"
+        }
+    }
+
+}))
 
 export default function Home() {
     return (
