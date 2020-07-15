@@ -9,11 +9,11 @@ export const HomeData = {
     },
     content: {
         title1: "Modernize Administrative Processes",
-        description1: "Ditch the traditional ways of scheduling tutoring classes over the phone or processing payments with cash or check. Omou will help alleviate time-consuming administrative tasks and reduce human errors by providing our customers with a simple interface for the single source of truth.",
+        description1: "Omou alleviates time-consuming administrative tasks like scheduling classes and processing payments with a simple interface. Reduce human errors with a single source of truth for your entire tutoring center.",
         title2: "Elevate Communication with Parents",
-        description2: "Miscommunication between parents and tutoring centers are often caused by disparate systems with conflicting information. Omou provides a digital central hub for parents, students, and staff alike to access personal information such as automated student progress reports, class schedules, and payment confirmations.(Coming Soon)",
+        description2: "Say good-bye to miscommunication between parents and your staff. With Omou, all stakeholders can access information like automated student progress reports, class schedules, and payment confirmations.",
         title3: "Set Up Students For Online Success",
-        description3: "Remote learning is the future. Remove the friction of setting up and configuring tools for online tutoring. With the ability to create on-demand tutorials and recommended student activities built into Omou, online tutoring is now seamless and accessible for everyone involved.(Coming Soon)",
+        description3: "Remove the friction of setting up and configuring tools for online tutoring. Create on-demand tutorials and recommended student activities directly inside Omou, making the switch to remote learning easy.",
     }
 }
 
