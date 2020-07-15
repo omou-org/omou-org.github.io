@@ -81,7 +81,7 @@ const FeaturesData = [
     name: "schedule",
     title: "Simple Scheduling",
     description:
-      "Scheduling personal tutoring classes with specific tutors can be tricky. Omou lets you quickly see which tutors are available at what time.",
+      "Scheduling tutoring classes while managing personal schedules of your staff can be tricky. Omou lets you quickly see which tutors are available at what time.",
     content: () => (
       <ul
         style={{
@@ -124,7 +124,7 @@ const FeaturesData = [
           <li>Create Tuition Rules and Discounts</li>
           <li>View Payments by Enrollment</li>
           <li>View Updated Payment Status of a Tutoring Session</li>
-          <li>Print Invoices</li>
+          <li>Access previous receipts and Print Invoices </li>
         </ul>
       </div>
     ),
@@ -144,7 +144,7 @@ const FeaturesData = [
     name: "useracct",
     title: "Centralized User Accounts",
     description:
-      "Omou allows you to create user profiles for admins, students, and parents.",
+      "Omou allows you to create user profiles for admins, students, and parents, meaning any team member or customer can easily access the information that matters to them.",
     content: () => (
       <div>
         <ul
