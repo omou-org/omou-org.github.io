@@ -9,6 +9,7 @@ import ContactUs from "./Views/ContactUs";
 import MeetTeam from "./Views/MeetTeam";
 import Home from "./Views/Home"
 import ScrollToTop from "./ScrollToTop"
+import withTracker from './withTracker';
 
 
 
@@ -18,12 +19,11 @@ export function Routes() {
 
 		<ScrollToTop>
 			<Switch>
-				<Route exact path="/" component={Home} />
-				<Route path="/meet-team" component={MeetTeam} />
-				<Route path="/features" component={Features} />
-				<Route path="/about-us" component={AboutUs} />
-				<Route path="/contact-us" component={ContactUs} />
-
+				<Route exact path="/" component={withTracker(Home)} />
+				<Route path="/meet-team" component={withTracker(MeetTeam)} />
+				<Route path="/features" component={withTracker(Features)} />
+				<Route path="/about-us" component={withTracker(AboutUs)} />
+				<Route path="/contact-us" component={withTracker(ContactUs)} />
 			</Switch>
 		</ScrollToTop>
 	)

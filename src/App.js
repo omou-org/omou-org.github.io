@@ -108,7 +108,6 @@ function NavigationBar() {
     const [anchorEl, setAnchorEl] = useState(null);
     const [mobileOpen, setMobileOpen] = useState(false);
 
-    const navBarList = ['Features', 'About', 'Contact Us'];
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     }
