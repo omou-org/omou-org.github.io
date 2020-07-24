@@ -16,6 +16,8 @@ import { blue } from "@material-ui/core/colors";
 import { flexbox } from "@material-ui/system";
 import Waves from "../components/Waves/Waves"
 import { useLocation } from "react-router-dom";
+import CardMedia from '@material-ui/core/CardMedia';
+
 
 
 const useStyles = makeStyles({
@@ -33,7 +35,9 @@ const useStyles = makeStyles({
 		margin: "0 auto"
 
 	},
-
+	media: {
+		height: 140,
+	},
 	header: {
 		color: "#43B5D9",
 		paddingTop: "1.5em"	
@@ -44,6 +48,7 @@ export default function ContactUs() {
 	const [fromName, setFromName] = useState("");
 	const [messageHTML, setMessage] = useState("");
 	const [replyTo, setReplyTo] = useState("");
+	const [messageSent, setMessageSent ] = useState(false)
 
 	const location = useLocation();
 	const classes = useStyles();
@@ -65,7 +70,12 @@ export default function ContactUs() {
 				message_html: messageHTML,
 				reply_to: replyTo,
 			},
-			'user_CddYW1ypBZ46FHYjjgeZG');
+			'user_CddYW1ypBZ46FHYjjgeZG')
+			.then((result) => {
+				setMessageSent(true);
+			}, (error) => {
+				console.log(error.text);
+			});
 	};
 
 	const handleNameChange = (e) => {
@@ -77,19 +87,45 @@ export default function ContactUs() {
 	const handleMessageBodyChange = (e) => {
 		setMessage(e.target.value);
 	};
+	const handleMessageSent = (e) => {
+		setMessageSent(e.target.value);
+	};
 
 	const fieldWidth = "100%";
 
-	return (
+	return (messageSent ?
 		<>
 		<Container maxWidth="md">
-<Typography
+			<Typography
+			style={{ marginBottom: "25px", marginTop: "40px" }}
+			variant="h2" className={classes.header}>
+			Contact Us
+			</Typography>
+			<Card variant="outlined" className={classes.root}>
+				<img src="https://pluspng.com/img-png/green-tick-png-green-tick-transparent-png-600.png" width="5%" heigth = "5%"/>
+				<Grid item>
+				<Typography className={classes.title} color="black" gutterBottom>
+					Thank you for contacting us!<br></br>
+					We have received your message and will be <br></br>
+					in touch shortly.
+        		</Typography>
+				</Grid>
+				<Button variant="contained" color="primary" href="#contained-buttons">
+					Go Back
+				</Button>
+			</Card>
+		</Container>
+			{location.pathname === "/contact-us" && <Waves />}
+			</>
+		:
+		<>
+		<Container maxWidth="md">
+					<Typography
 					style={{ marginBottom: "25px", marginTop: "40px" }}
 					variant="h2" className={classes.header}>
 					Contact Us
 					</Typography>
 			<Card variant="outlined" className={classes.root}>
-				
 
 				<form className="contact-form" onSubmit={sendEmail}>
 					<CardContent>
@@ -150,6 +186,6 @@ export default function ContactUs() {
 			</Card>
 		</Container>
 			{location.pathname === "/contact-us" && <Waves />}
-			</>
+		</>
 	)
 }
