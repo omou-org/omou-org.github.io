@@ -14,13 +14,21 @@ import { gql } from 'apollo-boost';
 
 
 const GET_HOMEPAGE = gql`
- query  
- {
-    home{
-      title
-      id
+query MyQuery {
+    homePage {
+      homeheaderSet {
+        subtitle
+        title
+      }
+      homehighlightsSet {
+        subtitle
+        title
+        image
+      }
     }
-  }`;
+  }
+  
+  `;
 
 
 
@@ -60,20 +68,13 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export default function Home() {
-
     const classes = useStyles()
-
-
     const { loading, error, data } = useQuery(GET_HOMEPAGE);
 
     if (!data) return "loading..."
     if (error) return console.log(error.error)
 
     const { header, content } = HomeData
-
-    console.log(data)
-
-
 
     return (
 
@@ -83,10 +84,10 @@ export default function Home() {
                     <Grid item md />
                     <Grid item xs={12} md={9} align="center" className={classes.topTextPadding}>
                         <Typography variant="h3" className="upper" >
-                            {data.home[0].title}  <span className="transform-colors">{header.transformText}</span>{header.textAfterTransform}
+                            {data.homePage.homeheaderSet[0].title} <span className="transform-colors">{header.transformText}</span>{header.textAfterTransform}
                         </Typography>
                         <Typography variant="h5" className="bottom" >
-                            {header.bottomText}
+                            {data.homePage.homeheaderSet[0].subtitle}
                         </Typography>
                     </Grid>
                     <Grid item md />
