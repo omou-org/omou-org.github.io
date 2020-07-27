@@ -17,6 +17,7 @@ import { flexbox } from "@material-ui/system";
 import Waves from "../components/Waves/Waves"
 import { useLocation } from "react-router-dom";
 import CardMedia from '@material-ui/core/CardMedia';
+import checkmark from './checkmark.png';
 
 
 
@@ -35,9 +36,7 @@ const useStyles = makeStyles({
 		margin: "0 auto"
 
 	},
-	media: {
-		height: 140,
-	},
+
 	header: {
 		color: "#43B5D9",
 		paddingTop: "1.5em"	
@@ -63,6 +62,7 @@ export default function ContactUs() {
 		e.preventDefault();
 
 		emailjs.send(
+			/*
 			'gmail',
 			'template_L8JA194M',
 			{
@@ -76,6 +76,9 @@ export default function ContactUs() {
 			}, (error) => {
 				console.log(error.text);
 			});
+			*/
+			setMessageSent(true)
+		);
 	};
 
 	const handleNameChange = (e) => {
@@ -102,7 +105,7 @@ export default function ContactUs() {
 			Contact Us
 			</Typography>
 			<Card variant="outlined" className={classes.root}>
-				<img src="https://pluspng.com/img-png/green-tick-png-green-tick-transparent-png-600.png" width="5%" heigth = "5%"/>
+				<img src={require("./checkmark.png")} width="5%" heigth = "5%"/>
 				<Grid item>
 				<Typography className={classes.title} color="black" gutterBottom>
 					Thank you for contacting us!<br></br>
