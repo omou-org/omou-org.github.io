@@ -39,15 +39,15 @@ const useStyles = makeStyles({
 
 	header: {
 		color: "#43B5D9",
-		paddingTop: "1.5em"	
-}
+		paddingTop: "1.5em"
+	}
 })
 
 export default function ContactUs() {
 	const [fromName, setFromName] = useState("");
 	const [messageHTML, setMessage] = useState("");
 	const [replyTo, setReplyTo] = useState("");
-	const [messageSent, setMessageSent ] = useState(false)
+	const [messageSent, setMessageSent] = useState(false)
 
 	const location = useLocation();
 	const classes = useStyles();
@@ -98,96 +98,99 @@ export default function ContactUs() {
 
 	return (messageSent ?
 		<>
-		<Container maxWidth="md">
-			<Typography
-			style={{ marginBottom: "25px", marginTop: "40px" }}
-			variant="h2" className={classes.header}>
-			Contact Us
+			<Container maxWidth="md">
+				<Typography
+					style={{ marginBottom: "25px", marginTop: "40px" }}
+					variant="h2" className={classes.header}>
+					Contact Us
 			</Typography>
-			<Card variant="outlined" className={classes.root}>
-				<img src={require("./checkmark.png")} width="5%" heigth = "5%"/>
-				<Grid item>
-				<Typography className={classes.title} color="black" gutterBottom>
-					Thank you for contacting us!<br></br>
+				<Card variant="outlined" className={classes.root}>
+					<img src={require("./checkmark.png")} width="5%" heigth="5%" />
+					<Grid item>
+						<Typography className={classes.title} color="black" gutterBottom>
+							Thank you for contacting us!<br></br>
 					We have received your message and will be <br></br>
 					in touch shortly.
         		</Typography>
-				</Grid>
-				<Button variant="contained" color="primary" href="#contained-buttons">
-					Go Back
+					</Grid>
+					<Button
+						variant="contained"
+						color="primary"
+						onClick={() => setMessageSent(false)}>
+						Go Back
 				</Button>
-			</Card>
-		</Container>
+				</Card>
+			</Container>
 			{location.pathname === "/contact-us" && <Waves />}
-			</>
+		</>
 		:
 		<>
-		<Container maxWidth="md">
-					<Typography
+			<Container maxWidth="md">
+				<Typography
 					style={{ marginBottom: "25px", marginTop: "40px" }}
 					variant="h2" className={classes.header}>
 					Contact Us
 					</Typography>
-			<Card variant="outlined" className={classes.root}>
+				<Card variant="outlined" className={classes.root}>
 
-				<form className="contact-form" onSubmit={sendEmail}>
-					<CardContent>
+					<form className="contact-form" onSubmit={sendEmail}>
+						<CardContent>
 
-						<Grid item>
-							<TextField
-								className={classes.textBox}
-								id="Name"
-								label="Name"
-								variant="outlined"
-								style={{ width: fieldWidth }}
-								value={fromName}
-								onChange={handleNameChange}
-							/>
-						</Grid>
-						<br />
-						<Grid item>
-							<TextField
-								className={classes.textBox}
-								id="Email"
-								label="Your Email"
-								variant="outlined"
-								required
-								style={{ width: fieldWidth }}
-								value={replyTo}
-								onChange={handleReplyToEmail}
-							/>
-						</Grid>
-						<br />
-						<Grid item>
-							<TextField
-								className={classes.textBox}
-								id="message-body"
-								multiline
-								label="Message"
-								rows="8"
-								variant="outlined"
-								style={{ width: fieldWidth }}
-								required
-								value={messageHTML}
-								onChange={handleMessageBodyChange}
-							/>
-						</Grid>
-					</CardContent>
-					<CardActions>
+							<Grid item>
+								<TextField
+									className={classes.textBox}
+									id="Name"
+									label="Name"
+									variant="outlined"
+									style={{ width: fieldWidth }}
+									value={fromName}
+									onChange={handleNameChange}
+								/>
+							</Grid>
+							<br />
+							<Grid item>
+								<TextField
+									className={classes.textBox}
+									id="Email"
+									label="Your Email"
+									variant="outlined"
+									required
+									style={{ width: fieldWidth }}
+									value={replyTo}
+									onChange={handleReplyToEmail}
+								/>
+							</Grid>
+							<br />
+							<Grid item>
+								<TextField
+									className={classes.textBox}
+									id="message-body"
+									multiline
+									label="Message"
+									rows="8"
+									variant="outlined"
+									style={{ width: fieldWidth }}
+									required
+									value={messageHTML}
+									onChange={handleMessageBodyChange}
+								/>
+							</Grid>
+						</CardContent>
+						<CardActions>
 
-						<Button
-							className={classes.sendButton}
-							color="primary"
-							variant="contained"
-							onClick={sendEmail}
-						>
-							SEND
+							<Button
+								className={classes.sendButton}
+								color="primary"
+								variant="contained"
+								onClick={sendEmail}
+							>
+								SEND
 						</Button>
-					</CardActions>
-				</form>
+						</CardActions>
+					</form>
 
-			</Card>
-		</Container>
+				</Card>
+			</Container>
 			{location.pathname === "/contact-us" && <Waves />}
 		</>
 	)
