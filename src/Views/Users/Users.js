@@ -90,6 +90,21 @@ export const Users = [
         picture_src: "selina.jpg",
     },
     {
+        roleId: 4,
+        name: "Kelly Huang",
+        role: "Product Marketer",
+        description: "Things I love: outdoor adventures, reading, yoga, and guac",
+        linkedin: "https://www.linkedin.com/in/khuangx/",
+        picture_src: "kelly.jpg",
+    },
+    {
+        name: "Shana Vu",
+        role: "Product Marketer",
+        description: "You’ll most likely find me sipping flat whites, running around San Francisco, or wandering the aisles of Trader Joe’s.",
+        linkedin: " https://www.linkedin.com/in/shanavu/",
+        picture_src: "shana.jpg",
+    },
+    {
         roleID: 1,
         name: "Wilson Lam",
         role: "Front-End Engineer",
@@ -123,21 +138,6 @@ export const Users = [
         picture_src: "novia.png",
     },
     {
-        roleId: 4,
-        name: "Kelly Huang",
-        role: "Product Marketer",
-        description: "Things I love: outdoor adventures, reading, yoga, and guac",
-        linkedin: "",
-        picture_src: "kelly.jpg",
-    },
-    {
-        name: "Shana Vu",
-        role: "Product Marketer",
-        description: "You’ll most likely find me sipping flat whites, running around San Francisco, or wandering the aisles of Trader Joe’s.",
-        linkedin: " https://www.linkedin.com/in/shanavu/",
-        picture_src: "shana.jpg",
-    },
-    {
         roleId: 0,
         name: "Brandon Yang",
         role: "Sales Development Lead",
@@ -145,7 +145,7 @@ export const Users = [
         linkedin: "",
         picture_src: "brandon.jpg",
 
-    }
+    },
 
 
 

@@ -38,7 +38,7 @@ const UserCards = ({ user }) => {
                     className={classes.root}
                     disableTouchRipple={true}
                     onClick={() => {
-                        window.open(user.linkedin)
+                        user.linkedin && window.open(user.linkedin)
                     }}>
                     <CardMedia
                         className={classes.media}
