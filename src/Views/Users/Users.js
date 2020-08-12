@@ -4,6 +4,8 @@
  *  1 = Front-end
  *  2 = Back-end
  *  3 = Product Designers
+ *  4 = Product Marketer
+ *  
  */
 
 
@@ -36,6 +38,14 @@ export const Users = [
         picture_src: "neil.png",
     },
     {
+        roleID: 3,
+        name: "Katie Ho",
+        role: "Senior Product Designer",
+        description: "In my free time, I love traveling and discovering new coffee spots.",
+        linkedin: "https://www.linkedin.com/in/katiebelleho/",
+        picture_src: "katie.png",
+    },
+    {
         roleID: 0,
         name: "Gaby Chan",
         role: "Lead Product Designer",
@@ -43,14 +53,7 @@ export const Users = [
         linkedin: "https://www.linkedin.com/in/gaby-chan/",
         picture_src: "gaby.JPG",
     },
-    {
-        roleID: 3,
-        name: "Katie Ho",
-        role: "Product Designer",
-        description: "In my free time, I love traveling and discovering new coffee spots.",
-        linkedin: "https://www.linkedin.com/in/katiebelleho/",
-        picture_src: "katie.png",
-    },
+
     {
         roleID: 2,
         name: "Matthew Li",
@@ -79,14 +82,28 @@ export const Users = [
         picture_src: "calvin.png",
     },
     {
-        roleID: 1,
-        name: "Greg Glinoga",
-        role: "Front-End Engineer",
-        description: "Professional background includes data visualization and business intelligence.",
-        linkedin: "https://www.linkedin.com/in/greg-glinoga-a7442243/",
-        picture_src: "greg.png",
+        roleId: 0,
+        name: "Selina Che",
+        role: "Lead Product Designer",
+        description: "LA-based creative. Master’s student at UW MHCI+D.",
+        linkedin: "https://www.linkedin.com/in/selinache/",
+        picture_src: "selina.jpg",
     },
-
+    {
+        roleId: 4,
+        name: "Kelly Huang",
+        role: "Product Marketer",
+        description: "Things I love: outdoor adventures, reading, yoga, and guac",
+        linkedin: "https://www.linkedin.com/in/khuangx/",
+        picture_src: "kelly.jpg",
+    },
+    {
+        name: "Shana Vu",
+        role: "Product Marketer",
+        description: "You’ll most likely find me sipping flat whites, running around San Francisco, or wandering the aisles of Trader Joe’s.",
+        linkedin: " https://www.linkedin.com/in/shanavu/",
+        picture_src: "shana.jpg",
+    },
     {
         roleID: 1,
         name: "Wilson Lam",
@@ -119,6 +136,15 @@ export const Users = [
         description: "I love exploring new places and learn new things!",
         linkedin: "https://www.linkedin.com/in/novia-elvina-700a2473/",
         picture_src: "novia.png",
+    },
+    {
+        roleId: 0,
+        name: "Brandon Yang",
+        role: "Sales Development Lead",
+        description: "I love taking pictures, racing, and traveling around the world!",
+        linkedin: "",
+        picture_src: "brandon.jpg",
+
     },
 
 
