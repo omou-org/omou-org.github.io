@@ -137,15 +137,7 @@ export const Users = [
         linkedin: "https://www.linkedin.com/in/novia-elvina-700a2473/",
         picture_src: "novia.png",
     },
-    {
-        roleId: 0,
-        name: "Brandon Yang",
-        role: "Sales Development Lead",
-        description: "I love taking pictures, racing, and traveling around the world!",
-        linkedin: "",
-        picture_src: "brandon.jpg",
 
-    },
 
 
 
