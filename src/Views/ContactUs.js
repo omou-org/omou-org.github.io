@@ -7,17 +7,13 @@ import {
 	Typography,
 	Grid,
 	Container,
-	Box,
 	Card,
 	CardContent,
 	CardActions
 } from "@material-ui/core";
-import { blue } from "@material-ui/core/colors";
-import { flexbox } from "@material-ui/system";
 import Waves from "../components/Waves/Waves"
 import { useLocation } from "react-router-dom";
-import CardMedia from '@material-ui/core/CardMedia';
-import checkmark from './checkmark.png';
+
 
 
 
@@ -90,9 +86,7 @@ export default function ContactUs() {
 	const handleMessageBodyChange = (e) => {
 		setMessage(e.target.value);
 	};
-	const handleMessageSent = (e) => {
-		setMessageSent(e.target.value);
-	};
+
 
 	const fieldWidth = "100%";
 
@@ -105,7 +99,7 @@ export default function ContactUs() {
 					Contact Us
 			</Typography>
 				<Card variant="outlined" className={classes.root}>
-					<img src={require("./checkmark.png")} width="5%" heigth="5%" />
+					<img src={require("./checkmark.png")} alt="Check mark" width="5%" heigth="5%" />
 					<Grid item>
 						<Typography className={classes.title} color="black" gutterBottom>
 							Thank you for contacting us!<br></br>
