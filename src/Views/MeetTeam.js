@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Grid, Typography, Box } from '@material-ui/core'
+import { Container, Grid, Typography } from '@material-ui/core'
 import { Users } from "./Users/Users"
 import { makeStyles } from '@material-ui/core/styles';
 import UserCards from "./Users/UserCards"

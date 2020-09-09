@@ -65,14 +65,14 @@ const FeaturesCard = ({
               <Grid item>
                 <Slideshow images={images} path={path} />
               </Grid>
-				<Grid
-					item
-					container
-					direction="row"
-					spacing={3}
-				>
-					{content()}
-				</Grid>
+              <Grid
+                item
+                container
+                direction="row"
+                spacing={3}
+              >
+                {content()}
+              </Grid>
             </Grid>
           </div>
         </Container>
@@ -115,7 +115,7 @@ const FeaturesCard = ({
               </Grid>
             </Grid>
             <Grid item xs={12} md={7}>
-				<Slideshow images={images} path={path} />
+              <Slideshow images={images} path={path} />
             </Grid>
           </Grid>
         </div>

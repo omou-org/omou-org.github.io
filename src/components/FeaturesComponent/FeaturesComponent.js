@@ -225,6 +225,7 @@ const FeaturesComponent = ({ click, featuresArr }) => {
       case "4":
         setBtnBg(classes.redBg);
         setActive("4");
+        break;
       default:
         return;
     }
@@ -242,7 +243,7 @@ const FeaturesComponent = ({ click, featuresArr }) => {
         <Button
           className={`${classes.buttonMargins} ${classes.buttonMargins1} ${
             active === "1" ? btnBg : classes.clearBg
-          }`}
+            }`}
           data-id="1"
           onClick={handleClick}
         >
@@ -268,7 +269,7 @@ const FeaturesComponent = ({ click, featuresArr }) => {
         <Button
           className={`${classes.buttonMargins} ${classes.buttonMargins2} ${
             active === "2" ? btnBg : classes.clearBg
-          }`}
+            }`}
           data-id="2"
           onClick={handleClick}
         >
@@ -294,7 +295,7 @@ const FeaturesComponent = ({ click, featuresArr }) => {
         <Button
           className={`${classes.buttonMargins} ${classes.buttonMargins3} ${
             active === "3" ? btnBg : classes.clearBg
-          }`}
+            }`}
           data-id="3"
           onClick={handleClick}
         >
@@ -320,7 +321,7 @@ const FeaturesComponent = ({ click, featuresArr }) => {
         <Button
           className={`${classes.buttonMargins} ${classes.buttonMargins4} ${
             active === "4" ? btnBg : classes.clearBg
-          }`}
+            }`}
           data-id="4"
           onClick={handleClick}
         >
