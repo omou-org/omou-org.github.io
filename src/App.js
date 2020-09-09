@@ -3,7 +3,7 @@ import './App.css';
 
 import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import { appBarTheme, theme } from './theme/theme'
-import { AppBar, Toolbar, Typography, Container, Grid, Button, Menu, MenuItem, Hidden, Drawer, IconButton, List, ListItem, ListItemText } from "@material-ui/core";
+import { AppBar, Toolbar, Typography, Container, Grid, Button, Menu, MenuItem, Hidden, Drawer, IconButton, List, } from "@material-ui/core";
 import { BrowserRouter as Router, NavLink, useLocation } from "react-router-dom";
 import MenuIcon from '@material-ui/icons/Menu';
 import { Routes } from "./routes";

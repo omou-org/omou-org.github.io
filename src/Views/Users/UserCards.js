@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 
-import { Paper, Card, CardActionArea, CardContent, CardMedia } from '@material-ui/core'
+import { Paper, CardActionArea, CardContent, CardMedia } from '@material-ui/core'
 
 
 import Typography from '@material-ui/core/Typography';
