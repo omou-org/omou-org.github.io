@@ -77,17 +77,9 @@ export const Users = [
         roleID: 1,
         name: "Calvin Fronda",
         role: "Front-End Engineer",
-        description: "Favorite part of the day: Waking up to my homemade cold brew to start the morning.",
+        description: "Retail Chat Support at Apple. Always striving to find the best solution to a problem.",
         linkedin: "https://www.linkedin.com/in/calvinfronda/",
         picture_src: "calvin.png",
-    },
-    {
-        roleId: 0,
-        name: "Selina Che",
-        role: "Lead Product Designer",
-        description: "LA-based creative. Master’s student at UW MHCI+D.",
-        linkedin: "https://www.linkedin.com/in/selinache/",
-        picture_src: "selina.jpg",
     },
     {
         roleId: 4,
@@ -116,7 +108,7 @@ export const Users = [
         roleID: 1,
         name: "Ryan Gedwill",
         role: "Front-End Engineer",
-        description: "Favorite life hack: Put cream in before the coffee so it doesn't need to be stirred",
+        description: "Favorite life hack: Put cream in before the coffee so it doesn't need to be stirred.",
         linkedin: "https://www.linkedin.com/in/ryan-gedwill-a87960107/",
         picture_src: "ryan.png",
     },
@@ -139,7 +131,30 @@ export const Users = [
     },
 
 
-
+    {
+        roleID: 1,
+        name: "Peter Kang",
+        Role: "Front-End Engineer",
+        description: "LA-based dev, strength training enthusiast, lifelong Lakers fan.",
+        linkedin: "https://www.linkedin.com/in/peterswkang/",
+        picture_src: "peter.png"
+    },
+    {
+        roleID: 1,
+        name: "Anna Grace Conover",
+        Role: "Front-End Engineer",
+        description: "Always striving to learn and grow. Sometimes happens to do that by reading, playing with the cat (Iroh), or playing video games/board games.",
+        linkedin: "https://www.linkedin.com/in/anna-conover/",
+        picture_src: "annagrace.png"
+    },
+    {
+        roleID: 1,
+        name: "Andrew Knapp",
+        Role: "Front-End Engineer",
+        description: "Learning is my game, whether that be frameworks, musical instruments, or the animal kingdom.",
+        linkedin: "https://www.linkedin.com/in/andrew-knapp-445760150/",
+        picture_src: "andrew.jpg"
+    },
 
 
 ]
