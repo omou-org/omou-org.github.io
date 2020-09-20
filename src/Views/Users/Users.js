@@ -155,6 +155,12 @@ export const Users = [
         linkedin: "https://www.linkedin.com/in/andrew-knapp-445760150/",
         picture_src: "andrew.jpg"
     },
-
+    {
+        roleID: 1,
+        name: "Chris Lojewski",
+        role: "Front-End Engineer",
+        description: "Graduate student in materials science and engineering that somehow ended up programming.",
+        picture_src: "chris.png"
+    }
 
 ]
