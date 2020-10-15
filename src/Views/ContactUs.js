@@ -58,7 +58,7 @@ export default function ContactUs() {
 		e.preventDefault();
 
 		emailjs.send(
-			/*
+
 			'gmail',
 			'template_L8JA194M',
 			{
@@ -72,9 +72,8 @@ export default function ContactUs() {
 			}, (error) => {
 				console.log(error.text);
 			});
-			*/
-			setMessageSent(true)
-		);
+
+		setMessageSent(true)
 	};
 
 	const handleNameChange = (e) => {
