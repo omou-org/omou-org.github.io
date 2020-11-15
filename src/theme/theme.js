@@ -12,7 +12,7 @@ export const appBarTheme = createMuiTheme({
 	},
 	typography:{
 		h3:{
-			fontFamily: "Roboto Slab, serif",
+			fontFamily: "Montserrat",
 			fontWeight:700,
 			color: primaryColor,
 		}
@@ -37,19 +37,19 @@ export const theme = createMuiTheme({
 	},
 	typography:{
 		h1:{
-			fontFamily: "Roboto Slab, serif",
+			fontFamily: "Montserrat",
 			fontWeight:700,
 		},
 		h2:{
-			fontFamily: "Roboto Slab, serif",
+			fontFamily: "Montserrat",
 			fontWeight:700,
 		},
 		h3:{
-			fontFamily: "Roboto Slab, serif",
+			fontFamily: "Montserrat",
 			fontWeight:700,
 		},
 		h4:{
-			fontFamily: "Roboto Slab, serif",
+			fontFamily: "Montserrat",
 			fontWeight:700,
 		}
 	},

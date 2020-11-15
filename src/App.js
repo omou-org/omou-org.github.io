@@ -279,7 +279,7 @@ function App() {
                 <div className="App">
                     <NavigationBar />
                     <Routes />
-                    <Footer />
+                    {/* <Footer /> */}
                 </div>
             </Router>
         </ThemeProvider>
