@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Grid, Typography, TextField, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { primaryColor } from '../../theme/colors';
 import bottomWave from './homeimages/bottomWave.svg';
+import { useLocation } from 'react-router-dom';
+import emailjs from 'emailjs-com';
 
 const useStyles = makeStyles((theme) => ({
     contactUsForm: {
@@ -45,6 +47,49 @@ const useStyles = makeStyles((theme) => ({
 
 const ContactUsForm = () => {
     const classes = useStyles();
+    const [fromName, setFromName] = useState('');
+    const [userEmail, setUserEmail] = useState('');
+    const [replyTo, setReplyTo] = useState('');
+    const [messageSent, setMessageSent] = useState(false);
+
+    // Connect email feature
+
+    const location = useLocation();
+
+    function sendEmail(e) {
+        e.preventDefault();
+        emailjs
+            .send(
+                'gmail',
+                'template_L8JA194M',
+                {
+                    from_name: fromName,
+                    message_html: userEmail,
+                    reply_to: replyTo,
+                },
+                'user_CddYW1ypBZ46FHYjjgeZG'
+            )
+            .then(
+                (result) => {
+                    setMessageSent(true);
+                },
+                (error) => {
+                    console.log(error.text);
+                }
+            );
+
+        setMessageSent(true);
+    }
+
+    const handleNameChange = (e) => {
+        setFromName(e.target.value);
+    };
+    const handleReplyToEmail = (e) => {
+        setReplyTo(e.target.value);
+    };
+    const handleEmailChange = (e) => {
+        setUserEmail(e.target.value);
+    };
 
     return (
         <Grid
@@ -78,7 +123,9 @@ const ContactUsForm = () => {
                             <TextField
                                 required
                                 variant="outlined"
-                                id="name"
+                                id="Name"
+                                value={fromName}
+                                onChange={handleNameChange}
                                 InputProps={{
                                     classes: {
                                         root: classes.namePhoneInput,
@@ -111,6 +158,8 @@ const ContactUsForm = () => {
                             <TextField
                                 required
                                 variant="outlined"
+                                value={userEmail}
+                                onChange={handleEmailChange}
                                 fullWidth
                                 id="standard-required"
                                 InputProps={{
