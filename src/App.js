@@ -313,7 +313,11 @@ const Footer = () => {
                         direction="column"
                         alignItems="flex-end"
                         justify="center"
-                        style={{ alignItems: 'baseline', paddingRight: '2em' }}
+                        style={{
+                            alignItems: 'baseline',
+                            paddingRight: '4em',
+                            paddingBottom: '2em',
+                        }}
                     >
                         <MenuList />
                     </Grid>
