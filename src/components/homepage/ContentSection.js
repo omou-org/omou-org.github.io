@@ -34,10 +34,9 @@ const useStyles = makeStyles({
 });
 
 const ContentSection = ({
-    image,
     title,
     description,
-    learnMore,
+
     isRight,
     waveImage,
     displayContactUsButton,
