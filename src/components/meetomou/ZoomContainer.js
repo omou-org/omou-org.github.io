@@ -1,13 +1,5 @@
-import React, { useState } from 'react';
-import {
-    Grid,
-    Typography,
-    Box,
-    TextField,
-    Paper,
-    Zoom,
-    Container,
-} from '@material-ui/core';
+import React, { useState, useRef } from 'react';
+import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import userData from './userInfo.json';
 
@@ -24,54 +16,78 @@ const useStyles = makeStyles({
         fontWeight: '700',
     },
     zoomChat: {
-        height: '1200px',
-        width: '469px',
-        overflowY: 'scroll',
+        overflow: 'auto',
         color: 'white',
+        width: '500px',
+        height: '1200px',
     },
     imageHighlightSelect: {
+        position: 'relative',
         outline: 'solid 6px #24FF00',
         outlineOffset: '-6px',
     },
     imageNormal: {
+        position: 'relative',
         border: ' solid 2px none',
     },
-    zoomChatStyles: {
-        paddingTop: '1em',
+    imageTextName: {
+        position: 'absolute',
+        fontFamily: 'Montserrat',
+        bottom: '3px',
+
+        backgroundColor: 'rgba(0, 0, 0, 0.5);',
+        color: 'white',
+        fontSize: '16px',
+        fontWeight: 'bold',
+        padding: '5px 10px 5px 10px',
+    },
+    zoomChatStylesHighlighted: {
+        padding: '1em',
+        backgroundColor: 'rgba(196, 196, 196, 0.15)',
+    },
+    zoomChatStylesNormal: {
+        padding: '1em',
+        backgroundColor: '#333333',
     },
 });
 
 const ZoomContainer = () => {
     const classes = useStyles();
     const [choosenImage, setChoosenImage] = useState(null);
+    const [isHighlighted, setIsHighlighted] = useState(null);
     const [zoomChat, setZoomChat] = useState([]);
 
     const takeFirstName = (string) => {
         return string.match(/(?:^|(?:[.!?]\s))(\w+)/gm);
     };
 
-    const ZoomImageBox = ({ image, name, id }) => (
-        <Grid item key={id}>
-            <div
-                className={
-                    choosenImage === takeFirstName(name).toString()
-                        ? classes.imageHighlightSelect
-                        : classes.imageNormal
-                }
-            >
-                <img
-                    src={require(`./images/${image}`)}
-                    alt={name + ' alt'}
-                    style={{ height: '200px', width: '300px' }}
-                    id={takeFirstName(name)}
-                    onClick={(e) => {
-                        setChoosenImage(e.target.id);
-                        findUserInfo(id);
-                    }}
-                />
-            </div>
-        </Grid>
-    );
+    const ZoomImageBox = ({ image, name, id }) => {
+        return (
+            <Grid item>
+                <div
+                    className={
+                        choosenImage === takeFirstName(name).toString()
+                            ? classes.imageHighlightSelect
+                            : classes.imageNormal
+                    }
+                >
+                    <img
+                        src={require(`./images/${image}`)}
+                        alt={name + ' alt'}
+                        style={{ height: '200px', width: '300px' }}
+                        id={takeFirstName(name)}
+                        onClick={(e) => {
+                            setChoosenImage(e.target.id);
+                            findUserInfo(id);
+                        }}
+                    />
+                    <Typography className={classes.imageTextName}>
+                        {name}
+                    </Typography>
+                </div>
+            </Grid>
+        );
+    };
 
     const findUserInfo = (userId) => {
         const isInZoomChat = zoomChat.some((el) => el.id === userId);
@@ -81,15 +97,49 @@ const ZoomContainer = () => {
         }
     };
 
-    const ZoomChat = ({ name, linkedin, description, role, id }) => (
-        <Grid item xs={9} key={id} className={classes.zoomChatStyles}>
-            <Typography>From {name} to Everyone</Typography>
-            <Typography>ROLE: {role}</Typography>
-            <Typography>{description} </Typography>
+    const ZoomChat = ({ name, linkedin, description, role, id }) => {
+        const ref = useRef();
 
-            <Typography> {linkedin}</Typography>
-        </Grid>
-    );
+        return (
+            <Grid
+                item
+                id={id}
+                className={
+                    choosenImage === takeFirstName(name).toString()
+                        ? classes.zoomChatStylesHighlighted
+                        : classes.zoomChatStylesNormal
+                }
+            >
+                <Typography style={{ fontWeight: '700' }}>
+                    FROM{' '}
+                    <span style={{ color: '#43B5D9' }}>
+                        {name.toUpperCase()}
+                    </span>{' '}
+                    TO
+                    <span style={{ color: '#43B5D9' }}> EVERYONE</span>{' '}
+                </Typography>
+                <Typography style={{ paddingTop: '1em', fontWeight: '700' }}>
+                    {role}
+                </Typography>
+                <Typography style={{ fontWeight: 'bold', fontSize: '15px' }}>
+                    {description}
+                </Typography>
+                <a href={linkedin} target="_blank">
+                    <Typography
+                        style={{
+                            color: 'white',
+                            textDecoration: 'underline',
+                            fontWeight: '700',
+                            paddingTop: '10px',
+                        }}
+                    >
+                        {' '}
+                        {linkedin}{' '}
+                    </Typography>
+                </a>
+            </Grid>
+        );
+    };
 
     return (
         <Grid
@@ -97,34 +147,35 @@ const ZoomContainer = () => {
             justify="space-around"
             alignContent="center"
             direction="row"
+            spacing={0}
+            style={{
+                backgroundColor: '#333333',
+                borderRadius: '20px 20px 0 0',
+                border: 'none',
+                paddingBottom: '2vh',
+            }}
         >
-            <Grid
-                container
-                style={{
-                    backgroundColor: '#333333',
-                    borderRadius: '20px 20px 0 0',
-                    border: 'none',
-                }}
-            >
-                <Grid item xs={12} style={{ textAlign: 'center' }}>
-                    <div
-                        style={{
-                            backgroundColor: 'transparent',
-                            width: '100%',
-                            height: '52px',
-                        }}
-                    >
-                        <Typography className={classes.omouTeamText}>
-                            OMOU TEAM
-                        </Typography>
-                    </div>
-                </Grid>
+            <Grid item xs={12} style={{ textAlign: 'center' }}>
+                <div
+                    style={{
+                        backgroundColor: 'transparent',
+                        width: '100%',
+                        height: '52px',
+                    }}
+                >
+                    <Typography className={classes.omouTeamText}>
+                        OMOU TEAM
+                    </Typography>
+                </div>
+            </Grid>
+
+            <Grid container>
                 <Grid
                     item
                     xs={7}
                     container
                     direction="row"
-                    justify="center"
+                    justify="flex-end"
                     alignItems="center"
                 >
                     {userData.map((data) => (
@@ -137,6 +188,7 @@ const ZoomContainer = () => {
                 </Grid>
 
                 <Grid
+                    item
                     xs={5}
                     direction="column"
                     justify="flex-start"
@@ -150,6 +202,7 @@ const ZoomContainer = () => {
                             description={data.description}
                             role={data.role}
                             id={data.id}
+                            key={data.id}
                         />
                     ))}
                 </Grid>
