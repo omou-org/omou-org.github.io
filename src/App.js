@@ -232,26 +232,22 @@ const Footer = () => {
     return (
         <div
             style={{
-                backgroundColor: "#FFFFFF",
+                backgroundColor: "#333333",
                 color: primaryColor,
                 width: "100%",
             }}
         >
-            <Container
-                maxWidth={"lg"}
-                style={{
-                    padding: "3%"
-                }}
-            >
                 <Grid
                     container
                     alignItems="flex-end"
+                    className="footer"
+                    style={{paddingTop:"4%",paddingBottom:"4%", paddingLeft:"2%"}}
                 >
                     <Grid item md={12} xs={12}>
 
                         <NavLink
                             to="/"
-                            style={{ textDecoration: "none", color: primaryColor }}
+                            style={{ textDecoration: "none", color: "white" }}
                         >
                             <Typography variant="h3" style={{ marginBottom: "1.5vh" }}>
                                 omou
@@ -267,7 +263,7 @@ const Footer = () => {
                     </Typography>
                     </Grid>
                 </Grid>
-            </Container>
+                <Grid/>
         </div>
     )
 };
