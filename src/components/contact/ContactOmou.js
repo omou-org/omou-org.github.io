@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { makeStyles } from '@material-ui/core/styles';
+import Fade from '@material-ui/core/Fade';
 
 import {
     Grid,
@@ -13,6 +14,7 @@ import {
     Checkbox,
     FormControlLabel,
 } from '@material-ui/core';
+import { getElementError } from '@testing-library/react';
 
 const useStyles = makeStyles((theme) => ({
     contactUsJumboTron: {
@@ -65,10 +67,16 @@ const ContactOmou = () => {
         nextStep();
     };
 
-    const handleReachedAtCateogryChange = (event) => {
+    const handleReachedAtCategoryChange = (event) => {
         setReachedAt({ value: event.target.value });
         nextStep();
     };
+
+    const handleInfoChange = (event) => {
+        setMessage({ value: event.target.value });
+        nextStep();
+    };
+
 
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
@@ -113,7 +121,7 @@ const ContactOmou = () => {
                         </Typography>
                     </Grid>
                 </Grid>
-                <form className={classes.formContainer}>
+                <form onSubmit={e => { e.preventDefault() }} className={classes.formContainer}>
                     <Grid
                         container
                         direction="row"
@@ -130,99 +138,110 @@ const ContactOmou = () => {
                                 </span>
                             </Typography>
                         </Grid>
-                        <CSSTransition
-                            in={emailCategory.isVisible}
-                            onEnter={() =>
-                                setEmailCategory({ isVisible: true })
-                            }
-                        >
-                            <Grid item xs={7} className={classes.animatedDiv}>
-                                <Typography className={classes.formText}>
-                                    and I would like to :
+                        {stepper >= 2 &&
+                            <Fade in={true} timeout={{enter:1000}}>
+                                <Grid item xs={7} className={classes.animatedDiv}>
+                                    <Typography className={classes.formText}>
+                                        and I would like to :
                                     <span>
-                                        <FormControl>
-                                            <Select
-                                                id="email-category"
-                                                value={emailCategory.value}
-                                                onChange={
-                                                    handleEmailCategoryChange
-                                                }
-                                            >
-                                                <MenuItem value="general">
-                                                    General
+                                            <FormControl>
+                                                <Select
+                                                    id="email-category"
+                                                    value={emailCategory.value}
+                                                    onChange={
+                                                        handleEmailCategoryChange
+                                                    }
+                                                >
+                                                    <MenuItem value="general">
+                                                        General
                                                 </MenuItem>
-                                                <MenuItem value="support">
-                                                    Support
+                                                    <MenuItem value="support">
+                                                        Support
                                                 </MenuItem>
-                                                <MenuItem value="sales">
-                                                    Sales
+                                                    <MenuItem value="sales">
+                                                        Sales
                                                 </MenuItem>
-                                            </Select>
-                                        </FormControl>
-                                    </span>
-                                </Typography>
-                            </Grid>
-                        </CSSTransition>
+                                                </Select>
+                                            </FormControl>
+                                        </span>
+                                    </Typography>
+                                </Grid>
+                            </Fade>}
                         <Grid item>
-                            <Typography className={classes.formText}>
-                                Here are some details...
-                            </Typography>
-                            <TextField
-                                variant="outlined"
-                                style={{ height: '166px' }}
-                                inputProps={{
-                                    style: {
-                                        height: '166px',
-                                        width: '700px',
-                                        padding: '0 14px',
-                                    },
-                                }}
-                            ></TextField>
-                            <Grid item>
-                                <Typography className={classes.formText}>
-                                    and I can be reached by :{' '}
-                                    <span>
-                                        <FormControl>
-                                            <Select
-                                                id="reachedAt-category"
-                                                value={reachedAt.value}
-                                                onChange={
-                                                    handleReachedAtCateogryChange
-                                                }
-                                            >
-                                                <MenuItem value="email">
-                                                    Email
+                            {stepper >= 3 &&
+                            <Fade in={true} timeout={{enter:1000}}>
+                                <div>
+                                    <Typography className={classes.formText}>
+                                        Here are some details...
+                                    </Typography>
+                                    <TextField
+                                        variant="outlined"
+                                        style={{ height: '166px' }}
+                                        onKeyDown={handleKeyDown}
+                                        inputProps={{
+                                            style: {
+                                                height: '166px',
+                                                width: '700px',
+                                                padding: '0 14px',
+                                            },
+                                        }}
+                                    ></TextField>
+                                </div>
+                                </Fade>}
+
+                            {stepper >= 4 &&
+                                <Fade in={true} timeout={{enter:1000}}>
+                                    <Grid item>
+                                        <Typography className={classes.formText}>
+                                            and I can be reached by :{' '}
+                                            <span>
+                                                <FormControl>
+                                                    <Select
+                                                        id="reachedAt-category"
+                                                        value={reachedAt.value}
+                                                        onChange={
+                                                            handleReachedAtCategoryChange
+                                                        }
+                                                    >
+                                                        <MenuItem value="email">
+                                                            Email
                                                 </MenuItem>
-                                                <MenuItem value="phone">
-                                                    Phone
+                                                        <MenuItem value="phone">
+                                                            Phone
                                                 </MenuItem>
-                                            </Select>
-                                        </FormControl>
-                                    </span>
+                                                    </Select>
+                                                </FormControl>
+                                            </span>
                                     at:
                                     <span>
-                                        <TextField></TextField>
-                                    </span>
-                                </Typography>
-                            </Grid>
-                            <FormControl component="fieldset">
-                                <FormControlLabel
-                                    value={'top'}
-                                    control={
-                                        <Checkbox
-                                            inputProps={{
-                                                'aria-label':
-                                                    'primary checkbox',
-                                            }}
+                                                <TextField></TextField>
+                                            </span>
+                                        </Typography>
+                                    </Grid>
+                                </Fade>}
+                            {stepper >= 5 &&
+                                <Fade in={true} timeout={{enter:1000}}>
+                                    <div>
+                                    <FormControl component="fieldset">
+                                        <FormControlLabel
+                                            value={'top'}
+                                            control={
+                                                <Checkbox
+                                                    inputProps={{
+                                                        'aria-label':
+                                                            'primary checkbox',
+                                                    }}
+                                                />
+                                            }
+                                            label={privatePolicyText}
+                                            labelPlacement="end"
                                         />
-                                    }
-                                    label={privatePolicyText}
-                                    labelPlacement="end"
-                                />
-                            </FormControl>
-                            <Grid item xs={12}>
-                                <Button>Send</Button>
-                            </Grid>
+                                    </FormControl>
+                                    <Grid item xs={12}>
+                                        <Button>Send</Button>
+                                    </Grid>
+                                    </div>
+                                </Fade>}
                         </Grid>
                     </Grid>
                 </form>
