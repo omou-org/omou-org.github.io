@@ -1,0 +1,13 @@
+Client ID
+502254938356-q4hs1mdcrbhbq3indmv68u27nbvlk56f.apps.googleusercontent.com
+Client Secret
+jDN14c5tQGsh7q4_0gtMcWwL
+
+
+KEY = AIzaSyB9SamxnXpDQC7yk5qVHTOiQly4WVKQthU
+
+
+
+Oauth Client ID = 281034201526-kk4ve7gtbj93krlsmb38q94jnbbmj78i.apps.googleusercontent.com
+
+Secret = GuAWocZ28OiVB09JJPh4I8Nj
