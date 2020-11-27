@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Typography, Box } from "@material-ui/core"
-import teamImage from "./homeimages/grouppicture.png"
+import teamImage from "./homeimages/grouppicture2.png"
 import whoweare from "./homeimages/whoweare.svg"
 import whyomou from "./homeimages/whyomou.svg"
 import ourmission from "./homeimages/ourmission.svg"
@@ -21,9 +21,9 @@ const AboutUs = () => {
                         OMOU
                     </div>
                 </Grid> */}
-                <Grid style={{ textAlign: "center", fullWidth: true }}>
+                <Grid style={{ textAlign: "center" }}>
                     <Box display={{ xs: 'none', sm: 'block', md: 'block' }}>
-                        <img src={teamImage} />
+                        <img src={teamImage} style={{width:"100vw"}}/>
                     </Box>
                 </Grid>
                 <Grid container item md={12} className="bodyContainer">
