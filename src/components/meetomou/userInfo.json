@@ -102,9 +102,9 @@
     {
 "id":13,
         "name": "Kelly Huang",
-        "Role": "Product Marketer",
-        "Description": "Things I love: outdoor adventures, reading, yoga, and guac",
-        "linkedIn": "https://www.linkedin.com/in/khuangx/",
+        "role": "Product Marketer",
+        "description": "Things I love: outdoor adventures, reading, yoga, and guac",
+        "linkedin": "https://www.linkedin.com/in/khuangx/",
         "image": "kelly.jpg"
     },
     {
@@ -128,7 +128,7 @@
 "id":16,
         "name": "Andrew Knapp",
         "role": "Front-End Engineer",
-        "Description": "Learning is my game, whether that be frameworks, musical instruments, or the animal kingdom.",
+        "description": "Learning is my game, whether that be frameworks, musical instruments, or the animal kingdom.",
         "linkedin": "https://bit.ly/3cAimAN",
         "image": "andrew.jpg"
     },
@@ -136,7 +136,7 @@
 "id": 17,
         "name": "Peter Kang",
         "role": "Front-End Engineer",
-        "Description": "LA-based dev, strength training enthusiast, lifelong Lakers fan",
+        "description": "LA-based dev, strength training enthusiast, lifelong Lakers fan",
         "linkedin": "https://www.linkedin.com/in/peterswkang/",
         "image": "peter.png"
     },
@@ -145,7 +145,7 @@
         "id":18,
         "name": "Chris Lojewski",
         "role": "Front-End Engineer",
-        "Description": "Graduate student in materials science and engineering that somehow ended up programming.",
+        "description": "Graduate student in materials science and engineering that somehow ended up programming.",
         "image": "chris.png"
     }
 

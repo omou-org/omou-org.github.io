@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import userData from './userInfo.json';
+import { useEffect } from 'react';
 
 const useStyles = makeStyles({
     meetOmouHeader: {
@@ -18,8 +19,8 @@ const useStyles = makeStyles({
     zoomChat: {
         overflow: 'auto',
         color: 'white',
-        width: '500px',
         height: '1200px',
+        minHeight: '100%',
     },
     imageHighlightSelect: {
         position: 'relative',
@@ -54,19 +55,14 @@ const useStyles = makeStyles({
 const ZoomContainer = () => {
     const classes = useStyles();
     const [choosenImage, setChoosenImage] = useState(null);
-    const [isHighlighted, setIsHighlighted] = useState(null);
     const [zoomChat, setZoomChat] = useState([]);
-
-    const takeFirstName = (string) => {
-        return string.match(/(?:^|(?:[.!?]\s))(\w+)/gm);
-    };
 
     const ZoomImageBox = ({ image, name, id }) => {
         return (
             <Grid item>
                 <div
                     className={
-                        choosenImage === takeFirstName(name).toString()
+                        choosenImage === id.toString()
                             ? classes.imageHighlightSelect
                             : classes.imageNormal
                     }
@@ -75,7 +71,7 @@ const ZoomContainer = () => {
                         src={require(`./images/${image}`)}
                         alt={name + ' alt'}
                         style={{ height: '200px', width: '300px' }}
-                        id={takeFirstName(name)}
+                        id={id}
                         onClick={(e) => {
                             setChoosenImage(e.target.id);
                             findUserInfo(id);
@@ -96,19 +92,23 @@ const ZoomContainer = () => {
             setZoomChat(zoomChat.concat(filtered));
         }
     };
+    // shared store
+    // Parent :
+    // create a hook
 
     const ZoomChat = ({ name, linkedin, description, role, id }) => {
-        const ref = useRef();
-
+        const chatRef = useRef();
+        console.log(chatRef);
         return (
             <Grid
                 item
                 id={id}
                 className={
-                    choosenImage === takeFirstName(name).toString()
+                    choosenImage === id.toString()
                         ? classes.zoomChatStylesHighlighted
                         : classes.zoomChatStylesNormal
                 }
+                ref={chatRef}
             >
                 <Typography style={{ fontWeight: '700' }}>
                     FROM{' '}

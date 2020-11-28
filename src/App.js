@@ -275,7 +275,7 @@ const Footer = () => {
                     item
                     md={4}
                     xs={4}
-                    style={{ marginLeft: '15%', paddingBottom: '4em' }}
+                    style={{ marginLeft: '2%', paddingBottom: '4em' }}
                 >
                     <NavLink
                         to="/"
