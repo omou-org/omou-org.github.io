@@ -5,6 +5,8 @@ import GoogleSheetsForm from './GoogleSheetsForm';
 import betaPageData from './betaPageData.json';
 import ContentSection from '../homepage/ContentSection';
 import wave from '../homepage/homeimages/wave.svg';
+import SlideShow from '../homepage/Slideshow';
+import { betaPageSlideShowData } from './betaPageSlideShowData';
 
 const useStyles = makeStyles((theme) => ({
     homepageBanner: {
@@ -27,10 +29,21 @@ const useStyles = makeStyles((theme) => ({
             marginLeft: '0',
         },
     },
+    EAPQuestion: {
+        textAlign: 'center',
+        fontSize: '60px',
+        fontWeight: 'bold',
+        fontFamily: 'Montserrat',
+    },
+    EAPQuestionContainer: {
+        paddingTop: '16vh',
+        paddingBottom: '16vh',
+    },
 }));
 
 const BetaPage = () => {
     const classes = useStyles();
+
     return (
         <Grid container>
             <Grid
@@ -62,7 +75,34 @@ const BetaPage = () => {
 
                 <GoogleSheetsForm />
             </Grid>
-            <img src={wave} alt="wave" style={{ width: '100%' }} />
+            <img
+                src={wave}
+                alt="wave"
+                style={{ width: '100%', paddingBottom: '4vh' }}
+            />
+            <Grid item xs={12} className={classes.EAPQuestionContainer}>
+                <Typography className={classes.EAPQuestion}>
+                    Why Should I Try the Omou Early Access Program?
+                </Typography>
+            </Grid>
+            <Grid
+                container
+                direction="row"
+                justify="space-around"
+                alignItems="center"
+                className={classes.sliderContainer}
+            >
+                {betaPageSlideShowData.map(
+                    ({ image, title, description, type }) => (
+                        <SlideShow
+                            image={image}
+                            title={title}
+                            description={description}
+                            type={type}
+                        />
+                    )
+                )}
+            </Grid>
             {betaPageData.map(
                 ({
                     image,

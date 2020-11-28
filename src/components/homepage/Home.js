@@ -5,6 +5,8 @@ import people from './homeimages/people.svg';
 import ContentSection from './ContentSection';
 import ContactUsForm from './ContactUsForm';
 import homePageData from './homePageData.json';
+import { slideShowData } from './slideShowData';
+import SlideShow from './Slideshow';
 
 const useStyles = makeStyles((theme) => ({
     homepageBanner: {
@@ -26,6 +28,10 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('sm')]: {
             marginLeft: '0',
         },
+    },
+    sliderContainer: {
+        backgroundColor: '#FAFAFA',
+        height: '700px',
     },
 }));
 
@@ -91,7 +97,21 @@ const Home = () => {
                     />
                 )
             )}
-
+            <Grid
+                container
+                direction="row"
+                justify="space-around"
+                alignItems="center"
+                className={classes.sliderContainer}
+            >
+                {slideShowData.map(({ image, description, title }) => (
+                    <SlideShow
+                        image={image}
+                        description={description}
+                        title={title}
+                    />
+                ))}
+            </Grid>
             <ContactUsForm />
         </Grid>
     );
