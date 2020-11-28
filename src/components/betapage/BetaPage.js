@@ -2,6 +2,9 @@ import React from 'react';
 import { Grid, Typography, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import GoogleSheetsForm from './GoogleSheetsForm';
+import betaPageData from './betaPageData.json';
+import ContentSection from '../homepage/ContentSection';
+import wave from '../homepage/homeimages/wave.svg';
 
 const useStyles = makeStyles((theme) => ({
     homepageBanner: {
@@ -57,10 +60,30 @@ const BetaPage = () => {
                     </Typography>
                 </Grid>
 
-                <Grid item alignContent="right">
-                    <GoogleSheetsForm />
-                </Grid>
+                <GoogleSheetsForm />
             </Grid>
+            <img src={wave} alt="wave" style={{ width: '100%' }} />
+            {betaPageData.map(
+                ({
+                    image,
+                    title,
+                    description,
+                    learnMore,
+                    isRight,
+                    waveImage,
+                    displayContactUsButton,
+                }) => (
+                    <ContentSection
+                        image={image}
+                        title={title}
+                        description={description}
+                        learnMore={learnMore}
+                        isRight={isRight}
+                        waveImage={waveImage}
+                        displayContactUsButton={displayContactUsButton}
+                    />
+                )
+            )}
         </Grid>
     );
 };

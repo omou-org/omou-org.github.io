@@ -8,6 +8,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "emailjs-com": "^2.4.1",
+    "google-spreadsheet": "^3.0.14",
     "material-ui-image": "^3.2.3",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
