@@ -64,7 +64,11 @@ const ContentSection = ({
     return (
         <>
             {waveImage && (
-                <img src={wave} alt="wave" style={{ width: '100%' }} />
+                <img
+                    src={wave}
+                    alt="wave"
+                    style={{ width: '100%', backgroundColor: '#FAFAFA' }}
+                />
             )}
 
             {isRight ? (
