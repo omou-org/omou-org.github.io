@@ -2,20 +2,33 @@ import React from 'react';
 import { Grid, Typography, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import GoogleSheetsForm from './GoogleSheetsForm';
-import betaPageData from './betaPageData.json';
+import { betaPageContent, betaPageSlideShowData } from './betaPageData.js';
 import ContentSection from '../homepage/ContentSection';
 import wave from '../homepage/homeimages/wave.svg';
 import SlideShow from '../homepage/Slideshow';
-import { betaPageSlideShowData } from './betaPageSlideShowData';
+
+import FaqSection from './FaqSection';
 
 const useStyles = makeStyles((theme) => ({
     homepageBanner: {
         width: '100%',
         textAlign: 'center',
         color: 'black',
+        paddingBottom: '5vh',
+    },
+    bannerActionContainer: {
+        paddingTop: '5vh',
+        marginLeft: '4vh',
+    },
+    bannerActionText: {
+        fontSize: '20px',
+        fontWeight: '600',
     },
     homepageText: {
-        marginLeft: '20vh',
+        marginLeft: '4vh',
+        fontSize: '60px',
+        fontWeight: 'bold',
+
         [theme.breakpoints.down('md')]: {
             fontSize: '3vh',
         },
@@ -23,8 +36,11 @@ const useStyles = makeStyles((theme) => ({
             marginLeft: '0',
         },
     },
+
     homepageSubText: {
-        marginLeft: '20vh',
+        marginLeft: '4vh',
+        paddingTop: '5vh',
+        fontSize: '30px',
         [theme.breakpoints.down('sm')]: {
             marginLeft: '0',
         },
@@ -47,33 +63,67 @@ const BetaPage = () => {
     return (
         <Grid container>
             <Grid
-                xs={12}
                 container
                 justify="space-between"
                 direction="row"
                 alignItems="center"
                 className={classes.homepageBanner}
             >
-                <Grid item sm={8} lg={7}>
-                    <Typography
-                        variant="h4"
-                        align="left"
-                        className={classes.homepageText}
+                <Grid item container sm={12} lg={7}>
+                    <Grid item xs={12}>
+                        <Typography
+                            align="left"
+                            className={classes.homepageText}
+                        >
+                            THE OMOU
+                        </Typography>
+                        <Typography
+                            align="left"
+                            className={classes.homepageText}
+                        >
+                            {' '}
+                            EARLY ACCESS PROGRAM
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={10}>
+                        <Typography
+                            className={classes.homepageSubText}
+                            align="left"
+                        >
+                            We understand that running a business is no easy
+                            task. Let us help you handle all the stressful
+                            logistics that comes with operating a tutoring
+                            center.
+                        </Typography>
+                    </Grid>
+                    <Grid
+                        container
+                        direction="row"
+                        justify="flex-start"
+                        alignItems="center"
+                        className={classes.bannerActionContainer}
+                        spacing={12}
                     >
-                        The OMOU EARLY ACCESS PROGRAM
-                    </Typography>
-
-                    <Typography
-                        className={classes.homepageSubText}
-                        align="left"
-                    >
-                        We understand that running a business is no easy task.
-                        Let us help you handle all the stressful logistics that
-                        comes with operating a tutoring center.
-                    </Typography>
+                        <Grid>
+                            <Typography className={classes.bannerActionText}>
+                                Scheduling
+                            </Typography>
+                        </Grid>
+                        <Grid xs={3}>
+                            <Typography className={classes.bannerActionText}>
+                                Invoicing
+                            </Typography>
+                        </Grid>
+                        <Grid>
+                            <Typography className={classes.bannerActionText}>
+                                Course Management
+                            </Typography>
+                        </Grid>
+                    </Grid>
                 </Grid>
-
-                <GoogleSheetsForm />
+                <Grid item xs={5}>
+                    <GoogleSheetsForm />
+                </Grid>
             </Grid>
             <img
                 src={wave}
@@ -103,7 +153,7 @@ const BetaPage = () => {
                     )
                 )}
             </Grid>
-            {betaPageData.map(
+            {betaPageContent.map(
                 ({
                     image,
                     title,
@@ -111,6 +161,7 @@ const BetaPage = () => {
                     learnMore,
                     isRight,
                     waveImage,
+
                     displayContactUsButton,
                 }) => (
                     <ContentSection
@@ -124,6 +175,7 @@ const BetaPage = () => {
                     />
                 )
             )}
+            <FaqSection />
         </Grid>
     );
 };

@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: '4em',
     },
     namePhoneInput: {
-        width: '200%',
+        width: '100%',
         marginLeft: 'auto',
         marginRight: 'auto',
         fontWeight: 500,
