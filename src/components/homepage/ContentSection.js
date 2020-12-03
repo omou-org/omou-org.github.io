@@ -14,10 +14,29 @@ const useStyles = makeStyles({
         height: '800px',
         paddingTop: '10em',
     },
+    contentContainerRight: {
+        height: '800px',
+        paddingTop: '10em',
+        backgroundColor: ' #FAFAFA',
+    },
     rightContent: {
         paddingTop: '2vh',
     },
     contactUsButton: {
+        background: primaryColor,
+        color: 'white',
+        width: '472px',
+        height: '64px',
+        borderRadius: '20px',
+        fontSize: '18px',
+        fontWeight: 'bold',
+        filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
+        '&:hover': {
+            backgroundColor: '#A0A0A0',
+            color: '#FFF',
+        },
+    },
+    signUpForFreeTrailButton: {
         background: primaryColor,
         color: 'white',
         width: '472px',
@@ -36,7 +55,6 @@ const useStyles = makeStyles({
 const ContentSection = ({
     title,
     description,
-
     isRight,
     waveImage,
     displayContactUsButton,
@@ -46,7 +64,11 @@ const ContentSection = ({
     return (
         <>
             {waveImage && (
-                <img src={wave} alt="wave" style={{ width: '100%' }} />
+                <img
+                    src={wave}
+                    alt="wave"
+                    style={{ width: '100%', backgroundColor: '#FAFAFA' }}
+                />
             )}
 
             {isRight ? (
@@ -54,7 +76,7 @@ const ContentSection = ({
                     <Grid
                         container
                         justify="space-around"
-                        className={classes.contentContainer}
+                        className={classes.contentContainerRight}
                     >
                         <section>
                             <Box className={classes.image}></Box>
@@ -73,10 +95,23 @@ const ContentSection = ({
 
                                 <Typography
                                     variant="h4"
-                                    style={{ paddingTop: '15vh' }}
+                                    style={{ paddingTop: '7vh' }}
                                 >
                                     Learn More
                                 </Typography>
+                                {displayContactUsButton ? (
+                                    <Box style={{ paddingTop: '5vh' }}>
+                                        <Button
+                                            className={
+                                                classes.signUpForFreeTrailButton
+                                            }
+                                        >
+                                            SIGN UP FOR YOUR FREE TRIAL TODAY
+                                        </Button>
+                                    </Box>
+                                ) : (
+                                    ''
+                                )}
                             </section>
                         </Grid>
                     </Grid>
@@ -98,22 +133,12 @@ const ContentSection = ({
                                 >
                                     {description}
                                 </Typography>
-                                {displayContactUsButton ? (
-                                    <Box style={{ paddingTop: '15vh' }}>
-                                        <Button
-                                            className={classes.contactUsButton}
-                                        >
-                                            Contact Us
-                                        </Button>
-                                    </Box>
-                                ) : (
-                                    <Typography
-                                        variant="h4"
-                                        style={{ paddingTop: '15vh' }}
-                                    >
-                                        Learn More
-                                    </Typography>
-                                )}
+                                <Typography
+                                    variant="h4"
+                                    style={{ paddingTop: '15vh' }}
+                                >
+                                    Learn More
+                                </Typography>
                             </section>
                         </Grid>
 

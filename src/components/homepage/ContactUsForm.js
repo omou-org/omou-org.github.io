@@ -14,9 +14,11 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(10),
         width: '50%',
     },
-    contactUsContainer: {},
+    contactUsContainer: {
+        paddingTop: '4em',
+    },
     namePhoneInput: {
-        width: '200%',
+        width: '100%',
         marginLeft: 'auto',
         marginRight: 'auto',
         fontWeight: 500,
@@ -115,7 +117,7 @@ const ContactUsForm = () => {
                         alignItems="center"
                         spacing={1}
                     >
-                        <Grid item xs={6}>
+                        <Grid item xs={12}>
                             <Typography className={classes.inputText}>
                                 FULL NAME
                             </Typography>
@@ -124,24 +126,9 @@ const ContactUsForm = () => {
                                 required
                                 variant="outlined"
                                 id="Name"
+                                fullWidth
                                 value={fromName}
                                 onChange={handleNameChange}
-                                InputProps={{
-                                    classes: {
-                                        root: classes.namePhoneInput,
-                                    },
-                                }}
-                            />
-                        </Grid>
-
-                        <Grid item xs={6}>
-                            <Typography className={classes.inputText}>
-                                PHONE NUMBER
-                            </Typography>
-                            <TextField
-                                required
-                                variant="outlined"
-                                id="standard-required"
                                 InputProps={{
                                     classes: {
                                         root: classes.namePhoneInput,
