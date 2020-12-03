@@ -5,8 +5,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     formBox: {
-        height: '450px',
-        width: '400px',
+        height: '550px',
+        width: '600px',
         backgroundColor: '#747679',
         borderRadius: '20px',
         boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25);',
@@ -28,7 +28,8 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: 'white',
     },
     formLabelText: {
-        marginRight: '13em',
+        marginLeft: '2em',
+        textAlign: 'left',
         padding: '10px 0 10px 0',
         fontSize: '22px',
         color: 'white',
@@ -40,8 +41,9 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: 'Montserrat',
     },
     signUpButton: {
-        width: '150px',
-        height: '42px',
+        width: '250px',
+        height: '60px',
+        fontSize: '22px',
         borderRadius: '45px',
         backgroundColor: 'white',
     },

@@ -85,6 +85,7 @@ const Home = () => {
                     isRight,
                     waveImage,
                     displayContactUsButton,
+                    homepage,
                 }) => (
                     <ContentSection
                         image={image}
@@ -94,6 +95,7 @@ const Home = () => {
                         isRight={isRight}
                         waveImage={waveImage}
                         displayContactUsButton={displayContactUsButton}
+                        homepage={homepage}
                     />
                 )
             )}

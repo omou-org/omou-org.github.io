@@ -13,6 +13,7 @@
         "description": "Say good-bye to miscommunication between parents and your staff. With Omou, all stakeholders can access information like automated student progress reports, class schedules, and payment confirmations.",
         "learnMore": "",
         "isRight": false
+     
     },
     {
         "image": "",
@@ -20,13 +21,15 @@
         "description": "Omou alleviates time-consuming administrative tasks like scheduling classes and processing payments with a simple interface. Reduce human errors with a single source of truth for your entire tutoring center.",
         "learnMore": "",
         "isRight": true
+        
     },
     {
         "image": "",
         "title": "A single source of truth for your payments and invoices",
         "description": "Create invoices with Omou, you can automatically create professional invoices and view payment status. Never worry about payment mix-ups again.",
         "learnMore": "",
-        "isRight": false,
-        "displayContactUsButton": true
+        "isRight": false
+        
+       
     }
 ]
