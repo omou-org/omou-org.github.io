@@ -13,14 +13,14 @@ import Carousel from 'react-multi-carousel';
 import './home.scss';
 const useStyles = makeStyles((theme) => ({
     homepageBanner: {
-        paddingTop: '20vh',
+        paddingTop: '15vh',
 
         width: '100%',
         textAlign: 'center',
         color: 'black',
     },
     homepageText: {
-        marginLeft: '20vh',
+        marginLeft: '10vh',
 
         paddingBottom: '4vh',
         fontSize: '50px',
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     homepageSubText: {
-        marginLeft: '20vh',
+        marginLeft: '10vh',
         fontSize: '30px',
         paddingTop: '2vh',
         paddingBottom: '4vh',
@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '20px',
         fontSize: '18px',
         fontWeight: 'bold',
-
+        marginRight: '18vh',
         filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
         '&:hover': {
             backgroundColor: '#A0A0A0',
@@ -134,29 +134,31 @@ const Home = (props) => {
                 </Grid>
             </Grid>
             <Grid>
-                {homePageData.map(
-                    ({
-                        image,
-                        title,
-                        description,
-                        learnMore,
-                        isRight,
-                        waveImage,
-                        displayContactUsButton,
-                        homepage,
-                    }) => (
-                        <ContentSection
-                            image={image}
-                            title={title}
-                            description={description}
-                            learnMore={learnMore}
-                            isRight={isRight}
-                            waveImage={waveImage}
-                            displayContactUsButton={displayContactUsButton}
-                            homepage={homepage}
-                        />
-                    )
-                )}
+                <Grid container spacing={0}>
+                    {homePageData.map(
+                        ({
+                            image,
+                            title,
+                            description,
+                            learnMore,
+                            isRight,
+                            waveImage,
+                            displayContactUsButton,
+                            homepage,
+                        }) => (
+                            <ContentSection
+                                image={image}
+                                title={title}
+                                description={description}
+                                learnMore={learnMore}
+                                isRight={isRight}
+                                waveImage={waveImage}
+                                displayContactUsButton={displayContactUsButton}
+                                homepage={homepage}
+                            />
+                        )
+                    )}
+                </Grid>
             </Grid>
             <Grid
                 item

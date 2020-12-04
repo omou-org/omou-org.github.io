@@ -117,7 +117,7 @@ const ContactUsForm = () => {
                         alignItems="center"
                         spacing={1}
                     >
-                        <Grid item xs={12}>
+                        <Grid item xs={6}>
                             <Typography className={classes.inputText}>
                                 FULL NAME
                             </Typography>
@@ -128,7 +128,6 @@ const ContactUsForm = () => {
                                 id="Name"
                                 fullWidth
                                 value={fromName}
-                                fullWidth
                                 onChange={handleNameChange}
                                 InputProps={{
                                     classes: {
