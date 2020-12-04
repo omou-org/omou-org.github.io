@@ -52,7 +52,6 @@ const useStyles = makeStyles({
         backgroundColor: '#FAFAFA',
         padding: '5em',
         width: '100%',
-        height: '900px',
     },
     faqHeading: {
         fontFamily: 'Montserrat',

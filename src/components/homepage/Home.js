@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     },
     homepageText: {
         marginLeft: '20vh',
+        fontSize: '50px',
         [theme.breakpoints.down('md')]: {
             fontSize: '3vh',
         },
@@ -26,6 +27,8 @@ const useStyles = makeStyles((theme) => ({
     },
     homepageSubText: {
         marginLeft: '20vh',
+        fontSize: '30px',
+        paddingTop: '2em',
         [theme.breakpoints.down('sm')]: {
             marginLeft: '0',
         },
@@ -67,13 +70,9 @@ const Home = (props) => {
                 className={classes.homepageBanner}
             >
                 <Grid item sm={8} lg={7}>
-                    <Typography
-                        variant="h2"
-                        align="left"
-                        className={classes.homepageText}
-                    >
-                        Don't just digitize the way your tutoring center runs -
-                        Transform it
+                    <Typography align="left" className={classes.homepageText}>
+                        DON'T JUST DIGITIZE THE WAY YOUR TUTORING CENTER RUNS
+                        TRANSFORM IT
                     </Typography>
 
                     <Typography
@@ -119,10 +118,13 @@ const Home = (props) => {
                     )
                 )}
             </Grid>
-            <Grid item xs={12}>
+            <Grid
+                item
+                xs={12}
+                style={{ backgroundColor: '#FAFAFA', padding: '5em' }}
+            >
                 <Carousel
-                    swipeable={false}
-                    draggable={false}
+                    swipeable={true}
                     responsive={responsive}
                     keyBoardControl={true}
                     containerClass="carousel-container"

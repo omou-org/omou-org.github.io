@@ -36,7 +36,7 @@ export const slideShowData = [
     },
     {
         key: 6,
-        image: require('./homeimages/calendar.svg'),
+        image: require('./homeimages/handShakePeople.svg'),
         title: 'User profiles for all',
         description:
             'Students, parents, and staff all have their own portals so they can see what’s important to them.',

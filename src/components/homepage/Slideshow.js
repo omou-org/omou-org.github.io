@@ -21,6 +21,14 @@ const useStyles = makeStyles({
         textAlign: 'center',
         fontFamily: 'Montserrat',
     },
+    betaHeaderText: {
+        fontSize: '30px',
+        fontWeight: 500,
+        paddingTop: '10vh',
+
+        textAlign: 'center',
+        fontFamily: 'Montserrat',
+    },
 });
 
 // TODO
@@ -46,16 +54,11 @@ const Slideshow = ({ image, description, title, type, link }) => {
                                 className={classes.iconImage}
                             ></img>
                         </Grid>
-                        <Grid item xs={5}>
-                            <Typography className={classes.headerText}>
+                        <Grid item xs={7}>
+                            <Typography className={classes.betaHeaderText}>
                                 {title}
                             </Typography>
                         </Grid>
-                    </Grid>
-                    <Grid item xs={10}>
-                        <Typography className={classes.descriptionText}>
-                            {description || ''}
-                        </Typography>
                     </Grid>
                 </Grid>
             ) : (
@@ -63,20 +66,22 @@ const Slideshow = ({ image, description, title, type, link }) => {
                     <Grid
                         container
                         direction="column"
-                        justify="center"
+                        justify="space-around"
                         alignItems="center"
                     >
-                        <Grid xs={12}>
+                        <Grid xs={10}>
                             <img
                                 src={image}
                                 alt=""
                                 className={classes.iconImage}
                             ></img>
                         </Grid>
-                        <Grid item xs={9}>
-                            <Typography className={classes.headerText}>
-                                {title}
-                            </Typography>
+                        <Grid item xs={12}>
+                            <Box style={{ height: '120px' }}>
+                                <Typography className={classes.headerText}>
+                                    {title}
+                                </Typography>
+                            </Box>
                         </Grid>
                     </Grid>
                     <Grid item xs={12}>
