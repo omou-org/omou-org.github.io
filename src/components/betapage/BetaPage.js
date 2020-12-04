@@ -6,6 +6,8 @@ import { betaPageContent, betaPageSlideShowData } from './betaPageData.js';
 import ContentSection from '../homepage/ContentSection';
 import wave from '../homepage/homeimages/wave.svg';
 import SlideShow from '../homepage/Slideshow';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 import FaqSection from './FaqSection';
 
@@ -57,7 +59,25 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const BetaPage = () => {
+const responsive = {
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 3,
+        slidesToSlide: 3, // optional, default to 1.
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2,
+        slidesToSlide: 2, // optional, default to 1.
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1,
+        slidesToSlide: 1, // optional, default to 1.
+    },
+};
+
+const BetaPage = (props) => {
     const classes = useStyles();
 
     return (
@@ -134,25 +154,26 @@ const BetaPage = () => {
                 <Typography className={classes.EAPQuestion}>
                     Why Should I Try the Omou Early Access Program?
                 </Typography>
+
+                <Grid
+                    container
+                    direction="row"
+                    justify="center"
+                    alignContent="center"
+                    className={classes.EAPQuestionContainer}
+                >
+                    {betaPageSlideShowData.map(({ image, title, type }) => (
+                        <SlideShow image={image} title={title} type={type} />
+                    ))}
+                </Grid>
             </Grid>
             <Grid
+                item
+                xs={12}
                 container
-                direction="row"
-                justify="space-around"
-                alignItems="center"
-                className={classes.sliderContainer}
-            >
-                {betaPageSlideShowData.map(
-                    ({ image, title, description, type }) => (
-                        <SlideShow
-                            image={image}
-                            title={title}
-                            description={description}
-                            type={type}
-                        />
-                    )
-                )}
-            </Grid>
+                alignContent="center"
+                justify="center"
+            ></Grid>
             {betaPageContent.map(
                 ({
                     image,
@@ -176,6 +197,7 @@ const BetaPage = () => {
                 )
             )}
             <FaqSection />
+            <GoogleSheetsForm contactUs={true} />
         </Grid>
     );
 };

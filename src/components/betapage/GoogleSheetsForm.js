@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Grid, Typography, TextField, Button, Box } from '@material-ui/core';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import { makeStyles } from '@material-ui/core/styles';
+import { primaryColor } from '../../theme/colors';
+import bottomWave from '../homepage/homeimages/bottomWave.svg';
 
 const useStyles = makeStyles((theme) => ({
     formBox: {
@@ -47,9 +49,45 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '45px',
         backgroundColor: 'white',
     },
+    contactUsForm: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        margin: theme.spacing(10),
+        width: '50%',
+    },
+    contactUsContainer: {
+        paddingTop: '4em',
+    },
+    namePhoneInput: {
+        width: '100%',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        fontWeight: 500,
+        borderRadius: '30px',
+    },
+
+    inputText: {
+        paddingBottom: '20px',
+        fontSize: '22px',
+        fontWeight: '300',
+    },
+    emailInputText: {
+        paddingBottom: '20px',
+        paddingTop: '20px',
+        fontSize: '22px',
+        fontWeight: '300',
+    },
+    learnMoreButton: {
+        width: '166px',
+        height: '62px',
+        borderRadius: '20px',
+        backgroundColor: primaryColor,
+        color: 'white',
+    },
 }));
 
-const GoogleSheetsForm = () => {
+const GoogleSheetsForm = ({ contactUs }) => {
     const classes = useStyles();
 
     const SPREADSHEET_ID = process.env.REACT_APP_SPREADSHEET_ID;
@@ -59,6 +97,7 @@ const GoogleSheetsForm = () => {
     const [formData, setFormData] = useState({ Name: '', Email: '' });
 
     const doc = new GoogleSpreadsheet(SPREADSHEET_ID);
+
     const appendSpreadsheet = async (row) => {
         try {
             await doc.useServiceAccountAuth({
@@ -69,6 +108,7 @@ const GoogleSheetsForm = () => {
             await doc.loadInfo();
 
             const sheet = doc.sheetsById[SHEET_ID];
+            console.log(sheet);
             const result = await sheet.addRow(row);
             console.log(result);
         } catch (e) {
@@ -85,68 +125,173 @@ const GoogleSheetsForm = () => {
     };
 
     const handleFormSubmit = () => {
-        appendSpreadsheet(formData);
+        // appendSpreadsheet(formData);
+
+        setFormData({ Name: '', Email: '' });
     };
 
     return (
-        <form>
-            <Grid item style={{ padding: '6vh' }}>
+        <>
+            {contactUs ? (
                 <Grid
                     container
-                    direction="row"
                     justify="center"
-                    alignItems="center"
-                    className={classes.formBox}
+                    direction="row"
+                    className={classes.contactUsContainer}
                 >
-                    <Grid item xs={12}>
-                        <Typography className={classes.formHeadingText}>
-                            TRY IT FOR FREE TODAY! SIGN UP HERE.
-                        </Typography>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <Typography className={classes.formLabelText}>
-                            Name
-                        </Typography>
-                        <TextField
-                            variant="outlined"
-                            id="name"
-                            style={{ width: '90%' }}
-                            onChange={handleNameInput}
-                            InputProps={{
-                                classes: {
-                                    root: classes.nameInput,
-                                },
+                    <Grid item xs={6} style={{ textAlign: 'center' }}>
+                        <Typography
+                            style={{
+                                fontSize: '47px',
+                                fontWeight: '700',
+                                fontFamily: 'Montserrat',
                             }}
-                        />
-                    </Grid>
-                    <Grid item xs={12}>
-                        <Typography className={classes.formLabelText}>
-                            Email*
-                        </Typography>
-                        <TextField
-                            required
-                            variant="outlined"
-                            id="email"
-                            style={{ width: '90%' }}
-                            onChange={handleEmailInput}
-                            InputProps={{
-                                classes: {
-                                    root: classes.emailInput,
-                                },
-                            }}
-                        />
-                    </Grid>
-                    <Grid item xs={12} style={{ padding: '2vh 0 2vh 0' }}>
-                        <Button
-                            className={classes.signUpButton}
-                            onClick={handleFormSubmit}
                         >
-                            SIGN UP
-                        </Button>
+                            JOIN THE EARLY ACCESS PROGRAM FOR FREE TODAY!
+                        </Typography>
                     </Grid>
+                    <Grid
+                        container
+                        direction="row"
+                        justify="center"
+                        alignItems="center"
+                    >
+                        <form className={classes.contactUsForm}>
+                            <Grid
+                                container
+                                direction="row"
+                                justify="center"
+                                alignItems="center"
+                                spacing={1}
+                            >
+                                <Grid item xs={12}>
+                                    <Typography className={classes.inputText}>
+                                        FULL NAME
+                                    </Typography>
+
+                                    <TextField
+                                        required
+                                        variant="outlined"
+                                        id="Name"
+                                        value={formData.Name}
+                                        fullWidth
+                                        onChange={handleNameInput}
+                                        InputProps={{
+                                            classes: {
+                                                root: classes.namePhoneInput,
+                                            },
+                                        }}
+                                    />
+                                </Grid>
+
+                                <Grid item xs={12}>
+                                    <Typography
+                                        className={classes.emailInputText}
+                                    >
+                                        EMAIL
+                                    </Typography>
+
+                                    <TextField
+                                        required
+                                        variant="outlined"
+                                        value={formData.Email}
+                                        onChange={handleEmailInput}
+                                        fullWidth
+                                        id="standard-required"
+                                        InputProps={{
+                                            classes: {
+                                                root: classes.emailInput,
+                                            },
+                                        }}
+                                    />
+                                </Grid>
+                            </Grid>
+                        </form>
+                    </Grid>
+
+                    <Grid container justify="center" direction="row">
+                        <Grid item>
+                            <Button
+                                className={classes.learnMoreButton}
+                                onClick={handleFormSubmit}
+                            >
+                                Learn more
+                            </Button>
+                        </Grid>
+                    </Grid>
+                    <img
+                        src={bottomWave}
+                        alt="wave2"
+                        style={{ width: '100%' }}
+                    />
                 </Grid>
-            </Grid>
-        </form>
+            ) : (
+                <form>
+                    <Grid item style={{ padding: '6vh' }}>
+                        <Grid
+                            container
+                            direction="row"
+                            justify="center"
+                            alignItems="center"
+                            className={classes.formBox}
+                        >
+                            <Grid item xs={12}>
+                                <Typography className={classes.formHeadingText}>
+                                    TRY IT FOR FREE TODAY! SIGN UP HERE.
+                                </Typography>
+                            </Grid>
+                            <Grid item xs={12}>
+                                <Typography className={classes.formLabelText}>
+                                    Name
+                                </Typography>
+                                <TextField
+                                    variant="outlined"
+                                    id="name"
+                                    style={{ width: '90%' }}
+                                    value={formData.Name}
+                                    onChange={handleNameInput}
+                                    InputProps={{
+                                        classes: {
+                                            root: classes.nameInput,
+                                        },
+                                    }}
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <Typography className={classes.formLabelText}>
+                                    Email*
+                                </Typography>
+                                <TextField
+                                    required
+                                    variant="outlined"
+                                    id="email"
+                                    value={formData.Email}
+                                    style={{ width: '90%' }}
+                                    onChange={handleEmailInput}
+                                    InputProps={{
+                                        classes: {
+                                            root: classes.emailInput,
+                                        },
+                                    }}
+                                />
+                            </Grid>
+                            <Grid
+                                item
+                                xs={12}
+                                style={{ padding: '2vh 0 2vh 0' }}
+                            >
+                                <Button
+                                    className={classes.signUpButton}
+                                    onClick={handleFormSubmit}
+                                >
+                                    SIGN UP
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </form>
+            )}
+        </>
     );
 };
 

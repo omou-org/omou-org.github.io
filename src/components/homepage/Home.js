@@ -9,6 +9,8 @@ import { slideShowData } from './slideShowData';
 import SlideShow from './Slideshow';
 import { primaryColor } from '../../theme/colors';
 
+import Carousel from 'react-multi-carousel';
+import './home.scss';
 const useStyles = makeStyles((theme) => ({
     homepageBanner: {
         paddingTop: '20vh',
@@ -21,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: '20vh',
 
         paddingBottom: '4vh',
+        fontSize: '50px',
         [theme.breakpoints.down('md')]: {
             fontSize: '3vh',
         },
@@ -58,7 +61,25 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Home = () => {
+const responsive = {
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 3,
+        slidesToSlide: 3, // optional, default to 1.
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2,
+        slidesToSlide: 2, // optional, default to 1.
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1,
+        slidesToSlide: 1, // optional, default to 1.
+    },
+};
+
+const Home = (props) => {
     const classes = useStyles();
     return (
         <Grid container>
@@ -112,45 +133,53 @@ const Home = () => {
                     </Box>
                 </Grid>
             </Grid>
-
-            {homePageData.map(
-                ({
-                    image,
-                    title,
-                    description,
-                    learnMore,
-                    isRight,
-                    waveImage,
-                    displayContactUsButton,
-                    homepage,
-                }) => (
-                    <ContentSection
-                        image={image}
-                        title={title}
-                        description={description}
-                        learnMore={learnMore}
-                        isRight={isRight}
-                        waveImage={waveImage}
-                        displayContactUsButton={displayContactUsButton}
-                        homepage={homepage}
-                    />
-                )
-            )}
-            <Grid
-                container
-                direction="row"
-                justify="space-around"
-                alignItems="center"
-                className={classes.sliderContainer}
-            >
-                {slideShowData.map(({ image, description, title }) => (
-                    <SlideShow
-                        image={image}
-                        description={description}
-                        title={title}
-                    />
-                ))}
+            <Grid>
+                {homePageData.map(
+                    ({
+                        image,
+                        title,
+                        description,
+                        learnMore,
+                        isRight,
+                        waveImage,
+                        displayContactUsButton,
+                        homepage,
+                    }) => (
+                        <ContentSection
+                            image={image}
+                            title={title}
+                            description={description}
+                            learnMore={learnMore}
+                            isRight={isRight}
+                            waveImage={waveImage}
+                            displayContactUsButton={displayContactUsButton}
+                            homepage={homepage}
+                        />
+                    )
+                )}
             </Grid>
+            <Grid
+                item
+                xs={12}
+                style={{ backgroundColor: '#FAFAFA', padding: '5em' }}
+            >
+                <Carousel
+                    swipeable={true}
+                    responsive={responsive}
+                    keyBoardControl={true}
+                    containerClass="carousel-container"
+                    removeArrowOnDeviceType={['tablet', 'mobile']}
+                >
+                    {slideShowData.map(({ image, description, title }) => (
+                        <SlideShow
+                            image={image}
+                            description={description}
+                            title={title}
+                        />
+                    ))}
+                </Carousel>
+            </Grid>
+
             <ContactUsForm />
         </Grid>
     );

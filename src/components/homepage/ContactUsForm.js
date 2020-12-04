@@ -128,7 +128,24 @@ const ContactUsForm = () => {
                                 id="Name"
                                 fullWidth
                                 value={fromName}
+                                fullWidth
                                 onChange={handleNameChange}
+                                InputProps={{
+                                    classes: {
+                                        root: classes.namePhoneInput,
+                                    },
+                                }}
+                            />
+                        </Grid>
+                        <Grid item xs={6}>
+                            <Typography className={classes.inputText}>
+                                PHONE NUMBER
+                            </Typography>
+                            <TextField
+                                required
+                                variant="outlined"
+                                id="standard-required"
+                                fullWidth
                                 InputProps={{
                                     classes: {
                                         root: classes.namePhoneInput,
