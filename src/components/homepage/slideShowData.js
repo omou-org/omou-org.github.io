@@ -1,22 +1,44 @@
 export const slideShowData = [
     {
         key: 1,
-        image: require('./homeimages/computerCheck.svg'),
-        title: 'Take care of all your administrative processes in one place',
+        image: require('./homeimages/macClick.svg'),
+        title: 'A single home for all of your business needs',
         description:
-            'Reduce human error by handling payments, schedules, and more in one place',
+            'Say good-bye to juggling multiple tools. Handle payments, schedules, and more in one platform so you can focus on helping students. ',
     },
     {
         key: 2,
-        image: require('./homeimages/handShakePeople.svg'),
-        title: 'Keep everyone in the loop on student progress',
-        description: 'A single destination for parents, students, and staff.',
+        image: require('./homeimages/stocks.svg'),
+        title: 'Intuitive course dashboards',
+        description:
+            'Get insight into how your business is running, and detailed overviews of each of your courses.',
     },
     {
         key: 3,
-        image: require('./homeimages/macClick.svg'),
-        title: 'Make the transition to online learning seamless',
+        image: require('./homeimages/stopwatch.svg'),
+        title: 'Guided set-up',
         description:
-            "We'll handle the online part of online learning  so you can focus on working with students.",
+            'Our team will ensure that your business is set up for success with Omou and your transition to online learning is seamless.',
+    },
+    {
+        key: 4,
+        image: require('./homeimages/calendar.svg'),
+        title: 'Simple scheduling',
+        description:
+            'Quickly see availability of your staff and make scheduling decisions a breeze.',
+    },
+    {
+        key: 5,
+        image: require('./homeimages/reciept.svg'),
+        title: 'Professional payment tracking',
+        description:
+            'Create tuition rules and discount and view real-time status of payments in the same place you manage students. ',
+    },
+    {
+        key: 6,
+        image: require('./homeimages/calendar.svg'),
+        title: 'User profiles for all',
+        description:
+            'Students, parents, and staff all have their own portals so they can see what’s important to them.',
     },
 ];

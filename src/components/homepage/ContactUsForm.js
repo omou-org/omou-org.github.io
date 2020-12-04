@@ -127,6 +127,7 @@ const ContactUsForm = () => {
                                 variant="outlined"
                                 id="Name"
                                 value={fromName}
+                                fullWidth
                                 onChange={handleNameChange}
                                 InputProps={{
                                     classes: {
@@ -144,6 +145,7 @@ const ContactUsForm = () => {
                                 required
                                 variant="outlined"
                                 id="standard-required"
+                                fullWidth
                                 InputProps={{
                                     classes: {
                                         root: classes.namePhoneInput,

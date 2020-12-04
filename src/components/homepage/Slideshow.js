@@ -10,7 +10,7 @@ const useStyles = makeStyles({
         fontSize: '20px',
         fontWeight: 700,
         paddingTop: '5vh',
-        paddingBottom: '3vh',
+
         textAlign: 'center',
         fontFamily: 'Montserrat',
     },
@@ -30,37 +30,63 @@ const Slideshow = ({ image, description, title, type, link }) => {
     const classes = useStyles();
 
     return (
-        <Grid item xs={4}>
-            <Grid
-                container
-                direction="column"
-                justify="center"
-                alignItems="center"
-            >
-                <Grid xs={12}>
-                    <img src={image} alt="" className={classes.iconImage}></img>
-                </Grid>
-                {type === 'beta' ? (
-                    <Grid item xs={5}>
-                        <Typography className={classes.headerText}>
-                            {title}
-                        </Typography>
+        <>
+            {type === 'beta' ? (
+                <Grid item xs={4}>
+                    <Grid
+                        container
+                        direction="column"
+                        justify="center"
+                        alignItems="center"
+                    >
+                        <Grid xs={12}>
+                            <img
+                                src={image}
+                                alt=""
+                                className={classes.iconImage}
+                            ></img>
+                        </Grid>
+                        <Grid item xs={5}>
+                            <Typography className={classes.headerText}>
+                                {title}
+                            </Typography>
+                        </Grid>
                     </Grid>
-                ) : (
                     <Grid item xs={10}>
-                        <Typography className={classes.headerText}>
-                            {title}
+                        <Typography className={classes.descriptionText}>
+                            {description || ''}
                         </Typography>
                     </Grid>
-                )}
-
-                <Grid item xs={10}>
-                    <Typography className={classes.descriptionText}>
-                        {description || ''}
-                    </Typography>
                 </Grid>
-            </Grid>
-        </Grid>
+            ) : (
+                <Grid item xs={8}>
+                    <Grid
+                        container
+                        direction="column"
+                        justify="center"
+                        alignItems="center"
+                    >
+                        <Grid xs={12}>
+                            <img
+                                src={image}
+                                alt=""
+                                className={classes.iconImage}
+                            ></img>
+                        </Grid>
+                        <Grid item xs={9}>
+                            <Typography className={classes.headerText}>
+                                {title}
+                            </Typography>
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Typography className={classes.descriptionText}>
+                            {description || ''}
+                        </Typography>
+                    </Grid>
+                </Grid>
+            )}
+        </>
     );
 };
 
