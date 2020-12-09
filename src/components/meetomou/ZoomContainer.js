@@ -1,8 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect, Component } from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import userData from './userInfo.json';
-import { useEffect } from 'react';
+import { userData } from './userData.js';
 
 const useStyles = makeStyles({
     meetOmouHeader: {
@@ -56,8 +55,9 @@ const ZoomContainer = () => {
     const classes = useStyles();
     const [choosenImage, setChoosenImage] = useState(null);
     const [zoomChat, setZoomChat] = useState([]);
+    const [tasks, setTasks] = useState([]);
 
-    const ZoomImageBox = ({ image, name, id }) => {
+    const ZoomImageBox = ({ image, name, id, i }) => {
         return (
             <Grid item>
                 <div
@@ -73,6 +73,7 @@ const ZoomContainer = () => {
                         style={{ height: '200px', width: '300px' }}
                         id={id}
                         onClick={(e) => {
+                            refsArray.current[i].scrollIntoView();
                             setChoosenImage(e.target.id);
                             findUserInfo(id);
                         }}
@@ -97,8 +98,6 @@ const ZoomContainer = () => {
     // create a hook
 
     const ZoomChat = ({ name, linkedin, description, role, id }) => {
-        const chatRef = useRef();
-        console.log(chatRef);
         return (
             <Grid
                 item
@@ -108,7 +107,9 @@ const ZoomContainer = () => {
                         ? classes.zoomChatStylesHighlighted
                         : classes.zoomChatStylesNormal
                 }
-                ref={chatRef}
+                ref={(ref) => {
+                    refsArray.current[id] = ref;
+                }}
             >
                 <Typography style={{ fontWeight: '700' }}>
                     FROM{' '}
@@ -133,13 +134,18 @@ const ZoomContainer = () => {
                             paddingTop: '10px',
                         }}
                     >
-                        {' '}
-                        {linkedin}{' '}
+                        {linkedin}
                     </Typography>
                 </a>
             </Grid>
         );
     };
+
+    const refsArray = useRef([]);
+
+    useEffect(() => {
+        console.log(refsArray);
+    });
 
     return (
         <Grid
@@ -178,12 +184,34 @@ const ZoomContainer = () => {
                     justify="flex-end"
                     alignItems="center"
                 >
-                    {userData.map((data) => (
-                        <ZoomImageBox
-                            image={data.image}
-                            name={data.name}
-                            id={data.id}
-                        />
+                    {userData.map((data, i) => (
+                        <Grid item>
+                            <div
+                                className={
+                                    choosenImage === data.id.toString()
+                                        ? classes.imageHighlightSelect
+                                        : classes.imageNormal
+                                }
+                                key={i}
+                                onClick={() => {
+                                    console.log(refsArray);
+                                }}
+                            >
+                                <img
+                                    src={require(`./images/${data.image}`)}
+                                    alt={data.name + ' alt'}
+                                    style={{ height: '200px', width: '300px' }}
+                                    id={data.id}
+                                    onClick={(e) => {
+                                        setChoosenImage(e.target.id);
+                                        findUserInfo(data.id);
+                                    }}
+                                />
+                                <Typography className={classes.imageTextName}>
+                                    {data.name}
+                                </Typography>
+                            </div>
+                        </Grid>
                     ))}
                 </Grid>
 
@@ -195,15 +223,62 @@ const ZoomContainer = () => {
                     alignItems="center"
                     className={classes.zoomChat}
                 >
-                    {zoomChat.map((data) => (
-                        <ZoomChat
-                            name={data.name}
-                            linkedin={data.linkedin}
-                            description={data.description}
-                            role={data.role}
-                            id={data.id}
-                            key={data.id}
-                        />
+                    {zoomChat.map((data, i) => (
+                        <div
+                            ref={(ref) => {
+                                refsArray.current[i] = ref;
+                            }}
+                        >
+                            <Grid
+                                item
+                                id={data.id}
+                                className={
+                                    choosenImage === data.id.toString()
+                                        ? classes.zoomChatStylesHighlighted
+                                        : classes.zoomChatStylesNormal
+                                }
+                            >
+                                <Typography style={{ fontWeight: '700' }}>
+                                    FROM{' '}
+                                    <span style={{ color: '#43B5D9' }}>
+                                        {data.name.toUpperCase()}
+                                    </span>{' '}
+                                    TO
+                                    <span style={{ color: '#43B5D9' }}>
+                                        {' '}
+                                        EVERYONE
+                                    </span>{' '}
+                                </Typography>
+                                <Typography
+                                    style={{
+                                        paddingTop: '1em',
+                                        fontWeight: '700',
+                                    }}
+                                >
+                                    {data.role}
+                                </Typography>
+                                <Typography
+                                    style={{
+                                        fontWeight: 'bold',
+                                        fontSize: '15px',
+                                    }}
+                                >
+                                    {data.description}
+                                </Typography>
+                                <a href={data.linkedin} target="_blank">
+                                    <Typography
+                                        style={{
+                                            color: 'white',
+                                            textDecoration: 'underline',
+                                            fontWeight: '700',
+                                            paddingTop: '10px',
+                                        }}
+                                    >
+                                        {data.linkedin}
+                                    </Typography>
+                                </a>
+                            </Grid>
+                        </div>
                     ))}
                 </Grid>
             </Grid>
