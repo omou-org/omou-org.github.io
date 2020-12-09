@@ -20,6 +20,7 @@ const useStyles = makeStyles({
         backgroundColor: ' #FAFAFA',
     },
     rightContent: {
+        fontSize: '18px',
         paddingTop: '2vh',
     },
     contactUsButton: {
@@ -84,18 +85,30 @@ const ContentSection = ({
 
                         <Grid xs={4}>
                             <section className={classes.rightContent}>
-                                <Typography variant="h4">{title}</Typography>
+                                <Typography
+                                    style={{
+                                        fontSize: '22px',
+                                        fontWeight: 'bold',
+                                    }}
+                                >
+                                    {' '}
+                                    {title}
+                                </Typography>
 
                                 <Typography
-                                    variant="h5"
-                                    style={{ paddingTop: '5vh' }}
+                                    style={{
+                                        fontSize: '22px',
+                                        paddingTop: '5vh',
+                                    }}
                                 >
                                     {description}
                                 </Typography>
 
                                 <Typography
-                                    variant="h4"
-                                    style={{ paddingTop: '7vh' }}
+                                    style={{
+                                        paddingTop: '7vh',
+                                        fontSize: '22px',
+                                    }}
                                 >
                                     Learn More
                                 </Typography>
@@ -125,17 +138,28 @@ const ContentSection = ({
                     >
                         <Grid xs={4}>
                             <section className={classes.rightContent}>
-                                <Typography variant="h4">{title}</Typography>
+                                <Typography
+                                    style={{
+                                        fontSize: '22px',
+                                        fontWeight: 'bold',
+                                    }}
+                                >
+                                    {title}
+                                </Typography>
 
                                 <Typography
-                                    variant="h5"
-                                    style={{ paddingTop: '5vh' }}
+                                    style={{
+                                        fontSize: '22px',
+                                        paddingTop: '5vh',
+                                    }}
                                 >
                                     {description}
                                 </Typography>
                                 <Typography
-                                    variant="h4"
-                                    style={{ paddingTop: '15vh' }}
+                                    style={{
+                                        paddingTop: '15vh',
+                                        fontSize: '22px',
+                                    }}
                                 >
                                     Learn More
                                 </Typography>
