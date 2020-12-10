@@ -9,9 +9,33 @@ import {
     useLocation,
 } from 'react-router-dom';
 
-import { Overview } from './features-pages/Overview';
+import Overview  from './features-pages/feature-components/Overview';
+import Payment from './features-pages/feature-components/Payment';
+import Accounts from './features-pages/feature-components/Accounts';
+import Registration from './features-pages/feature-components/Registration';
+import Scheduling from './features-pages/feature-components/Scheduling';
 
-const useStyles = makeStyles({});
+const useStyles = makeStyles({
+    sideBar: {
+        position: 'absolute',
+        top: '0px',
+        fontFamily: 'Montserrat',
+        fontWeight: '500',
+        fontSize: '28px',
+        lineHeight: '43.77px',
+        fontVariant: 'all-small-caps',
+        letterSpacing: '0.03em',
+        marginLeft: '20px',
+        whiteSpace: 'no-wrap'
+    },
+    featureHeader: {
+        fontFamily: 'Montserrat',
+        fontSize: '72px',
+        fontWeight: '400',
+        lineHeight: '109px',
+        letterSpacing: '0.03em'
+    }
+});
 
 // const routes = [
 //     {
@@ -28,10 +52,10 @@ const useStyles = makeStyles({});
 //         main: () => <h2>registration</h2>,
 //     },
 //     {
-//         title: 'scheduleing',
-//         link: '/scheduleing',
-//         sidebar: () => <div>scheduleing</div>,
-//         main: () => <h2>scheduleing</h2>,
+//         title: 'scheduling',
+//         link: '/scheduling',
+//         sidebar: () => <div>scheduling</div>,
+//         main: () => <h2>scheduling</h2>,
 //     },
 //     {
 //         title: 'payments',
@@ -52,27 +76,28 @@ const routes = [
         path: '/features',
         exact: true,
         sidebar: () => <div>home!</div>,
-        main: () => <h2>Home</h2>,
+        // Render component in main
+        main: () => <Overview />,
     },
     {
         path: '/registration',
         sidebar: () => <div>registration!</div>,
-        main: () => <h2>registration</h2>,
+        main: () => <Registration />,
     },
     {
-        path: '/scheduleing',
-        sidebar: () => <div>scheduleing!</div>,
-        main: () => <h2>scheduleing</h2>,
+        path: '/scheduling',
+        sidebar: () => <div>Simple Scheduling</div>,
+        main: () => <Scheduling />,
     },
     {
         path: '/payments',
         sidebar: () => <div>payments!</div>,
-        main: () => <h2>payments</h2>,
+        main: () => <Payment />,
     },
     {
         path: '/accounts',
         sidebar: () => <div>accounts!</div>,
-        main: () => <h2>accounts</h2>,
+        main: () => <Accounts />,
     },
 ];
 
@@ -82,37 +107,26 @@ const Features = ({}) => {
     // feature data
     // need them to link
 
-    const MenuList = ({ fontType }) => {
-        const classes = useStyles();
-        const location = useLocation();
-
-        return routes.map(({ title, link }) => (
-            <div>
-                <ul>
-                    <li>
-                        <Link to={link}>{title}</Link>
-                    </li>
-                </ul>
-            </div>
-        ));
-    };
-
     return (
         <Router>
-            <Grid container>
+            <Grid style={{marginBottom: '40px'}} container>
                 <Grid
                     container
                     justify="center"
                     alignContent="center"
                     direction="row"
                 >
-                    <Typography>
-                        OMOU <span>FEATURES</span>
+                    <Typography className={classes.featureHeader}>
+                        <span style={{color: primaryColor}}>OMOU</span> FEATURES
                     </Typography>
                 </Grid>
 
-                <Grid container item={12}>
+                <Grid 
+                container item={12}>
                     <Grid
+                        style={{
+                            // background: 'green', 
+                            position: 'relative' }}
                         item
                         xs={2}
                         container
@@ -120,23 +134,27 @@ const Features = ({}) => {
                         justify="center"
                         alignItems="flex-start"
                     >
-                        <ul style={{ listStyleType: 'none', padding: 0 }}>
+                        <ul
+                        className={classes.sideBar} 
+                        style={{ listStyleType: 'none', padding: 0 }}
+                        >
                             <li>
-                                <Link to="/features">Home</Link>
+                                <Link style={{textDecoration: 'none'}} to="/features">Overview</Link>
                             </li>
                             <li>
-                                <Link to="/registration">registration</Link>
+                                <Link style={{textDecoration: 'none'}} to="/registration">Registration</Link>
                             </li>
                             <li>
-                                <Link to="/scheduleing">scheduleing</Link>
+                                <Link style={{textDecoration: 'none'}} to="/scheduling">Simple Scheduling</Link>
                             </li>
                             <li>
-                                <Link to="/registration">registration</Link>
+                                <Link style={{textDecoration: 'none'}} to="/payments">Payments</Link>
                             </li>
                             <li>
-                                <Link to="/accounts">accounts</Link>
+                                <Link style={{textDecoration: 'none'}} to="/accounts">User Accounts</Link>
                             </li>
                         </ul>
+                        {/* <Button>request demo</Button> */}
                     </Grid>
                     <div style={{ flex: 1, padding: '10px' }}>
                         <Switch>
@@ -147,7 +165,7 @@ const Features = ({}) => {
                                     key={index}
                                     path={route.path}
                                     exact={route.exact}
-                                    children={<route.main />}
+                                    children={route.main}
                                 />
                             ))}
                         </Switch>
