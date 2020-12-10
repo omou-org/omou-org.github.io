@@ -15,7 +15,8 @@ const useStyles = makeStyles((theme) => ({
         width: '50%',
     },
     contactUsContainer: {
-        paddingTop: '4em',
+        paddingTop: '5em',
+        height: '800px',
     },
     namePhoneInput: {
         width: '100%',

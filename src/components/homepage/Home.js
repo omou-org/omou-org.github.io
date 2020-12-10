@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import people from './homeimages/people.svg';
 import ContentSection from './ContentSection';
 import ContactUsForm from './ContactUsForm';
-import homePageData from './homePageData.json';
+import { homePageData } from './homePageData';
 import { slideShowData } from './slideShowData';
 import SlideShow from './Slideshow';
 import { primaryColor } from '../../theme/colors';

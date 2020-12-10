@@ -6,22 +6,25 @@ import { primaryColor } from '../../theme/colors';
 
 const useStyles = makeStyles({
     image: {
-        width: '500px',
-        height: '500px',
+        width: '900px',
+        height: '600px',
         backgroundColor: 'black',
+        border: '1px solid #FFFFF',
+        boxSizing: 'border-box',
+        filter: ' drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
     },
     contentContainer: {
-        height: '800px',
+        height: '1000px',
         paddingTop: '10em',
     },
     contentContainerRight: {
-        height: '800px',
+        height: '1000px',
         paddingTop: '10em',
         backgroundColor: ' #FAFAFA',
     },
     rightContent: {
         fontSize: '18px',
-        paddingTop: '2vh',
+        paddingTop: '10vh',
     },
     contactUsButton: {
         background: primaryColor,
@@ -57,6 +60,7 @@ const ContentSection = ({
     title,
     description,
     isRight,
+    image,
     waveImage,
     displayContactUsButton,
 }) => {
@@ -80,7 +84,16 @@ const ContentSection = ({
                         className={classes.contentContainerRight}
                     >
                         <section>
-                            <Box className={classes.image}></Box>
+                            <Box className={classes}>
+                                {image ? (
+                                    <img
+                                        src={image}
+                                        className={classes.image}
+                                    />
+                                ) : (
+                                    ''
+                                )}
+                            </Box>
                         </section>
 
                         <Grid xs={4}>
@@ -133,7 +146,9 @@ const ContentSection = ({
                 <>
                     <Grid
                         container
+                        direction="column"
                         justify="space-around"
+                        alignItems="center"
                         className={classes.contentContainer}
                     >
                         <Grid xs={4}>
@@ -167,7 +182,9 @@ const ContentSection = ({
                         </Grid>
 
                         <section>
-                            <Box className={classes.image}></Box>
+                            <Box>
+                                <img src={image} className={classes.image} />{' '}
+                            </Box>
                         </section>
                     </Grid>
                 </>
