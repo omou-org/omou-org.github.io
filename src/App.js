@@ -168,7 +168,7 @@ function NavigationBar() {
             >
                 <Toolbar>
                     <NavLink className={classes.link} to="/">
-                        <Typography variant="h3">omou</Typography>
+                        <Typography variant="h4">omou</Typography>
                     </NavLink>
                     <div className={classes.grow} />
                     <div className={classes.desktopMenu}></div>
