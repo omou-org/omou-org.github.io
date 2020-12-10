@@ -38,7 +38,7 @@ const Accounts = () => {
 	const classes = useStyles();
 
 	return (
-		<div>
+		<div style={{marginLeft: '50px'}}>
 			<Typography
 				style={{ marginBottom: '20px', marginTop: '25px' }}
 				className={classes.headers}

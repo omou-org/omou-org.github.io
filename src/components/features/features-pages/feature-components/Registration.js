@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Box, Typography, Button } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import sampleImg1 from '../../images/Parents_Reg_1.0.0.png';
 import sampleImg2 from '../../images/Parents_Reg_1.1.1.png';
@@ -39,7 +39,7 @@ const useStyles = makeStyles({
 const Registration = () => {
 	const classes = useStyles();
 	return (
-		<div>
+		<div style={{marginLeft: '50px'}}>
 			<Typography style={{ marginBottom: '20px', marginTop: '25px' }} className={classes.headers}>
 				standardized registration & payments
 			</Typography>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Box, Typography, Button } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { primaryColor } from '../../../../theme/colors';
 import schedImg1 from '../../images/Inst_Course Management_Landing.jpg';
@@ -38,7 +38,7 @@ const Scheduling = () => {
 	const classes = useStyles();
 
 	return (
-		<div>
+		<div style={{marginLeft: '50px'}}>
 			<Typography style={{ marginBottom: '20px', marginTop: '25px' }} className={classes.headers}>
 				simple scheduling
 			</Typography>

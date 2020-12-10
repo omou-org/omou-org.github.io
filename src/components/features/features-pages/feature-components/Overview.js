@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Box, Typography, Button } from '@material-ui/core';
+import { Typography, Button } from '@material-ui/core';
 import sampleImg1 from '../../images/Parents_Reg_1.0.0.png';
 import sampleImg2 from '../../images/Parents_Reg_1.1.1.png';
 
@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 const Overview = () => {
 	const classes = useStyles();
 	return (
-		<div>
+		<div style={{marginLeft: '50px'}}>
 			<Typography className={classes.overviewText} align='left' paragraph>
 				Whatever your needs are, Omou can help your tutoring center seamlessly
 				make the transition to digital learning. Manage tutor schedule, billing

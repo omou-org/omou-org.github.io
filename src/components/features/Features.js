@@ -34,6 +34,17 @@ const useStyles = makeStyles({
         fontWeight: '400',
         lineHeight: '109px',
         letterSpacing: '0.03em'
+    },
+    requestDemoBtn: {
+        color: 'white',
+        width: '250px',
+        height: '45px',
+        background: primaryColor,
+        border: `1px solid ${primaryColor}`,
+        borderRadius: '20px',
+        boxSizing: 'border-box',
+        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+        marginTop: '50px'
     }
 });
 
@@ -121,12 +132,12 @@ const Features = ({}) => {
                     </Typography>
                 </Grid>
 
-                <Grid 
+                <Grid
                 container item={12}>
                     <Grid
                         style={{
-                            // background: 'green', 
-                            position: 'relative' }}
+                            position: 'relative',
+                        }}
                         item
                         xs={2}
                         container
@@ -139,22 +150,25 @@ const Features = ({}) => {
                         style={{ listStyleType: 'none', padding: 0 }}
                         >
                             <li>
-                                <Link style={{textDecoration: 'none'}} to="/features">Overview</Link>
+                                <Link style={{color: 'black', textDecoration: 'none'}} to="/features">Overview</Link>
                             </li>
                             <li>
-                                <Link style={{textDecoration: 'none'}} to="/registration">Registration</Link>
+                                <Link style={{color: 'black', textDecoration: 'none'}} to="/registration">Registration</Link>
                             </li>
                             <li>
-                                <Link style={{textDecoration: 'none'}} to="/scheduling">Simple Scheduling</Link>
+                                <Link style={{color: 'black', textDecoration: 'none'}} to="/scheduling">Simple Scheduling</Link>
                             </li>
                             <li>
-                                <Link style={{textDecoration: 'none'}} to="/payments">Payments</Link>
+                                <Link style={{color: 'black', textDecoration: 'none'}} to="/payments">Payments</Link>
                             </li>
                             <li>
-                                <Link style={{textDecoration: 'none'}} to="/accounts">User Accounts</Link>
+                                <Link style={{color: 'black', textDecoration: 'none'}} to="/accounts">User Accounts</Link>
+                            </li>
+                            <li>
+                                <Button className={classes.requestDemoBtn} >request demo</Button>
                             </li>
                         </ul>
-                        {/* <Button>request demo</Button> */}
+                        {/* <Button className={classes.requestDemoBtn} >request demo</Button> */}
                     </Grid>
                     <div style={{ flex: 1, padding: '10px' }}>
                         <Switch>
