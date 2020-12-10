@@ -24,7 +24,7 @@ export const userData = [
         description:
             'Junior at Amador Valley High School. Loves to code and relax.',
         linkedin: 'https://www.linkedin.com/in/neilallavarpu/',
-        image: 'neil.png',
+        image: 'neil.jpg',
     },
     {
         id: 4,
@@ -42,7 +42,7 @@ export const userData = [
         description:
             'In my free time, I love traveling and discovering new coffee spots.',
         linkedin: 'https://www.linkedin.com/in/katiebelleho/',
-        image: 'katie.png',
+        image: 'katie.jpeg',
     },
     {
         id: 6,
@@ -60,7 +60,7 @@ export const userData = [
         description:
             'Frontend Engineer Senior at AVHS. Loves to play video games and card games.',
         linkedin: 'https://www.linkedin.com/in/jeffrey-su-09b0831a1/',
-        image: 'jeffery.png',
+        image: 'jeffery.jpeg',
     },
     {
         id: 8,
@@ -104,15 +104,15 @@ export const userData = [
         role: 'Product Designer',
         description: 'I love exploring new places and learn new things!',
         linkedin: 'https://www.linkedin.com/in/novia-elvina-700a2473/',
-        image: 'novia.png',
+        image: 'novia.jpeg',
     },
     {
         id: 13,
         name: 'Kelly Huang',
-        Role: 'Product Marketer',
-        Description:
+        role: 'Product Marketer',
+        description:
             'Things I love: outdoor adventures, reading, yoga, and guac',
-        linkedIn: 'https://www.linkedin.com/in/khuangx/',
+        linkedin: 'https://www.linkedin.com/in/khuangx/',
         image: 'kelly.jpg',
     },
     {
@@ -138,7 +138,7 @@ export const userData = [
         id: 16,
         name: 'Andrew Knapp',
         role: 'Front-End Engineer',
-        Description:
+        description:
             'Learning is my game, whether that be frameworks, musical instruments, or the animal kingdom.',
         linkedin: 'https://bit.ly/3cAimAN',
         image: 'andrew.jpg',
@@ -147,7 +147,7 @@ export const userData = [
         id: 17,
         name: 'Peter Kang',
         role: 'Front-End Engineer',
-        Description:
+        description:
             'LA-based dev, strength training enthusiast, lifelong Lakers fan',
         linkedin: 'https://www.linkedin.com/in/peterswkang/',
         image: 'peter.png',
@@ -156,7 +156,7 @@ export const userData = [
         id: 18,
         name: 'Chris Lojewski',
         role: 'Front-End Engineer',
-        Description:
+        description:
             'Graduate student in materials science and engineering that somehow ended up programming.',
         image: 'chris.png',
     },

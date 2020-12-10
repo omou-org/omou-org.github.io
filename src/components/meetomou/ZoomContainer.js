@@ -16,7 +16,7 @@ const useStyles = makeStyles({
         fontWeight: '700',
     },
     zoomChat: {
-        overflow: 'auto',
+        overflow: 'scroll',
         color: 'white',
         height: '1200px',
         minHeight: '100%',
@@ -56,6 +56,7 @@ const ZoomContainer = () => {
     const [choosenImage, setChoosenImage] = useState(null);
     const [zoomChat, setZoomChat] = useState([]);
     const [tasks, setTasks] = useState([]);
+    let chatRef = useRef();
 
     const ZoomImageBox = ({ image, name, id, i }) => {
         return (
@@ -73,7 +74,6 @@ const ZoomContainer = () => {
                         style={{ height: '200px', width: '300px' }}
                         id={id}
                         onClick={(e) => {
-                            refsArray.current[i].scrollIntoView();
                             setChoosenImage(e.target.id);
                             findUserInfo(id);
                         }}
@@ -86,13 +86,26 @@ const ZoomContainer = () => {
         );
     };
 
-    const findUserInfo = (userId) => {
+    const exicuteScroll = () => {
+        if (chatRef.current) {
+            chatRef.current.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+                inline: 'nearest',
+            });
+        }
+    };
+
+    const findUserInfo = (userId, i) => {
         const isInZoomChat = zoomChat.some((el) => el.id === userId);
         if (!isInZoomChat) {
             const filtered = userData.filter(({ id }) => id === userId);
+            exicuteScroll();
             setZoomChat(zoomChat.concat(filtered));
         }
     };
+
+    console.log(chatRef);
     // shared store
     // Parent :
     // create a hook
@@ -107,9 +120,7 @@ const ZoomContainer = () => {
                         ? classes.zoomChatStylesHighlighted
                         : classes.zoomChatStylesNormal
                 }
-                ref={(ref) => {
-                    refsArray.current[id] = ref;
-                }}
+                ref={(ref) => {}}
             >
                 <Typography style={{ fontWeight: '700' }}>
                     FROM{' '}
@@ -140,12 +151,6 @@ const ZoomContainer = () => {
             </Grid>
         );
     };
-
-    const refsArray = useRef([]);
-
-    useEffect(() => {
-        console.log(refsArray);
-    });
 
     return (
         <Grid
@@ -193,9 +198,6 @@ const ZoomContainer = () => {
                                         : classes.imageNormal
                                 }
                                 key={i}
-                                onClick={() => {
-                                    console.log(refsArray);
-                                }}
                             >
                                 <img
                                     src={require(`./images/${data.image}`)}
@@ -203,8 +205,8 @@ const ZoomContainer = () => {
                                     style={{ height: '200px', width: '300px' }}
                                     id={data.id}
                                     onClick={(e) => {
-                                        setChoosenImage(e.target.id);
                                         findUserInfo(data.id);
+                                        setChoosenImage(e.target.id);
                                     }}
                                 />
                                 <Typography className={classes.imageTextName}>
@@ -226,7 +228,7 @@ const ZoomContainer = () => {
                     {zoomChat.map((data, i) => (
                         <div
                             ref={(ref) => {
-                                refsArray.current[i] = ref;
+                                chatRef.current = ref;
                             }}
                         >
                             <Grid
