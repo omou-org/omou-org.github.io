@@ -1,36 +1,25 @@
 import React from 'react';
-import { Grid, Box, Typography, Button } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { primaryColor } from '../../../../theme/colors';
 import accountsImg1 from '../../images/1.Dahl_Receptionist_Accounts_Student_CurrentCourses.png'
 import accountsImg2 from '../../images/2.Dahl_Receptionist_Accounts_ResetPassword.png'
 
+import featuresPageTheme from '../../../../theme/theme';
+const { textStyle, imgStyle, headerStyle, listStyle } = featuresPageTheme;
+
 const useStyles = makeStyles({
 	headers: {
-		fontFamily: 'Montserrat',
-		fontWeight: '700',
-		fontSize: '28px',
-		lineHeight: '33.42px',
-		letterSpacing: '0.03em',
-		fontVariant: 'all-small-caps',
+		...headerStyle
 	},
 	accountsText: {
-		fontFamily: 'Montserrat',
-		fontWeight: '300',
-		fontSize: '23px',
-		lineHeight: '35.95px',
-		letterSpacing: '0.03em',
+		...textStyle
 	},
 	accountsImg: {
-		width: '913px',
-		height: '525px',
+		...imgStyle
 	},
 	featureList: {
-		fontFamily: 'Montserrat',
-		fontWeight: '500',
-		fontSize: '23px',
-		lineHeight: '33.42px',
-		letterSpacing: '0.03em',
+		...listStyle
 	},
 });
 

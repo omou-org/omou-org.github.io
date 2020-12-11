@@ -5,32 +5,21 @@ import { primaryColor } from '../../../../theme/colors';
 import schedImg1 from '../../images/Inst_Course Management_Landing.jpg';
 import schedImg2 from '../../images/Page Base.png';
 
+import featuresPageTheme from '../../../../theme/theme';
+const { textStyle, imgStyle, headerStyle, listStyle } = featuresPageTheme;
+
 const useStyles = makeStyles({
 	headers: {
-		fontFamily: 'Montserrat',
-		fontWeight: '700',
-		fontSize: '28px',
-		lineHeight: '33.42px',
-		letterSpacing: '0.03em',
-		fontVariant: 'all-small-caps',
+		...headerStyle
 	},
 	schedText: {
-		fontFamily: 'Montserrat',
-		fontWeight: '300',
-		fontSize: '23px',
-		lineHeight: '35.95px',
-		letterSpacing: '0.03em',
+		...textStyle
 	},
 	schedImg: {
-		width: '913px',
-		height: '525px',
+		...imgStyle
 	},
 	featureList: {
-		fontFamily: 'Montserrat',
-		fontWeight: '500',
-		fontSize: '23px',
-		lineHeight: '33.42px',
-		letterSpacing: '0.03em',
+		...listStyle
 	},
 });
 

@@ -1,21 +1,19 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Button } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 import sampleImg1 from '../../images/Parents_Reg_1.0.0.png';
 import sampleImg2 from '../../images/Parents_Reg_1.1.1.png';
 
+import featuresPageTheme from '../../../../theme/theme';
+const { textStyle, imgStyle } = featuresPageTheme;
+
 const useStyles = makeStyles({
 	overviewText: {
-		fontFamily: 'Montserrat',
-		fontWeight: '300',
-		fontSize: '23px',
-		lineHeight: '35.95px',
-		letterSpacing: '0.03em',
+		...textStyle,
 		marginTop: '25px',
 	},
 	sampleImg: {
-		width: '913px',
-		height: '525px',
+		...imgStyle
 	},
 });
 

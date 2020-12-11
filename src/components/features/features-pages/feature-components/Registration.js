@@ -5,32 +5,21 @@ import sampleImg1 from '../../images/Parents_Reg_1.0.0.png';
 import sampleImg2 from '../../images/Parents_Reg_1.1.1.png';
 import { primaryColor } from '../../../../theme/colors';
 
+import featuresPageTheme from '../../../../theme/theme';
+const { textStyle, imgStyle, headerStyle, listStyle } = featuresPageTheme;
+
 const useStyles = makeStyles({
 	headers: {
-		fontFamily: 'Montserrat',
-		fontWeight: '700',
-		fontSize: '28px',
-		lineHeight: '33.42px',
-		letterSpacing: '0.03em',
-		fontVariant: 'all-small-caps',
+		...headerStyle
 	},
 	regText: {
-		fontFamily: 'Montserrat',
-		fontWeight: '300',
-		fontSize: '23px',
-		lineHeight: '35.95px',
-		letterSpacing: '0.03em',
+		...textStyle
 	},
 	sampleImg: {
-		width: '913px',
-		height: '525px',
+		...imgStyle
 	},
 	featureList: {
-		fontFamily: 'Montserrat',
-		fontWeight: '500',
-		fontSize: '23px',
-		lineHeight: '33.42px',
-		letterSpacing: '0.03em',
+		...listStyle,
 	},
 });
 

@@ -1,13 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Box, Typography, Button, MenuItem } from '@material-ui/core';
+import { Grid, Typography, Button} from '@material-ui/core';
 import { Switch, Route, Link } from 'react-router-dom';
 import { primaryColor } from '../../theme/colors';
-import {
-    BrowserRouter as Router,
-    NavLink,
-    useLocation,
-} from 'react-router-dom';
+import { BrowserRouter as Router, } from 'react-router-dom';
 
 import Overview  from './features-pages/feature-components/Overview';
 import Payment from './features-pages/feature-components/Payment';
@@ -87,7 +83,6 @@ const routes = [
         path: '/features',
         exact: true,
         sidebar: () => <div>home!</div>,
-        // Render component in main
         main: () => <Overview />,
     },
     {
@@ -132,12 +127,9 @@ const Features = ({}) => {
                     </Typography>
                 </Grid>
 
-                <Grid
-                container item={12}>
+                <Grid container item={12}>
                     <Grid
-                        style={{
-                            position: 'relative',
-                        }}
+                        style={{ position: 'relative' }}
                         item
                         xs={2}
                         container
@@ -145,10 +137,7 @@ const Features = ({}) => {
                         justify="center"
                         alignItems="flex-start"
                     >
-                        <ul
-                        className={classes.sideBar} 
-                        style={{ listStyleType: 'none', padding: 0 }}
-                        >
+                        <ul className={classes.sideBar} style={{ listStyleType: 'none', padding: 0 }} >
                             <li>
                                 <Link style={{color: 'black', textDecoration: 'none'}} to="/features">Overview</Link>
                             </li>
@@ -168,8 +157,8 @@ const Features = ({}) => {
                                 <Button className={classes.requestDemoBtn} >request demo</Button>
                             </li>
                         </ul>
-                        {/* <Button className={classes.requestDemoBtn} >request demo</Button> */}
                     </Grid>
+                    
                     <div style={{ flex: 1, padding: '10px' }}>
                         <Switch>
                             {routes.map((route, index) => (

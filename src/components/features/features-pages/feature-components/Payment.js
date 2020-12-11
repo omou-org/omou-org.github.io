@@ -4,32 +4,21 @@ import { makeStyles } from '@material-ui/core/styles';
 import { primaryColor } from '../../../../theme/colors';
 import paymentImg from '../../images/Payments_1.png';
 
+import featuresPageTheme from '../../../../theme/theme';
+const { textStyle, imgStyle, headerStyle, listStyle } = featuresPageTheme;
+
 const useStyles = makeStyles({
 	headers: {
-		fontFamily: 'Montserrat',
-		fontWeight: '700',
-		fontSize: '28px',
-		lineHeight: '33.42px',
-		letterSpacing: '0.03em',
-		fontVariant: 'all-small-caps',
+		...headerStyle
 	},
 	paymentText: {
-		fontFamily: 'Montserrat',
-		fontWeight: '300',
-		fontSize: '23px',
-		lineHeight: '35.95px',
-		letterSpacing: '0.03em',
+		...textStyle,
 	},
 	paymentImg: {
-		width: '913px',
-		height: '525px',
+		...imgStyle
 	},
 	featureList: {
-		fontFamily: 'Montserrat',
-		fontWeight: '500',
-		fontSize: '23px',
-		lineHeight: '33.42px',
-		letterSpacing: '0.03em',
+		...listStyle
 	},
 });
 
