@@ -1,9 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Typography, Button} from '@material-ui/core';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { primaryColor } from '../../theme/colors';
-import { BrowserRouter as Router, } from 'react-router-dom';
+import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 
 import Overview  from './features-pages/feature-components/Overview';
 import Payment from './features-pages/feature-components/Payment';
@@ -41,42 +41,12 @@ const useStyles = makeStyles({
         boxSizing: 'border-box',
         boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
         marginTop: '50px'
+    },
+    linkStyle : {
+        color: 'black', 
+        textDecoration: 'none'
     }
 });
-
-// const routes = [
-//     {
-//         title: 'overview',
-//         link: '/overview',
-//         sidebar: () => <div>overview</div>,
-//         main: () => <h2>overview</h2>,
-//     },
-
-//     {
-//         title: 'registration',
-//         link: '/features/registration',
-//         sidebar: () => <div>registration</div>,
-//         main: () => <h2>registration</h2>,
-//     },
-//     {
-//         title: 'scheduling',
-//         link: '/scheduling',
-//         sidebar: () => <div>scheduling</div>,
-//         main: () => <h2>scheduling</h2>,
-//     },
-//     {
-//         title: 'payments',
-//         link: '/payments',
-//         sidebar: () => <div>payments</div>,
-//         main: () => <h2>payments</h2>,
-//     },
-//     {
-//         title: 'accounts',
-//         link: '/accounts',
-//         sidebar: () => <div>Hello</div>,
-//         main: () => <h2>accounts</h2>,
-//     },
-// ];
 
 const routes = [
     {
@@ -112,7 +82,7 @@ const Features = ({}) => {
 
     // feature data
     // need them to link
-
+ 
     return (
         <Router>
             <Grid style={{marginBottom: '40px'}} container>
@@ -139,19 +109,44 @@ const Features = ({}) => {
                     >
                         <ul className={classes.sideBar} style={{ listStyleType: 'none', padding: 0 }} >
                             <li>
-                                <Link style={{color: 'black', textDecoration: 'none'}} to="/features">Overview</Link>
+                                <NavLink
+                                    activeStyle={{color: primaryColor, textDecoration: 'none'}}
+                                    className={classes.linkStyle} 
+                                    to="/features">
+                                        Overview
+                                </NavLink>
                             </li>
                             <li>
-                                <Link style={{color: 'black', textDecoration: 'none'}} to="/registration">Registration</Link>
+                                <NavLink 
+                                    activeStyle={{color: primaryColor, textDecoration: 'none'}}
+                                    className={classes.linkStyle}  
+                                    to="/registration">
+                                        Registration
+                                </NavLink>
                             </li>
                             <li>
-                                <Link style={{color: 'black', textDecoration: 'none'}} to="/scheduling">Simple Scheduling</Link>
+                                <NavLink 
+                                    activeStyle={{color: primaryColor, textDecoration: 'none'}}
+                                    className={classes.linkStyle}  
+                                    to="/scheduling">
+                                        Simple Scheduling
+                                </NavLink>
                             </li>
                             <li>
-                                <Link style={{color: 'black', textDecoration: 'none'}} to="/payments">Payments</Link>
+                                <NavLink 
+                                    activeStyle={{color: primaryColor, textDecoration: 'none'}}
+                                    className={classes.linkStyle}  
+                                    to="/payments">
+                                        Payments
+                                </NavLink>
                             </li>
                             <li>
-                                <Link style={{color: 'black', textDecoration: 'none'}} to="/accounts">User Accounts</Link>
+                                <NavLink 
+                                    activeStyle={{color: primaryColor, textDecoration: 'none'}}
+                                    className={classes.linkStyle}  
+                                    to="/accounts">
+                                        User Accounts
+                                </NavLink>
                             </li>
                             <li>
                                 <Button className={classes.requestDemoBtn} >request demo</Button>
