@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Grid, Typography, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import GoogleSheetsForm from './GoogleSheetsForm';
@@ -6,8 +6,9 @@ import { betaPageContent, betaPageSlideShowData } from './betaPageData.js';
 import ContentSection from '../homepage/ContentSection';
 import wave from '../homepage/homeimages/wave.svg';
 import SlideShow from '../homepage/Slideshow';
-import Carousel from 'react-multi-carousel';
+
 import 'react-multi-carousel/lib/styles.css';
+import { Link } from 'react-router-dom';
 
 import FaqSection from './FaqSection';
 
@@ -59,26 +60,11 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const responsive = {
-    desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 3,
-        slidesToSlide: 3, // optional, default to 1.
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 2,
-        slidesToSlide: 2, // optional, default to 1.
-    },
-    mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 1,
-        slidesToSlide: 1, // optional, default to 1.
-    },
-};
-
 const BetaPage = (props) => {
     const classes = useStyles();
+    const childRef = useRef(null);
+    const scrollToContent = () =>
+        childRef.current.scrollIntoView({ behavior: 'smooth' });
 
     return (
         <Grid container>
@@ -126,7 +112,9 @@ const BetaPage = (props) => {
                     >
                         <Grid>
                             <Typography className={classes.bannerActionText}>
-                                Scheduling
+                                <Link onClick={scrollToContent}>
+                                    Scheduling
+                                </Link>
                             </Typography>
                         </Grid>
                         <Grid xs={3}>
@@ -179,17 +167,18 @@ const BetaPage = (props) => {
                     image,
                     title,
                     description,
-                    learnMore,
+                    linkTo,
                     isRight,
                     waveImage,
 
                     displayContactUsButton,
                 }) => (
                     <ContentSection
+                        ref={childRef}
                         image={image}
                         title={title}
                         description={description}
-                        learnMore={learnMore}
+                        linkTo={linkTo}
                         isRight={isRight}
                         waveImage={waveImage}
                         displayContactUsButton={displayContactUsButton}

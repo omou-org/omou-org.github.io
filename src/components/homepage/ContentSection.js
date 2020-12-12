@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Box, Typography, Button } from '@material-ui/core';
 import wave from './homeimages/wave.svg';
 import { primaryColor } from '../../theme/colors';
-
+import { Link } from 'react-router-dom';
 const useStyles = makeStyles({
     image: {
         width: '900px',
@@ -54,6 +54,18 @@ const useStyles = makeStyles({
             color: '#FFF',
         },
     },
+    learnMoreButton: {
+        color: '#1F82A1',
+        fontWeight: '600',
+        paddingTop: '7vh',
+        fontSize: '22px',
+    },
+    leftLearnMoreButton: {
+        color: '#1F82A1',
+        fontWeight: '600',
+        paddingTop: '15vh',
+        fontSize: '22px',
+    },
 });
 
 const ContentSection = ({
@@ -61,13 +73,15 @@ const ContentSection = ({
     description,
     isRight,
     image,
+    linkTo,
     waveImage,
+    ref,
     displayContactUsButton,
 }) => {
     const classes = useStyles();
 
     return (
-        <>
+        <div ref={ref}>
             {waveImage && (
                 <img
                     src={wave}
@@ -116,15 +130,16 @@ const ContentSection = ({
                                 >
                                     {description}
                                 </Typography>
-
-                                <Typography
-                                    style={{
-                                        paddingTop: '7vh',
-                                        fontSize: '22px',
-                                    }}
+                                <Link
+                                    to={linkTo}
+                                    style={{ textDecoration: 'none' }}
                                 >
-                                    Learn More
-                                </Typography>
+                                    <Typography
+                                        className={classes.learnMoreButton}
+                                    >
+                                        Learn More
+                                    </Typography>
+                                </Link>
                                 {displayContactUsButton ? (
                                     <Box style={{ paddingTop: '5vh' }}>
                                         <Button
@@ -170,14 +185,16 @@ const ContentSection = ({
                                 >
                                     {description}
                                 </Typography>
-                                <Typography
-                                    style={{
-                                        paddingTop: '15vh',
-                                        fontSize: '22px',
-                                    }}
+                                <Link
+                                    to={linkTo}
+                                    style={{ textDecoration: 'none' }}
                                 >
-                                    Learn More
-                                </Typography>
+                                    <Typography
+                                        className={classes.leftLearnMoreButton}
+                                    >
+                                        Learn More
+                                    </Typography>
+                                </Link>
                             </section>
                         </Grid>
 
@@ -189,7 +206,7 @@ const ContentSection = ({
                     </Grid>
                 </>
             )}
-        </>
+        </div>
     );
 };
 

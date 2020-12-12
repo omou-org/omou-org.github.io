@@ -140,7 +140,7 @@ const Home = (props) => {
                             image,
                             title,
                             description,
-                            learnMore,
+                            linkTo,
                             isRight,
                             waveImage,
                             displayContactUsButton,
@@ -150,7 +150,7 @@ const Home = (props) => {
                                 image={image}
                                 title={title}
                                 description={description}
-                                learnMore={learnMore}
+                                linkTo={linkTo}
                                 isRight={isRight}
                                 waveImage={waveImage}
                                 displayContactUsButton={displayContactUsButton}

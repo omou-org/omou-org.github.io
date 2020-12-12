@@ -52,6 +52,9 @@ export const theme = createMuiTheme({
             fontFamily: 'Montserrat',
             fontWeight: 700,
         },
+        body1: {
+            fontFamily: 'Montserrat',
+        },
     },
     overrides: {
         MuiButton: {

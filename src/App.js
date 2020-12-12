@@ -24,6 +24,7 @@ import {
 import MenuIcon from '@material-ui/icons/Menu';
 import { Routes } from './routes';
 import { primaryColor } from './theme/colors';
+import ScrollToTop from './ScrollToTop';
 
 const drawerWidth = 150;
 const useStyles = makeStyles((theme) => ({
@@ -78,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const MenuItems = [
+const NavMenuItems = [
     {
         title: 'Home',
         link: '/',
@@ -101,15 +102,41 @@ const MenuItems = [
         link: '/contact-us',
     },
 ];
+const FooterMenuItems = [
+    {
+        title: 'Home',
+        link: '/',
+    },
 
-const MenuList = ({ fontType }) => {
+    {
+        title: 'Features',
+        link: '/features',
+    },
+    {
+        title: 'About Us',
+        link: '/about-us',
+    },
+    {
+        title: 'Team',
+        link: '/meet-team',
+    },
+    {
+        title: 'Contact Us',
+        link: '/contact-us',
+    },
+    {
+        title: 'Beta',
+        link: '/beta',
+    },
+];
+
+const MenuList = (MenuItems) => {
     const classes = useStyles();
     const location = useLocation();
 
     return MenuItems.map(({ title, link }) => (
         <NavLink className={classes.link} to={link} key={title}>
             <Typography
-                variant={fontType}
                 align="center"
                 className={`${classes.desktopMenuItem} ${
                     location.pathname === link ? classes.active : ''
@@ -143,7 +170,7 @@ function NavigationBar() {
     const drawer = (
         <div>
             <List>
-                {MenuItems.map(({ link, title }) => (
+                {NavMenuItems.map(({ link, title }) => (
                     <NavLink className={classes.link} to={link} key={title}>
                         <Typography
                             style={{ lineHeight: '5vh' }}
@@ -268,6 +295,7 @@ const Footer = () => {
                 backgroundColor: '#333333',
                 color: primaryColor,
                 width: '100%',
+                paddingTop: '2em',
             }}
         >
             <Grid container direction="row" justify="space-between">
@@ -275,7 +303,7 @@ const Footer = () => {
                     item
                     md={4}
                     xs={4}
-                    style={{ marginLeft: '2%', paddingBottom: '4em' }}
+                    style={{ marginLeft: '2%', paddingTop: '3em' }}
                 >
                     <NavLink
                         to="/"
@@ -310,11 +338,15 @@ const Footer = () => {
                     <Grid
                         container
                         direction="column"
-                        alignItems="flex-end"
                         justify="center"
-                        style={{ alignItems: 'baseline', paddingRight: '2em' }}
+                        alignItems="center"
+                        style={{
+                            alignItems: 'baseline',
+                            paddingRight: '2em',
+                            paddingBottom: '2em',
+                        }}
                     >
-                        <MenuList />
+                        {MenuList(FooterMenuItems)}
                     </Grid>
                     {/* <Grid item>
                         <Typography variant="body1" style={{ color: 'black' }}>
@@ -331,11 +363,13 @@ function App() {
     return (
         <ThemeProvider theme={theme}>
             <Router>
-                <div className="App">
-                    <NavigationBar />
-                    <Routes />
-                    <Footer />
-                </div>
+                <ScrollToTop>
+                    <div className="App">
+                        <NavigationBar />
+                        <Routes />
+                        <Footer />
+                    </div>
+                </ScrollToTop>
             </Router>
         </ThemeProvider>
     );
