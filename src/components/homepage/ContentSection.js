@@ -75,13 +75,12 @@ const ContentSection = ({
     image,
     linkTo,
     waveImage,
-    ref,
     displayContactUsButton,
 }) => {
     const classes = useStyles();
 
     return (
-        <div ref={ref}>
+        <div>
             {waveImage && (
                 <img
                     src={wave}
@@ -197,12 +196,16 @@ const ContentSection = ({
                                 </Link>
                             </section>
                         </Grid>
-
-                        <section>
-                            <Box>
-                                <img src={image} className={classes.image} />{' '}
-                            </Box>
-                        </section>
+                        <Grid item xs={6}>
+                            <section>
+                                <Box>
+                                    <img
+                                        src={image}
+                                        className={classes.image}
+                                    />{' '}
+                                </Box>
+                            </section>
+                        </Grid>
                     </Grid>
                 </>
             )}

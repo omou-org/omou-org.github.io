@@ -112,9 +112,7 @@ const BetaPage = (props) => {
                     >
                         <Grid>
                             <Typography className={classes.bannerActionText}>
-                                <Link onClick={scrollToContent}>
-                                    Scheduling
-                                </Link>
+                                Scheduling
                             </Typography>
                         </Grid>
                         <Grid xs={3}>
