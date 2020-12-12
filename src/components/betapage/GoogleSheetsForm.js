@@ -125,7 +125,7 @@ const GoogleSheetsForm = ({ contactUs }) => {
     };
 
     const handleFormSubmit = () => {
-        // appendSpreadsheet(formData);
+        appendSpreadsheet(formData);
 
         setFormData({ Name: '', Email: '' });
     };
@@ -170,7 +170,6 @@ const GoogleSheetsForm = ({ contactUs }) => {
                                     </Typography>
 
                                     <TextField
-                                        required
                                         variant="outlined"
                                         id="Name"
                                         value={formData.Name}

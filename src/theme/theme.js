@@ -1,29 +1,29 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import {primaryColor} from "./colors";
+import { primaryColor } from './colors';
 
 export const appBarTheme = createMuiTheme({
-	palette: {
-		primary: {main: "#ffffff"},
-		secondary: {main: "#a6a6a6"},
-		background: {
-			main: "#ffffff",
-			default: "#ffffff",
-		},
-	},
-	typography:{
-		h3:{
-			fontFamily: "Montserrat",
-			fontWeight:700,
-			color: primaryColor,
-		}
-	},
-	overrides:{
-		MuiAppBar:{
-			root:{
-				boxShadow: "none",
-			}
-		}
-	}
+    palette: {
+        primary: { main: '#ffffff' },
+        secondary: { main: '#a6a6a6' },
+        background: {
+            main: '#ffffff',
+            default: '#ffffff',
+        },
+    },
+    typography: {
+        h4: {
+            fontFamily: 'Montserrat',
+            fontWeight: 700,
+            color: primaryColor,
+        },
+    },
+    overrides: {
+        MuiAppBar: {
+            root: {
+                boxShadow: 'none',
+            },
+        },
+    },
 });
 
 export const theme = createMuiTheme({
