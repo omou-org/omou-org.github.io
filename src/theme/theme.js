@@ -63,16 +63,6 @@ export const theme = createMuiTheme({
 })
 
 const featuresPageTheme = createMuiTheme({
-	overrides: {
-		MuiButton: {
-			fontFamily: 'Montserrat',
-        	fontWeight: '500',
-        	fontSize: '28px',
-        	lineHeight: '43.77px',
-        	fontVariant: 'all-small-caps',
-        	letterSpacing: '0.03em',
-		}
-	},
 	textStyle: {
 		fontFamily: 'Montserrat',
 		fontWeight: '300',
