@@ -1,0 +1,70 @@
+import React from 'react';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import { primaryColor } from '../../../../theme/colors';
+import paymentImg from '../../images/Payments_1.png';
+
+import featuresPageTheme from '../../../../theme/theme';
+const { textStyle, imgStyle, headerStyle, listStyle } = featuresPageTheme;
+
+const useStyles = makeStyles({
+	headers: {
+		...headerStyle
+	},
+	paymentText: {
+		...textStyle,
+	},
+	paymentImg: {
+		...imgStyle
+	},
+	featureList: {
+		...listStyle
+	},
+});
+
+const Payment = () => {
+	const classes = useStyles();
+
+	return (
+		<div style={{marginLeft: '50px'}}>
+			<Typography
+				style={{ marginBottom: '20px', marginTop: '25px' }}
+				className={classes.headers}
+			>
+				control payments and tuition
+			</Typography>
+			<Typography paragraph className={classes.paymentText}>
+				Never worry about mix-ups with payment confirmation! Omou can be your
+				single source of truth with automated invoice tracking and much more.{' '}
+			</Typography>
+
+			<div>
+				<img
+					style={{ marginTop: '20px', marginBottom: '20px' }}
+					className={classes.paymentImg}
+					src={paymentImg}
+					alt='payment img'
+				></img>
+			</div>
+
+			<Typography
+				style={{ color: primaryColor, marginBottom: '20px' }}
+				className={classes.headers}
+			>
+				payment & tuition
+			</Typography>
+
+			<ul
+				style={{ listStyleType: 'none', padding: 0 }}
+				className={classes.featureList}
+			>
+				<li>Create Tuition Rules and Discounts</li>
+				<li>View Payments by Enrollment </li>
+				<li>View Updated Payment Status of a Tutoring Session</li>
+				<li>Print Invoices</li>
+			</ul>
+		</div>
+	);
+};
+
+export default Payment;
