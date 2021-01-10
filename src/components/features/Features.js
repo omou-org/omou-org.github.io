@@ -48,40 +48,41 @@ const useStyles = makeStyles({
     }
 });
 
-const routes = [
+const sideBarRoutes = [
     {
         path: '/features',
         exact: true,
-        sidebar: () => <div>home!</div>,
+        title: 'overview',
         main: () => <Overview />,
     },
     {
         path: '/registration',
-        sidebar: () => <div>registration!</div>,
+        exact: true,
+        title: 'registration',
         main: () => <Registration />,
     },
     {
         path: '/scheduling',
-        sidebar: () => <div>Simple Scheduling</div>,
+        exact: true,
+        title: 'simple scheduling',
         main: () => <Scheduling />,
     },
     {
         path: '/payments',
-        sidebar: () => <div>payments!</div>,
+        exact: true,
+        title: 'payments',
         main: () => <Payment />,
     },
     {
         path: '/accounts',
-        sidebar: () => <div>accounts!</div>,
+        exact: true,
+        title: 'accounts',
         main: () => <Accounts />,
     },
 ];
 
-const Features = ({}) => {
+const Features = () => {
     const classes = useStyles();
-
-    // feature data
-    // need them to link
  
     return (
         <Router>
@@ -108,46 +109,17 @@ const Features = ({}) => {
                         alignItems="flex-start"
                     >
                         <ul className={classes.sideBar} style={{ listStyleType: 'none', padding: 0 }} >
-                            <li>
-                                <NavLink
-                                    activeStyle={{color: primaryColor, textDecoration: 'none'}}
-                                    className={classes.linkStyle} 
-                                    to="/features">
-                                        Overview
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink 
-                                    activeStyle={{color: primaryColor, textDecoration: 'none'}}
-                                    className={classes.linkStyle}  
-                                    to="/registration"> 
-                                        Registration
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink 
-                                    activeStyle={{color: primaryColor, textDecoration: 'none'}}
-                                    className={classes.linkStyle}  
-                                    to="/scheduling">
-                                        Simple Scheduling
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink 
-                                    activeStyle={{color: primaryColor, textDecoration: 'none'}}
-                                    className={classes.linkStyle}  
-                                    to="/payments">
-                                        Payments
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink 
-                                    activeStyle={{color: primaryColor, textDecoration: 'none'}}
-                                    className={classes.linkStyle}  
-                                    to="/accounts">
-                                        User Accounts
-                                </NavLink>
-                            </li>
+                            {sideBarRoutes.map(({path, title}, index) => (
+                                <li>
+                                    <NavLink
+                                        key={index}
+                                        activeStyle={{color: primaryColor, textDecoration: 'none'}}
+                                        className={classes.linkStyle} 
+                                        to={path}>
+                                            {title}
+                                    </NavLink>
+                                </li>
+                            ))}
                             <li>
                                 <Button className={classes.requestDemoBtn} >request demo</Button>
                             </li>
@@ -156,9 +128,7 @@ const Features = ({}) => {
                     
                     <div style={{ flex: 1, padding: '10px' }}>
                         <Switch>
-                            {routes.map((route, index) => (
-                                // Render more <Route>s with the same paths as
-                                // above, but different components this time.
+                            {sideBarRoutes.map((route, index) => (
                                 <Route
                                     key={index}
                                     path={route.path}
