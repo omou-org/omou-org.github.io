@@ -15,6 +15,9 @@ export function Routes() {
             <Route path="/beta" component={BetaProgram} />
             <Route exact path="/about-us" component={AboutUs} />
             <Route exact path="/features" component={Features} />
+            <Route exact path="/accounts" component={Features} />
+            <Route exact path="/registration" component={Features} />
+            <Route exact path="/payments" component={Features} />
         </Switch>
     );
 }

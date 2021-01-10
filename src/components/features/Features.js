@@ -120,7 +120,7 @@ const Features = ({}) => {
                                 <NavLink 
                                     activeStyle={{color: primaryColor, textDecoration: 'none'}}
                                     className={classes.linkStyle}  
-                                    to="/registration">
+                                    to="/registration"> 
                                         Registration
                                 </NavLink>
                             </li>
