@@ -14,7 +14,7 @@ export const homePageData = [
         title: 'Simple course management',
         description:
             'Browse all the courses your center offers, check enrollment, and register students with ease. And a Google Classroom integration keeps students and parents up to date. ',
-        linkTo: '/features',
+        linkTo: '/registration',
         isRight: false,
     },
     {
