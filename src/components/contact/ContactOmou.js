@@ -28,6 +28,9 @@ const useStyles = makeStyles((theme) => ({
     },
     requestDemoSubText: {
         fontSize: '23px',
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '15px',
+        },
     },
     formContainer: {
         '& .MuiInputBase-input': {
@@ -66,9 +69,9 @@ const ContactOmou = () => {
     const [reachedAtCategory, setReachedAtCategory] = useState('');
     const [errorText, setErrorText] = useState('');
     const [isVisible, setIsVisible] = useState({
-        type: false,
-        message: false,
-        reachedBy: false,
+        type: true,
+        message: true,
+        reachedBy: true,
     });
 
     const privatePolicyText = 'We are aways your inbox is a sacred place';
@@ -251,7 +254,7 @@ const ContactOmou = () => {
                             <Grid item>
                                 <Fade
                                     in={isVisible.message}
-                                    timeout={{ enter: 1000 }}
+                                    timeout={{ enter: 1500 }}
                                 >
                                     <div>
                                         <Typography
@@ -278,7 +281,7 @@ const ContactOmou = () => {
 
                                 <Fade
                                     in={isVisible.reachedBy}
-                                    timeout={{ enter: 1000 }}
+                                    timeout={{ enter: 2000 }}
                                 >
                                     <Grid item>
                                         <Typography
@@ -329,7 +332,7 @@ const ContactOmou = () => {
 
                                 <Fade
                                     in={isVisible.reachedBy}
-                                    timeout={{ enter: 1000 }}
+                                    timeout={{ enter: 2500 }}
                                 >
                                     <div>
                                         <FormControl
@@ -353,7 +356,7 @@ const ContactOmou = () => {
                                         <Grid
                                             item
                                             xs={12}
-                                            style={{ paddingTop: '1em' }}
+                                            style={{ paddingTop: '2.5em' }}
                                         >
                                             <Button
                                                 className={
