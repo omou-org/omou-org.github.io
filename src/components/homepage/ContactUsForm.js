@@ -46,6 +46,13 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: primaryColor,
         color: 'white',
     },
+    bottomWave: {
+        width: '100%',
+        display: 'block',
+        [theme.breakpoints.down('sm')]: {
+            height: '37%',
+        },
+    },
 }));
 
 const ContactUsForm = () => {
@@ -184,7 +191,7 @@ const ContactUsForm = () => {
                     </Button>
                 </Grid>
             </Grid>
-            <img src={bottomWave} alt="wave2" style={{ width: '100%' }} />
+            <img src={bottomWave} alt="wave2" className={classes.bottomWave} />
         </Grid>
     );
 };

@@ -14,10 +14,10 @@ import {
     MenuItem,
     Checkbox,
     FormControlLabel,
+    SwipeableDrawer,
 } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
-    root: {},
     contactUsJumboTron: {
         margin: '10em 10em 5em 10em',
     },
@@ -28,6 +28,9 @@ const useStyles = makeStyles((theme) => ({
     },
     requestDemoSubText: {
         fontSize: '23px',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '15px',
+        },
     },
     formContainer: {
         '& .MuiInputBase-input': {
@@ -65,10 +68,12 @@ const ContactOmou = () => {
     const [messageHTML, setMessageHTML] = useState('');
     const [reachedAtCategory, setReachedAtCategory] = useState('');
     const [errorText, setErrorText] = useState('');
+
+    // Animation controls
     const [isVisible, setIsVisible] = useState({
-        type: false,
-        message: false,
-        reachedBy: false,
+        type: true,
+        message: true,
+        reachedBy: true,
     });
 
     const privatePolicyText = 'We are aways your inbox is a sacred place';
@@ -89,17 +94,26 @@ const ContactOmou = () => {
         setReachedAtCategory(event.target.value);
     };
 
+    // If user picks phone , change validation
+
     // Email validation
     const handleEmailInput = (event) => {
         setEmailInput(event.target.value);
-        if (
-            event.target.value.match(
-                /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/
-            )
-        ) {
-            setErrorText('');
-        } else {
-            setErrorText('Invalid Email');
+        switch (reachedAtCategory) {
+            case 'email':
+                emailInput.match(/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/)
+                    ? setErrorText('')
+                    : setErrorText('Invalid Email');
+                break;
+            case 'phone':
+                event.target.value.match(
+                    /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/
+                )
+                    ? setErrorText('')
+                    : setErrorText('Invalid Phone Number');
+                break;
+            default:
+                setErrorText('Please select a category');
         }
     };
     // If the form is on name or message then we listen for Enter keys to move to next step
@@ -195,32 +209,35 @@ const ContactOmou = () => {
                             justify="center"
                             alignItems="center"
                         >
-                            <Grid item xs={8}>
-                                <Typography className={classes.formText}>
-                                    My name is:
-                                    <span>
-                                        <TextField
-                                            onKeyDown={handleKeyDown}
-                                            inputProps={{
-                                                style: {
-                                                    padding: 5,
-                                                },
-                                            }}
-                                        ></TextField>
-                                    </span>
-                                </Typography>
-                            </Grid>
-
                             <Fade in={isVisible.type} timeout={{ enter: 1000 }}>
+                                <Grid item xs={12}>
+                                    <Typography className={classes.formText}>
+                                        My name is:
+                                        <span>
+                                            <TextField
+                                                onKeyDown={handleKeyDown}
+                                                required={true}
+                                                inputProps={{
+                                                    style: {
+                                                        padding: 5,
+                                                    },
+                                                }}
+                                            ></TextField>
+                                        </span>
+                                    </Typography>
+                                </Grid>
+                            </Fade>
+                            <Fade in={isVisible.type} timeout={{ enter: 1500 }}>
                                 <Grid
                                     item
-                                    xs={7}
+                                    xs={12}
                                     className={classes.animatedDiv}
                                 >
                                     <Typography className={classes.formText}>
-                                        and I would like to :
+                                        and I would like to reach:
                                         <span>
                                             <FormControl
+                                                required
                                                 style={{
                                                     minWidth: 175,
                                                 }}
@@ -251,7 +268,7 @@ const ContactOmou = () => {
                             <Grid item>
                                 <Fade
                                     in={isVisible.message}
-                                    timeout={{ enter: 1000 }}
+                                    timeout={{ enter: 2000 }}
                                 >
                                     <div>
                                         <Typography
@@ -278,7 +295,7 @@ const ContactOmou = () => {
 
                                 <Fade
                                     in={isVisible.reachedBy}
-                                    timeout={{ enter: 1000 }}
+                                    timeout={{ enter: 2500 }}
                                 >
                                     <Grid item>
                                         <Typography
@@ -329,7 +346,7 @@ const ContactOmou = () => {
 
                                 <Fade
                                     in={isVisible.reachedBy}
-                                    timeout={{ enter: 1000 }}
+                                    timeout={{ enter: 3000 }}
                                 >
                                     <div>
                                         <FormControl
@@ -353,7 +370,7 @@ const ContactOmou = () => {
                                         <Grid
                                             item
                                             xs={12}
-                                            style={{ paddingTop: '1em' }}
+                                            style={{ paddingTop: '2.5em' }}
                                         >
                                             <Button
                                                 className={

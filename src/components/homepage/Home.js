@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography, Box, Button } from '@material-ui/core';
+import { Grid, Typography, Box, Button, Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import people from './homeimages/people.svg';
 import ContentSection from './ContentSection';
@@ -14,14 +14,16 @@ import './home.scss';
 const useStyles = makeStyles((theme) => ({
     homepageBanner: {
         paddingTop: '15vh',
-
         width: '100%',
         textAlign: 'center',
         color: 'black',
+        [theme.breakpoints.down('sm')]: {
+            padding: '3vh',
+        },
     },
     homepageText: {
         marginLeft: '10vh',
-
+        textTransform: 'uppercase',
         paddingBottom: '4vh',
         fontSize: '50px',
         [theme.breakpoints.down('md')]: {
@@ -38,6 +40,12 @@ const useStyles = makeStyles((theme) => ({
         paddingBottom: '4vh',
         [theme.breakpoints.down('sm')]: {
             marginLeft: '0',
+        },
+    },
+    responsiveContactUsButton: {
+        paddingTop: '4vh',
+        [theme.breakpoints.down('sm')]: {
+            paddingTop: '1vh',
         },
     },
     contactUsButton: {
@@ -57,11 +65,11 @@ const useStyles = makeStyles((theme) => ({
     },
     sliderContainer: {
         backgroundColor: '#FAFAFA',
-        height: '700px',
+        padding: '5em',
     },
 }));
 
-const responsive = {
+const responsiveCarousel = {
     desktop: {
         breakpoint: { max: 3000, min: 1024 },
         items: 3,
@@ -82,7 +90,7 @@ const responsive = {
 const Home = (props) => {
     const classes = useStyles();
     return (
-        <Grid container>
+        <Grid>
             <Grid
                 container
                 justify="space-between"
@@ -95,7 +103,7 @@ const Home = (props) => {
                     direction="column"
                     justify="flex-start"
                     alignItems="center"
-                    sm={8}
+                    sm={9}
                     lg={7}
                 >
                     <Grid item xs={12}>
@@ -105,7 +113,10 @@ const Home = (props) => {
                             className={classes.homepageText}
                         >
                             Don't just digitize the way your tutoring center
-                            runs Transform it
+                            runs{' '}
+                            <span style={{ color: '#43B5D9' }}>
+                                Transform it
+                            </span>
                         </Typography>
                     </Grid>
                     <Grid item xs={10}>
@@ -117,7 +128,11 @@ const Home = (props) => {
                             remote-learning.
                         </Typography>
                     </Grid>
-                    <Grid item xs={10} style={{ paddingTop: '4vh' }}>
+                    <Grid
+                        item
+                        xs={10}
+                        className={classes.responsiveContactUsButton}
+                    >
                         <Button className={classes.contactUsButton}>
                             CONTACT US
                         </Button>
@@ -134,7 +149,13 @@ const Home = (props) => {
                 </Grid>
             </Grid>
             <Grid>
-                <Grid container spacing={0}>
+                <Grid
+                    container
+                    direction="column"
+                    justify="center"
+                    alignItems="center"
+                    spacing={2}
+                >
                     {homePageData.map(
                         ({
                             image,
@@ -161,27 +182,43 @@ const Home = (props) => {
                 </Grid>
             </Grid>
             <Grid
-                item
-                xs={12}
-                style={{ backgroundColor: '#FAFAFA', padding: '5em' }}
+                container
+                display="row"
+                justify="center"
+                alignItems="center"
+                className={classes.sliderContainer}
             >
-                <Carousel
-                    swipeable={true}
-                    responsive={responsive}
-                    keyBoardControl={true}
-                    containerClass="carousel-container"
-                    removeArrowOnDeviceType={['tablet', 'mobile']}
-                >
-                    {slideShowData.map(({ image, description, title }) => (
-                        <SlideShow
-                            image={image}
-                            description={description}
-                            title={title}
-                        />
-                    ))}
-                </Carousel>
+                <Grid item xs={12}>
+                    <Hidden mdDown>
+                        <Carousel
+                            swipeable={true}
+                            responsive={responsiveCarousel}
+                            keyBoardControl={true}
+                            containerClass="carousel-container"
+                            removeArrowOnDeviceType={['tablet', 'mobile']}
+                        >
+                            {slideShowData.map(
+                                ({ image, description, title }) => (
+                                    <SlideShow
+                                        image={image}
+                                        description={description}
+                                        title={title}
+                                    />
+                                )
+                            )}
+                        </Carousel>
+                    </Hidden>
+                    <Hidden mdUp>
+                        {slideShowData.map(({ image, description, title }) => (
+                            <SlideShow
+                                image={image}
+                                description={description}
+                                title={title}
+                            />
+                        ))}
+                    </Hidden>
+                </Grid>
             </Grid>
-
             <ContactUsForm />
         </Grid>
     );
