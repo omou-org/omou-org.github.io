@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Typography, Box } from '@material-ui/core';
 import teamImage from './aboutusImages/grouppicture2.png';
+import whoweare from './aboutusImages/whoweare.svg';
 import whyomou from './aboutusImages/whyomou.svg';
 import ourmission from './aboutusImages/ourmission.svg';
 
