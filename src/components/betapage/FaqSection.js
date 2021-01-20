@@ -85,7 +85,9 @@ const FaqSection = () => {
                     </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <Typography>{answer}</Typography>
+                    <Typography style={{ fontSize: '20px' }}>
+                        {answer}
+                    </Typography>
                 </AccordionDetails>
             </Accordion>
         </Grid>
