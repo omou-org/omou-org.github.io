@@ -1,5 +1,6 @@
 export const betaPageContent = [
     {
+        id: 1,
         image: require('./betapageImages/modernize.png'),
         title: 'Modernize Administrative Processes Admin',
         description:
@@ -9,6 +10,7 @@ export const betaPageContent = [
         waveImage: false,
     },
     {
+        id: 2,
         image: require('./betapageImages/transparent.png'),
         title: 'Transparent Invoicing',
         description:
@@ -17,6 +19,7 @@ export const betaPageContent = [
         isRight: false,
     },
     {
+        id: 3,
         image: require('./betapageImages/coursemanagement.jpg'),
         title: 'Easy Course Management',
         description:

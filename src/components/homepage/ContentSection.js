@@ -135,11 +135,16 @@ const ContentSection = ({
                     >
                         <Grid item xs={12} md={6}>
                             {image && (
-                                <img src={image} className={classes.image} />
+                                <img
+                                    src={image}
+                                    className={classes.image}
+                                    alt="right"
+                                />
                             )}
                         </Grid>
 
                         <Grid
+                            item
                             xs={12}
                             md={5}
                             className={classes.textStylesRight}
@@ -200,11 +205,17 @@ const ContentSection = ({
                                     <img
                                         src={image}
                                         className={classes.image}
+                                        alt="left"
                                     />
                                 )}
                             </Grid>
                         </Hidden>
-                        <Grid xs={12} md={5} className={classes.textStylesLeft}>
+                        <Grid
+                            item
+                            xs={12}
+                            md={5}
+                            className={classes.textStylesLeft}
+                        >
                             <Typography
                                 className={classes.contentTitle}
                                 style={{
@@ -249,6 +260,7 @@ const ContentSection = ({
                                     <img
                                         src={image}
                                         className={classes.image}
+                                        alt="left"
                                     />
                                 )}
                             </Grid>

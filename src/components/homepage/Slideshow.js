@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Typography, Box, Hidden } from '@material-ui/core';
+import { Grid, Typography, Hidden } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     iconImage: {
@@ -51,7 +51,7 @@ const Slideshow = ({ image, description, title, type, link }) => {
                         justify="center"
                         alignItems="center"
                     >
-                        <Grid xs={12}>
+                        <Grid item xs={12}>
                             <img
                                 src={image}
                                 alt=""

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid, Typography, TextField, Button, Box } from '@material-ui/core';
+import { Grid, Typography, TextField, Button } from '@material-ui/core';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import { makeStyles } from '@material-ui/core/styles';
 import { primaryColor } from '../../theme/colors';
@@ -97,6 +97,7 @@ const GoogleSheetsForm = ({ contactUs }) => {
     const SHEET_ID = process.env.REACT_APP_SHEET_ID;
     const CLIENT_EMAIL = process.env.REACT_APP_GOOGLE_CLIENT_EMAIL;
     const PRIVATE_KEY = process.env.REACT_APP_GOOGLE_SERVICE_PRIVATE_KEY;
+
     const [formData, setFormData] = useState({ Name: '', Email: '' });
 
     const doc = new GoogleSpreadsheet(SPREADSHEET_ID);
@@ -129,7 +130,6 @@ const GoogleSheetsForm = ({ contactUs }) => {
 
     const handleFormSubmit = () => {
         appendSpreadsheet(formData);
-
         setFormData({ Name: '', Email: '' });
     };
 

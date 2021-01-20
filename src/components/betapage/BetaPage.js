@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { Grid, Typography, Box } from '@material-ui/core';
+import React from 'react';
+import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import GoogleSheetsForm from './GoogleSheetsForm';
 import { betaPageContent, betaPageSlideShowData } from './betaPageData.js';
@@ -8,7 +8,6 @@ import wave from '../homepage/homeimages/wave.svg';
 import SlideShow from '../homepage/Slideshow';
 
 import 'react-multi-carousel/lib/styles.css';
-import { Link } from 'react-router-dom';
 
 import FaqSection from './FaqSection';
 
@@ -69,9 +68,6 @@ const useStyles = makeStyles((theme) => ({
 
 const BetaPage = (props) => {
     const classes = useStyles();
-    const childRef = useRef(null);
-    const scrollToContent = () =>
-        childRef.current.scrollIntoView({ behavior: 'smooth' });
 
     return (
         <Grid container>
@@ -115,14 +111,13 @@ const BetaPage = (props) => {
                         justify="flex-start"
                         alignItems="center"
                         className={classes.bannerActionContainer}
-                        spacing={12}
                     >
                         <Grid>
                             <Typography className={classes.bannerActionText}>
                                 Scheduling
                             </Typography>
                         </Grid>
-                        <Grid xs={3}>
+                        <Grid item xs={3}>
                             <Typography className={classes.bannerActionText}>
                                 Invoicing
                             </Typography>
@@ -155,9 +150,16 @@ const BetaPage = (props) => {
                     alignContent="center"
                     className={classes.EAPQuestionContainer}
                 >
-                    {betaPageSlideShowData.map(({ image, title, type }) => (
-                        <SlideShow image={image} title={title} type={type} />
-                    ))}
+                    {betaPageSlideShowData.map(
+                        ({ key, image, title, type }) => (
+                            <SlideShow
+                                key={key}
+                                image={image}
+                                title={title}
+                                type={type}
+                            />
+                        )
+                    )}
                 </Grid>
             </Grid>
             <Grid
@@ -169,6 +171,7 @@ const BetaPage = (props) => {
             ></Grid>
             {betaPageContent.map(
                 ({
+                    id,
                     image,
                     title,
                     description,
@@ -179,7 +182,7 @@ const BetaPage = (props) => {
                     displayContactUsButton,
                 }) => (
                     <ContentSection
-                        ref={childRef}
+                        key={id}
                         image={image}
                         title={title}
                         description={description}
