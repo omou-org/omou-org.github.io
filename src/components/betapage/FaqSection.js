@@ -1,13 +1,13 @@
 import React from 'react';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
-import { Grid, Box, Typography, Button, IconButton } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 
 import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import { betaPageFaqData } from './betaPageData.js';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { primaryColor } from '../../theme/colors';
+
 const Accordion = withStyles({
     root: {
         backgroundColor: '#FAFAFA',
@@ -107,6 +107,7 @@ const FaqSection = () => {
 
                 <Grid
                     item
+                    container
                     justify="space-between"
                     direction="row"
                     alignItems="center"
@@ -114,6 +115,7 @@ const FaqSection = () => {
                 >
                     {betaPageFaqData.map(({ key, question, answer }) => (
                         <QuestionContainer
+                            key={key}
                             question={question}
                             answer={answer}
                             id={key}

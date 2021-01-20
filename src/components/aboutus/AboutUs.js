@@ -1,8 +1,8 @@
 import React from 'react';
-import { Grid, Typography, Box } from '@material-ui/core';
+import { Grid, Box } from '@material-ui/core';
 import teamImage from './aboutusImages/grouppicture2.png';
 import whoweare from './aboutusImages/whoweare.svg';
-import whyomou from './aboutusImages/whyomou.svg';
+
 import ourmission from './aboutusImages/ourmission.svg';
 
 import './AboutUs.scss';
@@ -21,7 +21,11 @@ const AboutUs = () => {
                 </Grid> */}
                 <Grid item xs={12} style={{ textAlign: 'center' }}>
                     <Box display={{ xs: 'none', sm: 'block', md: 'block' }}>
-                        <img src={teamImage} style={{ width: '100vw' }} />
+                        <img
+                            src={teamImage}
+                            style={{ width: '100vw' }}
+                            alt="team-group"
+                        />
                     </Box>
                 </Grid>
                 <Grid container item md={12} className="bodyContainer">
@@ -45,7 +49,7 @@ We at Omou want to remove all physical barriers that prevent students, parents, 
                         style={{ textAlign: 'center', fullWidth: true }}
                     >
                         <Box display={{ xs: 'none', sm: 'none', md: 'block' }}>
-                            <img src={whoweare} />
+                            <img src={whoweare} alt="whoweare" />
                         </Box>
                         <Box display={{ xs: 'block', sm: 'block', md: 'none' }}>
                             <div className="whoweare">WHO WE ARE</div>

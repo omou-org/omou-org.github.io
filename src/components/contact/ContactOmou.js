@@ -14,7 +14,6 @@ import {
     MenuItem,
     Checkbox,
     FormControlLabel,
-    SwipeableDrawer,
 } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
