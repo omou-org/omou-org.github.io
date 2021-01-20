@@ -1,3 +1,5 @@
+$omouLightBlue: rgba(67, 181, 217, 0.5);
+
 .header {
     font-size: 50px;
     font-style: normal;
@@ -21,7 +23,8 @@
     align-content: center;
     .bodybox {
         align-content: center;
-        margin:auto;
+        margin: auto;
+        padding: 1em;
         .body {
             font-family: Montserrat;
             text-align: left;
@@ -59,4 +62,18 @@
         line-height: 20px;
         padding-top: 5%;
     }
+}
+
+.whyomoutext {
+    color: white;
+    font-size: 14rem;
+    text-shadow: -8px -8px 0 $omouLightBlue, 0 -2px 0 $omouLightBlue,
+        2px -2px 0 $omouLightBlue, 2px 0 0 $omouLightBlue,
+        2px 2px 0 $omouLightBlue, 0 2px 0 $omouLightBlue,
+        -2px 2px 0 $omouLightBlue, -2px 0 0 $omouLightBlue;
+}
+
+.whoweare {
+    font-size: 8rem;
+    color: $omouLightBlue;
 }

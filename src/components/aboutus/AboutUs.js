@@ -1,15 +1,14 @@
 import React from 'react';
 import { Grid, Typography, Box } from '@material-ui/core';
-import teamImage from './homeimages/grouppicture2.png';
-import whoweare from './homeimages/whoweare.svg';
-import whyomou from './homeimages/whyomou.svg';
-import ourmission from './homeimages/ourmission.svg';
+import teamImage from './aboutusImages/grouppicture2.png';
+import whyomou from './aboutusImages/whyomou.svg';
+import ourmission from './aboutusImages/ourmission.svg';
 
 import './AboutUs.scss';
 
 const AboutUs = () => {
     return (
-        <div style={{ width: '100vw' }}>
+        <div style={{ width: '100%' }}>
             <Grid direction="row" alignItems="center">
                 {/* <Grid container justify="center">
                     <div className="header left" style={{ paddingRight: 10 }}>
@@ -19,7 +18,7 @@ const AboutUs = () => {
                         OMOU
                     </div>
                 </Grid> */}
-                <Grid style={{ textAlign: 'center' }}>
+                <Grid item xs={12} style={{ textAlign: 'center' }}>
                     <Box display={{ xs: 'none', sm: 'block', md: 'block' }}>
                         <img src={teamImage} style={{ width: '100vw' }} />
                     </Box>
@@ -41,18 +40,17 @@ We at Omou want to remove all physical barriers that prevent students, parents, 
                     <Grid
                         item
                         md={3}
+                        xs={12}
                         style={{ textAlign: 'center', fullWidth: true }}
                     >
-                        <Box display={{ xs: 'none', sm: 'block', md: 'block' }}>
+                        <Box display={{ xs: 'none', sm: 'none', md: 'block' }}>
                             <img src={whoweare} />
                         </Box>
+                        <Box display={{ xs: 'block', sm: 'block', md: 'none' }}>
+                            <div className="whoweare">WHO WE ARE</div>
+                        </Box>
                     </Grid>
-                    <Grid
-                        item
-                        md={9}
-                        className="bodybox"
-                        style={{ width: '100vw' }}
-                    >
+                    <Grid item md={9} className="bodybox">
                         <div className="body">
                             We’re Omou. We’re born out of a desire to create
                             digital spaces for tutoring centers to grow and
@@ -71,7 +69,7 @@ We at Omou want to remove all physical barriers that prevent students, parents, 
                                 paddingLeft: 0,
                             }}
                         >
-                            <Grid xs={12}>
+                            <Grid md={12}>
                                 <Box
                                     display={{
                                         xs: 'none',
@@ -79,13 +77,15 @@ We at Omou want to remove all physical barriers that prevent students, parents, 
                                         md: 'block',
                                     }}
                                 >
-                                    <img src={whyomou} />
+                                    <div className="whyomoutext">WHY OMOU?</div>
                                 </Box>
                             </Grid>
                         </Grid>
                         <Grid
+                            xs={12}
+                            md={10}
                             className="bodybox"
-                            style={{ width: '90%', paddingTop: 60 }}
+                            style={{ paddingTop: 60 }}
                         >
                             <div className="body">
                                 While not a direct replacement for physical
@@ -101,9 +101,10 @@ We at Omou want to remove all physical barriers that prevent students, parents, 
                     <Grid container className="bodycontainer" item md={12}>
                         <Grid
                             item
-                            md={4}
+                            xs={11}
+                            md={10}
                             style={{
-                                textAlign: 'center',
+                                textAlign: 'right',
                                 fullWidth: true,
                                 paddingLeft: 0,
                             }}
@@ -114,11 +115,12 @@ We at Omou want to remove all physical barriers that prevent students, parents, 
                                     sm: 'block',
                                     md: 'block',
                                 }}
+                                alignItems="right"
                             >
-                                <img src={ourmission} />
+                                <img src={ourmission} alt="ourmission" />
                             </Box>
                         </Grid>
-                        <Grid className="bodybox" item md={7}>
+                        <Grid className="bodybox" item md={9}>
                             <div className="body">
                                 We at Omou want to remove all physical barriers
                                 that prevent students, parents, and teachers
