@@ -13,6 +13,9 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-evenly',
         margin: theme.spacing(10),
         width: '50%',
+        [theme.breakpoints.down('sm')]: {
+            width: '100%',
+        },
     },
     contactUsContainer: {
         paddingTop: '5em',
@@ -45,6 +48,13 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '20px',
         backgroundColor: primaryColor,
         color: 'white',
+    },
+    bottomWave: {
+        width: '100%',
+        display: 'block',
+        [theme.breakpoints.down('sm')]: {
+            height: '37%',
+        },
     },
 }));
 
@@ -184,7 +194,7 @@ const ContactUsForm = () => {
                     </Button>
                 </Grid>
             </Grid>
-            <img src={bottomWave} alt="wave2" style={{ width: '100%' }} />
+            <img src={bottomWave} alt="wave2" className={classes.bottomWave} />
         </Grid>
     );
 };

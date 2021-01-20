@@ -55,6 +55,9 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-evenly',
         margin: theme.spacing(10),
         width: '50%',
+        [theme.breakpoints.down('sm')]: {
+            width: '70%',
+        },
     },
     contactUsContainer: {
         paddingTop: '4em',
@@ -139,7 +142,7 @@ const GoogleSheetsForm = ({ contactUs }) => {
                     direction="row"
                     className={classes.contactUsContainer}
                 >
-                    <Grid item xs={6} style={{ textAlign: 'center' }}>
+                    <Grid item xs={12} md={6} style={{ textAlign: 'center' }}>
                         <Typography
                             style={{
                                 fontSize: '47px',
@@ -162,7 +165,6 @@ const GoogleSheetsForm = ({ contactUs }) => {
                                 direction="row"
                                 justify="center"
                                 alignItems="center"
-                                spacing={1}
                             >
                                 <Grid item xs={12}>
                                     <Typography className={classes.inputText}>
@@ -221,12 +223,16 @@ const GoogleSheetsForm = ({ contactUs }) => {
                     <img
                         src={bottomWave}
                         alt="wave2"
-                        style={{ width: '100%' }}
+                        style={{
+                            width: '100%',
+
+                            display: 'block',
+                        }}
                     />
                 </Grid>
             ) : (
                 <form>
-                    <Grid item style={{ padding: '6vh' }}>
+                    <Grid item xs={12} style={{ paddingTop: '4em' }}>
                         <Grid
                             container
                             direction="row"

@@ -24,7 +24,7 @@ export const userData = [
         description:
             'Junior at Amador Valley High School. Loves to code and relax.',
         linkedin: 'https://www.linkedin.com/in/neilallavarpu/',
-        image: 'neil.jpg',
+        image: 'neil.png',
     },
     {
         id: 4,
@@ -55,15 +55,6 @@ export const userData = [
     },
     {
         id: 7,
-        name: 'Jeffrey Su',
-        role: 'Front-End Engineer',
-        description:
-            'Frontend Engineer Senior at AVHS. Loves to play video games and card games.',
-        linkedin: 'https://www.linkedin.com/in/jeffrey-su-09b0831a1/',
-        image: 'jeffery.jpeg',
-    },
-    {
-        id: 8,
         name: 'Calvin Fronda',
         role: 'Front-End Engineer',
         description:
@@ -72,7 +63,7 @@ export const userData = [
         image: 'calvin.png',
     },
     {
-        id: 9,
+        id: 8,
         name: 'Wilson Lam',
         role: 'Front-End Engineer',
         description:
@@ -81,7 +72,7 @@ export const userData = [
         image: 'wilson.jpg',
     },
     {
-        id: 10,
+        id: 9,
         name: 'Ryan Gedwill',
         role: 'Front-End Engineer',
         description:
@@ -90,7 +81,7 @@ export const userData = [
         image: 'ryan.png',
     },
     {
-        id: 11,
+        id: 10,
         name: 'Gina Yoo',
         role: 'Product Designer',
         description:
@@ -99,7 +90,7 @@ export const userData = [
         image: 'gina.png',
     },
     {
-        id: 12,
+        id: 11,
         name: 'Novia Elvina',
         role: 'Product Designer',
         description: 'I love exploring new places and learn new things!',
@@ -107,7 +98,7 @@ export const userData = [
         image: 'novia.jpeg',
     },
     {
-        id: 13,
+        id: 12,
         name: 'Kelly Huang',
         role: 'Product Marketer',
         description:
@@ -116,7 +107,7 @@ export const userData = [
         image: 'kelly.jpg',
     },
     {
-        id: 14,
+        id: 13,
         name: 'Shana Vu',
         Role: 'Product Marketer',
         description:
@@ -124,18 +115,9 @@ export const userData = [
         linkedin: 'https://www.linkedin.com/in/shanavu/',
         image: 'shana.jpg',
     },
-    {
-        id: 15,
-        name: 'Anna Grace Conover',
-        role: 'Front-End Engineer',
-        description:
-            'Always striving to learn and grow. Sometimes happens to do that by reading, playing with the cat (Iroh), or playing video games/board games.',
-        linkedin: 'https://www.linkedin.com/in/anna-conover/',
-        image: 'annagrace.png',
-    },
 
     {
-        id: 16,
+        id: 14,
         name: 'Andrew Knapp',
         role: 'Front-End Engineer',
         description:
@@ -144,7 +126,7 @@ export const userData = [
         image: 'andrew.jpg',
     },
     {
-        id: 17,
+        id: 15,
         name: 'Peter Kang',
         role: 'Front-End Engineer',
         description:
@@ -153,7 +135,7 @@ export const userData = [
         image: 'peter.png',
     },
     {
-        id: 18,
+        id: 16,
         name: 'Chris Lojewski',
         role: 'Front-End Engineer',
         description:

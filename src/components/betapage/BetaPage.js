@@ -17,11 +17,14 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         textAlign: 'center',
         color: 'black',
-        paddingBottom: '5vh',
+        padding: '5vh',
     },
     bannerActionContainer: {
         paddingTop: '5vh',
         marginLeft: '4vh',
+        [theme.breakpoints.down('sm')]: {
+            marginLeft: '0',
+        },
     },
     bannerActionText: {
         fontSize: '20px',
@@ -57,6 +60,10 @@ const useStyles = makeStyles((theme) => ({
     EAPQuestionContainer: {
         paddingTop: '16vh',
         paddingBottom: '16vh',
+        [theme.breakpoints.down('sm')]: {
+            paddingTop: '5vh',
+            paddingBottom: '5vh',
+        },
     },
 }));
 
