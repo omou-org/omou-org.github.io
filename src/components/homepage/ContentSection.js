@@ -21,29 +21,40 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: '10em',
     },
     contentContainerRight: {
-        width: '102%',
         padding: '5em',
         paddingBottom: '10em',
         backgroundColor: ' #FAFAFA',
+        paddingTop: '10em',
     },
     contentContainerLeft: {
-        width: '102%',
         padding: ' 5em',
         paddingBottom: '10em',
-        paddingTop: '4vh',
-
+        paddingTop: '10em',
         backgroundColor: ' #FFFFFF',
     },
     contentTitle: {
         textTransform: 'uppercase',
     },
-    rightContent: {
+    textStylesLeft: {
         fontSize: '18px',
         paddingTop: '10vh',
         textAlign: 'left',
-        paddingLeft: '4em',
+        paddingRight: '7em',
         [theme.breakpoints.down('sm')]: {
             textAlign: 'center',
+            paddingLeft: '0',
+            paddingRight: '0',
+        },
+    },
+    textStylesRight: {
+        fontSize: '18px',
+        paddingTop: '10vh',
+        textAlign: 'left',
+        paddingLeft: '7em',
+        [theme.breakpoints.down('sm')]: {
+            textAlign: 'center',
+            paddingLeft: '0',
+            paddingRight: '0',
         },
     },
     contactUsButton: {
@@ -120,7 +131,6 @@ const ContentSection = ({
                         direction="row"
                         justify="center"
                         alignItems="center"
-                        spacing={10}
                         className={classes.contentContainerRight}
                     >
                         <Grid item xs={12} md={6}>
@@ -129,48 +139,48 @@ const ContentSection = ({
                             )}
                         </Grid>
 
-                        <Grid xs={12} md={5}>
-                            <section className={classes.rightContent}>
-                                <Typography
-                                    className={classes.contentTitle}
-                                    style={{
-                                        fontSize: '22px',
-                                        fontWeight: 'bold',
-                                    }}
-                                >
-                                    {title}
-                                </Typography>
+                        <Grid
+                            xs={12}
+                            md={5}
+                            className={classes.textStylesRight}
+                        >
+                            <Typography
+                                className={classes.contentTitle}
+                                style={{
+                                    fontSize: '22px',
+                                    fontWeight: 'bold',
+                                }}
+                            >
+                                {title}
+                            </Typography>
 
-                                <Typography
-                                    style={{
-                                        fontSize: '22px',
-                                        paddingTop: '5vh',
-                                    }}
-                                >
-                                    {description}
+                            <Typography
+                                style={{
+                                    fontSize: '22px',
+                                    paddingTop: '5vh',
+                                }}
+                            >
+                                {description}
+                            </Typography>
+                            <Link
+                                to={linkTo}
+                                style={{ textDecoration: 'none' }}
+                            >
+                                <Typography className={classes.learnMoreButton}>
+                                    Learn More
                                 </Typography>
-                                <Link
-                                    to={linkTo}
-                                    style={{ textDecoration: 'none' }}
-                                >
-                                    <Typography
-                                        className={classes.learnMoreButton}
+                            </Link>
+                            {displayContactUsButton && (
+                                <Box style={{ paddingTop: '5vh' }}>
+                                    <Button
+                                        className={
+                                            classes.signUpForFreeTrailButton
+                                        }
                                     >
-                                        Learn More
-                                    </Typography>
-                                </Link>
-                                {displayContactUsButton && (
-                                    <Box style={{ paddingTop: '5vh' }}>
-                                        <Button
-                                            className={
-                                                classes.signUpForFreeTrailButton
-                                            }
-                                        >
-                                            SIGN UP FOR YOUR FREE TRIAL TODAY
-                                        </Button>
-                                    </Box>
-                                )}
-                            </section>
+                                        SIGN UP FOR YOUR FREE TRIAL TODAY
+                                    </Button>
+                                </Box>
+                            )}
                         </Grid>
                     </Grid>
                 </>
@@ -182,7 +192,6 @@ const ContentSection = ({
                         direction="row"
                         justify="center"
                         alignItems="center"
-                        spacing={10}
                         className={classes.contentContainerLeft}
                     >
                         <Hidden mdUp>
@@ -195,48 +204,44 @@ const ContentSection = ({
                                 )}
                             </Grid>
                         </Hidden>
-                        <Grid xs={12} md={6}>
-                            <section className={classes.rightContent}>
-                                <Typography
-                                    className={classes.contentTitle}
-                                    style={{
-                                        fontSize: '22px',
-                                        fontWeight: 'bold',
-                                    }}
-                                >
-                                    {title}
-                                </Typography>
+                        <Grid xs={12} md={5} className={classes.textStylesLeft}>
+                            <Typography
+                                className={classes.contentTitle}
+                                style={{
+                                    fontSize: '22px',
+                                    fontWeight: 'bold',
+                                }}
+                            >
+                                {title}
+                            </Typography>
 
-                                <Typography
-                                    style={{
-                                        fontSize: '22px',
-                                        paddingTop: '5vh',
-                                    }}
-                                >
-                                    {description}
+                            <Typography
+                                style={{
+                                    fontSize: '22px',
+                                    paddingTop: '5vh',
+                                }}
+                            >
+                                {description}
+                            </Typography>
+                            <Link
+                                to={linkTo}
+                                style={{ textDecoration: 'none' }}
+                            >
+                                <Typography className={classes.learnMoreButton}>
+                                    Learn More
                                 </Typography>
-                                <Link
-                                    to={linkTo}
-                                    style={{ textDecoration: 'none' }}
-                                >
-                                    <Typography
-                                        className={classes.learnMoreButton}
+                            </Link>
+                            {displayContactUsButton && (
+                                <Box style={{ paddingTop: '5vh' }}>
+                                    <Button
+                                        className={
+                                            classes.signUpForFreeTrailButton
+                                        }
                                     >
-                                        Learn More
-                                    </Typography>
-                                </Link>
-                                {displayContactUsButton && (
-                                    <Box style={{ paddingTop: '5vh' }}>
-                                        <Button
-                                            className={
-                                                classes.signUpForFreeTrailButton
-                                            }
-                                        >
-                                            SIGN UP FOR YOUR FREE TRIAL TODAY
-                                        </Button>
-                                    </Box>
-                                )}
-                            </section>
+                                        SIGN UP FOR YOUR FREE TRIAL TODAY
+                                    </Button>
+                                </Box>
+                            )}
                         </Grid>
                         <Hidden mdDown>
                             <Grid item xs={12} md={6}>

@@ -13,6 +13,9 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-evenly',
         margin: theme.spacing(10),
         width: '50%',
+        [theme.breakpoints.down('sm')]: {
+            width: '100%',
+        },
     },
     contactUsContainer: {
         paddingTop: '5em',

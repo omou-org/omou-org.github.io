@@ -154,7 +154,6 @@ const Home = (props) => {
                     direction="column"
                     justify="center"
                     alignItems="center"
-                    spacing={2}
                 >
                     {homePageData.map(
                         ({
