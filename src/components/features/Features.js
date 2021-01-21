@@ -126,7 +126,7 @@ const Features = () => {
                     direction="row"
                     item={12}
                 >
-                    <Hidden mdUp>
+                    <Hidden lgUp>
                         <List style={flexContainer} alignItems="center">
                             {sideBarRoutes.map(({ path, title }, index) => (
                                 <ListItem>
@@ -146,7 +146,7 @@ const Features = () => {
                         </List>
                     </Hidden>
 
-                    <Hidden smDown>
+                    <Hidden mdDown>
                         <Grid
                             style={{ position: 'relative' }}
                             item
