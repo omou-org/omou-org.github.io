@@ -1,30 +1,25 @@
-import React from "react";
-import {
-	Switch,
-	Route
-} from "react-router-dom";
-import Features from "./Views/Features";
-import AboutUs from "./Views/AboutUs";
-import ContactUs from "./Views/ContactUs";
-import MeetTeam from "./Views/MeetTeam";
-import Home from "./Views/Home"
-import ScrollToTop from "./ScrollToTop"
-import withTracker from './withTracker';
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 
-
-
+import Home from './components/homepage/Home';
+import AboutUs from './components/aboutus/AboutUs';
+import MeetOmouContainer from './components/meetomou/MeetOmouContainer';
+import BetaProgram from './components/betapage/BetaPage';
+import Features from './components/features/Features';
+import ContactOmou from './components/contact/ContactOmou';
 
 export function Routes() {
-	return (
-
-		<ScrollToTop>
-			<Switch>
-				<Route exact path="/" component={withTracker(Home)} />
-				<Route path="/meet-team" component={withTracker(MeetTeam)} />
-				<Route path="/features" component={withTracker(Features)} />
-				<Route path="/about-us" component={withTracker(AboutUs)} />
-				<Route path="/contact-us" component={withTracker(ContactUs)} />
-			</Switch>
-		</ScrollToTop>
-	)
+    return (
+        <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/meet-team" component={MeetOmouContainer} />
+            <Route path="/beta" component={BetaProgram} />
+            <Route path="/contact-us" component={ContactOmou} />
+            <Route exact path="/about-us" component={AboutUs} />
+            <Route exact path="/features" component={Features} />
+            <Route exact path="/accounts" component={Features} />
+            <Route exact path="/registration" component={Features} />
+            <Route exact path="/payments" component={Features} />
+        </Switch>
+    );
 }
