@@ -17,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         textAlign: 'center',
         color: 'black',
+        [theme.breakpoints.down('md')]: {
+            paddingTop: '5vh',
+        },
         [theme.breakpoints.down('sm')]: {
             padding: '3vh',
         },
@@ -44,8 +47,13 @@ const useStyles = makeStyles((theme) => ({
     },
     responsiveContactUsButton: {
         paddingTop: '4vh',
+        [theme.breakpoints.down('md')]: {
+            marginLeft: '10vh',
+            paddingBottom: '3em',
+        },
         [theme.breakpoints.down('sm')]: {
-            paddingTop: '1vh',
+            marginLeft: '0',
+            paddingBottom: '0',
         },
     },
     contactUsButton: {
@@ -138,8 +146,15 @@ const Home = (props) => {
                         </Button>
                     </Grid>
                 </Grid>
-                <Grid item alignContent="right">
-                    <Box display={{ xs: 'block', sm: 'none', md: 'block' }}>
+                <Grid>
+                    <Box
+                        display={{
+                            xs: 'none',
+                            sm: 'none',
+                            md: 'none',
+                            lg: 'block',
+                        }}
+                    >
                         <img
                             src={people}
                             alt="hero"

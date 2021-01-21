@@ -254,8 +254,8 @@ const ContentSection = ({
                                 </Box>
                             )}
                         </Grid>
-                        <Hidden mdDown>
-                            <Grid item xs={12} md={6}>
+                        <Hidden smDown>
+                            <Grid item xs={12} md={7}>
                                 {image && (
                                     <img
                                         src={image}
