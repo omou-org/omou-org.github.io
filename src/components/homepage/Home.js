@@ -141,7 +141,10 @@ const Home = (props) => {
                         xs={10}
                         className={classes.responsiveContactUsButton}
                     >
-                        <Button className={classes.contactUsButton}>
+                        <Button
+                            className={classes.contactUsButton}
+                            href="/contact-us"
+                        >
                             CONTACT US
                         </Button>
                     </Grid>

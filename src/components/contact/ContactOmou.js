@@ -141,9 +141,9 @@ const ContactOmou = () => {
                 'gmail',
                 'template_L8JA194M',
                 {
-                    // from_name: fromName,
-                    // message_html: messageHTML,
-                    // reply_to: emailInput,
+                    from_name: fromName,
+                    message_html: messageHTML,
+                    reply_to: emailInput,
                 },
                 'user_CddYW1ypBZ46FHYjjgeZG'
             )
@@ -348,7 +348,13 @@ const ContactOmou = () => {
                                     timeout={{ enter: 3000 }}
                                 >
                                     <div>
-                                        <FormControl
+                                        {/**
+                                         * This is where a terms and conditions or
+                                         * private policy - pending
+                                         *
+                                         */}
+
+                                        {/* <FormControl
                                             component="fieldset"
                                             style={{ paddingTop: '1em' }}
                                         >
@@ -365,7 +371,7 @@ const ContactOmou = () => {
                                                 label={privatePolicyText}
                                                 labelPlacement="end"
                                             />
-                                        </FormControl>
+                                        </FormControl> */}
                                         <Grid
                                             item
                                             xs={12}

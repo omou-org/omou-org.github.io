@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Grid, Typography, TextField, Button } from '@material-ui/core';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import { makeStyles } from '@material-ui/core/styles';
@@ -92,6 +92,7 @@ const useStyles = makeStyles((theme) => ({
 
 const GoogleSheetsForm = ({ contactUs }) => {
     const classes = useStyles();
+    const contactUsRef = useRef();
 
     const SPREADSHEET_ID = process.env.REACT_APP_SPREADSHEET_ID;
     const SHEET_ID = process.env.REACT_APP_SHEET_ID;
@@ -99,7 +100,8 @@ const GoogleSheetsForm = ({ contactUs }) => {
     const PRIVATE_KEY = process.env.REACT_APP_GOOGLE_SERVICE_PRIVATE_KEY;
 
     const [formData, setFormData] = useState({ Name: '', Email: '' });
-
+    const [errorText, setErrorText] = useState('');
+    const [isError, setIsError] = useState(false);
     const doc = new GoogleSpreadsheet(SPREADSHEET_ID);
 
     const appendSpreadsheet = async (row) => {
@@ -124,8 +126,21 @@ const GoogleSheetsForm = ({ contactUs }) => {
         setFormData({ ...formData, Name: e.target.value });
     };
 
+    const handleErrors = (bool) => {
+        if (bool) {
+            setIsError(true);
+            setErrorText('Invalid Email');
+        } else {
+            setIsError(false);
+            setErrorText('');
+        }
+    };
+
     const handleEmailInput = (e) => {
         setFormData({ ...formData, Email: e.target.value });
+        e.target.value.match(/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/)
+            ? handleErrors(false)
+            : handleErrors(true);
     };
 
     const handleFormSubmit = () => {
@@ -196,9 +211,10 @@ const GoogleSheetsForm = ({ contactUs }) => {
                                         required
                                         variant="outlined"
                                         value={formData.Email}
+                                        error={errorText}
+                                        helperText={errorText}
                                         onChange={handleEmailInput}
                                         fullWidth
-                                        id="standard-required"
                                         InputProps={{
                                             classes: {
                                                 root: classes.emailInput,
@@ -213,6 +229,7 @@ const GoogleSheetsForm = ({ contactUs }) => {
                     <Grid container justify="center" direction="row">
                         <Grid item>
                             <Button
+                                disabled={isError}
                                 className={classes.learnMoreButton}
                                 onClick={handleFormSubmit}
                             >
@@ -270,6 +287,8 @@ const GoogleSheetsForm = ({ contactUs }) => {
                                     required
                                     variant="outlined"
                                     id="email"
+                                    error={errorText}
+                                    helperText={errorText}
                                     value={formData.Email}
                                     style={{ width: '90%' }}
                                     onChange={handleEmailInput}
@@ -286,6 +305,7 @@ const GoogleSheetsForm = ({ contactUs }) => {
                                 style={{ padding: '2vh 0 2vh 0' }}
                             >
                                 <Button
+                                    disabled={isError}
                                     className={classes.signUpButton}
                                     onClick={handleFormSubmit}
                                 >
