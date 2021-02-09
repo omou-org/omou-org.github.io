@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, Component } from 'react';
+import React, { useState, useRef} from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { userData } from './userData.js';
@@ -55,36 +55,10 @@ const ZoomContainer = () => {
     const classes = useStyles();
     const [choosenImage, setChoosenImage] = useState(null);
     const [zoomChat, setZoomChat] = useState([]);
-    const [tasks, setTasks] = useState([]);
+
     let chatRef = useRef();
 
-    const ZoomImageBox = ({ image, name, id, i }) => {
-        return (
-            <Grid item>
-                <div
-                    className={
-                        choosenImage === id.toString()
-                            ? classes.imageHighlightSelect
-                            : classes.imageNormal
-                    }
-                >
-                    <img
-                        src={require(`./images/${image}`)}
-                        alt={name + ' alt'}
-                        style={{ height: '200px', width: '300px' }}
-                        id={id}
-                        onClick={(e) => {
-                            setChoosenImage(e.target.id);
-                            findUserInfo(id);
-                        }}
-                    />
-                    <Typography className={classes.imageTextName}>
-                        {name}
-                    </Typography>
-                </div>
-            </Grid>
-        );
-    };
+
 
     const exicuteScroll = () => {
         if (chatRef.current) {
@@ -108,48 +82,6 @@ const ZoomContainer = () => {
     // shared store
     // Parent :
     // create a hook
-
-    const ZoomChat = ({ name, linkedin, description, role, id }) => {
-        return (
-            <Grid
-                item
-                id={id}
-                className={
-                    choosenImage === id.toString()
-                        ? classes.zoomChatStylesHighlighted
-                        : classes.zoomChatStylesNormal
-                }
-                
-            >
-                <Typography style={{ fontWeight: '700' }}>
-                    FROM{' '}
-                    <span style={{ color: '#43B5D9' }}>
-                        {name.toUpperCase()}
-                    </span>{' '}
-                    TO
-                    <span style={{ color: '#43B5D9' }}> EVERYONE</span>{' '}
-                </Typography>
-                <Typography style={{ paddingTop: '1em', fontWeight: '700' }}>
-                    {role}
-                </Typography>
-                <Typography style={{ fontWeight: 'bold', fontSize: '15px' }}>
-                    {description}
-                </Typography>
-                <a href={linkedin} target="_blank">
-                    <Typography
-                        style={{
-                            color: 'white',
-                            textDecoration: 'underline',
-                            fontWeight: '700',
-                            paddingTop: '10px',
-                        }}
-                    >
-                        {linkedin}
-                    </Typography>
-                </a>
-            </Grid>
-        );
-    };
 
     return (
         <Grid
@@ -199,7 +131,7 @@ const ZoomContainer = () => {
                                 key={i}
                             >
                                 <img
-                                    src={require(`./images/${data.image}`)}
+                                    src={require(`${data.image}`)}
                                     alt={data.name + ' alt'}
                                     style={{ height: '200px', width: '300px' }}
                                     id={data.id}
