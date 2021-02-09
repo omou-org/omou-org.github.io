@@ -141,5 +141,5 @@ export const userData = [
         description:
             'Graduate student in materials science and engineering that somehow ended up programming.',
         image: 'chris.png',
-    },
+    }
 ];
