@@ -105,7 +105,6 @@ const ZoomContainer = () => {
         }
     };
 
-
     // shared store
     // Parent :
     // create a hook
@@ -120,7 +119,7 @@ const ZoomContainer = () => {
                         ? classes.zoomChatStylesHighlighted
                         : classes.zoomChatStylesNormal
                 }
-                ref={(ref) => {}}
+                
             >
                 <Typography style={{ fontWeight: '700' }}>
                     FROM{' '}
@@ -190,7 +189,7 @@ const ZoomContainer = () => {
                     alignItems="center"
                 >
                     {userData.map((data, i) => (
-                        <Grid item>
+                        <Grid item key={i}>
                             <div
                                 className={
                                     choosenImage === data.id.toString()
@@ -220,13 +219,11 @@ const ZoomContainer = () => {
                 <Grid
                     item
                     xs={5}
-                    direction="column"
-                    justify="flex-start"
-                    alignItems="center"
                     className={classes.zoomChat}
                 >
                     {zoomChat.map((data, i) => (
                         <div
+                        key={i}
                             ref={(ref) => {
                                 chatRef.current = ref;
                             }}
