@@ -105,7 +105,6 @@ const ZoomContainer = () => {
         }
     };
 
-   
     // shared store
     // Parent :
     // create a hook
