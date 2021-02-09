@@ -33,7 +33,7 @@ export const userData = [
         description:
             'Master’s student in the UW MHCI+D program and an avid street and concert photographer',
         linkedin: 'https://www.linkedin.com/in/gaby-chan/',
-        image: 'gaby.JPG',
+        image: 'gaby.jpg',
     },
     {
         id: 5,
