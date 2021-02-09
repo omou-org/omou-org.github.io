@@ -105,7 +105,7 @@ const ZoomContainer = () => {
         }
     };
 
-    console.log(chatRef);
+
     // shared store
     // Parent :
     // create a hook

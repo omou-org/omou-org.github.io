@@ -114,9 +114,9 @@ const GoogleSheetsForm = ({ contactUs }) => {
             await doc.loadInfo();
 
             const sheet = doc.sheetsById[SHEET_ID];
-            console.log(sheet);
+         
             const result = await sheet.addRow(row);
-            console.log(result);
+         
         } catch (e) {
             console.error('Error: ', e);
         }
