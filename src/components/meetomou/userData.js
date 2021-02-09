@@ -42,7 +42,7 @@ export const userData = [
         description:
             'In my free time, I love traveling and discovering new coffee spots.',
         linkedin: 'https://www.linkedin.com/in/katiebelleho/',
-        image: 'katie.jpeg',
+        image: 'katie.jpg',
     },
     {
         id: 6,
@@ -95,7 +95,7 @@ export const userData = [
         role: 'Product Designer',
         description: 'I love exploring new places and learn new things!',
         linkedin: 'https://www.linkedin.com/in/novia-elvina-700a2473/',
-        image: 'novia.jpeg',
+        image: 'novia.jpg',
     },
     {
         id: 12,

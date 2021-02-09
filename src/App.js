@@ -172,15 +172,7 @@ function NavigationBar() {
             <List>
                 {NavMenuItems.map(({ link, title }) => (
                     <NavLink className={classes.link} to={link} key={title}>
-                        <Typography
-                            style={{ lineHeight: '5vh' }}
-                            align="center"
-                            className={`${classes.desktopMenuItem} ${
-                                location.pathname === link ? classes.active : ''
-                            }`}
-                        >
-                            {title}
-                        </Typography>
+                        <Typography>{title}</Typography>
                     </NavLink>
                 ))}
             </List>

@@ -35,7 +35,7 @@ const MeetOmouContainer = () => {
                     <ZoomContainer />
                 </Container>
             </Hidden>
-            <Hidden mdUp>
+            <Hidden lgUp>
                 <div>
                     <MobileMeetTeam />
                 </div>

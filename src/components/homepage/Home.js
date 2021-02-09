@@ -149,7 +149,9 @@ const Home = (props) => {
                         </Button>
                     </Grid>
                 </Grid>
-                <Grid>
+
+                <Grid item alignContent="right">
+
                     <Box
                         display={{
                             xs: 'none',
