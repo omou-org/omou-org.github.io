@@ -6,7 +6,7 @@ export const userData = [
         description:
             'Accenture Hacker by day, but developer, product manager, sales guy by night.',
         linkedin: 'https://www.linkedin.com/in/dhuangg/',
-        image: 'daniel.jpg',
+        image: './images/daniel.jpg',
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ export const userData = [
         description:
             'Software Engineer at Robinhood When not transforming food into code or getting lost in data, I like to play badminton, solve puzzles, and play board games!',
         linkedin: 'https://www.linkedin.com/in/jerrylinew/',
-        image: 'jerry.png',
+        image: './images/jerry.png',
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ export const userData = [
         description:
             'Junior at Amador Valley High School. Loves to code and relax.',
         linkedin: 'https://www.linkedin.com/in/neilallavarpu/',
-        image: 'neil.png',
+        image: './images/neil.png',
     },
     {
         id: 4,
@@ -33,7 +33,7 @@ export const userData = [
         description:
             'Master’s student in the UW MHCI+D program and an avid street and concert photographer',
         linkedin: 'https://www.linkedin.com/in/gaby-chan/',
-        image: 'gaby.jpg',
+        image: './images/gaby.jpg',
         
     },
     {
@@ -43,7 +43,7 @@ export const userData = [
         description:
             'In my free time, I love traveling and discovering new coffee spots.',
         linkedin: 'https://www.linkedin.com/in/katiebelleho/',
-        image: 'katie.jpg',
+        image: './images/katie.jpg',
     },
     {
         id: 6,
@@ -52,7 +52,7 @@ export const userData = [
         description:
             'CS at UC Santa Barbara. Passionate rower from the shores of Lake Cachuma.',
         linkedin: 'https://www.linkedin.com/in/matthew-li-mli/',
-        image: 'matt.jpg',
+        image: './images/matt.jpg',
     },
     {
         id: 7,
@@ -61,7 +61,7 @@ export const userData = [
         description:
             'Favorite part of the day: Waking up to my homemade cold brew to start the morning.',
         linkedin: 'https://www.linkedin.com/in/calvinfronda/',
-        image: 'calvin.png',
+        image: './images/calvin.png',
     },
     {
         id: 8,
@@ -70,7 +70,7 @@ export const userData = [
         description:
             'Gamer, Coder, Foodie. Commodity I wish I had more of: Time.',
         linkedin: 'https://www.linkedin.com/in/wilson-lam87/',
-        image: 'wilson.jpg',
+        image: './images/wilson.jpg',
     },
     {
         id: 9,
@@ -79,7 +79,7 @@ export const userData = [
         description:
             "Favorite life hack: Put cream in before the coffee so it doesn't need to be stirred",
         linkedin: 'https://www.linkedin.com/in/ryan-gedwill-a87960107/',
-        image: 'ryan.png',
+        image: './images/ryan.png',
     },
     {
         id: 10,
@@ -88,7 +88,7 @@ export const userData = [
         description:
             'I love learning and trying new things. Addicted to coffee and playing games.',
         linkedin: 'https://www.linkedin.com/in/eunhyegina/',
-        image: 'gina.png',
+        image: './images/gina.png',
     },
     {
         id: 11,
@@ -96,7 +96,7 @@ export const userData = [
         role: 'Product Designer',
         description: 'I love exploring new places and learn new things!',
         linkedin: 'https://www.linkedin.com/in/novia-elvina-700a2473/',
-        image: 'novia.jpg',
+        image: './images/novia.jpg',
     },
     {
         id: 12,
@@ -105,7 +105,7 @@ export const userData = [
         description:
             'Things I love: outdoor adventures, reading, yoga, and guac',
         linkedin: 'https://www.linkedin.com/in/khuangx/',
-        image: 'kelly.jpg',
+        image: './images/kelly.jpg',
     },
     {
         id: 13,
@@ -114,7 +114,7 @@ export const userData = [
         description:
             'You’ll most likely find me sipping flat whites, running around San Francisco, or wandering the aisles of Trader Joe’s.',
         linkedin: 'https://www.linkedin.com/in/shanavu/',
-        image: 'shana.jpg',
+        image: './images/shana.jpg',
     },
 
     {
@@ -124,7 +124,7 @@ export const userData = [
         description:
             'Learning is my game, whether that be frameworks, musical instruments, or the animal kingdom.',
         linkedin: 'https://bit.ly/3cAimAN',
-        image: 'andrew.jpg',
+        image: './images/andrew.jpg',
     },
     {
         id: 15,
@@ -133,7 +133,7 @@ export const userData = [
         description:
             'LA-based dev, strength training enthusiast, lifelong Lakers fan',
         linkedin: 'https://www.linkedin.com/in/peterswkang/',
-        image: 'peter.png',
+        image: './images/peter.png',
     },
     {
         id: 16,
@@ -141,6 +141,6 @@ export const userData = [
         role: 'Front-End Engineer',
         description:
             'Graduate student in materials science and engineering that somehow ended up programming.',
-        image: 'chris.png',
+        image: './images/chris.png',
     },
 ];
