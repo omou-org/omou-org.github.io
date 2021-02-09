@@ -139,7 +139,14 @@ const Home = (props) => {
                     </Grid>
                 </Grid>
                 <Grid item alignContent="right">
-                    <Box display={{ xs: 'block', sm: 'none', md: 'block' }}>
+                    <Box
+                        display={{
+                            xs: 'none',
+                            sm: 'none',
+                            md: 'none',
+                            lg: 'block',
+                        }}
+                    >
                         <img
                             src={people}
                             alt="hero"
