@@ -125,8 +125,8 @@ const FooterMenuItems = [
         link: '/contact-us',
     },
     {
-        title: 'Beta',
-        link: '/beta',
+        title: 'Early access program',
+        link: '/early-access-program',
     },
 ];
 

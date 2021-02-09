@@ -49,6 +49,11 @@ const useStyles = makeStyles((theme) => ({
         boxSizing: 'border-box',
         boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
         marginTop: '50px',
+        fontSize: '1.3rem',
+        '&:hover': {
+            backgroundColor: '#A0A0A0',
+            color: '#FFF',
+        },
     },
     linkStyle: {
         color: 'black',
@@ -126,7 +131,7 @@ const Features = () => {
                     direction="row"
                     item={12}
                 >
-                    <Hidden mdUp>
+                    <Hidden lgUp>
                         <List style={flexContainer} alignItems="center">
                             {sideBarRoutes.map(({ path, title }, index) => (
                                 <ListItem>
@@ -146,7 +151,7 @@ const Features = () => {
                         </List>
                     </Hidden>
 
-                    <Hidden smDown>
+                    <Hidden mdDown>
                         <Grid
                             style={{ position: 'relative' }}
                             item
@@ -176,7 +181,10 @@ const Features = () => {
                                     </li>
                                 ))}
                                 <li>
-                                    <Button className={classes.requestDemoBtn}>
+                                    <Button
+                                        className={classes.requestDemoBtn}
+                                        href="/contact-us"
+                                    >
                                         request demo
                                     </Button>
                                 </li>

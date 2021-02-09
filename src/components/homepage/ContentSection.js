@@ -175,7 +175,7 @@ const ContentSection = ({
                                     Learn More
                                 </Typography>
                             </Link>
-                            {displayContactUsButton && (
+                            {/* {displayContactUsButton && (
                                 <Box style={{ paddingTop: '5vh' }}>
                                     <Button
                                         className={
@@ -185,7 +185,7 @@ const ContentSection = ({
                                         SIGN UP FOR YOUR FREE TRIAL TODAY
                                     </Button>
                                 </Box>
-                            )}
+                            )} */}
                         </Grid>
                     </Grid>
                 </>
@@ -254,8 +254,8 @@ const ContentSection = ({
                                 </Box>
                             )}
                         </Grid>
-                        <Hidden mdDown>
-                            <Grid item xs={12} md={6}>
+                        <Hidden smDown>
+                            <Grid item xs={12} md={7}>
                                 {image && (
                                     <img
                                         src={image}

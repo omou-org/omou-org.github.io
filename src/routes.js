@@ -13,7 +13,7 @@ export function Routes() {
         <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/meet-team" component={MeetOmouContainer} />
-            <Route path="/beta" component={BetaProgram} />
+            <Route path="/early-access-program" component={BetaProgram} />
             <Route path="/contact-us" component={ContactOmou} />
             <Route exact path="/about-us" component={AboutUs} />
             <Route exact path="/features" component={Features} />
