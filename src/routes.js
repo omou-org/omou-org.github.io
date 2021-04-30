@@ -7,6 +7,7 @@ import MeetOmouContainer from './components/meetomou/MeetOmouContainer';
 import BetaProgram from './components/betapage/BetaPage';
 import Features from './components/features/Features';
 import ContactOmou from './components/contact/ContactOmou';
+import GetStarted from './components/getstarted/GetStarted'
 
 export function Routes() {
     return (
@@ -20,6 +21,7 @@ export function Routes() {
             <Route exact path="/accounts" component={Features} />
             <Route exact path="/registration" component={Features} />
             <Route exact path="/payments" component={Features} />
+            <Route exact path="/get-started" component={GetStarted} />
         </Switch>
     );
 }

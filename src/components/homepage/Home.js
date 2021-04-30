@@ -143,9 +143,9 @@ const Home = (props) => {
                     >
                         <Button
                             className={classes.contactUsButton}
-                            href="/contact-us"
+                            href="/get-started"
                         >
-                            CONTACT US
+                            get started
                         </Button>
                     </Grid>
                 </Grid>
