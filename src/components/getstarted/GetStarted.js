@@ -114,7 +114,7 @@ const GetStarted = () => {
 							);
 						})}
 					</Grid>
-                    <Grid style={{ marginTop: '5rem' }} item xs={12}>
+                    <Grid style={{ marginTop: '3rem', marginBottom: '7rem' }} item xs={12}>
                         <Button className={classes.submitButton} href="/get-started-submitted">
                             SUBMIT & SCHEDULE A SESSION
                         </Button>
