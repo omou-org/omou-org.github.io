@@ -67,7 +67,7 @@ const useStyles = makeStyles({
 		border: '1px solid #000000',
 		borderRadius: '45px',
 		width: '26.375rem',
-		height: '1.5rem',
+		height: '2rem',
 		filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
 	},
 	submitButton: {
